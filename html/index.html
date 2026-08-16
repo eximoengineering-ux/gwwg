@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Tablet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tablet" class="hidden">
+        <div class="tablet-frame">
+            <div class="screw tl"></div>
+            <div class="screw tr"></div>
+            <div class="screw bl"></div>
+            <div class="screw br"></div>
+            <div class="cam-dot top"></div>
+
+            <div class="screen">
+                <!-- Status bar -->
+                <header class="statusbar">
+                    <span id="clock" class="clock">00:00</span>
+                    <span class="app-title">Job Center</span>
+                    <span class="status-icons">
+                        <svg viewBox="0 0 24 24" class="icon"><path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2zm6-6v-5a6 6 0 1 0-12 0v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
+                        <span class="battery"><span class="battery-fill"></span></span>
+                    </span>
+                </header>
+
+                <!-- Header row: profile + tabs -->
+                <div class="topnav">
+                    <div class="profile">
+                        <div class="avatar" id="avatar">T</div>
+                        <div class="profile-meta">
+                            <div class="profile-name-row">
+                                <span id="playerName" class="profile-name">Player</span>
+                                <span class="chip chip-level">Lvl <span id="playerLevel">1</span></span>
+                            </div>
+                            <div class="xpbar"><div id="xpFill" class="xpbar-fill"></div></div>
+                            <div class="xp-label"><span id="playerXp">0</span> / <span id="playerXpNext">0</span> XP</div>
+                        </div>
+                    </div>
+                    <nav class="tabs">
+                        <button class="tab active" data-view="jobs">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M10 4h4a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2zm0 3h4V6h-4v1z" fill="currentColor"/></svg>
+                            Jobs
+                        </button>
+                        <button class="tab" data-view="quests">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M6 3h12l-2 4 2 4H8v10H6V3z" fill="currentColor"/></svg>
+                            Quests
+                        </button>
+                    </nav>
+                    <div class="topnav-spacer"></div>
+                </div>
+
+                <!-- ===================== JOBS VIEW ===================== -->
+                <main id="view-jobs" class="view">
+                    <div class="view-head">
+                        <h2>Available Jobs</h2>
+                        <span id="jobsCount" class="chip chip-muted">0 available</span>
+                    </div>
+                    <div id="featuredJob"></div>
+                    <div id="jobsGrid" class="jobs-grid"></div>
+                </main>
+
+                <!-- ===================== QUESTS VIEW ===================== -->
+                <main id="view-quests" class="view hidden">
+                    <div class="pill-row">
+                        <button class="pill active" data-kind="daily">Daily</button>
+                        <button class="pill" data-kind="weekly">Weekly</button>
+                    </div>
+                    <div id="questsGrid" class="quests-grid"></div>
+                </main>
+
+                <!-- ===================== JOB DETAIL / MINE ===================== -->
+                <main id="view-job-detail" class="view hidden">
+                    <button id="backBtn" class="back-btn">&#8592; Back to jobs</button>
+                    <div class="detail-hero" id="detailHero">
+                        <span class="chip chip-orange-outline">Persistent Business</span>
+                        <h1 id="detailName">Mineral Mining</h1>
+                        <p id="detailDesc" class="detail-desc"></p>
+                        <div class="detail-meta">
+                            <span id="detailCrewMeta" class="meta-item">&#9874; Owner + 4 helpers</span>
+                            <span class="meta-item live-dot" id="detailWorkers">0 underground</span>
+                            <span class="chip chip-dark location-chip">&#9906; Mining office</span>
+                        </div>
+                    </div>
+
+                    <!-- shown when the player has no mine yet -->
+                    <section id="mineEmpty" class="panel hidden">
+                        <h3>No mine deed yet</h3>
+                        <p class="muted">Claim a deed to start your own persistent mine, invite helpers, and level it up.</p>
+                        <button id="createMineBtn" class="btn btn-orange">Claim mine deed</button>
+                    </section>
+
+                    <!-- shown when the player owns a mine -->
+                    <section id="minePanel" class="hidden">
+                        <div class="panel mine-card">
+                            <div class="mine-card-head">
+                                <div>
+                                    <span class="eyebrow">Mine deed #0</span>
+                                    <h3 id="mineName">Mine</h3>
+                                    <span class="muted">Mechanized Mine &middot; saved automatically</span>
+                                </div>
+                                <button class="btn btn-ghost">Enter through the mining employer</button>
+                            </div>
+                            <div class="mine-stats">
+                                <div class="stat"><span class="stat-label">Mine level</span><span id="mineLevel" class="stat-value">1</span><span class="stat-sub">Mechanized Mine</span></div>
+                                <div class="stat"><span class="stat-label">Active crew</span><span id="mineCrewCount" class="stat-value">0/5</span><span class="stat-sub">Owner plus helpers</span></div>
+                                <div class="stat"><span class="stat-label">Cells created</span><span id="mineCells" class="stat-value">0</span><span class="stat-sub">Lifetime development</span></div>
+                                <div class="stat"><span class="stat-label">Processed</span><span id="mineProcessed" class="stat-value">0</span><span class="stat-sub">Claimed materials</span></div>
+                            </div>
+                            <div class="dev-row">
+                                <span>Mine development</span>
+                                <span id="mineDevLabel">0 / 0 XP</span>
+                            </div>
+                            <div class="progress"><div id="mineDevFill" class="progress-fill"></div></div>
+                        </div>
+
+                        <div class="mine-columns">
+                            <div class="panel">
+                                <div class="panel-head">
+                                    <div><span class="eyebrow">Live access</span><h3>Crew</h3></div>
+                                    <span id="crewCounter" class="muted">0/5</span>
+                                </div>
+                                <div class="invite-row">
+                                    <input id="inviteInput" type="text" placeholder="Online player ID" maxlength="6">
+                                    <button id="inviteBtn" class="btn btn-orange">&#43; Invite</button>
+                                </div>
+                                <div id="crewList" class="crew-list">
+                                    <p class="muted center">The mine is currently empty.</p>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-head">
+                                    <div><span class="eyebrow">Owner settings</span><h3>Property</h3></div>
+                                    <svg viewBox="0 0 24 24" class="icon muted"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm8-3a8 8 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a8 8 0 0 0-2-1.2L15 3H9l-.5 2.6a8 8 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a8 8 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a8 8 0 0 0 2 1.2L9 21h6l.5-2.6a8 8 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.06-.4.1-.8.1-1.2z" fill="currentColor"/></svg>
+                                </div>
+                                <label class="field-label" for="mineNameInput">Mine name</label>
+                                <div class="invite-row">
+                                    <input id="mineNameInput" type="text" maxlength="40">
+                                    <button id="renameBtn" class="btn btn-ghost">Save</button>
+                                </div>
+                                <div class="note">
+                                    &#9432; Supplies are purchased by the owner from the computer inside the mine.
+                                    Processed output is claimed into the worker's inventory and sold at the employer exchange.
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+
+                <div class="home-indicator"></div>
+                <div id="toast" class="toast hidden"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
