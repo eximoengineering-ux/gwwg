@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .pinDot { width: 13px; height: 13px; border-radius: 50%; border: 1.6px solid rgba(255,255,255,0.25); }
+    .pinOn { background: #FF7A1F; border-color: #FF7A1F; box-shadow: 0 0 10px rgba(255,122,31,0.6); }
+    .nk { width: 58px; height: 44px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; }
+    .amt { flex: 1; text-align: center; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 10px 0; font-size: 12px; font-weight: 700; }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="slideL" style="position: absolute; left: 56px; top: 44px; display: flex; align-items: center; gap: 14px;">
+    <div class="cut" style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(255,122,31,0.4);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0B0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg>
+    </div>
+    <div>
+      <div class="lab" style="color: #FFB56B;">QB-BANKING &middot; STREET ATM</div>
+      <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 2px;">Fleeca ATM</div>
+    </div>
+  </div>
+
+  <!-- PIN entry -->
+  <div class="panel cut rise" style="position: absolute; left: 56px; top: 136px; width: 300px; padding: 18px 20px 20px; animation-delay: 0.1s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="edgep" style="left: 10px; right: 10px; top: 0;"></div>
+    <div style="text-align: center;">
+      <div style="display: inline-flex; align-items: center; gap: 7px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span class="h" style="font-size: 14px; font-weight: 700;">Enter PIN</span>
+      </div>
+      <div class="lab" style="margin-top: 4px;">CARD &bull;&bull;&bull;&bull;2148 &middot; RAY CALDERON</div>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 13px; margin-top: 16px;">
+      <span class="pinDot pinOn"></span><span class="pinDot pinOn"></span><span class="pinDot pinOn"></span><span class="pinDot" style="animation: caret 1.1s step-end infinite;"></span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 58px); gap: 9px; justify-content: center; margin-top: 17px;">
+      <div class="nk h">1</div><div class="nk h">2</div><div class="nk h">3</div>
+      <div class="nk h">4</div><div class="nk h">5</div><div class="nk h">6</div>
+      <div class="nk h">7</div><div class="nk h">8</div><div class="nk h">9</div>
+      <div class="nk lab" style="font-size: 9px;">CLEAR</div><div class="nk h">0</div>
+      <div class="nk" style="background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-top: 15px; justify-content: center;">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>
+      <span style="font-size: 10px; color: #6B655F;">3 wrong attempts lock the card for 10 min</span>
+    </div>
+  </div>
+
+  <!-- Quick withdraw -->
+  <div class="panel cut rise" style="position: absolute; left: 396px; top: 136px; width: 420px; padding: 18px 20px 20px; animation-delay: 0.22s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span class="h" style="font-size: 15px; font-weight: 700;">Quick withdraw</span>
+      <span class="lab" style="color: #42D392;">&#9679; CONNECTED</span>
+    </div>
+    <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 12px;">
+      <span class="lab">AVAILABLE</span>
+      <span class="h" style="font-size: 24px; font-weight: 700;">$18,240<span style="font-size: 14px; color: #A8A29C;">.20</span></span>
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: 14px;">
+      <div class="amt h">$100</div>
+      <div class="amt h">$250</div>
+      <div class="amt h" style="border-color: rgba(255,122,31,0.55); background: rgba(255,122,31,0.1); color: #FFB56B; box-shadow: 0 0 0 3px rgba(255,122,31,0.1);">$500</div>
+      <div class="amt h">$1,000</div>
+    </div>
+    <div style="display: flex; gap: 10px; margin-top: 12px; align-items: center;">
+      <div style="flex: 1; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 11px 14px; display: flex; align-items: baseline; gap: 4px;">
+        <span style="color: #6B655F; font-weight: 700; font-size: 13px;">$</span>
+        <span class="h" style="font-size: 16px; font-weight: 700;">500</span>
+        <span style="border-right: 2px solid #FF7A1F; height: 15px; animation: caret 1.2s step-end infinite;"></span>
+        <span class="lab" style="margin-left: auto;">CUSTOM</span>
+      </div>
+      <div class="cut h" style="position: relative; overflow: hidden; font-size: 12px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 13px 22px; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">WITHDRAW<div class="sheen"></div></div>
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 13px;">
+      <div style="flex: 1; display: flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 10px 12px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+        <span style="font-size: 11.5px; font-weight: 700;">Deposit cash</span>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 10px 12px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11a5 5 0 0 1 5 5v1M8 3L4 7l4 4"/></svg>
+        <span style="font-size: 11.5px; font-weight: 700;">Balance only</span>
+      </div>
+      <div style="flex: 1; display: flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; padding: 10px 12px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5M10 17l-5-5 5-5M5 12h11"/></svg>
+        <span style="font-size: 11.5px; font-weight: 700;">Eject card</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 13px; background: rgba(232,176,75,0.07); border: 1px solid rgba(232,176,75,0.28); border-radius: 10px; padding: 9px 12px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="2" stroke-linecap="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>
+      <span style="font-size: 10.5px; color: #E8B04B; line-height: 1.5;">Street ATMs charge a $12 service fee &mdash; Fleeca branches are free.</span>
+    </div>
+  </div>
+
+  <!-- Dispensing state -->
+  <div class="panel cut rise" style="position: absolute; left: 856px; top: 136px; width: 368px; padding: 18px 20px 20px; animation-delay: 0.34s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span class="h" style="font-size: 15px; font-weight: 700;">Dispensing</span>
+      <span class="lab" style="color: #FFB56B; animation: pulseGlow 1.4s ease-in-out infinite;">&#9679; IN PROGRESS</span>
+    </div>
+    <div style="position: relative; height: 96px; margin-top: 14px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: rgba(10,9,8,0.6);">
+      <div style="position: absolute; left: 50%; top: 26px; transform: translateX(-50%); width: 190px; height: 10px; border-radius: 5px; background: #060505; box-shadow: inset 0 2px 4px rgba(0,0,0,0.8), 0 0 14px rgba(255,122,31,0.25);"></div>
+      <div style="position: absolute; left: 50%; top: 30px; transform: translateX(-50%); width: 150px; height: 44px; border-radius: 4px; background: linear-gradient(180deg, #3f6b48, #2c5136); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 18px rgba(0,0,0,0.5);">
+        <div style="position: absolute; inset: 6px 10px; border: 1px dashed rgba(255,255,255,0.25); border-radius: 3px; display: flex; align-items: center; justify-content: center;">
+          <span class="h" style="font-size: 13px; font-weight: 700; color: rgba(245,241,236,0.9);">$100</span>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 11px;">
+      <span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">AMOUNT</span><span class="h" style="font-weight: 700;">$500 &middot; 5 &times; $100</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 7px; font-size: 11px;">
+      <span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">FEE</span><span class="h" style="font-weight: 700; color: #F4544E;">&minus;$12</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 7px; font-size: 11px; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
+      <span style="color: #F5F1EC; font-weight: 700; letter-spacing: 0.08em;">NEW BALANCE</span><span class="h" style="font-weight: 700; color: #FFB56B;">$17,728.20</span>
+    </div>
+    <div style="margin-top: 13px; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.07); overflow: hidden;">
+      <div style="width: 74%; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #FF7A1F, #FFB56B); animation: pulseGlow 1.4s ease-in-out infinite;"></div>
+    </div>
+    <div class="lab" style="text-align: center; margin-top: 9px;">TAKE YOUR CASH WHEN THE TRAY OPENS</div>
+  </div>
+
+  <div class="lab rise" style="position: absolute; left: 56px; bottom: 34px; animation-delay: 0.45s;">QB-BANKING &middot; ATM PIN &middot; QUICK WITHDRAW &middot; DISPENSE &middot; FEES</div>
+</div>
+</x-dc>
+</body>
+</html>

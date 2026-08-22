@@ -2,7 +2,8 @@
   "pages": [
     { "id": "page-1", "name": "Core & HUD" },
     { "id": "page-2", "name": "Screens & Apps" },
-    { "id": "page-3", "name": "EmberOS Phone" }
+    { "id": "page-3", "name": "EmberOS Phone" },
+    { "id": "page-4", "name": "Extended Screens" }
   ],
   "artboards": [
     { "file": "Main.dc.html", "title": "Brand & Design System", "x": 0, "y": 0, "w": 1280, "h": 860, "page": "page-1" },
@@ -28,12 +29,22 @@
     { "file": "PhoneBank.dc.html", "title": "Fleeca App — Home, Transfer, Receipt", "x": 0, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
     { "file": "PhoneBirdy.dc.html", "title": "Birdy — Feed, Compose, Profile", "x": 1360, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
     { "file": "PhoneMail.dc.html", "title": "Mail & Alarms", "x": 2720, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
-    { "file": "PhoneGarage.dc.html", "title": "Garage, Services & Crypto", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-3" }
+    { "file": "PhoneGarage.dc.html", "title": "Garage, Services & Crypto", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "Charcreate.dc.html", "title": "Multicharacter — Create & Delete", "x": 0, "y": 0, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "Apartment.dc.html", "title": "Apartments — Select, Interior, Rent", "x": 1360, "y": 0, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "HUDStates.dc.html", "title": "HUD — States & Settings", "x": 2720, "y": 0, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "Hotbar.dc.html", "title": "Inventory — Hotbar & Item Actions", "x": 0, "y": 850, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "Crafting.dc.html", "title": "Inventory — Crafting & Attachments", "x": 1360, "y": 850, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "ATM.dc.html", "title": "Banking — Street ATM", "x": 2720, "y": 850, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "GarageUI.dc.html", "title": "Garages — Terminal & Impound", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "Ammunation.dc.html", "title": "Shops — Ammunation & Checkout", "x": 1360, "y": 1700, "w": 1280, "h": 720, "page": "page-4" },
+    { "file": "Barber.dc.html", "title": "Appearance — Barber & Tattoo", "x": 2720, "y": 1700, "w": 1280, "h": 720, "page": "page-4" }
   ],
   "annotations": [
     { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "page": "page-1", "text": "EMBER RP — QBCore UI redesign.\nSignature: ember-cut glass panels, orbital wheel, active-edge keyline, scanlines, 270° gauges, night-city scene, inward tilt — fully animated (staggered entrances, gauge sweeps, live loops; respects reduced motion). Identity is a placeholder." },
     { "id": "batch2-brief", "x": 0, "y": -200, "w": 560, "page": "page-2", "text": "Screens & Apps — multicharacter, spawn, EmberOS phone, inventory, banking, shop, scoreboard, boss menu, admin, wardrobe.\nSame Ember system: cut panels, keylines, staggered entrances. NUI code follows approval." },
-    { "id": "batch3-brief", "x": 0, "y": -200, "w": 560, "page": "page-3", "text": "EmberOS Phone — every app in detail: lock screen, camera, settings, calls, messages, Fleeca banking, Birdy social, mail, alarms, garage, city services, EmberCoin crypto.\n21 screens, consistent world data (Ray Calderon / Mia Vasquez / Benny's), fully animated." }
+    { "id": "batch3-brief", "x": 0, "y": -200, "w": 560, "page": "page-3", "text": "EmberOS Phone — every app in detail: lock screen, camera, settings, calls, messages, Fleeca banking, Birdy social, mail, alarms, garage, city services, EmberCoin crypto.\n21 screens, consistent world data (Ray Calderon / Mia Vasquez / Benny's), fully animated." },
+    { "id": "batch4-brief", "x": 0, "y": -200, "w": 560, "page": "page-4", "text": "Extended Screens — the remaining interface of every script: character creation & delete, apartments, HUD situational states & settings, inventory hotbar / item actions / crafting / attachments, street ATM, garage terminal & impound, Ammunation with license gate & checkout, barber & tattoo.\nSame Ember system throughout." }
   ],
-  "launch": { "view": "canvas", "page": "page-3" }
+  "launch": { "view": "canvas", "page": "page-4" }
 }

@@ -81,6 +81,18 @@ EmberOS phone apps (page 3, three screens per board):
 - `PhoneMail.dc.html` — mail inbox, opened DMV receipt email, alarms
 - `PhoneGarage.dc.html` — fleet with valet request, city services directory, EmberCoin crypto chart
 
+Extended screens (page 4) — the remaining interface of every script:
+
+- `Charcreate.dc.html` — multicharacter: identity form, heritage, delete guard
+- `Apartment.dc.html` — apartments: building select, interior menu, rent status
+- `HUDStates.dc.html` — HUD states (critical, underwater, money, cinematic, parachute, stress) + settings
+- `Hotbar.dc.html` — inventory hotbar, right-click menu, item detail, split, weight
+- `Crafting.dc.html` — workbench recipes, live progress, weapon attachment bench
+- `ATM.dc.html` — street ATM: PIN pad, quick withdraw, dispensing, fees
+- `GarageUI.dc.html` — garage terminal, vehicle rail, shared keys, impound
+- `Ammunation.dc.html` — weapon shop with license gate, checkout with tax
+- `Barber.dc.html` — barber controls, tattoo zone picker, saved looks
+
 ## Single-file collection
 
 `EmberRP-UI-All.html` bundles **every** board above into one standalone file (open it in any browser). It is the canonical collection: every new interface designed for this project gets added here. To rebuild it after adding or editing a board, register the board in the `SECTIONS` list of `build-all.mjs` and run:

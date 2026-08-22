@@ -39,6 +39,17 @@ const SECTIONS = [
     ['PhoneMail.dc.html', 'Mail & Alarms', 720],
     ['PhoneGarage.dc.html', 'Garage, Services & Crypto', 720],
   ]},
+  { name: 'Extended Screens', boards: [
+    ['Charcreate.dc.html', 'Multicharacter — Create & Delete', 720],
+    ['Apartment.dc.html', 'Apartments — Select, Interior, Rent', 720],
+    ['HUDStates.dc.html', 'HUD — States & Settings', 720],
+    ['Hotbar.dc.html', 'Inventory — Hotbar & Item Actions', 720],
+    ['Crafting.dc.html', 'Inventory — Crafting & Attachments', 720],
+    ['ATM.dc.html', 'Banking — Street ATM', 720],
+    ['GarageUI.dc.html', 'Garages — Terminal & Impound', 720],
+    ['Ammunation.dc.html', 'Shops — Ammunation & Checkout', 720],
+    ['Barber.dc.html', 'Appearance — Barber & Tattoo', 720],
+  ]},
 ];
 
 function boardDoc(file) {
