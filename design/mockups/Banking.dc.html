@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.7) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .nav { display: flex; align-items: center; gap: 11px; padding: 11px 14px; font-size: 13px; font-weight: 600; color: #A8A29C; }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 4s ease-in-out 1.4s infinite; }
+    @keyframes fillW { from { width: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1040px; height: 600px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); display: flex; overflow: hidden;">
+    <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #FF7A1F, #FFB56B, rgba(255,181,107,0));"></div>
+
+    <div style="width: 218px; border-right: 1px solid rgba(255,255,255,0.06); padding: 22px 14px; box-sizing: border-box; display: flex; flex-direction: column; background: rgba(10,9,8,0.5);">
+      <div class="slideL" style="display: flex; align-items: center; gap: 10px; padding: 0 8px 18px;">
+        <div class="cut" style="width: 34px; height: 34px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 10V8l7-4 7 4v2M6 10v7M12 10v7M18 10v7M4 17h16v3H4z"/></svg>
+        </div>
+        <div>
+          <div class="h" style="font-size: 14px; font-weight: 700;">Fleeca</div>
+          <div style="font-size: 9.5px; color: #6B655F; letter-spacing: 0.12em;">EMBER BRANCH</div>
+        </div>
+      </div>
+
+      <div class="nav slideL" style="color: #FFB56B; background: rgba(255,122,31,0.1); border: 1px solid rgba(255,122,31,0.35); position: relative; animation-delay: 0.08s;">
+        <div style="position: absolute; left: 0; top: 6px; bottom: 6px; width: 2.5px; background: #FF7A1F;"></div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>Overview
+      </div>
+      <div class="nav slideL" style="animation-delay: 0.14s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 8h7.5a2.5 2.5 0 0 1 0 5H9a2.5 2.5 0 0 0 0 5h8"/></svg>Transfer</div>
+      <div class="nav slideL" style="animation-delay: 0.2s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4zM4 10h16M8 15h4"/></svg>Bills</div>
+      <div class="nav slideL" style="animation-delay: 0.26s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>History</div>
+      <div class="nav slideL" style="animation-delay: 0.32s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M19 8.5V6a2 2 0 0 0-2-2H5.5a2 2 0 0 0 0 4H19a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6M16.5 13.5h.01"/></svg>Savings</div>
+
+      <div class="slideL" style="margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px 8px 0; border-top: 1px solid rgba(255,255,255,0.06); animation-delay: 0.38s;">
+        <div class="h" style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFB56B;">RC</div>
+        <div>
+          <div style="font-size: 12px; font-weight: 700;">Ray Calderon</div>
+          <div style="font-size: 9.5px; color: #6B655F;">EMB-2148</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="flex: 1; padding: 24px 28px; box-sizing: border-box; overflow: hidden;">
+      <div class="rise" style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div class="lab" style="color: #FFB56B;">Personal Account &middot; ****2148</div>
+          <div class="h" style="font-size: 38px; font-weight: 700; margin-top: 6px; letter-spacing: 0.01em;">$18,540<span style="font-size: 20px; color: #6B655F;">.20</span></div>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <div style="display: flex; align-items: center; gap: 7px; background: rgba(66,211,146,0.1); border: 1px solid rgba(66,211,146,0.35); padding: 8px 13px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M12 5l-5.5 5.5M12 5l5.5 5.5"/></svg>
+            <span class="h" style="font-size: 12.5px; font-weight: 700; color: #42D392;">+$3,120 <span style="color: #6B655F; font-weight: 600;">this week</span></span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 7px; background: rgba(244,84,78,0.08); border: 1px solid rgba(244,84,78,0.3); padding: 8px 13px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M12 19l-5.5-5.5M12 19l5.5-5.5"/></svg>
+            <span class="h" style="font-size: 12.5px; font-weight: 700; color: #F4544E;">&minus;$1,480</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rise" style="display: flex; gap: 10px; margin-top: 20px; animation-delay: 0.12s;">
+        <div class="cut" style="position: relative; overflow: hidden; height: 44px; padding: 0 24px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 13.5px; display: flex; align-items: center; gap: 9px; box-shadow: 0 8px 24px rgba(255,122,31,0.35);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M12 5l-5.5 5.5M12 5l5.5 5.5"/></svg>Deposit<div class="sheen"></div></div>
+        <div style="height: 44px; padding: 0 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 13.5px; display: flex; align-items: center; gap: 9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9D4CE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M12 19l-5.5-5.5M12 19l5.5-5.5"/></svg>Withdraw</div>
+        <div style="height: 44px; padding: 0 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 13.5px; display: flex; align-items: center; gap: 9px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D9D4CE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13M17 7l-3.5-3.5M20 17H7M7 17l3.5 3.5"/></svg>Transfer</div>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 8px; background: rgba(15,13,11,0.8); border: 1px solid rgba(255,255,255,0.09); padding: 0 14px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/></svg>
+          <span class="h" style="font-size: 12.5px; font-weight: 700; color: #42D392;">$2,840 <span style="color: #6B655F; font-weight: 600;">on hand</span></span>
+        </div>
+      </div>
+
+      <div class="rise" style="margin-top: 22px; animation-delay: 0.22s;">
+        <div class="lab">Latest Transactions</div>
+        <div style="margin-top: 10px; display: flex; flex-direction: column;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 11px 4px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div style="width: 30px; height: 30px; background: rgba(66,211,146,0.1); border: 1px solid rgba(66,211,146,0.35); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.2" width="19" height="12" rx="2"/><path d="M8.5 7.2V5.5A2.5 2.5 0 0 1 11 3h2a2.5 2.5 0 0 1 2.5 2.5v1.7"/></svg></div>
+            <div style="flex: 1;"><div style="font-size: 13px; font-weight: 600;">Mechanic payroll</div><div style="font-size: 10.5px; color: #6B655F; margin-top: 1px;">Society &middot; Today 20:00</div></div>
+            <span class="h" style="font-size: 13.5px; font-weight: 700; color: #42D392;">+$1,250</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 11px 4px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div style="width: 30px; height: 30px; background: rgba(244,84,78,0.08); border: 1px solid rgba(244,84,78,0.3); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0"/></svg></div>
+            <div style="flex: 1;"><div style="font-size: 13px; font-weight: 600;">Vehicle registration &middot; DMV</div><div style="font-size: 10.5px; color: #6B655F; margin-top: 1px;">Today 18:22</div></div>
+            <span class="h" style="font-size: 13.5px; font-weight: 700; color: #F4544E;">&minus;$1,250</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 11px 4px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div style="width: 30px; height: 30px; background: rgba(76,158,235,0.1); border: 1px solid rgba(76,158,235,0.35); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13M17 7l-3.5-3.5M20 17H7M7 17l3.5 3.5"/></svg></div>
+            <div style="flex: 1;"><div style="font-size: 13px; font-weight: 600;">Transfer from Mia Vasquez</div><div style="font-size: 10.5px; color: #6B655F; margin-top: 1px;">Yesterday 23:10 &middot; "gas money"</div></div>
+            <span class="h" style="font-size: 13.5px; font-weight: 700; color: #42D392;">+$300</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 11px 4px;">
+            <div style="width: 30px; height: 30px; background: rgba(244,84,78,0.08); border: 1px solid rgba(244,84,78,0.3); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v13H4zM4 10h16"/></svg></div>
+            <div style="flex: 1;"><div style="font-size: 13px; font-weight: 600;">Utility bill &middot; Apartment</div><div style="font-size: 10.5px; color: #6B655F; margin-top: 1px;">Yesterday 09:00 &middot; autopay</div></div>
+            <span class="h" style="font-size: 13.5px; font-weight: 700; color: #F4544E;">&minus;$230</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rise" style="margin-top: 14px; animation-delay: 0.32s;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="lab">Savings Goal &middot; Bennys Upgrade</span>
+          <span class="h" style="font-size: 11.5px; font-weight: 700; color: #FFB56B;">$6,200 / $10,000</span>
+        </div>
+        <div style="margin-top: 8px; height: 7px; background: rgba(255,255,255,0.08); overflow: hidden;"><div style="width: 62%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B); box-shadow: 0 0 12px rgba(255,122,31,0.6); animation: fillW 1.3s cubic-bezier(0.3, 0.7, 0.2, 1) 0.6s both;"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

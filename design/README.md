@@ -55,6 +55,17 @@ for the shared design canvas:
 - `Radial.dc.html` — qb-radialmenu
 - `Notify.dc.html` — notifications, drawtext keybind, progressbar
 
-Planned batches: 2) multicharacter + spawn + apartments, 3) phone,
-4) banking, garages, shops, scoreboard, inventory, management, adminmenu,
-clothing. NUI implementation follows once mockups are approved.
+Page 2 — Screens & Apps (all remaining surfaces, same system):
+
+- `Multichar.dc.html` — character select + details card
+- `Spawn.dc.html` — map-style spawn selector (last location / apartment / motel)
+- `Phone.dc.html` — EmberOS phone: clock, notification, app grid, dock
+- `Inventory.dc.html` — pockets/trunk grids, weight bars, hotbar, item actions
+- `Banking.dc.html` — Fleeca app: sidebar, balance, quick actions, transactions
+- `Shop.dc.html` — 24/7 store: category tabs, product grid, basket, cash/bank
+- `Scoreboard.dc.html` — server header, job counts, player table
+- `Management.dc.html` — boss menu: society stats, employee table
+- `Admin.dc.html` — staff panel: categories, toggles, player actions
+- `Clothing.dc.html` — wardrobe: category rail, variation carousel, outfits
+
+NUI implementation follows once mockups are approved.

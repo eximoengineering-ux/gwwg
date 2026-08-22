@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.7) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .nav { display: flex; align-items: center; gap: 11px; padding: 10px 13px; font-size: 13px; font-weight: 600; color: #A8A29C; }
+    .abtn { font-size: 12px; font-weight: 700; padding: 9px 0; text-align: center; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.05); color: #D9D4CE; }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1000px; height: 580px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); display: flex; overflow: hidden;">
+    <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #F4544E, #FF7A1F, rgba(255,122,31,0));"></div>
+
+    <div style="width: 208px; border-right: 1px solid rgba(255,255,255,0.06); padding: 20px 13px; box-sizing: border-box; background: rgba(10,9,8,0.5);">
+      <div class="slideL" style="display: flex; align-items: center; gap: 10px; padding: 0 6px 16px;">
+        <div class="cut" style="width: 34px; height: 34px; background: linear-gradient(135deg, #F4544E, #C22F2A); display: flex; align-items: center; justify-content: center;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 7.6-8 9-4.6-1.4-8-4.5-8-9V6l8-3z"/></svg>
+        </div>
+        <div>
+          <div class="h" style="font-size: 14px; font-weight: 700;">Admin</div>
+          <div style="font-size: 9.5px; color: #6B655F; letter-spacing: 0.12em;">EMBER STAFF</div>
+        </div>
+      </div>
+      <div class="nav slideL" style="color: #FFB56B; background: rgba(255,122,31,0.1); border: 1px solid rgba(255,122,31,0.35); animation-delay: 0.07s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 4.2a3.4 3.4 0 0 1 0 6.6M21.5 20a6.5 6.5 0 0 0-4.5-6.2"/></svg>Players</div>
+      <div class="nav slideL" style="animation-delay: 0.12s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0"/></svg>Vehicles</div>
+      <div class="nav slideL" style="animation-delay: 0.17s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Server</div>
+      <div class="nav slideL" style="animation-delay: 0.22s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M5.5 5.5l13 13"/></svg>Bans</div>
+      <div class="nav slideL" style="animation-delay: 0.27s;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17.5L12 4l9 13.5M7 12.5h10"/></svg>Reports <span class="h" style="margin-left: auto; font-size: 10px; font-weight: 700; color: #F4544E; background: rgba(244,84,78,0.12); border: 1px solid rgba(244,84,78,0.4); padding: 1px 7px;">3</span></div>
+
+      <div class="slideL" style="margin-top: 18px; padding: 0 6px; display: flex; flex-direction: column; gap: 10px; animation-delay: 0.32s;">
+        <div class="lab">Quick Toggles</div>
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 12px; color: #D9D4CE; font-weight: 600;">Noclip</span><div style="width: 38px; height: 21px; border-radius: 11px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative;"><div style="position: absolute; right: 2.5px; top: 2.5px; width: 16px; height: 16px; border-radius: 50%; background: #17100A;"></div></div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 12px; color: #A8A29C; font-weight: 600;">Godmode</span><div style="width: 38px; height: 21px; border-radius: 11px; background: rgba(255,255,255,0.1); position: relative;"><div style="position: absolute; left: 2.5px; top: 2.5px; width: 16px; height: 16px; border-radius: 50%; background: #6B655F;"></div></div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-size: 12px; color: #A8A29C; font-weight: 600;">Invisible</span><div style="width: 38px; height: 21px; border-radius: 11px; background: rgba(255,255,255,0.1); position: relative;"><div style="position: absolute; left: 2.5px; top: 2.5px; width: 16px; height: 16px; border-radius: 50%; background: #6B655F;"></div></div></div>
+      </div>
+    </div>
+
+    <div style="flex: 1; padding: 22px 26px; box-sizing: border-box;">
+      <div class="rise" style="display: flex; gap: 10px; align-items: center;">
+        <div style="flex: 1; height: 40px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.11); display: flex; align-items: center; gap: 10px; padding: 0 14px; box-sizing: border-box;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16 16"/></svg>
+          <span style="font-size: 13px; color: #6B655F;">Search player by name or ID&hellip;</span>
+        </div>
+        <span class="h" style="font-size: 12px; font-weight: 700; color: #A8A29C;">128 online</span>
+      </div>
+
+      <div style="display: flex; gap: 18px; margin-top: 16px;">
+        <div class="rise" style="width: 300px; display: flex; flex-direction: column; gap: 6px; animation-delay: 0.1s;">
+          <div style="display: flex; align-items: center; gap: 11px; padding: 10px 13px; background: rgba(255,122,31,0.08); border: 1px solid rgba(255,122,31,0.4); border-left: 3px solid #FF7A1F;">
+            <span class="h" style="font-size: 11px; font-weight: 700; color: #FFB56B; width: 32px;">156</span>
+            <span style="font-size: 13px; font-weight: 700; color: #FFFFFF;">Dexter Cole</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 11px; padding: 10px 13px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <span class="h" style="font-size: 11px; font-weight: 700; color: #6B655F; width: 32px;">12</span>
+            <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Marcus Webb</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 11px; padding: 10px 13px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <span class="h" style="font-size: 11px; font-weight: 700; color: #6B655F; width: 32px;">87</span>
+            <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Mia Vasquez</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 11px; padding: 10px 13px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);">
+            <span class="h" style="font-size: 11px; font-weight: 700; color: #6B655F; width: 32px;">203</span>
+            <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Lena Ortiz</span>
+          </div>
+        </div>
+
+        <div class="panel rise" style="flex: 1; padding: 18px 20px; box-sizing: border-box; align-self: flex-start; animation-delay: 0.18s;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <div class="h" style="font-size: 17px; font-weight: 700;">Dexter Cole <span style="color: #6B655F; font-size: 12px; font-weight: 600;">&middot; ID 156</span></div>
+              <div style="font-size: 11px; color: #A8A29C; margin-top: 3px;">EMB-3390 &middot; Civilian &middot; Ping 96 &middot; 2 priors</div>
+            </div>
+            <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #E8B04B; background: rgba(232,176,75,0.1); border: 1px solid rgba(232,176,75,0.4); padding: 4px 9px; animation: pulseGlow 2s ease-in-out infinite;">WATCHLIST</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px;">
+            <div class="abtn">Teleport</div>
+            <div class="abtn">Bring</div>
+            <div class="abtn">Spectate</div>
+            <div class="abtn">Freeze</div>
+            <div class="abtn">Revive</div>
+            <div class="abtn">Screenshot</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px;">
+            <div class="abtn" style="color: #E8B04B; border-color: rgba(232,176,75,0.4); background: rgba(232,176,75,0.07);">Warn</div>
+            <div class="abtn" style="color: #E8B04B; border-color: rgba(232,176,75,0.4); background: rgba(232,176,75,0.07);">Kick</div>
+          </div>
+          <div class="cut abtn" style="margin-top: 8px; color: #F4544E; border-color: rgba(244,84,78,0.45); background: rgba(244,84,78,0.08); font-size: 12.5px;">Ban Player</div>
+          <div style="margin-top: 12px; font-size: 10.5px; color: #6B655F;">Last note &middot; "VDM report at Legion, warned once" &mdash; Staff: Nova</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
