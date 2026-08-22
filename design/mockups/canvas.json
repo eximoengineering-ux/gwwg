@@ -9,7 +9,7 @@
     { "file": "Notify.dc.html", "title": "Notifications & Progressbar", "x": 2720, "y": 1880, "w": 1280, "h": 720 }
   ],
   "annotations": [
-    { "id": "batch1-brief", "x": 0, "y": -190, "w": 420, "text": "EMBER RP — QBCore UI redesign, batch 1 of 4.\nDark modern, ember-orange accent on near-black, balanced glass.\nIdentity (name + flame mark) is a placeholder — swap anytime.\nNext batches: multicharacter/spawn/apartments, phone, banking/garages/shops/inventory." }
+    { "id": "batch1-brief", "x": 0, "y": -280, "w": 560, "text": "EMBER RP — QBCore UI redesign, batch 1 of 4.\nDark modern, ember-orange accent on near-black, balanced glass.\nIdentity (name + flame mark) is a placeholder — swap anytime.\nNext batches: multicharacter/spawn/apartments, phone, banking/garages/shops/inventory." }
   ],
   "launch": { "view": "canvas" }
 }
