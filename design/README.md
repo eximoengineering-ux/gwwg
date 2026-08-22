@@ -31,6 +31,13 @@ diagonal slash accent at the cut, and faint scanlines
 rings (`pathLength` dasharray); status rings are 100-unit circles. Keycaps,
 pills and toggles stay rounded (5px/14px); panels stay sharp.
 
+Motion language: staggered entrances (fade + 28–36px translate, 0.5–0.65s,
+`cubic-bezier(0.2, 0.8, 0.2, 1)`, 80–120ms stagger); gauges and status rings
+sweep in by animating `stroke-dasharray`; bars fill from zero. Ambient loops
+(compass tick scroll, voice EQ, glow pulses, sheen sweeps, dash crawl, toast
+drain, progressbar stripe scroll) cycle in 0.9–5s. Everything is disabled
+under `prefers-reduced-motion: reduce`.
+
 Inward tilt: edge-anchored panels lean toward screen center with
 `transform: perspective(1200px) rotateY(±6–8deg)` (origin on the screen-edge
 side); bottom/center panels use `rotateX(4–6deg)` instead.

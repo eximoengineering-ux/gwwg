@@ -23,6 +23,17 @@
     .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
     .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
     .toast { width: 344px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,0.5); }
+    @keyframes slideR { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
+    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes slideScale { from { opacity: 0; transform: translateX(36px) scale(0.97); } to { opacity: 0.85; transform: translateX(0) scale(0.97); } }
+    @keyframes drain { to { transform: scaleX(0); } }
+    .drain { transform-origin: left center; animation: drain 9s linear 1.2s forwards; }
+    @keyframes stripes { to { background-position: 15px 0; } }
+    @keyframes fillW { from { width: 0; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes capPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,122,31,0.3); } 50% { box-shadow: 0 0 0 5px rgba(255,122,31,0); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
 <div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
@@ -36,7 +47,7 @@
   <div class="vig"></div>
 
   <div style="position: absolute; top: 24px; right: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 9px; transform: perspective(1200px) rotateY(-7deg); transform-origin: right center;">
-    <div class="panel cut toast">
+    <div class="panel cut toast slideR">
       <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #42D392, rgba(66,211,146,0.2));"></div>
       <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
         <div style="width: 32px; height: 32px; background: rgba(66,211,146,0.13); border: 1px solid rgba(66,211,146,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -50,10 +61,10 @@
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">$2,500 transferred to your savings account.</div>
         </div>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div style="width: 72%; height: 100%; background: #42D392;"></div></div>
+      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 72%; height: 100%; background: #42D392;"></div></div>
     </div>
 
-    <div class="panel cut toast">
+    <div class="panel cut toast slideR" style="animation-delay: 0.12s;">
       <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2));"></div>
       <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
         <div style="width: 32px; height: 32px; background: rgba(255,122,31,0.13); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -67,10 +78,10 @@
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">A delivery job was posted at the depot. Check your job center.</div>
         </div>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div style="width: 45%; height: 100%; background: #FF7A1F;"></div></div>
+      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 45%; height: 100%; background: #FF7A1F; animation-duration: 6s;"></div></div>
     </div>
 
-    <div class="panel cut toast" style="border-color: rgba(244,84,78,0.4); transform: scale(0.97); opacity: 0.85;">
+    <div class="panel cut toast" style="border-color: rgba(244,84,78,0.4); opacity: 0; animation: slideScale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.24s forwards;">
       <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #F4544E, rgba(244,84,78,0.2));"></div>
       <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
         <div style="width: 32px; height: 32px; background: rgba(244,84,78,0.13); border: 1px solid rgba(244,84,78,0.5); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -84,12 +95,12 @@
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">This vehicle is locked. Find the keys or lockpick it.</div>
         </div>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div style="width: 88%; height: 100%; background: #F4544E;"></div></div>
+      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 88%; height: 100%; background: #F4544E; animation-duration: 12s;"></div></div>
     </div>
   </div>
 
-  <div class="panel" style="position: absolute; left: 470px; top: 384px; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.45);">
-    <span class="kb kbon" style="font-size: 12px; padding: 3px 9px;">E</span>
+  <div class="panel rise" style="position: absolute; left: 470px; top: 384px; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.45); animation-delay: 0.4s;">
+    <span class="kb kbon" style="font-size: 12px; padding: 3px 9px; animation: capPulse 1.8s ease-out infinite;">E</span>
     <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Open Trunk</span>
   </div>
 
@@ -103,7 +114,7 @@
       <span class="h" style="font-size: 16px; font-weight: 700; color: #FFB56B;">64<span style="font-size: 11px; color: #6B655F;">%</span></span>
     </div>
     <div style="margin-top: 11px; height: 9px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 12px, rgba(0,0,0,0) 12px 15px); overflow: hidden;">
-      <div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 12px, rgba(0,0,0,0) 12px 15px); filter: drop-shadow(0 0 6px rgba(255,122,31,0.6));"></div>
+      <div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 12px, rgba(0,0,0,0) 12px 15px); filter: drop-shadow(0 0 6px rgba(255,122,31,0.6)); animation: fillW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.3s both, stripes 0.9s linear infinite;"></div>
     </div>
     <div style="margin-top: 9px; display: flex; justify-content: space-between; align-items: center;">
       <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Press X to cancel</span>

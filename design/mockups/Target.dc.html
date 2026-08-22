@@ -22,6 +22,14 @@
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
     .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
     .num { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; flex-shrink: 0; }
+    @keyframes slideR { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes slideAct { from { opacity: 0; transform: translateX(34px); } to { opacity: 1; transform: translateX(7px); } }
+    @keyframes dashcrawl { to { stroke-dashoffset: -48; } }
+    @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes growW { from { width: 0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
 <div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
@@ -36,23 +44,23 @@
 
   <div style="position: absolute; left: 588px; top: 308px; width: 104px; height: 104px;">
     <svg width="104" height="104" viewBox="0 0 104 104" style="overflow: visible;">
-      <polygon points="52.0,11.0 87.5,31.5 87.5,72.5 52.0,93.0 16.5,72.5 16.5,31.5" fill="none" stroke="rgba(255,122,31,0.5)" stroke-width="1.5" stroke-dasharray="3 9" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.4));"/>
+      <polygon points="52.0,11.0 87.5,31.5 87.5,72.5 52.0,93.0 16.5,72.5 16.5,31.5" fill="none" stroke="rgba(255,122,31,0.5)" stroke-width="1.5" stroke-dasharray="3 9" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.4)); animation: dashcrawl 4s linear infinite;"/>
       <polygon points="52.0,19.0 80.6,35.5 80.6,68.5 52.0,85.0 23.4,68.5 23.4,35.5" fill="rgba(15,13,11,0.88)" stroke="rgba(255,122,31,0.6)" stroke-width="1" style="filter: drop-shadow(0 0 14px rgba(255,122,31,0.35));"/>
       <polygon points="52.0,25.0 75.4,38.5 75.4,65.5 52.0,79.0 28.6,65.5 28.6,38.5" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-      <path d="M5 21v-8a3 3 0 0 1 3-3h8M99 21v-8a3 3 0 0 0-3-3h-8M5 83v8a3 3 0 0 0 3 3h8M99 83v8a3 3 0 0 1-3 3h-8" fill="none" stroke="rgba(255,122,31,0.65)" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 4px rgba(255,122,31,0.45));"/>
-      <line x1="80.6" y1="39" x2="80.6" y2="65" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.8));"/>
+      <path d="M5 21v-8a3 3 0 0 1 3-3h8M99 21v-8a3 3 0 0 0-3-3h-8M5 83v8a3 3 0 0 0 3 3h8M99 83v8a3 3 0 0 1-3 3h-8" fill="none" stroke="rgba(255,122,31,0.65)" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 4px rgba(255,122,31,0.45)); transform-box: fill-box; transform-origin: center; animation: breathe 2.6s ease-in-out infinite;"/>
+      <line x1="80.6" y1="39" x2="80.6" y2="65" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.8)); animation: pulseGlow 2.2s ease-in-out infinite;"/>
     </svg>
     <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;">
       <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3" fill="#FF7A1F" stroke="none"/></svg>
     </div>
   </div>
 
-  <div style="position: absolute; left: 692px; top: 358px; width: 46px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0.8), rgba(255,122,31,0.15));"></div>
+  <div style="position: absolute; left: 692px; top: 358px; width: 46px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0.8), rgba(255,122,31,0.15)); animation: growW 0.6s cubic-bezier(0.3, 0.7, 0.2, 1) 0.15s both;"></div>
   <div style="position: absolute; left: 689px; top: 355px; width: 8px; height: 8px; border-radius: 50%; background: #FF7A1F; box-shadow: 0 0 8px rgba(255,122,31,0.9);"></div>
   <div style="position: absolute; left: 736px; top: 356px; width: 6px; height: 6px; border-radius: 50%; border: 1.5px solid rgba(255,122,31,0.7); box-sizing: border-box; background: rgba(15,13,11,0.9);"></div>
 
   <div style="position: absolute; left: 740px; top: 282px; display: flex; flex-direction: column; gap: 8px; transform: perspective(1200px) rotateY(-6deg); transform-origin: left center;">
-    <div class="panel cut" style="display: flex; align-items: center; gap: 8px; padding: 7px 13px 7px 11px; align-self: flex-start; margin-bottom: 2px;">
+    <div class="panel cut slideR" style="display: flex; align-items: center; gap: 8px; padding: 7px 13px 7px 11px; align-self: flex-start; margin-bottom: 2px; animation-delay: 0.2s;">
       <div style="position: absolute; left: 0; top: 5px; bottom: 5px; width: 2px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2));"></div>
       <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">SULTAN RS</span>
       <span style="width: 1px; height: 10px; background: rgba(255,255,255,0.15);"></span>
@@ -62,8 +70,8 @@
       <span class="h" style="font-size: 10px; font-weight: 600; color: #A8A29C;">2.1M</span>
     </div>
 
-    <div class="panel cut" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-color: rgba(255,122,31,0.6); box-shadow: 0 0 24px rgba(255,122,31,0.2), 0 12px 34px rgba(0,0,0,0.5); transform: translateX(7px);">
-      <div style="position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7);"></div>
+    <div class="panel cut" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-color: rgba(255,122,31,0.6); box-shadow: 0 0 24px rgba(255,122,31,0.2), 0 12px 34px rgba(0,0,0,0.5); opacity: 0; animation: slideAct 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.28s forwards;">
+      <div style="position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
       <div class="num" style="background: rgba(255,122,31,0.14); border-color: rgba(255,122,31,0.45); color: #FFB56B;">1</div>
       <div style="width: 30px; height: 30px; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.2h16v7.6a2.1 2.1 0 0 1-2.1 2.1H6.1A2.1 2.1 0 0 1 4 17.8v-7.6zM4 10.2l2.1-4.5a2.1 2.1 0 0 1 1.9-1.2h8a2.1 2.1 0 0 1 1.9 1.2l2.1 4.5M8.6 14h6.8M12 14v2.6"/></svg>
@@ -72,7 +80,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>
 
-    <div class="panel" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px;">
+    <div class="panel slideR" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; animation-delay: 0.36s;">
       <div class="num">2</div>
       <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.3" width="15" height="9.7" rx="2.2"/><path d="M8 10.3V7.4a4 4 0 0 1 8 0v2.9M12 14.2v.01M12 14.8v2"/></svg>
@@ -80,7 +88,7 @@
       <div style="font-size: 14px; font-weight: 600; color: #D9D4CE;">Lock Vehicle</div>
     </div>
 
-    <div class="panel" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px;">
+    <div class="panel slideR" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; animation-delay: 0.44s;">
       <div class="num">3</div>
       <div style="width: 30px; height: 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8v9.7M12 2.8L8.4 6.4M12 2.8l3.6 3.6M4.8 14.6v3.2a2.2 2.2 0 0 0 2.2 2.2h10a2.2 2.2 0 0 0 2.2-2.2v-3.2M8.3 16.8h.01M12 16.8h.01M15.7 16.8h.01"/></svg>
@@ -88,7 +96,7 @@
       <div style="font-size: 14px; font-weight: 600; color: #D9D4CE;">Push Vehicle</div>
     </div>
 
-    <div style="display: flex; align-items: center; gap: 7px; margin-top: 3px; margin-left: 2px;">
+    <div class="slideR" style="display: flex; align-items: center; gap: 7px; margin-top: 3px; margin-left: 2px; animation-delay: 0.54s;">
       <span class="kb">ALT</span>
       <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Hold to keep open</span>
     </div>

@@ -20,6 +20,13 @@
     .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
     .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
     .seglabel { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 8.5px; font-weight: 700; letter-spacing: 0.16em; fill: #6B655F; text-anchor: middle; }
+    @keyframes wheelIn { from { opacity: 0; transform: scale(0.85) rotate(-6deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes dashcrawl { to { stroke-dashoffset: -56; } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes ambient { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
 <div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
@@ -30,10 +37,10 @@
   </svg>
   <div class="vig"></div>
 
-  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 640px; height: 320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,122,31,0.1), rgba(255,122,31,0)); filter: blur(30px);"></div>
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 640px; height: 320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,122,31,0.1), rgba(255,122,31,0)); filter: blur(30px); animation: ambient 5s ease-in-out infinite;"></div>
 
   <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px;">
-    <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px;">
+    <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px; animation: wheelIn 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
       <defs>
         <linearGradient id="emberSeg" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stop-color="#FF7A1F"/>
@@ -57,7 +64,7 @@
       </defs>
       <g transform="translate(20, 20)">
 
-      <polygon points="210.0,6.0 386.7,108.0 386.7,312.0 210.0,414.0 33.3,312.0 33.3,108.0" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-dasharray="2 12"/>
+      <polygon points="210.0,6.0 386.7,108.0 386.7,312.0 210.0,414.0 33.3,312.0 33.3,108.0" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" stroke-dasharray="2 12" style="animation: dashcrawl 5s linear infinite;"/>
 
       <polygon points="218.2,24.8 366.3,110.3 295.6,155.4 214.5,108.6" fill="url(#segDark)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
       <polygon points="374.5,124.5 374.5,295.5 300.1,256.8 300.1,163.2" fill="url(#emberSeg)" filter="url(#segGlow)"/>
@@ -66,7 +73,7 @@
       <polygon points="45.5,295.5 45.5,124.5 119.9,163.2 119.9,256.8" fill="url(#segDark)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
       <polygon points="53.7,110.2 201.8,24.8 205.5,108.6 124.4,155.4" fill="url(#segDark)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
-      <line x1="380.6" y1="127" x2="380.6" y2="293" stroke="#FFB56B" stroke-width="2.5" stroke-linecap="round" filter="url(#rimGlow)"/>
+      <line x1="380.6" y1="127" x2="380.6" y2="293" stroke="#FFB56B" stroke-width="2.5" stroke-linecap="round" filter="url(#rimGlow)" style="animation: pulseGlow 2.4s ease-in-out infinite;"/>
 
       <g transform="translate(267.5, 74.4)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <rect x="5.5" y="1.5" width="11" height="19" rx="2.8"/><path d="M9.3 4.6h3.4M11 17.2v.01"/>
@@ -100,7 +107,7 @@
 
       <polygon points="210.0,138.0 272.4,174.0 272.4,246.0 210.0,282.0 147.6,246.0 147.6,174.0" fill="url(#hubGrad)" stroke="rgba(255,122,31,0.4)" stroke-width="1"/>
       <polygon points="210.0,146.0 265.4,178.0 265.4,242.0 210.0,274.0 154.6,242.0 154.6,178.0" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
-      <line x1="272.4" y1="180" x2="272.4" y2="240" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.8));"/>
+      <line x1="272.4" y1="180" x2="272.4" y2="240" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.8)); animation: pulseGlow 2.4s ease-in-out 1.2s infinite;"/>
 
       <g transform="translate(192.5, 172.5) scale(1.46)" stroke="#FFB56B" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/>
@@ -109,8 +116,10 @@
     </svg>
 
     <div style="position: absolute; left: 50%; top: 230px; transform: translateX(-50%); text-align: center;">
-      <div class="h" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">VEHICLE</div>
-      <div style="font-size: 10px; color: #6B655F; margin-top: 2px; white-space: nowrap;">6 actions</div>
+      <div class="rise" style="animation-delay: 0.35s;">
+        <div class="h" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">VEHICLE</div>
+        <div style="font-size: 10px; color: #6B655F; margin-top: 2px; white-space: nowrap;">6 actions</div>
+      </div>
     </div>
   </div>
 

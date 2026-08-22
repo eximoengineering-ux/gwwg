@@ -9,7 +9,7 @@
     { "file": "Notify.dc.html", "title": "Notifications & Progressbar", "x": 2720, "y": 1840, "w": 1280, "h": 720 }
   ],
   "annotations": [
-    { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "text": "EMBER RP — QBCore UI redesign, batch 1 v2.\nSignature: ember-cut glass panels, active-edge keyline, scanlines, 270° gauges, night-city scene, inward tilt. Identity is a placeholder.\nNext: multicharacter/spawn, phone, banking/garages/shops/inventory." }
+    { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "text": "EMBER RP — QBCore UI redesign, batch 1 v2.\nSignature: ember-cut glass panels, hex wheel, active-edge keyline, scanlines, 270° gauges, night-city scene, inward tilt — now fully animated (staggered entrances, gauge sweeps, live loops; respects reduced motion). Identity is a placeholder.\nNext: multicharacter/spawn, phone, banking/garages/shops/inventory." }
   ],
   "launch": { "view": "canvas" }
 }
