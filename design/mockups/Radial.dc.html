@@ -13,15 +13,23 @@
     a { color: #FF7A1F; } a:hover { color: #FFB56B; }
     .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
     .scene { position: absolute; inset: 0; background:
-      radial-gradient(1100px 560px at 72% 18%, #1c2330 0%, rgba(28,35,48,0) 62%),
-      radial-gradient(860px 480px at 16% 85%, #2a2018 0%, rgba(42,32,24,0) 60%),
-      linear-gradient(180deg, #10131b 0%, #12151d 46%, #0a0c11 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.7) 100%); }
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.72) 100%); }
+    .kb { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
   </style>
 </helmet>
 <div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
   <div class="scene"></div>
+  <svg style="position: absolute; left: 0; bottom: 0; opacity: 0.55;" width="1280" height="210" viewBox="0 0 1280 210" preserveAspectRatio="none">
+    <polygon points="0,210 0,120 60,120 60,88 130,88 130,132 210,132 210,70 236,70 236,52 262,52 262,118 360,118 360,96 430,96 430,140 520,140 520,108 570,108 570,60 590,44 610,60 610,124 720,124 720,92 800,92 800,136 880,136 880,78 940,78 940,116 1040,116 1040,90 1120,90 1120,128 1200,128 1200,102 1280,102 1280,210" fill="#0c0e13"/>
+    <polygon points="0,210 0,160 90,160 90,142 180,142 180,168 300,168 300,150 420,150 420,176 560,176 560,154 700,154 700,170 840,170 840,148 980,148 980,172 1120,172 1120,156 1280,156 1280,210" fill="#08090d"/>
+  </svg>
   <div class="vig"></div>
+
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 640px; height: 320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,122,31,0.1), rgba(255,122,31,0)); filter: blur(30px);"></div>
 
   <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px;">
     <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px;">
@@ -36,12 +44,15 @@
       </defs>
       <g transform="translate(20, 20)">
 
-      <path d="M216.5 24.1 A186 186 0 0 1 367.7 111.4 L294.8 157.0 A100 100 0 0 0 213.5 110.1 Z" fill="rgba(17,15,13,0.88)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="210" cy="210" r="204" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1.5" pathLength="360" stroke-dasharray="1.5 13.5"/>
+      <circle cx="210" cy="210" r="196" fill="none" stroke="rgba(255,122,31,0.2)" stroke-width="1"/>
+
+      <path d="M216.5 24.1 A186 186 0 0 1 367.7 111.4 L294.8 157.0 A100 100 0 0 0 213.5 110.1 Z" fill="rgba(17,15,13,0.9)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
       <path d="M374.2 122.7 A186 186 0 0 1 374.2 297.3 L298.3 256.9 A100 100 0 0 0 298.3 163.1 Z" fill="url(#emberSeg)" filter="url(#segGlow)"/>
-      <path d="M367.7 308.6 A186 186 0 0 1 216.5 395.9 L213.5 309.9 A100 100 0 0 0 294.8 263.0 Z" fill="rgba(17,15,13,0.88)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <path d="M203.5 395.9 A186 186 0 0 1 52.3 308.6 L125.2 263.0 A100 100 0 0 0 206.5 309.9 Z" fill="rgba(17,15,13,0.88)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <path d="M45.8 297.3 A186 186 0 0 1 45.8 122.7 L121.7 163.1 A100 100 0 0 0 121.7 256.9 Z" fill="rgba(17,15,13,0.88)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <path d="M52.3 111.4 A186 186 0 0 1 203.5 24.1 L206.5 110.1 A100 100 0 0 0 125.2 157.0 Z" fill="rgba(17,15,13,0.88)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <path d="M367.7 308.6 A186 186 0 0 1 216.5 395.9 L213.5 309.9 A100 100 0 0 0 294.8 263.0 Z" fill="rgba(17,15,13,0.9)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <path d="M203.5 395.9 A186 186 0 0 1 52.3 308.6 L125.2 263.0 A100 100 0 0 0 206.5 309.9 Z" fill="rgba(17,15,13,0.9)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <path d="M45.8 297.3 A186 186 0 0 1 45.8 122.7 L121.7 163.1 A100 100 0 0 0 121.7 256.9 Z" fill="rgba(17,15,13,0.9)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <path d="M52.3 111.4 A186 186 0 0 1 203.5 24.1 L206.5 110.1 A100 100 0 0 0 125.2 157.0 Z" fill="rgba(17,15,13,0.9)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
 
       <g transform="translate(270.5, 75.2)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <rect x="4" y="2" width="14" height="20" rx="3"/><path d="M9 18.5h4"/>
@@ -62,18 +73,24 @@
         <circle cx="11" cy="11" r="3.2"/><path d="M11 2.8v2.4M11 16.8v2.4M2.8 11h2.4M16.8 11h2.4M5.2 5.2l1.7 1.7M15.1 15.1l1.7 1.7M16.8 5.2l-1.7 1.7M6.9 15.1l-1.7 1.7"/>
       </g>
 
-      <circle cx="210" cy="210" r="66" fill="rgba(15,13,11,0.92)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-      <g transform="translate(198, 186)" stroke="#A8A29C" stroke-width="2.2" fill="none" stroke-linecap="round"><path d="M4 4l16 16M20 4L4 20"/></g>
+      <circle cx="210" cy="210" r="68" fill="rgba(15,13,11,0.94)" stroke="rgba(255,122,31,0.35)" stroke-width="1"/>
+      <circle cx="210" cy="210" r="62" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+      <g transform="translate(196, 178)" stroke="#FFB56B" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 15l2-5.5A2.5 2.5 0 0 1 8.4 8h11.2a2.5 2.5 0 0 1 2.4 1.5L24 15M3.5 15h24a1.2 1.2 0 0 1 0 2.5v3.7h-3.4M3 17.5v3.7h3.4M8 21a2.1 2.1 0 1 0 0 .01M23 21a2.1 2.1 0 1 0 0 .01" transform="scale(0.93)"/>
+      </g>
       </g>
     </svg>
 
-    <div class="h" style="position: absolute; left: 50%; top: 240px; transform: translateX(-50%); font-size: 14px; font-weight: 700; letter-spacing: 0.14em; color: #FFB56B; text-align: center;">VEHICLE</div>
-    <div style="position: absolute; left: 50%; top: 262px; transform: translateX(-50%); font-size: 11px; color: #6B655F; text-align: center; white-space: nowrap;">6 actions</div>
+    <div style="position: absolute; left: 50%; top: 232px; transform: translateX(-50%); text-align: center;">
+      <div class="h" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">VEHICLE</div>
+      <div style="font-size: 10px; color: #6B655F; margin-top: 2px; white-space: nowrap;">6 actions</div>
+    </div>
   </div>
 
-  <div style="position: absolute; left: 50%; bottom: 42px; transform: translateX(-50%); display: flex; gap: 14px;">
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">F1</span><span style="font-size: 11.5px; color: #6B655F; font-weight: 500;">Hold to open</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #FF7A1F; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); border-radius: 5px; padding: 2px 7px;">LMB</span><span style="font-size: 11.5px; color: #6B655F; font-weight: 500;">Select segment</span></div>
+  <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); display: flex; gap: 14px;">
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">F1</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Hold to open</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb kbon">LMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Select</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">RMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Back</span></div>
   </div>
 </div>
 </x-dc>

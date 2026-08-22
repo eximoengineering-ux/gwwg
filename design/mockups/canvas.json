@@ -1,15 +1,15 @@
 {
   "artboards": [
-    { "file": "Main.dc.html", "title": "Brand & Design System", "x": 0, "y": 0, "w": 1280, "h": 900 },
-    { "file": "HUD.dc.html", "title": "HUD — Status, Minimap, Vehicle", "x": 0, "y": 1030, "w": 1280, "h": 720 },
-    { "file": "Menu.dc.html", "title": "qb-menu — Context Menu", "x": 1360, "y": 1030, "w": 1280, "h": 720 },
-    { "file": "Input.dc.html", "title": "qb-input — Form Dialog", "x": 2720, "y": 1030, "w": 1280, "h": 720 },
-    { "file": "Target.dc.html", "title": "qb-target — Third Eye", "x": 0, "y": 1880, "w": 1280, "h": 720 },
-    { "file": "Radial.dc.html", "title": "qb-radialmenu — Radial Menu", "x": 1360, "y": 1880, "w": 1280, "h": 720 },
-    { "file": "Notify.dc.html", "title": "Notifications & Progressbar", "x": 2720, "y": 1880, "w": 1280, "h": 720 }
+    { "file": "Main.dc.html", "title": "Brand & Design System", "x": 0, "y": 0, "w": 1280, "h": 960 },
+    { "file": "HUD.dc.html", "title": "HUD — Status, Minimap, Vehicle", "x": 0, "y": 1090, "w": 1280, "h": 720 },
+    { "file": "Menu.dc.html", "title": "qb-menu — Context Menu", "x": 1360, "y": 1090, "w": 1280, "h": 720 },
+    { "file": "Input.dc.html", "title": "qb-input — Form Dialog", "x": 2720, "y": 1090, "w": 1280, "h": 720 },
+    { "file": "Target.dc.html", "title": "qb-target — Third Eye", "x": 0, "y": 1940, "w": 1280, "h": 720 },
+    { "file": "Radial.dc.html", "title": "qb-radialmenu — Radial Menu", "x": 1360, "y": 1940, "w": 1280, "h": 720 },
+    { "file": "Notify.dc.html", "title": "Notifications & Progressbar", "x": 2720, "y": 1940, "w": 1280, "h": 720 }
   ],
   "annotations": [
-    { "id": "batch1-brief", "x": 0, "y": -280, "w": 560, "text": "EMBER RP — QBCore UI redesign, batch 1 of 4.\nDark modern, ember-orange accent on near-black, balanced glass.\nIdentity (name + flame mark) is a placeholder — swap anytime.\nNext batches: multicharacter/spawn/apartments, phone, banking/garages/shops/inventory." }
+    { "id": "batch1-brief", "x": 0, "y": -280, "w": 560, "text": "EMBER RP — QBCore UI redesign, batch 1 v2.\nSignature style: sharp glass panels with an 'ember cut' corner, keyline on the active edge, scanline texture, 270° gauges, night-city scene, inward perspective tilt.\nIdentity (name + flame mark) is a placeholder — swap anytime.\nNext batches: multicharacter/spawn/apartments, phone, banking/garages/shops/inventory." }
   ],
   "launch": { "view": "canvas" }
 }

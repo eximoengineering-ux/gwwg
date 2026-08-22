@@ -19,9 +19,15 @@ The "Ember RP" identity (name + flame mark) is a placeholder and easy to swap.
 | Amber / Cyan | `#E8B04B` / `#45C8D8` | hunger, stamina / thirst, oxygen |
 
 Typography: **Space Grotesk** (display, headings, numbers) + **Instrument Sans**
-(body, UI text). Radius scale: 10px controls, 12px list items/panels, 14px
-dialogs/cards. Accent gradient: `#FF7A1F → #E8540E` (135deg). Glow reserved
+(body, UI text). Accent gradient: `#FF7A1F → #E8540E` (135deg). Glow reserved
 for the single active element.
+
+Signature motif — the **Ember Cut**: sharp-cornered glass panels with one
+16px sliced corner (`clip-path`), a 3px ember keyline on the active edge, a
+diagonal slash accent at the cut, and faint scanlines
+(`repeating-linear-gradient`, 1px/3px) in the glass. Gauges are 270° SVG
+rings (`pathLength` dasharray); status rings are 100-unit circles. Keycaps,
+pills and toggles stay rounded (5px/14px); panels stay sharp.
 
 Inward tilt: edge-anchored panels lean toward screen center with
 `transform: perspective(1200px) rotateY(±6–8deg)` (origin on the screen-edge
