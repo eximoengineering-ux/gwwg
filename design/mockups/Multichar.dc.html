@@ -27,6 +27,7 @@
     .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    @keyframes riseC { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translateX(-50%); } }
     .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
@@ -112,7 +113,7 @@
     </div>
   </div>
 
-  <div class="rise" style="position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); display: flex; gap: 14px; animation-delay: 0.45s;">
+  <div style="position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%); display: flex; gap: 14px; opacity: 0; animation: riseC 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s forwards;">
     <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">&#8593;&#8595;</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Switch</span></div>
     <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #FF7A1F; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); border-radius: 5px; padding: 2px 7px;">&#8629;</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Play</span></div>
   </div>
