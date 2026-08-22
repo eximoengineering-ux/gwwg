@@ -7,100 +7,132 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #F2F3F7; }
-    a { color: #8B93FF; } a:hover { color: #AEB4FF; }
-    .d { font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; }
-    .num { font-variant-numeric: tabular-nums; }
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
     .scene { position: absolute; inset: 0; background:
-      radial-gradient(1000px 520px at 70% 12%, #1a1d28 0%, rgba(26,29,40,0) 60%),
-      radial-gradient(700px 400px at 18% 78%, rgba(139,147,255,0.05) 0%, rgba(139,147,255,0) 60%),
-      linear-gradient(180deg, #101116 0%, #12131a 52%, #0b0c10 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
-    .panel { position: relative; background: rgba(23,24,30,0.78); border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; backdrop-filter: blur(24px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 20px 50px rgba(0,0,0,0.45); }
-    .row { position: relative; border-radius: 14px; padding: 13px 16px; display: flex; align-items: center; gap: 13px; }
-    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #5D616E; }
-    .chip { font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #9CA0AE; }
-    .key { font-size: 10.5px; font-weight: 800; padding: 3px 8px; border-radius: 7px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 2px 0 rgba(0,0,0,0.35); color: #9CA0AE; }
-    @keyframes in { from { opacity: 0; transform: translateY(14px) scale(0.98); } to { opacity: 1; transform: none; } }
-    .in { opacity: 0; animation: in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    @keyframes growW { from { width: 0; } }
-    @keyframes breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.58) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
+    @keyframes slideR { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
+    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes slideAct { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: translateX(-10px); } }
+    @keyframes fillW { from { width: 0; } }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0b0c10;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
   <div class="scene"></div>
+  <svg style="position: absolute; left: 0; bottom: 0; opacity: 0.75;" width="1280" height="210" viewBox="0 0 1280 210" preserveAspectRatio="none">
+    <polygon points="0,210 0,120 60,120 60,88 130,88 130,132 210,132 210,70 236,70 236,52 262,52 262,118 360,118 360,96 430,96 430,140 520,140 520,108 570,108 570,60 590,44 610,60 610,124 720,124 720,92 800,92 800,136 880,136 880,78 940,78 940,116 1040,116 1040,90 1120,90 1120,128 1200,128 1200,102 1280,102 1280,210" fill="#0c0e13"/>
+    <polygon points="0,210 0,160 90,160 90,142 180,142 180,168 300,168 300,150 420,150 420,176 560,176 560,154 700,154 700,170 840,170 840,148 980,148 980,172 1120,172 1120,156 1280,156 1280,210" fill="#08090d"/>
+    <rect x="222" y="80" width="3" height="4" fill="#FFB56B" opacity="0.55"/><rect x="585" y="66" width="3" height="4" fill="#FF7A1F" opacity="0.7"/><rect x="906" y="92" width="3" height="4" fill="#FFB56B" opacity="0.4"/>
+    <circle cx="590" cy="44" r="2.4" fill="#FF7A1F" opacity="0.9"/>
+  </svg>
   <div class="vig"></div>
 
-  <div class="panel in" style="position: absolute; right: 84px; top: 88px; width: 396px; padding: 22px 18px 16px;">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 6px 16px;">
-      <div>
-        <div class="lab" style="color: #8B93FF;">Garage</div>
-        <div class="d" style="font-size: 21px; font-weight: 600; margin-top: 4px; letter-spacing: -0.01em;">Legion Square</div>
+  <div style="position: absolute; right: 70px; top: 74px; width: 372px; display: flex; flex-direction: column; gap: 9px; transform: perspective(1200px) rotateY(-8deg); transform-origin: right center;">
+
+    <div class="panel cut slideR" style="padding: 0; overflow: hidden;">
+      <div style="height: 64px; background: linear-gradient(115deg, rgba(255,122,31,0.2) 0%, rgba(232,84,14,0.06) 55%, rgba(0,0,0,0) 100%); display: flex; align-items: center; gap: 14px; padding: 0 18px; position: relative;">
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.15));"></div>
+        <div class="cut" style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(255,122,31,0.4); flex-shrink: 0;">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13M4 13h16a1 1 0 0 1 1 1v3h-2.5M3 14v3h2.5M7 17a1.8 1.8 0 1 0 0 .01M17 17a1.8 1.8 0 1 0 0 .01M9 17h6"/></svg>
+        </div>
+        <div style="flex: 1;">
+          <div style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; color: #FFB56B;">GARAGE</div>
+          <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 2px;">Legion Square</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="h" style="font-size: 17px; font-weight: 700; color: #FFB56B;">3<span style="color: #6B655F; font-size: 12px; font-weight: 600;">/5</span></div>
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: #6B655F;">STORED</div>
+        </div>
       </div>
-      <span class="chip" style="background: rgba(139,147,255,0.12); color: #AEB4FF;">3 / 5 stored</span>
     </div>
 
-    <div class="row in" style="background: rgba(139,147,255,0.09); box-shadow: inset 0 0 0 1px rgba(139,147,255,0.35), inset 0 1px 0 rgba(255,255,255,0.08); animation-delay: 0.08s;">
-      <span style="position: absolute; left: 7px; top: 50%; transform: translateY(-50%); width: 4px; height: 26px; border-radius: 2px; background: #8B93FF; box-shadow: 0 0 10px rgba(139,147,255,0.7);"></span>
-      <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(139,147,255,0.14); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-left: 6px;">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#AEB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
+    <div class="panel cut" style="padding: 13px 15px; display: flex; align-items: center; gap: 13px; border-color: rgba(255,122,31,0.55); box-shadow: 0 0 26px rgba(255,122,31,0.16), 0 14px 40px rgba(0,0,0,0.5); opacity: 0; animation: slideAct 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.08s forwards;">
+      <div class="sheen"></div>
+      <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
+      <div style="position: absolute; top: 0; right: 0; width: 20px; height: 20px; overflow: hidden;"><div style="position: absolute; top: 8px; right: -6px; width: 30px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0), #FF7A1F); transform: rotate(45deg);"></div></div>
+      <div class="cut" style="width: 38px; height: 38px; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
       </div>
       <div style="flex: 1;">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 14.5px; font-weight: 800;">Sultan RS</span>
-          <span class="chip num" style="background: rgba(255,255,255,0.07); color: #C6C9D4;">8ABC123</span>
+          <span style="font-size: 14.5px; font-weight: 700; color: #FFFFFF;">Sultan RS</span>
+          <span class="h" style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #FFB56B; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); padding: 1px 6px;">8ABC123</span>
         </div>
-        <div style="display: flex; gap: 14px; margin-top: 7px; align-items: center;">
-          <div style="display: flex; align-items: center; gap: 6px;"><span class="lab">Fuel</span><div style="width: 46px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.09); overflow: hidden;"><div style="width: 84%; height: 100%; background: #FFC46B; border-radius: 2px; animation: growW 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;"></div></div></div>
-          <div style="display: flex; align-items: center; gap: 6px;"><span class="lab">Engine</span><div style="width: 46px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.09); overflow: hidden;"><div style="width: 97%; height: 100%; background: #5FD4A2; border-radius: 2px; animation: growW 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;"></div></div></div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 7px;">
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">FUEL</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 84%; height: 100%; background: #E8B04B; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.5s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">84</span></div>
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">ENG</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 97%; height: 100%; background: #42D392; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.6s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">97</span></div>
         </div>
       </div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B93FF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>
 
-    <div class="row in" style="animation-delay: 0.15s;">
-      <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9CA0AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
+    <div class="panel slideR" style="padding: 13px 15px; display: flex; align-items: center; gap: 13px; animation-delay: 0.16s;">
+      <div style="width: 38px; height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
       </div>
       <div style="flex: 1;">
-        <span style="font-size: 14.5px; font-weight: 700; color: #C6C9D4;">Elegy Retro Custom</span>
-        <div class="num" style="font-size: 11px; color: #5D616E; margin-top: 4px; font-weight: 600;">4KLM980 &middot; fuel 42% &middot; engine 88%</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 14.5px; font-weight: 600;">Elegy Retro Custom</span>
+          <span class="h" style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 1px 6px;">4KLM980</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 7px;">
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">FUEL</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 42%; height: 100%; background: #E8B04B; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.6s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">42</span></div>
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">ENG</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 88%; height: 100%; background: #42D392; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.7s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">88</span></div>
+        </div>
       </div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3A3D47" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>
 
-    <div class="row in" style="animation-delay: 0.22s;">
-      <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9CA0AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
+    <div class="panel slideR" style="padding: 13px 15px; display: flex; align-items: center; gap: 13px; animation-delay: 0.24s;">
+      <div style="width: 38px; height: 38px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
       </div>
       <div style="flex: 1;">
-        <span style="font-size: 14.5px; font-weight: 700; color: #C6C9D4;">Bravado Bison</span>
-        <div class="num" style="font-size: 11px; color: #5D616E; margin-top: 4px; font-weight: 600;">2QRS445 &middot; fuel 96% &middot; engine 100%</div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 14.5px; font-weight: 600;">Bravado Bison</span>
+          <span class="h" style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 1px 6px;">2QRS445</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 7px;">
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">FUEL</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 96%; height: 100%; background: #E8B04B; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.7s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">96</span></div>
+          <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; color: #6B655F;">ENG</span><div style="width: 52px; height: 4px; background: rgba(255,255,255,0.1);"><div style="width: 100%; height: 100%; background: #42D392; animation: fillW 0.9s cubic-bezier(0.3, 0.7, 0.2, 1) 0.8s both;"></div></div><span class="h" style="font-size: 10px; color: #A8A29C; font-weight: 600;">100</span></div>
+        </div>
       </div>
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3A3D47" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
     </div>
 
-    <div class="row in" style="opacity: 0; animation-delay: 0.29s; filter: opacity(0.55);">
-      <div style="width: 40px; height: 40px; border-radius: 12px; background: rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5D616E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.3" width="15" height="9.7" rx="3"/><path d="M8 10.3V7.4a4 4 0 0 1 8 0v2.9"/></svg>
+    <div class="panel slideR" style="padding: 13px 15px; display: flex; align-items: center; gap: 13px; animation-delay: 0.32s; filter: opacity(0.55) saturate(0.8);">
+      <div style="width: 38px; height: 38px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.3" width="15" height="9.7" rx="2.2"/><path d="M8 10.3V7.4a4 4 0 0 1 8 0v2.9M12 14.2v.01M12 14.8v2"/></svg>
       </div>
       <div style="flex: 1;">
-        <span style="font-size: 14.5px; font-weight: 700; color: #9CA0AE;">Kamacho</span>
-        <div style="font-size: 11px; color: #5D616E; margin-top: 4px; font-weight: 600;">Out &middot; last seen Sandy Shores</div>
+        <div style="font-size: 14.5px; font-weight: 600; color: #A8A29C;">Kamacho</div>
+        <div style="font-size: 11.5px; color: #6B655F; margin-top: 3px;">Out &mdash; last seen Sandy Shores</div>
       </div>
-      <span class="chip" style="background: rgba(255,107,107,0.1); color: #FF9B9B;">out</span>
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #F4544E; background: rgba(244,84,78,0.1); border: 1px solid rgba(244,84,78,0.35); padding: 3px 8px;">OUT</span>
     </div>
 
-    <div class="in" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 6px 0; margin-top: 6px; border-top: 1px solid rgba(255,255,255,0.06); animation-delay: 0.36s;">
-      <div style="display: flex; gap: 12px; align-items: center;">
-        <div style="display: flex; align-items: center; gap: 6px;"><span class="key">&#8593;&#8595;</span><span style="font-size: 11px; color: #5D616E; font-weight: 600;">Browse</span></div>
-        <div style="display: flex; align-items: center; gap: 6px;"><span class="key" style="color: #AEB4FF; border-color: rgba(139,147,255,0.35);">&#8629;</span><span style="font-size: 11px; color: #5D616E; font-weight: 600;">Retrieve</span></div>
-        <div style="display: flex; align-items: center; gap: 6px;"><span class="key">esc</span><span style="font-size: 11px; color: #5D616E; font-weight: 600;">Close</span></div>
+    <div class="slideR" style="display: flex; align-items: center; justify-content: space-between; margin-top: 3px; padding: 0 2px; animation-delay: 0.42s;">
+      <div style="display: flex; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 6px;"><span class="kb">&#8593;&#8595;</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Navigate</span></div>
+        <div style="display: flex; align-items: center; gap: 6px;"><span class="kb kbon">&#8629;</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Select</span></div>
+        <div style="display: flex; align-items: center; gap: 6px;"><span class="kb">ESC</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Close</span></div>
       </div>
-      <span style="width: 6px; height: 6px; border-radius: 50%; background: #8B93FF; animation: breathe 3s ease-in-out infinite;"></span>
+      <div style="width: 46px; height: 3px; background: rgba(255,255,255,0.1);"><div style="width: 40%; height: 100%; background: #FF7A1F;"></div></div>
     </div>
   </div>
 </div>
