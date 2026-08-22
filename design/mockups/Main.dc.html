@@ -14,13 +14,13 @@
     .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
     .label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B655F; font-weight: 700; }
     .cut { clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.96), rgba(14,12,10,0.94)); border: 1px solid rgba(255,255,255,0.08); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
-    .kb { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
     .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
   </style>
 </helmet>
-<div style="width: 1280px; height: 960px; background: radial-gradient(900px 420px at 82% -10%, rgba(255,122,31,0.07), rgba(255,122,31,0) 60%), #0C0B0A; box-sizing: border-box; padding: 40px 52px; display: flex; flex-direction: column; gap: 26px; overflow: hidden;">
+<div style="width: 1280px; height: 860px; background: radial-gradient(900px 420px at 82% -10%, rgba(255,122,31,0.07), rgba(255,122,31,0) 60%), #0C0B0A; box-sizing: border-box; padding: 40px 52px; display: flex; flex-direction: column; gap: 26px; overflow: hidden;">
 
   <div style="display: flex; align-items: stretch; gap: 26px;">
     <div style="flex: 1.35; display: flex; flex-direction: column; justify-content: center; gap: 14px;">
@@ -39,10 +39,10 @@
 
     <div class="panel cut" style="flex: 1; padding: 20px 22px; box-sizing: border-box; backdrop-filter: blur(14px);">
       <div style="position: absolute; top: 0; right: 0; width: 23px; height: 23px; overflow: hidden;"><div style="position: absolute; top: 10px; right: -6px; width: 34px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0), #FF7A1F); transform: rotate(45deg);"></div></div>
-      <div style="position: absolute; left: 0; top: 14px; bottom: 14px; width: 2px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0));"></div>
+      <div style="position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0));"></div>
       <div class="label" style="color: #FFB56B;">Signature Motif</div>
       <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 8px;">The Ember Cut</div>
-      <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.55; margin-top: 6px;">Sharp panels, one sliced corner, an ember keyline on the active edge, faint scanlines in the glass. Glow belongs to exactly one element per screen.</div>
+      <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.55; margin-top: 6px;">Sharp panels, one sliced corner, an ember keyline on the active edge, faint scanlines in the glass. Glow is rationed to live status and the single active element.</div>
       <div style="display: flex; gap: 10px; margin-top: 14px;">
         <span class="kb kbon">E</span><span class="kb">ESC</span><span class="kb">&#8593;&#8595;</span>
         <span style="font-size: 11.5px; color: #6B655F; align-self: center; font-weight: 500;">unified keycaps</span>
@@ -80,9 +80,9 @@
       <div class="label">Gauge &amp; Ring Language</div>
       <div class="panel" style="padding: 16px 22px; box-sizing: border-box; display: flex; align-items: center; gap: 26px; flex: 1;">
         <div style="position: relative; width: 86px; height: 86px;">
-          <svg width="86" height="86" viewBox="0 0 86 86">
+          <svg width="86" height="86" viewBox="0 0 86 86" style="overflow: visible;">
             <circle cx="43" cy="43" r="37" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="5" pathLength="360" stroke-dasharray="270 90" transform="rotate(135 43 43)" stroke-linecap="round"/>
-            <circle cx="43" cy="43" r="37" fill="none" stroke="#FF7A1F" stroke-width="5" pathLength="360" stroke-dasharray="168 192" transform="rotate(135 43 43)" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.7));"/>
+            <circle cx="43" cy="43" r="37" fill="none" stroke="#FF7A1F" stroke-width="5" pathLength="360" stroke-dasharray="167 193" transform="rotate(135 43 43)" stroke-linecap="round" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.7));"/>
           </svg>
           <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
             <span class="h" style="font-size: 20px; font-weight: 700; line-height: 1;">87</span>
@@ -98,7 +98,7 @@
         </div>
         <div style="flex: 1; display: flex; flex-direction: column; gap: 9px;">
           <div style="display: flex; align-items: center; gap: 10px;"><span style="font-size: 11px; color: #6B655F; font-weight: 700; width: 52px; letter-spacing: 0.08em;">SOLID</span><div style="flex: 1; height: 6px; background: rgba(255,255,255,0.08); overflow: hidden;"><div style="width: 64%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B); box-shadow: 0 0 10px rgba(255,122,31,0.6);"></div></div></div>
-          <div style="display: flex; align-items: center; gap: 10px;"><span style="font-size: 11px; color: #6B655F; font-weight: 700; width: 52px; letter-spacing: 0.08em;">SEG</span><div style="flex: 1; height: 6px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.09) 0 10px, rgba(0,0,0,0) 10px 13px); overflow: hidden; position: relative;"><div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 10px, rgba(0,0,0,0) 10px 13px);"></div></div></div>
+          <div style="display: flex; align-items: center; gap: 10px;"><span style="font-size: 11px; color: #6B655F; font-weight: 700; width: 52px; letter-spacing: 0.08em;">SEG</span><div style="flex: 1; height: 6px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.09) 0 12px, rgba(0,0,0,0) 12px 15px); overflow: hidden; position: relative;"><div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 12px, rgba(0,0,0,0) 12px 15px);"></div></div></div>
           <div style="font-size: 11px; color: #6B655F;">270&deg; gauges &middot; 100-unit status rings &middot; solid vs segmented bars</div>
         </div>
       </div>
@@ -108,13 +108,13 @@
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <div class="label">Core Components</div>
     <div class="panel" style="padding: 20px 22px; box-sizing: border-box; display: flex; align-items: center; gap: 20px;">
-      <div class="cut" style="height: 44px; padding: 0 26px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 14px; display: flex; align-items: center; box-shadow: 0 8px 24px rgba(255,122,31,0.35); letter-spacing: 0.02em;">Confirm</div>
-      <div style="height: 44px; padding: 0 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 14px; display: flex; align-items: center;">Cancel</div>
+      <div class="cut" style="height: 46px; padding: 0 26px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 14px; display: flex; align-items: center; box-shadow: 0 8px 24px rgba(255,122,31,0.35); letter-spacing: 0.02em;">Confirm</div>
+      <div style="height: 46px; padding: 0 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 14px; display: flex; align-items: center;">Cancel</div>
       <div style="display: flex; gap: 5px;">
-        <div class="h" style="width: 34px; height: 42px; background: #0F0E0C; border: 1px solid rgba(255,122,31,0.55); box-shadow: 0 0 0 3px rgba(255,122,31,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">E</div>
-        <div class="h" style="width: 34px; height: 42px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">M</div>
-        <div class="h" style="width: 34px; height: 42px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700;">B</div>
-        <div class="h" style="width: 34px; height: 42px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #6B655F;">&middot;</div>
+        <div class="h" style="width: 40px; height: 50px; background: #0F0E0C; border: 1px solid rgba(255,122,31,0.6); box-shadow: 0 0 0 3px rgba(255,122,31,0.12); display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700;">E</div>
+        <div class="h" style="width: 40px; height: 50px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700;">M</div>
+        <div class="h" style="width: 40px; height: 50px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700;">B</div>
+        <div class="h" style="width: 40px; height: 50px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700; color: #6B655F;">&middot;</div>
       </div>
       <div style="display: flex; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.11); padding: 3px;">
         <div style="padding: 8px 16px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-size: 12.5px; font-weight: 700;">Civilian</div>

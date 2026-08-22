@@ -16,7 +16,9 @@ The "Ember RP" identity (name + flame mark) is a placeholder and easy to swap.
 | Flare | `#FFB56B` | accent highlight |
 | Text | `#F5F1EC` / `#A8A29C` / `#6B655F` | primary / secondary / muted |
 | Mint / Coral / Sky | `#42D392` / `#F4544E` / `#4C9EEB` | success / error / info |
-| Amber / Cyan | `#E8B04B` / `#45C8D8` | hunger, stamina / thirst, oxygen |
+| Amber / Cyan | `#E8B04B` / `#45C8D8` | hunger, fuel / thirst, oxygen |
+| Violet | `#B98CF0` | stamina / stress |
+| Scene | `#0e1119 → #131620 → #0a0c11` | in-game backdrop gradient (not a UI surface) |
 
 Typography: **Space Grotesk** (display, headings, numbers) + **Instrument Sans**
 (body, UI text). Accent gradient: `#FF7A1F → #E8540E` (135deg). Glow reserved

@@ -20,7 +20,8 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .kb { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: #FF7A1F; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); border-radius: 5px; padding: 3px 9px; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
     .toast { width: 344px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,0.5); }
   </style>
 </helmet>
@@ -88,7 +89,7 @@
   </div>
 
   <div class="panel" style="position: absolute; left: 470px; top: 384px; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.45);">
-    <span class="kb">E</span>
+    <span class="kb kbon" style="font-size: 12px; padding: 3px 9px;">E</span>
     <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Open Trunk</span>
   </div>
 

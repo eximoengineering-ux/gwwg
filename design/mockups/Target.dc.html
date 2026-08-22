@@ -20,8 +20,8 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .kb { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
-    .num { font-family: 'Space Grotesk', sans-serif; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; flex-shrink: 0; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .num { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; flex-shrink: 0; }
   </style>
 </helmet>
 <div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
@@ -35,7 +35,7 @@
   <div class="vig"></div>
 
   <div style="position: absolute; left: 588px; top: 308px; width: 104px; height: 104px;">
-    <svg width="104" height="104" viewBox="0 0 104 104">
+    <svg width="104" height="104" viewBox="0 0 104 104" style="overflow: visible;">
       <circle cx="52" cy="52" r="49" fill="none" stroke="rgba(255,122,31,0.5)" stroke-width="1.5" pathLength="360" stroke-dasharray="3 15" style="filter: drop-shadow(0 0 6px rgba(255,122,31,0.4));"/>
       <circle cx="52" cy="52" r="41" fill="none" stroke="rgba(255,122,31,0.25)" stroke-width="1"/>
     </svg>
