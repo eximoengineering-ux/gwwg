@@ -71,4 +71,14 @@ Page 2 — Screens & Apps (all remaining surfaces, same system):
 - `Admin.dc.html` — staff panel: categories, toggles, player actions
 - `Clothing.dc.html` — wardrobe: category rail, variation carousel, outfits
 
+EmberOS phone apps (page 3, three screens per board):
+
+- `PhoneSettings.dc.html` — lock screen, camera viewfinder, settings (streamer mode, storage)
+- `PhoneCalls.dc.html` — keypad, recents, in-call controls
+- `PhoneMsg.dc.html` — message inbox, chat with location card, contact profile
+- `PhoneBank.dc.html` — Fleeca home card, transfer with numpad, transfer receipt
+- `PhoneBirdy.dc.html` — social feed, compose with photo attach, profile
+- `PhoneMail.dc.html` — mail inbox, opened DMV receipt email, alarms
+- `PhoneGarage.dc.html` — fleet with valet request, city services directory, EmberCoin crypto chart
+
 NUI implementation follows once mockups are approved.
