@@ -81,4 +81,12 @@ EmberOS phone apps (page 3, three screens per board):
 - `PhoneMail.dc.html` — mail inbox, opened DMV receipt email, alarms
 - `PhoneGarage.dc.html` — fleet with valet request, city services directory, EmberCoin crypto chart
 
+## Single-file collection
+
+`EmberRP-UI-All.html` bundles **every** board above into one standalone file (open it in any browser). It is the canonical collection: every new interface designed for this project gets added here. To rebuild it after adding or editing a board, register the board in the `SECTIONS` list of `build-all.mjs` and run:
+
+```
+node design/build-all.mjs
+```
+
 NUI implementation follows once mockups are approved.
