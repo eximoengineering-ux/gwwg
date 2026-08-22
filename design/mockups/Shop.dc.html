@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.7) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .prod { position: relative; background: rgba(12,11,9,0.85); border: 1px solid rgba(255,255,255,0.07); padding: 13px 13px 11px; box-sizing: border-box; }
+    .tab { padding: 9px 15px; font-size: 12.5px; font-weight: 600; color: #A8A29C; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); display: flex; align-items: center; gap: 8px; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+    .pop { opacity: 0; animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.6s ease-in-out 1.5s infinite; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1060px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); padding: 24px 28px 28px; box-sizing: border-box;">
+    <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #FF7A1F, #FFB56B, rgba(255,181,107,0));"></div>
+    <div class="edgep" style="bottom: 0; left: 14px; right: 14px;"></div>
+
+    <div class="rise" style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 13px;">
+        <div class="cut" style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(255,122,31,0.4);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5h2l2.2 10.5a1.6 1.6 0 0 0 1.6 1.3h7.6a1.6 1.6 0 0 0 1.6-1.2L20.5 10H7M9.5 21.5a1 1 0 1 0 0-.01M17.5 21.5a1 1 0 1 0 0-.01"/></svg>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: #FFB56B;">24/7 SUPERMARKET</div>
+          <div class="h" style="font-size: 19px; font-weight: 700; margin-top: 2px;">Innocence Blvd</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <div class="tab" style="color: #FFB56B; background: rgba(255,122,31,0.1); border-color: rgba(255,122,31,0.4);">Food</div>
+        <div class="tab">Drinks</div>
+        <div class="tab">Tools</div>
+        <div class="tab">Pharmacy</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 22px; margin-top: 20px;">
+      <div style="flex: 1.9; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+        <div class="prod pop" style="border-color: rgba(255,122,31,0.55); box-shadow: 0 0 0 2px rgba(255,122,31,0.12), 0 0 20px rgba(255,122,31,0.15); animation-delay: 0.08s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 9.5a7.5 7.5 0 0 1 15 0v.5h-15v-.5zM4 13h16M4.5 16.5h15v.3a2.7 2.7 0 0 1-2.7 2.7H7.2a2.7 2.7 0 0 1-2.7-2.7v-.3z"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 700; color: #FFFFFF;">Burger</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+            <span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$8</span>
+            <span class="h" style="width: 22px; height: 22px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center;">+</span>
+          </div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.14s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1 5.5a4 4 0 0 1-8 0zM8.5 21h7M12 12.5V21M9 6h6"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Hot Dog</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$6</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.2s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12l-1.5 4h-9zM7.5 7.5l1 12a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5l1-12M8 12h8"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Snack Box</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$12</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.26s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#45C8D8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v4l-3.5 8a4 4 0 0 0 3.7 5.5h3.6A4 4 0 0 0 17.5 15L14 7V3"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Water</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$4</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.32s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5v3.5l2.5 1.5M9.5 3h5"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Coffee</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$5</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.38s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7M4 12h16"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Lockpick</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$45</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.44s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M12 10v6M9 13h6"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Bandage</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$20</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+        <div class="prod pop" style="animation-delay: 0.5s;">
+          <div style="height: 56px; display: flex; align-items: center; justify-content: center;"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l7 4v9l-7 4-7-4v-9zM12 12l7-4M12 12L5 8M12 12v8.5"/></svg></div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #D9D4CE;">Rope</div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;"><span class="h" style="font-size: 13px; font-weight: 700; color: #42D392;">$15</span><span class="h" style="width: 22px; height: 22px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box;">+</span></div>
+        </div>
+      </div>
+
+      <div class="panel rise" style="width: 268px; padding: 18px 19px; box-sizing: border-box; align-self: flex-start; animation-delay: 0.25s;">
+        <div class="lab" style="color: #FFB56B;">Basket &middot; 3 items</div>
+        <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 9px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12.5px;"><span style="color: #D9D4CE;">Burger <span style="color: #8A8177;">&times;2</span></span><span class="h" style="font-weight: 700;">$16</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12.5px;"><span style="color: #D9D4CE;">Water <span style="color: #8A8177;">&times;3</span></span><span class="h" style="font-weight: 700;">$12</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12.5px;"><span style="color: #D9D4CE;">Bandage <span style="color: #8A8177;">&times;1</span></span><span class="h" style="font-weight: 700;">$20</span></div>
+        </div>
+        <div style="height: 1px; background: rgba(255,255,255,0.07); margin: 14px 0 11px;"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="lab">Total</span>
+          <span class="h" style="font-size: 20px; font-weight: 700; color: #FFB56B;">$48</span>
+        </div>
+        <div style="display: flex; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.1); padding: 3px; margin-top: 13px;">
+          <div style="flex: 1; padding: 7px 0; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-size: 11.5px; font-weight: 700; text-align: center;">Cash</div>
+          <div style="flex: 1; padding: 7px 0; color: #A8A29C; font-size: 11.5px; font-weight: 600; text-align: center;">Bank</div>
+        </div>
+        <div class="cut" style="position: relative; overflow: hidden; height: 42px; margin-top: 10px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 13.5px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(255,122,31,0.35);">Pay $48<div class="sheen"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

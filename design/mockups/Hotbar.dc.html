@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .slot { position: relative; width: 72px; height: 72px; border-radius: 12px; background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09); display: flex; align-items: center; justify-content: center; }
+    .qty { position: absolute; right: 5px; top: 4px; font-size: 9px; font-weight: 700; color: #A8A29C; }
+    .kb { position: absolute; left: 5px; top: 4px; font-size: 8.5px; font-weight: 700; color: #8A8177; }
+    .dur { position: absolute; left: 6px; right: 6px; bottom: 5px; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
+    .mrow { display: flex; align-items: center; gap: 10px; padding: 9px 12px; font-size: 12px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pop { 0% { opacity: 0; transform: scale(0.92); } 100% { opacity: 1; transform: scale(1); } }
+    .pop { opacity: 0; animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="slideL" style="position: absolute; left: 56px; top: 44px; display: flex; align-items: center; gap: 14px;">
+    <div class="cut" style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(255,122,31,0.4);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0B0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12H6.2zM8 8V6a4 4 0 0 1 8 0v2"/></svg>
+    </div>
+    <div>
+      <div class="lab" style="color: #FFB56B;">QB-INVENTORY &middot; HOTBAR &amp; ITEM ACTIONS</div>
+      <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 2px;">Quick slots &amp; item detail</div>
+    </div>
+  </div>
+
+  <!-- Hotbar -->
+  <div class="rise" style="position: absolute; left: 56px; top: 150px; animation-delay: 0.1s;">
+    <div class="lab" style="margin-bottom: 10px;">HOTBAR &middot; SHOWS 3S ON SCROLL</div>
+    <div style="display: flex; gap: 10px;">
+      <div class="slot" style="border-color: rgba(255,122,31,0.6); background: rgba(255,122,31,0.08); box-shadow: 0 0 20px rgba(255,122,31,0.18);">
+        <span class="kb" style="color: #FFB56B;">1</span>
+        <svg width="34" height="34" viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="9" rx="2.5" fill="#3a3733"/><rect x="28" y="17" width="13" height="6" rx="2" fill="#2c2926"/><rect x="10" y="29" width="6" height="10" rx="2" fill="#2c2926" transform="rotate(14 13 34)"/><rect x="20" y="29" width="5" height="8" rx="2" fill="#242220"/><rect x="6" y="22" width="26" height="2.4" fill="rgba(255,255,255,0.14)"/></svg>
+        <div class="dur"><div style="width: 86%; height: 100%; background: #42D392;"></div></div>
+      </div>
+      <div class="slot">
+        <span class="kb">2</span><span class="qty">3</span>
+        <svg width="30" height="30" viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="4" fill="#8f2f28"/><rect x="14" y="18" width="20" height="12" fill="#d9d3cc"/><path d="M21 24h6M24 21v6" stroke="#c2382f" stroke-width="2.4" stroke-linecap="round"/><rect x="20" y="6" width="8" height="5" rx="1.5" fill="#6b2520"/></svg>
+      </div>
+      <div class="slot">
+        <span class="kb">3</span><span class="qty">2</span>
+        <svg width="30" height="30" viewBox="0 0 48 48"><path d="M18 8h12l-2 6c3 1.6 5 4.4 5 8v16a2 2 0 0 1-2 2H17a2 2 0 0 1-2-2V22c0-3.6 2-6.4 5-8z" fill="#2f5d9e"/><rect x="15" y="24" width="18" height="9" fill="#d9d3cc"/><rect x="20" y="4" width="8" height="4" rx="1.4" fill="#22456f"/></svg>
+      </div>
+      <div class="slot">
+        <span class="kb">4</span><span class="qty">1</span>
+        <svg width="30" height="30" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="3.5" fill="#1f1c19" stroke="#4a4642" stroke-width="1.6"/><circle cx="24" cy="24" r="6.5" fill="#141210" stroke="#5b5652" stroke-width="1.4"/><circle cx="24" cy="24" r="2.6" fill="#33302c"/><rect x="33" y="17" width="3.4" height="3.4" rx="1" fill="#FF7A1F"/></svg>
+      </div>
+      <div class="slot" style="border-style: dashed; border-color: rgba(255,255,255,0.12);">
+        <span class="kb">5</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.16)" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context menu -->
+  <div class="panel cut pop" style="position: absolute; left: 56px; top: 330px; width: 210px; padding: 8px 0; animation-delay: 0.28s; box-shadow: 0 18px 50px rgba(0,0,0,0.6);">
+    <div style="padding: 6px 12px 8px; border-bottom: 1px solid rgba(255,255,255,0.07);">
+      <span class="h" style="font-size: 12px; font-weight: 700;">Combat SMG</span>
+      <div class="lab" style="margin-top: 1px;">RIGHT-CLICK MENU</div>
+    </div>
+    <div class="mrow" style="color: #FFB56B; background: rgba(255,122,31,0.07);"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12l4 4 8-9"/></svg>Equip <span class="lab" style="margin-left: auto;">&#8629;</span></div>
+    <div class="mrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M17 9l4 4-4 4"/></svg>Give nearby</div>
+    <div class="mrow"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h8M6 9h12l-1 11H7zM12 12v5"/></svg>Split stack</div>
+    <div class="mrow" style="border-bottom: none; color: #F4544E;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13M10 11v5M14 11v5"/></svg>Drop</div>
+  </div>
+
+  <!-- Item tooltip / detail -->
+  <div class="panel cut rise" style="position: absolute; left: 316px; top: 330px; width: 330px; padding: 16px 18px 18px; animation-delay: 0.2s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="edgep" style="left: 10px; right: 10px; top: 0;"></div>
+    <div style="display: flex; gap: 13px; align-items: center;">
+      <div class="slot" style="width: 62px; height: 62px; flex-shrink: 0; border-color: rgba(255,122,31,0.4);">
+        <svg width="32" height="32" viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="9" rx="2.5" fill="#3a3733"/><rect x="28" y="17" width="13" height="6" rx="2" fill="#2c2926"/><rect x="10" y="29" width="6" height="10" rx="2" fill="#2c2926" transform="rotate(14 13 34)"/><rect x="20" y="29" width="5" height="8" rx="2" fill="#242220"/><rect x="6" y="22" width="26" height="2.4" fill="rgba(255,255,255,0.14)"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div class="h" style="font-size: 15px; font-weight: 700;">Combat SMG</div>
+        <div style="display: flex; gap: 6px; margin-top: 5px;">
+          <span class="lab" style="background: rgba(255,122,31,0.1); border: 1px solid rgba(255,122,31,0.35); color: #FFB56B; border-radius: 6px; padding: 2.5px 8px;">WEAPON</span>
+          <span class="lab" style="background: rgba(255,255,255,0.06); border-radius: 6px; padding: 2.5px 8px;">2.9 KG</span>
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 7px; margin-top: 14px;">
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">SERIAL</span><span class="h" style="font-weight: 700;">EMB-77Q4-K812</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">AMMO</span><span class="h" style="font-weight: 700;">24 / 120 &middot; 9MM</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">ATTACHMENTS</span><span class="h" style="font-weight: 700; color: #FFB56B;">SUPPRESSOR &middot; GRIP</span></div>
+    </div>
+    <div style="margin-top: 13px;">
+      <div style="display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.08em; margin-bottom: 5px;"><span>CONDITION</span><span style="color: #42D392;">86%</span></div>
+      <div style="height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><div style="width: 86%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div></div>
+    </div>
+    <div style="font-size: 10.5px; color: #8A8177; line-height: 1.55; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">Registered to Ray Calderon. Degrades with use &mdash; service it at a weapons bench to restore condition.</div>
+  </div>
+
+  <!-- Give / split dialog -->
+  <div class="panel cut rise" style="position: absolute; left: 686px; top: 330px; width: 250px; padding: 16px 18px 18px; animation-delay: 0.32s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <span class="h" style="font-size: 13.5px; font-weight: 700;">Split stack</span>
+    <div class="lab" style="margin-top: 2px;">BANDAGE &times; 12</div>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 16px; justify-content: center;">
+      <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></div>
+      <span class="h" style="font-size: 26px; font-weight: 700; color: #FFB56B;">5</span>
+      <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+    </div>
+    <div style="position: relative; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 16px;">
+      <div style="width: 42%; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
+      <div style="position: absolute; left: 42%; top: 50%; transform: translate(-50%, -50%); width: 13px; height: 13px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 0 0 4px rgba(255,122,31,0.25);"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #8A8177; font-weight: 700; margin-top: 6px;"><span>KEEP 7</span><span>SPLIT 5</span></div>
+    <div class="cut h" style="margin-top: 15px; text-align: center; font-size: 11.5px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 10px 0; box-shadow: 0 8px 22px rgba(255,122,31,0.35);">CONFIRM SPLIT</div>
+  </div>
+
+  <!-- Weight / usage rail -->
+  <div class="panel cut rise" style="position: absolute; left: 976px; top: 330px; width: 248px; padding: 16px 18px 18px; animation-delay: 0.4s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="lab">CARRY WEIGHT</div>
+    <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 7px;">
+      <span class="h" style="font-size: 22px; font-weight: 700;">14.2</span>
+      <span style="font-size: 11px; color: #8A8177; font-weight: 700;">/ 40.0 KG</span>
+    </div>
+    <div style="height: 6px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 10px; overflow: hidden;">
+      <div style="width: 36%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(232,176,75,0.07); border: 1px solid rgba(232,176,75,0.28); border-radius: 8px; padding: 9px 11px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="2" stroke-linecap="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>
+      <span style="font-size: 10px; color: #E8B04B; line-height: 1.5;">Above 90% you walk slower and can't sprint.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-top: 13px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 11px;">
+      <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">TAB</span>
+      <span style="font-size: 10.5px; color: #8A8177;">Open inventory</span>
+    </div>
+  </div>
+
+  <div class="lab rise" style="position: absolute; left: 56px; bottom: 34px; animation-delay: 0.5s;">QB-INVENTORY &middot; HOTBAR &middot; CONTEXT MENU &middot; ITEM DETAIL &middot; SPLIT &middot; WEIGHT</div>
+</div>
+</x-dc>
+</body>
+</html>

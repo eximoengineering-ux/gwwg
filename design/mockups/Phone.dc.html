@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.62) 100%); }
+    .app { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .tile { position: relative; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 2px rgba(0,0,0,0.28), 0 6px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4); }
+    .tile::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 100% at 30% 12%, rgba(255,255,255,0.16), rgba(255,255,255,0) 45%, rgba(0,0,0,0.16) 100%); pointer-events: none; }
+    .dtile { background: radial-gradient(130% 110% at 30% 18%, #2b2b31 0%, #1a1a1f 60%, #131317 100%); }
+    .aname { font-size: 8.5px; font-weight: 600; color: #A8A29C; letter-spacing: 0.02em; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+    @keyframes phoneUp { from { opacity: 0; transform: translate(-50%, -44%) rotate(1.5deg); } to { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
+    @keyframes riseC { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <linearGradient id="cW" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#C9CCD6"/></linearGradient>
+      <linearGradient id="cMetal" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="#EDEFF4"/><stop offset="1" stop-color="#878C97"/></linearGradient>
+      <linearGradient id="cDark" x1="0" y1="0" x2="0.25" y2="1"><stop offset="0" stop-color="#7D8088"/><stop offset="1" stop-color="#393C42"/></linearGradient>
+      <linearGradient id="cCream" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#FCF7E9"/><stop offset="1" stop-color="#D8CDB0"/></linearGradient>
+      <linearGradient id="cGold" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#FFE79C"/><stop offset="1" stop-color="#C9871A"/></linearGradient>
+      <linearGradient id="cBrown" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="#E3AC6C"/><stop offset="1" stop-color="#8F531F"/></linearGradient>
+      <radialGradient id="cLens" cx="0.36" cy="0.3" r="0.95"><stop offset="0" stop-color="#B7D2F4"/><stop offset="0.38" stop-color="#4A5BC4"/><stop offset="0.72" stop-color="#241A4D"/><stop offset="1" stop-color="#0D0A1E"/></radialGradient>
+      <filter id="sB" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.4"/></filter>
+      <filter id="sB2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3.2"/></filter>
+      <filter id="sB3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2"/></filter>
+      <clipPath id="kPh"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z"/></clipPath>
+      <clipPath id="kBu"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z"/></clipPath>
+      <clipPath id="kSafe"><rect x="10.6" y="10.6" width="30" height="30" rx="5.5"/></clipPath>
+      <clipPath id="kBird"><ellipse cx="24" cy="28.5" rx="12" ry="9.4"/></clipPath>
+      <clipPath id="kEnv"><rect x="9.5" y="13.5" width="29" height="21.5" rx="4"/></clipPath>
+      <clipPath id="kCam"><rect x="8.6" y="14.6" width="31" height="24" rx="6"/></clipPath>
+      <clipPath id="kCar"><path d="M7.5 28.6c0-1.9 1.2-3.5 3-3.9l3.3-.8 4.7-4.9a5.2 5.2 0 0 1 3.8-1.6h5.6c1.6 0 3 .6 4.1 1.8l3.5 3.9 4.2 1c1.8.4 3.1 2 3.1 3.9v2.5a2.6 2.6 0 0 1-2.6 2.6h-1.7a4.9 4.9 0 0 1-9.6 0h-8.2a4.9 4.9 0 0 1-9.6 0H10a2.6 2.6 0 0 1-2.5-2.6z"/></clipPath>
+      <clipPath id="kCase"><rect x="9.5" y="17" width="29" height="19.5" rx="4.5"/></clipPath>
+      <clipPath id="kStar"><path d="M24 8l4.9 9.9 10.9 1.6-7.9 7.7 1.9 10.8L24 32.9 14.2 38l1.9-10.8-7.9-7.7 10.9-1.6z"/></clipPath>
+      <clipPath id="kClock"><circle cx="24" cy="26" r="13.6"/></clipPath>
+      <clipPath id="kCoin"><circle cx="23.6" cy="23.8" r="13.5"/></clipPath>
+      <clipPath id="kMag"><circle cx="22.6" cy="22.4" r="10.5"/></clipPath>
+    </defs>
+  </svg>
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 306px; height: 648px; animation: phoneUp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
+    <div style="position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 40px 90px rgba(0,0,0,0.7), 0 0 40px rgba(255,122,31,0.08), inset 0 0 0 3px #060505;"></div>
+    <div style="position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: radial-gradient(340px 260px at 85% -5%, rgba(255,122,31,0.22), rgba(255,122,31,0) 60%), radial-gradient(300px 300px at 0% 105%, rgba(76,158,235,0.1), rgba(76,158,235,0) 55%), linear-gradient(175deg, #14110e 0%, #0c0a09 100%);">
+
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px 0;">
+        <span class="h" style="font-size: 12px; font-weight: 700;">21:42</span>
+        <div style="display: flex; align-items: center; gap: 5px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#A8A29C"><rect x="2" y="14" width="3.4" height="6" rx="1"/><rect x="7.5" y="10" width="3.4" height="10" rx="1"/><rect x="13" y="6" width="3.4" height="14" rx="1"/><rect x="18.5" y="2.5" width="3.4" height="17.5" rx="1" fill="rgba(168,162,156,0.35)"/></svg>
+          <div style="width: 19px; height: 9.5px; border: 1px solid rgba(255,255,255,0.35); border-radius: 3px; padding: 1.2px; box-sizing: border-box;"><div style="width: 64%; height: 100%; border-radius: 1.5px; background: #42D392;"></div></div>
+        </div>
+      </div>
+
+      <div class="rise" style="padding: 18px 22px 0; animation-delay: 0.15s;">
+        <div class="h" style="font-size: 44px; font-weight: 700; line-height: 1; letter-spacing: 0.01em;">21:42</div>
+        <div style="font-size: 11.5px; color: #A8A29C; margin-top: 5px;">Saturday, August 22 &middot; Los Santos 24&deg;</div>
+      </div>
+
+      <div style="margin: 16px 14px 0; background: rgba(30,26,22,0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 11px 13px; display: flex; gap: 10px; align-items: flex-start; opacity: 0; animation: slideDown 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;">
+        <div class="tile" style="width: 30px; height: 30px; border-radius: 8px; background: #F2C531; flex-shrink: 0;">
+          <svg width="26" height="26" viewBox="0 0 48 48"><ellipse cx="24" cy="40" rx="12" ry="2.6" fill="rgba(0,0,0,0.28)" filter="url(#sB3)"/><g transform="rotate(-5 24 24)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="#8F94A1" transform="translate(1.6 2.2)" filter="url(#sB)"/><g clip-path="url(#kBu)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="url(#cW)"/><ellipse cx="18" cy="15" rx="15" ry="9" fill="rgba(255,255,255,0.85)" filter="url(#sB2)"/><ellipse cx="33" cy="34" rx="16" ry="10" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g></g></svg>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 11.5px; font-weight: 700;">Mia Vasquez</span>
+            <span style="font-size: 9px; color: #8A8177;">1m</span>
+          </div>
+          <div style="font-size: 11px; color: #A8A29C; margin-top: 2px; line-height: 1.4;">You still owe me a ride in that Sultan &#128293;</div>
+        </div>
+      </div>
+
+      <div class="rise" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 8px; padding: 20px 18px 0; animation-delay: 0.4s;">
+
+        <div class="app"><div class="tile" style="background: #3E7BFA;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="25" cy="41.5" rx="14" ry="2.8" fill="rgba(0,0,25,0.32)" filter="url(#sB3)"/><g transform="rotate(-8 24 24)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="#8F94A1" transform="translate(2 2.6)" filter="url(#sB)"/><g clip-path="url(#kPh)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="url(#cW)"/><ellipse cx="15" cy="13" rx="12" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="36" cy="38" rx="14" ry="10" fill="rgba(122,128,142,0.55)" filter="url(#sB2)"/></g></g></svg>
+        </div><span class="aname">Phone</span></div>
+
+        <div class="app"><div class="tile" style="background: #F2C531;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="41" rx="13" ry="2.8" fill="rgba(60,40,0,0.3)" filter="url(#sB3)"/><g transform="rotate(-5 24 24)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="#8F94A1" transform="translate(1.8 2.4)" filter="url(#sB)"/><g clip-path="url(#kBu)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="url(#cW)"/><ellipse cx="18" cy="14" rx="15" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="33" cy="34" rx="16" ry="10" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g></g></svg>
+        </div><span class="aname">Messages</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="25" cy="42.5" rx="15" ry="2.6" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><rect x="10.6" y="10.6" width="30" height="30" rx="5.5" fill="#4A4E57" transform="translate(2 1.8)" filter="url(#sB)"/><g clip-path="url(#kSafe)"><rect x="10.6" y="10.6" width="30" height="30" rx="5.5" fill="url(#cMetal)"/><ellipse cx="16" cy="14" rx="16" ry="10" fill="rgba(255,255,255,0.75)" filter="url(#sB2)"/><ellipse cx="36" cy="39" rx="17" ry="11" fill="rgba(52,57,66,0.6)" filter="url(#sB2)"/></g><rect x="14" y="14" width="23.2" height="23.2" rx="3.5" fill="none" stroke="rgba(70,75,84,0.55)" stroke-width="1.6"/><circle cx="23.5" cy="25.5" r="7.8" fill="none" stroke="#5C616B" stroke-width="3.2"/><circle cx="23.5" cy="25.5" r="7.8" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1" transform="translate(-0.6 -0.8)"/><circle cx="23.5" cy="25.5" r="2.6" fill="#5C616B"/><path d="M23.5 15.2v5.2M23.5 30.6v5.2M13.2 25.5h5.2M28.6 25.5h5.2M16.8 18.8l3.4 3.4M30.2 32.2l-3.4-3.4M30.2 18.8l-3.4 3.4M16.8 32.2l3.4-3.4" stroke="#5C616B" stroke-width="2.4" stroke-linecap="round"/><rect x="37.4" y="16.5" width="3.8" height="7" rx="1.8" fill="#767C87"/><rect x="37.4" y="28" width="3.8" height="7" rx="1.8" fill="#767C87"/></svg>
+        </div><span class="aname">Bank</span></div>
+
+        <div class="app"><div class="tile" style="background: #58BEEC;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="40.5" rx="13" ry="2.8" fill="rgba(0,30,50,0.28)" filter="url(#sB3)"/><g transform="rotate(-4 24 26)"><ellipse cx="25.6" cy="30.4" rx="12" ry="9.4" fill="#8F94A1" filter="url(#sB)"/><g clip-path="url(#kBird)"><ellipse cx="24" cy="28.5" rx="12" ry="9.4" fill="url(#cW)"/><ellipse cx="18" cy="22" rx="12" ry="8" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="31" cy="36" rx="13" ry="8" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g><circle cx="32.5" cy="17.5" r="6.6" fill="url(#cW)"/><circle cx="30.6" cy="15.4" r="3.4" fill="rgba(255,255,255,0.85)" filter="url(#sB3)"/><path d="M38.6 16.2l5.6 2-5.4 2.7z" fill="#F5A623"/><circle cx="34.4" cy="16.3" r="1.2" fill="#2B2E33"/><ellipse cx="19.5" cy="27.4" rx="6.4" ry="4.6" fill="#DADDE4" transform="rotate(-24 19.5 27.4)"/><ellipse cx="18.2" cy="25.8" rx="4" ry="2.6" fill="rgba(255,255,255,0.7)" transform="rotate(-24 18.2 25.8)" filter="url(#sB3)"/><path d="M13.2 25.4l-5.6-2.8 4.4 5.6z" fill="#E6E8ED"/></g></svg>
+        </div><span class="aname">Birdy</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="40" rx="14" ry="2.8" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><g transform="rotate(-6 24 24)"><rect x="9.5" y="13.5" width="29" height="21.5" rx="4" fill="#B0A382" transform="translate(1.8 2.2)" filter="url(#sB)"/><g clip-path="url(#kEnv)"><rect x="9.5" y="13.5" width="29" height="21.5" rx="4" fill="url(#cCream)"/><ellipse cx="15" cy="15" rx="15" ry="9" fill="rgba(255,255,255,0.75)" filter="url(#sB2)"/><ellipse cx="34" cy="34" rx="16" ry="9" fill="rgba(160,148,112,0.45)" filter="url(#sB2)"/><path d="M10.6 15.4h25.8L24 26.4z" fill="rgba(255,252,240,0.8)"/></g><path d="M10.2 15.2L24 26.8l13.8-11.6" fill="none" stroke="#BDB08E" stroke-width="2.2" stroke-linejoin="round"/></g></svg>
+        </div><span class="aname">Mail</span></div>
+
+        <div class="app"><div class="tile" style="background: #E9E9EB;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="41.5" rx="14" ry="2.8" fill="rgba(0,0,0,0.22)" filter="url(#sB3)"/><rect x="8.6" y="14.6" width="31" height="24" rx="6" fill="#2E3136" transform="translate(1.6 2)" filter="url(#sB)"/><rect x="13" y="10.5" width="9" height="6" rx="2" fill="#4A4E55"/><rect x="13.8" y="11.2" width="7.4" height="2.2" rx="1.1" fill="rgba(255,255,255,0.25)"/><g clip-path="url(#kCam)"><rect x="8.6" y="14.6" width="31" height="24" rx="6" fill="url(#cDark)"/><ellipse cx="14" cy="16" rx="15" ry="9" fill="rgba(255,255,255,0.4)" filter="url(#sB2)"/><ellipse cx="35" cy="38" rx="16" ry="10" fill="rgba(10,12,16,0.55)" filter="url(#sB2)"/></g><circle cx="24" cy="26.5" r="10" fill="#F2F3F6"/><circle cx="24" cy="26.5" r="10" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="0.8"/><circle cx="24" cy="26.5" r="7.3" fill="url(#cLens)"/><circle cx="21.3" cy="23.7" r="2" fill="rgba(255,255,255,0.85)" filter="url(#sB3)"/><circle cx="27.2" cy="30" r="1" fill="rgba(160,200,255,0.5)"/><circle cx="35.2" cy="18.6" r="1.7" fill="#F5C93B"/></svg>
+        </div><span class="aname">Camera</span></div>
+
+        <div class="app"><div class="tile" style="background: #FF7A1F;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="39.5" rx="15" ry="3" fill="rgba(90,30,0,0.32)" filter="url(#sB3)"/><g transform="rotate(-4 24 27)"><path d="M7.5 28.6c0-1.9 1.2-3.5 3-3.9l3.3-.8 4.7-4.9a5.2 5.2 0 0 1 3.8-1.6h5.6c1.6 0 3 .6 4.1 1.8l3.5 3.9 4.2 1c1.8.4 3.1 2 3.1 3.9v2.5a2.6 2.6 0 0 1-2.6 2.6h-1.7a4.9 4.9 0 0 1-9.6 0h-8.2a4.9 4.9 0 0 1-9.6 0H10a2.6 2.6 0 0 1-2.5-2.6z" fill="#8F94A1" transform="translate(1.6 2)" filter="url(#sB)"/><g clip-path="url(#kCar)"><path d="M7.5 28.6c0-1.9 1.2-3.5 3-3.9l3.3-.8 4.7-4.9a5.2 5.2 0 0 1 3.8-1.6h5.6c1.6 0 3 .6 4.1 1.8l3.5 3.9 4.2 1c1.8.4 3.1 2 3.1 3.9v2.5a2.6 2.6 0 0 1-2.6 2.6h-1.7a4.9 4.9 0 0 1-9.6 0h-8.2a4.9 4.9 0 0 1-9.6 0H10a2.6 2.6 0 0 1-2.5-2.6z" fill="url(#cW)"/><ellipse cx="16" cy="18" rx="16" ry="8" fill="rgba(255,255,255,0.85)" filter="url(#sB2)"/><ellipse cx="34" cy="34" rx="16" ry="8" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g><path d="M16.2 23.8l3.6-3.9a3 3 0 0 1 2.2-1h5.3c.9 0 1.8.4 2.4 1.1l3.3 3.8z" fill="#6E97BC"/><path d="M17.5 23l2.8-3a2.6 2.6 0 0 1 1.9-.8h2v3.8z" fill="rgba(210,230,250,0.55)"/><circle cx="15.8" cy="33.8" r="4.2" fill="#26282E"/><circle cx="15.8" cy="33.8" r="1.7" fill="#8F939C"/><circle cx="33.6" cy="33.8" r="4.2" fill="#26282E"/><circle cx="33.6" cy="33.8" r="1.7" fill="#8F939C"/></g></svg>
+        </div><span class="aname">Garage</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="41" rx="14" ry="2.8" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><g transform="rotate(-5 24 26)"><path d="M19.5 17.5v-2.6a4.8 4.8 0 0 1 4.5-4.4 4.8 4.8 0 0 1 4.5 4.4v2.6" fill="none" stroke="#6E3F14" stroke-width="3.4" stroke-linecap="round"/><rect x="9.5" y="17" width="29" height="19.5" rx="4.5" fill="#6B3B14" transform="translate(1.7 2)" filter="url(#sB)"/><g clip-path="url(#kCase)"><rect x="9.5" y="17" width="29" height="19.5" rx="4.5" fill="url(#cBrown)"/><ellipse cx="15" cy="18" rx="15" ry="8" fill="rgba(255,225,180,0.6)" filter="url(#sB2)"/><ellipse cx="34" cy="35" rx="16" ry="9" fill="rgba(90,50,15,0.55)" filter="url(#sB2)"/><rect x="9.5" y="24.8" width="29" height="3.2" fill="rgba(107,59,20,0.55)"/></g><rect x="21.2" y="22.8" width="5.6" height="6.8" rx="1.4" fill="#FFDCA8"/><rect x="21.9" y="23.5" width="4.2" height="2.2" rx="1" fill="rgba(255,255,255,0.55)"/></g></svg>
+        </div><span class="aname">Jobs</span></div>
+
+        <div class="app"><div class="tile" style="background: #57B85C;">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="40.5" rx="13" ry="2.8" fill="rgba(0,50,10,0.3)" filter="url(#sB3)"/><g transform="rotate(-7 24 24)"><path d="M24 8l4.9 9.9 10.9 1.6-7.9 7.7 1.9 10.8L24 32.9 14.2 38l1.9-10.8-7.9-7.7 10.9-1.6z" fill="#8F94A1" transform="translate(1.8 2.2)" filter="url(#sB)"/><g clip-path="url(#kStar)"><path d="M24 8l4.9 9.9 10.9 1.6-7.9 7.7 1.9 10.8L24 32.9 14.2 38l1.9-10.8-7.9-7.7 10.9-1.6z" fill="url(#cW)"/><ellipse cx="18" cy="14" rx="14" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="31" cy="34" rx="15" ry="9" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g></g></svg>
+        </div><span class="aname">Services</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="42.5" rx="13" ry="2.6" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><path d="M12.5 36.5l-3 4.5M35.5 36.5l3 4.5" stroke="#33363C" stroke-width="3.2" stroke-linecap="round"/><circle cx="13.6" cy="11.6" r="4.6" fill="#3E4148"/><circle cx="12.4" cy="10.4" r="1.8" fill="rgba(255,255,255,0.3)" filter="url(#sB3)"/><circle cx="34.4" cy="11.6" r="4.6" fill="#3E4148"/><circle cx="33.2" cy="10.4" r="1.8" fill="rgba(255,255,255,0.3)" filter="url(#sB3)"/><rect x="22.4" y="5.6" width="3.2" height="4.6" rx="1.4" fill="#F5A623"/><circle cx="25.4" cy="27.6" r="13.6" fill="#26282D" filter="url(#sB)"/><g clip-path="url(#kClock)"><circle cx="24" cy="26" r="13.6" fill="url(#cDark)"/><ellipse cx="16" cy="17" rx="12" ry="8" fill="rgba(255,255,255,0.45)" filter="url(#sB2)"/><ellipse cx="33" cy="37" rx="13" ry="9" fill="rgba(8,10,14,0.55)" filter="url(#sB2)"/></g><circle cx="24" cy="26" r="10.4" fill="url(#cCream)"/><circle cx="20" cy="21.5" r="4" fill="rgba(255,255,255,0.8)" filter="url(#sB2)"/><path d="M24 17.4v2.4M24 32.2v2.4M15.4 26h2.4M30.2 26h2.4M18 20l1.6 1.6M30 32l-1.6-1.6M30 20l-1.6 1.6M18 32l1.6-1.6" stroke="#8A867A" stroke-width="1.8" stroke-linecap="round"/><path d="M24 26l-.2-6.2M24 26l4.6 2.6" stroke="#E8940A" stroke-width="2.6" stroke-linecap="round"/><circle cx="24" cy="26" r="1.7" fill="#E8940A"/></svg>
+        </div><span class="aname">Alarms</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="41.5" rx="13" ry="2.6" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><circle cx="25.8" cy="25.8" r="13.5" fill="#8A5D0F" filter="url(#sB)"/><g clip-path="url(#kCoin)"><circle cx="23.6" cy="23.8" r="13.5" fill="url(#cGold)"/><ellipse cx="17" cy="15" rx="12" ry="8" fill="rgba(255,250,220,0.85)" filter="url(#sB2)"/><ellipse cx="31" cy="33" rx="13" ry="9" fill="rgba(150,95,10,0.55)" filter="url(#sB2)"/></g><circle cx="23.6" cy="23.8" r="9.6" fill="none" stroke="rgba(170,115,15,0.75)" stroke-width="2.2"/><path d="M25.6 15.6l-6.4 9h4.2l-2.6 7.4 7.4-9.6h-4.4z" fill="#FFF6DA"/></svg>
+        </div><span class="aname">Crypto</span></div>
+
+        <div class="app"><div class="tile dtile">
+          <svg width="44" height="44" viewBox="0 0 48 48"><ellipse cx="24" cy="41.5" rx="13.5" ry="2.6" fill="rgba(0,0,0,0.55)" filter="url(#sB3)"/><g transform="rotate(12 24 24)"><path d="M24.4 6h-.9a4 4 0 0 0-4 4v.4a4 4 0 0 1-2 3.4l-.9.5a4 4 0 0 1-4 0l-.3-.1a4 4 0 0 0-5.4 1.5l-.5.7a4 4 0 0 0 1.5 5.5l.3.2a4 4 0 0 1 2 3.4v1a4 4 0 0 1-2 3.5l-.3.2a4 4 0 0 0-1.5 5.4l.5.8a4 4 0 0 0 5.4 1.4l.3-.1a4 4 0 0 1 4 0l.9.5a4 4 0 0 1 2 3.4v.4a4 4 0 0 0 4 4h.9a4 4 0 0 0 4-4v-.4a4 4 0 0 1 2-3.4l.9-.5a4 4 0 0 1 4 0l.3.1a4 4 0 0 0 5.4-1.4l.5-.8a4 4 0 0 0-1.5-5.4l-.3-.2a4 4 0 0 1-2-3.5v-1a4 4 0 0 1 2-3.4l.3-.2a4 4 0 0 0 1.5-5.5l-.5-.7a4 4 0 0 0-5.4-1.5l-.3.1a4 4 0 0 1-4 0l-.9-.5a4 4 0 0 1-2-3.4V10a4 4 0 0 0-4-4z" fill="#3B3E45" transform="translate(1.6 2) scale(0.92)" transform-origin="24 24" filter="url(#sB)"/><path d="M24.4 6h-.9a4 4 0 0 0-4 4v.4a4 4 0 0 1-2 3.4l-.9.5a4 4 0 0 1-4 0l-.3-.1a4 4 0 0 0-5.4 1.5l-.5.7a4 4 0 0 0 1.5 5.5l.3.2a4 4 0 0 1 2 3.4v1a4 4 0 0 1-2 3.5l-.3.2a4 4 0 0 0-1.5 5.4l.5.8a4 4 0 0 0 5.4 1.4l.3-.1a4 4 0 0 1 4 0l.9.5a4 4 0 0 1 2 3.4v.4a4 4 0 0 0 4 4h.9a4 4 0 0 0 4-4v-.4a4 4 0 0 1 2-3.4l.9-.5a4 4 0 0 1 4 0l.3.1a4 4 0 0 0 5.4-1.4l.5-.8a4 4 0 0 0-1.5-5.4l-.3-.2a4 4 0 0 1-2-3.5v-1a4 4 0 0 1 2-3.4l.3-.2a4 4 0 0 0 1.5-5.5l-.5-.7a4 4 0 0 0-5.4-1.5l-.3.1a4 4 0 0 1-4 0l-.9-.5a4 4 0 0 1-2-3.4V10a4 4 0 0 0-4-4z" fill="url(#cMetal)" transform="scale(0.92)" transform-origin="24 24"/><circle cx="18" cy="16" r="6" fill="rgba(255,255,255,0.55)" filter="url(#sB2)"/><circle cx="24" cy="24" r="6" fill="#17171B"/><circle cx="24" cy="24" r="6" fill="none" stroke="#6E747E" stroke-width="1.4"/></g></svg>
+        </div><span class="aname">Settings</span></div>
+      </div>
+
+      <div class="rise" style="position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(34,29,24,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 8px 6px; animation-delay: 0.55s;">
+        <div class="tile" style="width: 42px; height: 42px; border-radius: 12px; background: #3E7BFA;">
+          <svg width="38" height="38" viewBox="0 0 48 48"><g transform="rotate(-8 24 24)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="#8F94A1" transform="translate(2 2.6)" filter="url(#sB)"/><g clip-path="url(#kPh)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="url(#cW)"/><ellipse cx="15" cy="13" rx="12" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="36" cy="38" rx="14" ry="10" fill="rgba(122,128,142,0.55)" filter="url(#sB2)"/></g></g></svg>
+        </div>
+        <div class="tile" style="width: 42px; height: 42px; border-radius: 12px; background: #F2C531;">
+          <svg width="38" height="38" viewBox="0 0 48 48"><g transform="rotate(-5 24 24)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="#8F94A1" transform="translate(1.8 2.4)" filter="url(#sB)"/><g clip-path="url(#kBu)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="url(#cW)"/><ellipse cx="18" cy="14" rx="15" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="33" cy="34" rx="16" ry="10" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g></g></svg>
+        </div>
+        <div class="tile" style="width: 42px; height: 42px; border-radius: 12px; background: #E9E9EB;">
+          <svg width="38" height="38" viewBox="0 0 48 48"><rect x="8.6" y="14.6" width="31" height="24" rx="6" fill="#2E3136" transform="translate(1.6 2)" filter="url(#sB)"/><rect x="13" y="10.5" width="9" height="6" rx="2" fill="#4A4E55"/><g clip-path="url(#kCam)"><rect x="8.6" y="14.6" width="31" height="24" rx="6" fill="url(#cDark)"/><ellipse cx="14" cy="16" rx="15" ry="9" fill="rgba(255,255,255,0.4)" filter="url(#sB2)"/><ellipse cx="35" cy="38" rx="16" ry="10" fill="rgba(10,12,16,0.55)" filter="url(#sB2)"/></g><circle cx="24" cy="26.5" r="10" fill="#F2F3F6"/><circle cx="24" cy="26.5" r="7.3" fill="url(#cLens)"/><circle cx="21.3" cy="23.7" r="2" fill="rgba(255,255,255,0.85)" filter="url(#sB3)"/><circle cx="35.2" cy="18.6" r="1.7" fill="#F5C93B"/></svg>
+        </div>
+        <div class="tile dtile" style="width: 42px; height: 42px; border-radius: 12px;">
+          <svg width="38" height="38" viewBox="0 0 48 48"><g transform="rotate(-8 24 24)"><circle cx="24.4" cy="24.6" r="10.5" fill="#8F94A1" filter="url(#sB)"/><path d="M30.6 30.4l7.4 7.4" stroke="#8F94A1" stroke-width="6.6" stroke-linecap="round" transform="translate(1.6 2)" filter="url(#sB)"/><path d="M30.6 30.4l7.4 7.4" stroke="url(#cW)" stroke-width="6.4" stroke-linecap="round"/><g clip-path="url(#kMag)"><circle cx="22.6" cy="22.4" r="10.5" fill="url(#cW)"/><ellipse cx="17" cy="16" rx="10" ry="7" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="29" cy="30" rx="11" ry="8" fill="rgba(122,128,142,0.55)" filter="url(#sB2)"/></g><circle cx="22.6" cy="22.4" r="6" fill="#17171B"/><circle cx="20.6" cy="20.2" r="2" fill="rgba(160,200,255,0.45)" filter="url(#sB3)"/></g></svg>
+        </div>
+      </div>
+    </div>
+    <div style="position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505;"></div>
+  </div>
+
+  <div style="position: absolute; left: 50%; bottom: 18px; display: flex; align-items: center; gap: 7px; opacity: 0; animation: riseC 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards; transform: translateX(-50%);">
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px;">M</span>
+    <span style="font-size: 11px; color: #8A8177; font-weight: 500;">Close phone</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

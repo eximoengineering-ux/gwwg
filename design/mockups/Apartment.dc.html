@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    .arow { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.025); }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="slideL" style="position: absolute; left: 56px; top: 44px; display: flex; align-items: center; gap: 14px;">
+    <div class="cut" style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(255,122,31,0.4);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0B0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></svg>
+    </div>
+    <div>
+      <div class="lab" style="color: #FFB56B;">QB-APARTMENTS</div>
+      <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 2px;">Pick your first home</div>
+    </div>
+  </div>
+
+  <!-- Apartment selection -->
+  <div class="panel cut rise" style="position: absolute; left: 56px; top: 132px; width: 480px; padding: 18px 20px 20px; animation-delay: 0.1s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="edgep" style="left: 10px; right: 10px; top: 0;"></div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span class="h" style="font-size: 15px; font-weight: 700;">Available buildings</span>
+      <span class="lab">FIRST MONTH FREE</span>
+    </div>
+
+    <div class="arow" style="margin-top: 14px; border-color: rgba(255,122,31,0.55); background: rgba(255,122,31,0.06); box-shadow: 0 0 22px rgba(255,122,31,0.12);">
+      <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
+      <svg width="46" height="40" viewBox="0 0 60 52">
+        <rect x="8" y="8" width="26" height="40" rx="2" fill="#1d1a16" stroke="rgba(255,122,31,0.5)" stroke-width="1.4"/>
+        <rect x="38" y="18" width="16" height="30" rx="2" fill="#161310" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+        <rect x="13" y="13" width="5" height="5" fill="#FFB56B" opacity="0.8"/><rect x="23" y="13" width="5" height="5" fill="rgba(255,255,255,0.12)"/>
+        <rect x="13" y="23" width="5" height="5" fill="rgba(255,255,255,0.12)"/><rect x="23" y="23" width="5" height="5" fill="#FFB56B" opacity="0.6"/>
+        <rect x="13" y="33" width="5" height="5" fill="#FFB56B" opacity="0.4"/><rect x="23" y="33" width="5" height="5" fill="rgba(255,255,255,0.12)"/>
+        <rect x="41" y="23" width="4" height="4" fill="rgba(255,255,255,0.14)"/><rect x="48" y="23" width="4" height="4" fill="#FFB56B" opacity="0.5"/>
+      </svg>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 700; color: #FFFFFF;">Alta Street Apartments</div>
+        <div style="font-size: 11px; color: #FFB56B; margin-top: 3px;">Unit 3C &middot; Downtown &middot; $850 / month</div>
+        <div style="display: flex; gap: 6px; margin-top: 7px;">
+          <span class="lab" style="background: rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px;">STASH 50KG</span>
+          <span class="lab" style="background: rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px;">WARDROBE</span>
+          <span class="lab" style="background: rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px;">2 KEYS</span>
+        </div>
+      </div>
+      <div class="h" style="font-size: 11px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); border-radius: 8px; padding: 8px 14px; position: relative; overflow: hidden;">SELECT<div class="sheen"></div></div>
+    </div>
+
+    <div class="arow rise" style="margin-top: 10px; animation-delay: 0.2s;">
+      <svg width="46" height="40" viewBox="0 0 60 52">
+        <rect x="10" y="14" width="40" height="34" rx="2" fill="#17140f" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+        <rect x="15" y="19" width="6" height="6" fill="rgba(255,255,255,0.14)"/><rect x="27" y="19" width="6" height="6" fill="#FFB56B" opacity="0.45"/><rect x="39" y="19" width="6" height="6" fill="rgba(255,255,255,0.14)"/>
+        <rect x="15" y="31" width="6" height="6" fill="#FFB56B" opacity="0.35"/><rect x="27" y="31" width="6" height="6" fill="rgba(255,255,255,0.14)"/><rect x="39" y="31" width="6" height="6" fill="rgba(255,255,255,0.12)"/>
+      </svg>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 600;">South Rockford Drive</div>
+        <div style="font-size: 11px; color: #A8A29C; margin-top: 3px;">Unit 12 &middot; Little Seoul &middot; $650 / month</div>
+      </div>
+      <span class="lab">VIEW</span>
+    </div>
+
+    <div class="arow rise" style="margin-top: 10px; animation-delay: 0.28s; opacity: 0;">
+      <svg width="46" height="40" viewBox="0 0 60 52">
+        <rect x="14" y="10" width="32" height="38" rx="2" fill="#17140f" stroke="rgba(255,255,255,0.16)" stroke-width="1.2"/>
+        <rect x="19" y="15" width="5" height="5" fill="rgba(255,255,255,0.14)"/><rect x="29" y="15" width="5" height="5" fill="rgba(255,255,255,0.12)"/><rect x="38" y="15" width="4" height="5" fill="#FFB56B" opacity="0.4"/>
+        <rect x="19" y="26" width="5" height="5" fill="#FFB56B" opacity="0.3"/><rect x="29" y="26" width="5" height="5" fill="rgba(255,255,255,0.12)"/>
+      </svg>
+      <div style="flex: 1;">
+        <div style="font-size: 14px; font-weight: 600;">Vespucci Bel-Air</div>
+        <div style="font-size: 11px; color: #A8A29C; margin-top: 3px;">Unit 7B &middot; Vespucci Canals &middot; $720 / month</div>
+      </div>
+      <span class="lab">VIEW</span>
+    </div>
+  </div>
+
+  <!-- Interior menu -->
+  <div class="panel cut rise" style="position: absolute; left: 576px; top: 132px; width: 330px; padding: 18px 20px 20px; animation-delay: 0.22s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <div>
+        <span class="h" style="font-size: 15px; font-weight: 700;">Alta St. &middot; Unit 3C</span>
+        <div class="lab" style="margin-top: 3px;">INSIDE &middot; RAY CALDERON</div>
+      </div>
+      <span class="lab" style="color: #42D392;">&#9679; RENT PAID</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+      <div style="border: 1px solid rgba(255,122,31,0.45); background: rgba(255,122,31,0.07); border-radius: 12px; padding: 13px 12px; position: relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM4 8l2-4h12l2 4M12 12v4"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Stash</div>
+        <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">18 / 50 kg used</div>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #FFB56B; border: 1px solid rgba(255,122,31,0.4); border-radius: 6px; padding: 2px 6px;">1</span>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-2 3h4zM6 7h12l1 13H5zM9 11v3M15 11v3"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Wardrobe</div>
+        <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">5 saved outfits</div>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">2</span>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M18 8v6M15 11h6"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Invite in</div>
+        <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">2 players nearby</div>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">3</span>
+      </div>
+      <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5M10 17l-5-5 5-5M5 12h11"/></svg>
+        <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Leave</div>
+        <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">Exit to Alta Street</div>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">4</span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px;">
+      <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">ESC</span>
+      <span style="font-size: 10.5px; color: #8A8177;">Close &middot; hold</span>
+      <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">H</span>
+      <span style="font-size: 10.5px; color: #8A8177;">for door lock</span>
+    </div>
+  </div>
+
+  <!-- Rent status card -->
+  <div class="panel cut rise" style="position: absolute; left: 946px; top: 132px; width: 278px; padding: 17px 19px 19px; animation-delay: 0.34s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="lab">RENT &middot; AUGUST</div>
+    <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 8px;">
+      <span class="h" style="font-size: 26px; font-weight: 700;">$850</span>
+      <span style="font-size: 11px; color: #42D392; font-weight: 700;">PAID</span>
+    </div>
+    <div style="font-size: 10.5px; color: #8A8177; margin-top: 3px;">Next payment due Aug 25 &middot; auto-pay from Fleeca &bull;&bull;&bull;&bull;2148</div>
+    <div style="height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 12px; overflow: hidden;">
+      <div style="width: 71%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #8A8177; font-weight: 700; margin-top: 5px;"><span>MONTH PROGRESS</span><span>22 / 31 DAYS</span></div>
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(76,158,235,0.07); border: 1px solid rgba(76,158,235,0.25); border-radius: 8px; padding: 9px 11px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      <span style="font-size: 10.5px; color: #8CC4F5; line-height: 1.5;">Missed rent locks the door after 7 days &mdash; items stay safe in the stash.</span>
+    </div>
+  </div>
+
+  <div class="lab rise" style="position: absolute; left: 56px; bottom: 34px; animation-delay: 0.45s;">QB-APARTMENTS &middot; SELECTION &middot; INTERIOR MENU &middot; RENT</div>
+</div>
+</x-dc>
+</body>
+</html>

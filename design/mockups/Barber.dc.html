@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .sw { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.14); }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="slideL" style="position: absolute; left: 56px; top: 44px; display: flex; align-items: center; gap: 14px;">
+    <div class="cut" style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(255,122,31,0.4);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0B0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="6" r="2.6"/><circle cx="7" cy="18" r="2.6"/><path d="M9 7.6L20 18M9 16.4L20 6"/></svg>
+    </div>
+    <div>
+      <div class="lab" style="color: #FFB56B;">QB-CLOTHING &middot; APPEARANCE SHOPS</div>
+      <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 2px;">Barber &amp; tattoo studio</div>
+    </div>
+  </div>
+
+  <!-- Barber -->
+  <div class="panel cut rise" style="position: absolute; left: 56px; top: 136px; width: 420px; padding: 17px 19px 19px; animation-delay: 0.1s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="edgep" style="left: 10px; right: 10px; top: 0;"></div>
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span class="h" style="font-size: 15px; font-weight: 700;">Herr Kutz Barber</span>
+      <span class="lab">HAIR &middot; BEARD &middot; BROWS</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 14px;">
+      <span class="lab" style="flex-shrink: 0; width: 64px;">STYLE</span>
+      <div style="flex: 1; display: flex; align-items: center; gap: 10px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        <div style="flex: 1; text-align: center; border: 1px solid rgba(255,122,31,0.45); background: rgba(255,122,31,0.07); border-radius: 8px; padding: 9px 0;">
+          <span style="font-size: 12px; font-weight: 700;">Slicked back</span>
+          <span class="lab" style="margin-left: 8px; color: #FFB56B;">14 / 38</span>
+        </div>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 11px;">
+      <span class="lab" style="flex-shrink: 0; width: 64px;">FADE</span>
+      <div style="flex: 1; position: relative; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08);">
+        <div style="width: 55%; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
+        <div style="position: absolute; left: 55%; top: 50%; transform: translate(-50%, -50%); width: 13px; height: 13px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 0 0 4px rgba(255,122,31,0.25);"></div>
+      </div>
+      <span class="h" style="font-size: 11px; font-weight: 700; color: #FFB56B; width: 30px; text-align: right;">55%</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 13px;">
+      <span class="lab" style="flex-shrink: 0; width: 64px;">COLOR</span>
+      <div style="display: flex; gap: 8px; flex: 1;">
+        <span class="sw" style="background: #17110c; border-color: #FF7A1F; box-shadow: 0 0 10px rgba(255,122,31,0.4);"></span>
+        <span class="sw" style="background: #2e2018;"></span>
+        <span class="sw" style="background: #4d3521;"></span>
+        <span class="sw" style="background: #6e552f;"></span>
+        <span class="sw" style="background: #8f8579;"></span>
+        <span class="sw" style="background: #b8362b;"></span>
+        <span class="sw" style="background: #d9d3cc;"></span>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; margin-top: 13px;">
+      <span class="lab" style="flex-shrink: 0; width: 64px;">BEARD</span>
+      <div style="flex: 1; display: flex; align-items: center; gap: 10px;">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        <div style="flex: 1; text-align: center; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 0;">
+          <span style="font-size: 12px; font-weight: 600;">Short boxed</span>
+          <span class="lab" style="margin-left: 8px;">6 / 29</span>
+        </div>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; margin-top: 17px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px; align-items: center;">
+      <div>
+        <div class="lab">TOTAL</div>
+        <div class="h" style="font-size: 19px; font-weight: 700; color: #FFB56B; margin-top: 2px;">$85</div>
+      </div>
+      <div style="flex: 1;"></div>
+      <div class="h" style="font-size: 11.5px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 10px 18px;">UNDO</div>
+      <div class="cut h" style="position: relative; overflow: hidden; font-size: 11.5px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 11px 20px; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">CONFIRM CUT<div class="sheen"></div></div>
+    </div>
+  </div>
+
+  <!-- Tattoo -->
+  <div class="panel cut rise" style="position: absolute; left: 516px; top: 136px; width: 420px; padding: 17px 19px 19px; animation-delay: 0.22s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+      <span class="h" style="font-size: 15px; font-weight: 700;">Blazing Tattoo</span>
+      <span class="lab">ZONE &middot; RIGHT ARM</span>
+    </div>
+    <div style="display: flex; gap: 14px; margin-top: 14px;">
+      <div style="width: 120px; flex-shrink: 0; position: relative; height: 190px; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; background: rgba(10,9,8,0.5);">
+        <svg width="66" height="160" viewBox="0 0 50 120" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+          <circle cx="25" cy="14" r="9" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+          <path d="M12 30q13-6 26 0l-3 34H15z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+          <path d="M12 32l-7 28 6 3 6-24M38 32l7 28-6 3-6-24" fill="rgba(255,122,31,0.18)" stroke="#FF7A1F" stroke-width="1.4"/>
+          <path d="M15 64l-2 44h8l3-34h2l3 34h8l-2-44z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+          <circle cx="44" cy="49" r="5" fill="none" stroke="#FFB56B" stroke-width="1.4" stroke-dasharray="2.5 2.5" style="animation: pulseGlow 2s ease-in-out infinite;"/>
+        </svg>
+        <span class="lab" style="position: absolute; left: 50%; bottom: 7px; transform: translateX(-50%); white-space: nowrap;">PICK A ZONE</span>
+      </div>
+      <div style="flex: 1;">
+        <div style="display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,122,31,0.5); background: rgba(255,122,31,0.07); border-radius: 12px; padding: 10px 12px; box-shadow: 0 0 18px rgba(255,122,31,0.1);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C9.5 7 13.5 8 13.5 11a2.6 2.6 0 0 1-5.2.2C7 12.6 6.3 14 6.3 15.4a5.7 5.7 0 0 0 11.4-.4c0-5-4.2-6-5.7-12z" fill="#FF7A1F"/></svg>
+          <div style="flex: 1;">
+            <div style="font-size: 12px; font-weight: 700;">Ember flame</div>
+            <div style="font-size: 9.5px; color: #FFB56B;">Forearm &middot; $220</div>
+          </div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 12px; margin-top: 8px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 10l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg>
+          <div style="flex: 1;">
+            <div style="font-size: 12px; font-weight: 600;">Old-school star</div>
+            <div style="font-size: 9.5px; color: #8A8177;">Shoulder &middot; $140</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 12px; margin-top: 8px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14c3-6 7-6 8-10 1 4 5 4 8 10-2 4-5 6-8 6s-6-2-8-6z"/><path d="M12 12v6"/></svg>
+          <div style="flex: 1;">
+            <div style="font-size: 12px; font-weight: 600;">Sparrow wings</div>
+            <div style="font-size: 9.5px; color: #8A8177;">Upper arm &middot; $180</div>
+          </div>
+        </div>
+        <div class="cut h" style="margin-top: 12px; position: relative; overflow: hidden; text-align: center; font-size: 11.5px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 10px 0; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">INK IT &middot; $220<div class="sheen"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Outfit save quick panel -->
+  <div class="panel cut rise" style="position: absolute; left: 976px; top: 136px; width: 248px; padding: 16px 18px 18px; animation-delay: 0.34s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
+    <div class="lab">SAVED LOOKS</div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 11px; border: 1px solid rgba(255,122,31,0.4); background: rgba(255,122,31,0.06); border-radius: 8px; padding: 9px 11px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-2 3h4zM6 7h12l1 13H5zM9 11v3M15 11v3"/></svg>
+      <div style="flex: 1;">
+        <div style="font-size: 11.5px; font-weight: 700;">Work fit</div>
+        <div style="font-size: 9.5px; color: #FFB56B;">Current &middot; Benny's overalls</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px; border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 9px 11px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-2 3h4zM6 7h12l1 13H5z"/></svg>
+      <div style="flex: 1;">
+        <div style="font-size: 11.5px; font-weight: 600;">Night out</div>
+        <div style="font-size: 9.5px; color: #8A8177;">Saved Aug 18</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-top: 8px; border: 1px dashed rgba(255,255,255,0.14); border-radius: 8px; padding: 9px 11px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      <span style="font-size: 11px; color: #8A8177; font-weight: 600;">Save current look</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(185,140,240,0.07); border: 1px solid rgba(185,140,240,0.28); border-radius: 8px; padding: 9px 11px;">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>
+      <span style="font-size: 10px; color: #B98CF0; line-height: 1.5;">Looks apply instantly at any wardrobe &mdash; free after purchase.</span>
+    </div>
+  </div>
+
+  <div class="lab rise" style="position: absolute; left: 56px; bottom: 34px; animation-delay: 0.45s;">QB-CLOTHING &middot; BARBER &middot; TATTOO ZONES &middot; SAVED OUTFITS</div>
+</div>
+</x-dc>
+</body>
+</html>

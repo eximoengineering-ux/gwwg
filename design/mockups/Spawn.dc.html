@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pinDrop { 0% { opacity: 0; transform: translateY(-14px); } 60% { opacity: 1; transform: translateY(2px); } 100% { opacity: 1; transform: none; } }
+    .pin { opacity: 0; animation: pinDrop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes ping { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2.4); opacity: 0; } }
+    .ping { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid #FF7A1F; animation: ping 1.8s ease-out infinite; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #11151c;">
+  <div style="position: absolute; inset: 0; background: linear-gradient(140deg, #151a23 0%, #1a2029 45%, #12161d 100%);"></div>
+  <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 64px 64px;"></div>
+  <div style="position: absolute; left: -40px; top: 210px; width: 1400px; height: 15px; background: #232a34; transform: rotate(-7deg);"></div>
+  <div style="position: absolute; left: 300px; top: -60px; width: 13px; height: 900px; background: #232a34; transform: rotate(11deg);"></div>
+  <div style="position: absolute; left: 700px; top: -40px; width: 11px; height: 860px; background: #202731; transform: rotate(-14deg);"></div>
+  <div style="position: absolute; left: 100px; top: 470px; width: 1200px; height: 10px; background: #202731; transform: rotate(4deg);"></div>
+  <div style="position: absolute; left: 180px; top: 120px; width: 90px; height: 60px; background: #1c222b;"></div>
+  <div style="position: absolute; left: 850px; top: 330px; width: 120px; height: 74px; background: #1c222b;"></div>
+  <div style="position: absolute; left: 480px; top: 520px; width: 80px; height: 54px; background: #1c222b;"></div>
+  <div style="position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(6,8,11,0) 40%, rgba(6,8,11,0.72) 100%);"></div>
+
+  <div style="position: absolute; left: 542px; top: 242px; width: 26px; height: 26px;">
+    <div class="ping"></div>
+    <div class="pin" style="position: absolute; left: 5px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #FF7A1F; border: 3px solid #17100A; box-shadow: 0 0 18px rgba(255,122,31,0.9); animation-delay: 0.3s;"></div>
+  </div>
+  <div style="position: absolute; left: 285px; top: 385px; width: 20px; height: 20px;">
+    <div class="pin" style="position: absolute; left: 4px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #A8A29C; border: 2.5px solid #17100A; animation-delay: 0.42s;"></div>
+  </div>
+  <div style="position: absolute; left: 905px; top: 300px; width: 20px; height: 20px;">
+    <div class="pin" style="position: absolute; left: 4px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #A8A29C; border: 2.5px solid #17100A; animation-delay: 0.54s;"></div>
+  </div>
+
+  <div class="rise" style="position: absolute; left: 56px; top: 44px;">
+    <div class="lab" style="color: #FFB56B;">EMBER RP &middot; RAY CALDERON</div>
+    <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 4px;">Where do you wake up?</div>
+  </div>
+
+  <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); display: flex; gap: 12px;">
+    <div class="panel cut rise" style="width: 224px; padding: 15px 17px; border-color: rgba(255,122,31,0.55); box-shadow: 0 0 26px rgba(255,122,31,0.16), 0 14px 40px rgba(0,0,0,0.5); animation-delay: 0.15s;">
+      <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3" fill="#FF7A1F" stroke="none"/></svg>
+        <span style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Last Location</span>
+      </div>
+      <div style="font-size: 11.5px; color: #FFB56B; margin-top: 7px;">Legion Square &middot; where you logged out</div>
+    </div>
+
+    <div class="panel rise" style="width: 224px; padding: 15px 17px; animation-delay: 0.24s;">
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 9.5V20h5v-6h4v6h5V9.5"/></svg>
+        <span style="font-size: 13.5px; font-weight: 600; color: #D9D4CE;">Apartment</span>
+      </div>
+      <div style="font-size: 11.5px; color: #8A8177; margin-top: 7px;">Alta Street 12 &middot; Del Perro</div>
+    </div>
+
+    <div class="panel rise" style="width: 224px; padding: 15px 17px; animation-delay: 0.33s;">
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12M1.5 20h21M7 10h3v3H7zM14 10h3v3h-3zM10.5 20v-4h3v4"/></svg>
+        <span style="font-size: 13.5px; font-weight: 600; color: #D9D4CE;">Pink Cage Motel</span>
+      </div>
+      <div style="font-size: 11.5px; color: #8A8177; margin-top: 7px;">Room 4 &middot; rented until Friday</div>
+    </div>
+  </div>
+
+  <div class="rise" style="position: absolute; right: 56px; top: 48px; display: flex; align-items: center; gap: 7px; animation-delay: 0.4s;">
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #FF7A1F; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); border-radius: 6px; padding: 2px 7px;">&#8629;</span>
+    <span style="font-size: 11px; color: #A8A29C; font-weight: 500;">Spawn here</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

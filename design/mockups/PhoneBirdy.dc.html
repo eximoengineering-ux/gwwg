@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%), linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.6) 100%); }
+    .ph { position: absolute; top: 24px; width: 306px; height: 648px; }
+    .phF { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 34px 80px rgba(0,0,0,0.7), inset 0 0 0 3px #060505; }
+    .scr { position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: linear-gradient(175deg, #16130f 0%, #0c0a09 100%); }
+    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505; z-index: 6; }
+    .sb { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px 0; font-size: 11.5px; font-weight: 700; }
+    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #8A8177; text-transform: uppercase; }
+    .av { border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+    .post { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .act { display: flex; align-items: center; gap: 4px; font-size: 10px; color: #8A8177; font-weight: 600; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes heartPop { 0% { transform: scale(1); } 40% { transform: scale(1.35); } 100% { transform: scale(1); } }
+    .heart { animation: heartPop 2.6s cubic-bezier(0.2, 0.8, 0.2, 1) infinite; transform-origin: center; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <!-- ===================== 1 · FEED ===================== -->
+  <div class="ph rise" style="left: 60px;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#58BEEC"><path d="M21 6c-.7.3-1.4.5-2.1.6.8-.5 1.3-1.2 1.6-2-.7.4-1.5.7-2.3.9C17.5 4.6 16.5 4 15.4 4c-2.1 0-3.8 1.7-3.8 3.8 0 .3 0 .6.1.9-3.2-.2-6-1.7-7.9-4-.3.6-.5 1.2-.5 1.9 0 1.3.7 2.5 1.7 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.8 1.3 3.4 3 3.7-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.6 3.5 2.6-1.3 1-2.9 1.6-4.7 1.6-.3 0-.6 0-.9-.1 1.7 1.1 3.7 1.7 5.8 1.7 7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.4-1.2 1.9-2z"/></svg>
+          <span class="h" style="font-size: 17px; font-weight: 700;">Birdy</span>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <div class="h av" style="width: 24px; height: 24px; background: rgba(255,122,31,0.18); color: #FF7A1F; font-size: 9px;">RC</div>
+        </div>
+      </div>
+      <div style="display: flex; padding: 8px 16px 0; gap: 18px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <div style="font-size: 11px; font-weight: 700; color: #F5F1EC; padding-bottom: 8px; border-bottom: 2px solid #FF7A1F;">For you</div>
+        <div style="font-size: 11px; font-weight: 600; color: #8A8177; padding-bottom: 8px;">Following</div>
+        <div style="font-size: 11px; font-weight: 600; color: #8A8177; padding-bottom: 8px;">Los Santos</div>
+      </div>
+
+      <div class="post">
+        <div style="display: flex; gap: 9px;">
+          <div class="h av" style="width: 32px; height: 32px; background: rgba(88,190,236,0.16); color: #58BEEC; font-size: 11px;">WZ</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="font-size: 11.5px; font-weight: 700;">Weazel News</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="#4C9EEB"><path d="M12 2l2.4 2.1 3.2-.4 1 3 3 1-.4 3.2L23 13l-2.1 2.4.4 3.2-3 1-1 3-3.2-.4L12 24l-2.4-2.1-3.2.4-1-3-3-1 .4-3.2L1 13l2.1-2.4-.4-3.2 3-1 1-3 3.2.4z" transform="scale(0.92) translate(1,0)"/><path d="M8.5 12.5l2.5 2.5 4.8-5" stroke="#0c0a09" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span style="font-size: 10px; color: #8A8177;">@weazel &middot; 12m</span>
+            </div>
+            <div style="font-size: 11.5px; line-height: 1.5; margin-top: 3px; color: #D9D3CC;">BREAKING: Pileup on the Olympic Fwy near La Mesa. LSPD asking drivers to take Popular St. Expect delays. &#127959;&#65039;</div>
+            <div style="margin-top: 8px; height: 74px; border-radius: 8px; overflow: hidden; position: relative; background: linear-gradient(180deg, #1d2534 0%, #12161f 70%, #0c0f15 100%); border: 1px solid rgba(255,255,255,0.07);">
+              <svg width="100%" height="100%" viewBox="0 0 250 74" preserveAspectRatio="none">
+                <path d="M0 58 L40 44 L70 50 L110 36 L150 44 L195 30 L250 40 L250 74 L0 74 Z" fill="#0a0d12"/>
+                <rect x="0" y="58" width="250" height="16" fill="#141312"/>
+                <rect x="0" y="63" width="250" height="2" fill="#242220"/>
+                <rect x="30" y="62" width="22" height="4" rx="1" fill="#3a55d9" opacity="0.9"/>
+                <rect x="60" y="62" width="22" height="4" rx="1" fill="#c23b34"/>
+                <rect x="96" y="62" width="22" height="4" rx="1" fill="#4a4744"/>
+                <circle cx="210" cy="20" r="7" fill="#F4544E" opacity="0.25"/>
+                <circle cx="210" cy="20" r="3" fill="#F4544E"/>
+              </svg>
+              <span style="position: absolute; left: 7px; bottom: 6px; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; color: #F5F1EC; background: rgba(0,0,0,0.55); border-radius: 4px; padding: 2px 6px;">LIVE &middot; OLYMPIC FWY</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; padding-right: 18px;">
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.2C4 15.5 3 13.9 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg> 48</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h13a4 4 0 0 0 4-4v-1"/></svg> 112</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-8.5C1 9.5 3 6 6.5 6c2 0 3.5 1 4.5 2.5C12 7 13.5 6 15.5 6 19 6 21 9.5 20.5 12.5 19.5 16.4 12 21 12 21z" transform="scale(0.95)"/></svg> 391</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post">
+        <div style="display: flex; gap: 9px;">
+          <div class="h av" style="width: 32px; height: 32px; background: rgba(66,211,146,0.16); color: #42D392; font-size: 11px;">MV</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="font-size: 11.5px; font-weight: 700;">Mia Vasquez</span>
+              <span style="font-size: 10px; color: #8A8177;">@miav &middot; 1h</span>
+            </div>
+            <div style="font-size: 11.5px; line-height: 1.5; margin-top: 3px; color: #D9D3CC;">Double shift at Pillbox done. If you crashed tonight and I patched you up &mdash; drive slower. I know where you live. &#128137;</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; padding-right: 18px;">
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.2C4 15.5 3 13.9 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg> 26</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h13a4 4 0 0 0 4-4v-1"/></svg> 41</span>
+              <span class="act" style="color: #F4544E;"><svg class="heart" width="12" height="12" viewBox="0 0 24 24" fill="#F4544E"><path d="M12 21s-7.5-4.6-9.5-8.5C1 9.5 3 6 6.5 6c2 0 3.5 1 4.5 2.5C12 7 13.5 6 15.5 6 19 6 21 9.5 20.5 12.5 19.5 16.4 12 21 12 21z" transform="scale(0.95)"/></svg> 208</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="post" style="border-bottom: none;">
+        <div style="display: flex; gap: 9px;">
+          <div class="h av" style="width: 32px; height: 32px; background: rgba(255,122,31,0.16); color: #FF7A1F; font-size: 11px;">B</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="font-size: 11.5px; font-weight: 700;">Benny's Motorworks</span>
+              <span style="font-size: 10px; color: #8A8177;">@bennys &middot; 3h</span>
+            </div>
+            <div style="font-size: 11.5px; line-height: 1.5; margin-top: 3px; color: #D9D3CC;">Weekend special: full engine tune + resprays 20% off. Walk-ins welcome, Strawberry Ave. &#128296;&#128293;</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; padding-right: 18px;">
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.2C4 15.5 3 13.9 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg> 9</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h13a4 4 0 0 0 4-4v-1"/></svg> 33</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-8.5C1 9.5 3 6 6.5 6c2 0 3.5 1 4.5 2.5C12 7 13.5 6 15.5 6 19 6 21 9.5 20.5 12.5 19.5 16.4 12 21 12 21z" transform="scale(0.95)"/></svg> 77</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="position: absolute; right: 16px; bottom: 18px; width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 26px rgba(255,122,31,0.45), inset 0 1px 0 rgba(255,255,255,0.35);">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Birdy &middot; Feed</div>
+  </div>
+
+  <!-- ===================== 2 · COMPOSE ===================== -->
+  <div class="ph rise" style="left: 487px; animation-delay: 0.12s;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 16px 12px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <span style="font-size: 12px; color: #A8A29C; font-weight: 600;">Cancel</span>
+        <span class="h" style="font-size: 13px; font-weight: 700;">New chirp</span>
+        <span class="h" style="font-size: 11px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); border-radius: 999px; padding: 6px 15px; box-shadow: 0 6px 16px rgba(255,122,31,0.35);">Chirp</span>
+      </div>
+      <div style="display: flex; gap: 10px; padding: 16px;">
+        <div class="h av" style="width: 36px; height: 36px; background: rgba(255,122,31,0.18); color: #FF7A1F; font-size: 12px;">RC</div>
+        <div style="flex: 1;">
+          <div style="font-size: 13px; line-height: 1.55; color: #F5F1EC;">Sultan RS finally back on the road. New turbo, new plates, same bad decisions. Come see us at Benny's &#128293;<span style="border-right: 2px solid #FF7A1F; animation: caret 1.2s step-end infinite;">&nbsp;</span></div>
+          <div style="margin-top: 12px; height: 108px; border-radius: 12px; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, #1a1611 0%, #100d0a 100%);">
+            <svg width="100%" height="100%" viewBox="0 0 240 108" preserveAspectRatio="none">
+              <rect x="0" y="76" width="240" height="32" fill="#0d0b09"/>
+              <ellipse cx="120" cy="86" rx="86" ry="9" fill="#000" opacity="0.55"/>
+              <path d="M42 76 L54 56 Q58 47 70 45 L96 41 Q120 30 150 33 L176 38 Q194 41 199 52 L204 76 Z" fill="#c2571f"/>
+              <path d="M96 41 Q120 30 150 33 L172 37 L160 44 L104 46 Z" fill="#2a1607" opacity="0.85"/>
+              <circle cx="74" cy="76" r="13" fill="#0a0908"/><circle cx="74" cy="76" r="6" fill="#3b3733"/>
+              <circle cx="176" cy="76" r="13" fill="#0a0908"/><circle cx="176" cy="76" r="6" fill="#3b3733"/>
+              <path d="M46 62 L58 62" stroke="#FFB56B" stroke-width="3" stroke-linecap="round"/>
+              <rect x="0" y="0" width="240" height="30" fill="url(#gGlow)"/>
+              <defs><linearGradient id="gGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF7A1F" stop-opacity="0.14"/><stop offset="1" stop-color="#FF7A1F" stop-opacity="0"/></linearGradient></defs>
+            </svg>
+            <span style="position: absolute; right: 7px; top: 7px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F5F1EC" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px; margin-top: 10px;">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+            <span style="font-size: 10.5px; color: #FF7A1F; font-weight: 600;">Strawberry, Los Santos</span>
+          </div>
+        </div>
+      </div>
+      <div style="position: absolute; left: 0; right: 0; bottom: 0; border-top: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.02); padding: 10px 16px 14px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="8.6" cy="10" r="1.6"/><path d="M21 16l-5.2-5L7 19"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8M12 8v8"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c.9 1.2 2.1 1.9 3.5 1.9s2.6-.7 3.5-1.9M9 9.5h.01M15 9.5h.01"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
+          <div style="flex: 1;"></div>
+          <div style="position: relative; width: 22px; height: 22px;">
+            <svg width="22" height="22" viewBox="0 0 30 30">
+              <circle cx="15" cy="15" r="12" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"/>
+              <circle cx="15" cy="15" r="12" fill="none" stroke="#FF7A1F" stroke-width="2.5" stroke-linecap="round" pathLength="100" stroke-dasharray="52 48" transform="rotate(-90 15 15)"/>
+            </svg>
+            <span class="h" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 6.5px; font-weight: 700; color: #A8A29C;">146</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Birdy &middot; Compose</div>
+  </div>
+
+  <!-- ===================== 3 · PROFILE ===================== -->
+  <div class="ph rise" style="left: 914px; animation-delay: 0.24s;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="position: relative; height: 78px; margin-top: 8px; background: linear-gradient(120deg, #2a1607 0%, #4a2408 45%, #17100A 100%); overflow: hidden;">
+        <svg width="100%" height="100%" viewBox="0 0 286 78" preserveAspectRatio="none" style="position: absolute; inset: 0;">
+          <path d="M0 66 L30 50 L52 58 L84 40 L120 52 L160 34 L200 46 L240 30 L286 44 L286 78 L0 78 Z" fill="#0d0a08" opacity="0.85"/>
+          <circle cx="236" cy="20" r="12" fill="#FF7A1F" opacity="0.35"/>
+          <circle cx="236" cy="20" r="6" fill="#FFB56B" opacity="0.7"/>
+        </svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F5F1EC" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; left: 14px; top: 12px;"><path d="M15 5l-7 7 7 7"/></svg>
+      </div>
+      <div style="padding: 0 16px; position: relative;">
+        <div class="h av" style="width: 58px; height: 58px; background: linear-gradient(150deg, #FF7A1F, #E8540E); color: #17100A; font-size: 19px; margin-top: -28px; border: 3px solid #0f0d0b; box-shadow: 0 10px 24px rgba(0,0,0,0.5);">RC</div>
+        <span style="position: absolute; right: 16px; top: 10px; font-size: 10.5px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 5px 14px;">Edit profile</span>
+        <div style="margin-top: 8px;">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <span class="h" style="font-size: 16px; font-weight: 700;">Ray Calderon</span>
+          </div>
+          <div style="font-size: 11px; color: #8A8177; margin-top: 1px;">@rayc</div>
+          <div style="font-size: 11.5px; line-height: 1.5; color: #D9D3CC; margin-top: 7px;">Foreman @ Benny's Motorworks. If it has wheels, I can make it faster. Sultan RS enjoyer. DMs open for tune bookings.</div>
+          <div style="display: flex; gap: 13px; margin-top: 8px;">
+            <span style="display: flex; align-items: center; gap: 4px; font-size: 10px; color: #8A8177;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg> Strawberry, LS</span>
+            <span style="display: flex; align-items: center; gap: 4px; font-size: 10px; color: #8A8177;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg> Joined 2024</span>
+          </div>
+          <div style="display: flex; gap: 14px; margin-top: 8px;">
+            <span style="font-size: 11px; color: #8A8177;"><b class="h" style="color: #F5F1EC;">312</b> Following</span>
+            <span style="font-size: 11px; color: #8A8177;"><b class="h" style="color: #F5F1EC;">1,847</b> Followers</span>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; padding: 10px 16px 0; gap: 18px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-top: 4px;">
+        <div style="font-size: 11px; font-weight: 700; color: #F5F1EC; padding-bottom: 8px; border-bottom: 2px solid #FF7A1F;">Chirps</div>
+        <div style="font-size: 11px; font-weight: 600; color: #8A8177; padding-bottom: 8px;">Replies</div>
+        <div style="font-size: 11px; font-weight: 600; color: #8A8177; padding-bottom: 8px;">Media</div>
+        <div style="font-size: 11px; font-weight: 600; color: #8A8177; padding-bottom: 8px;">Likes</div>
+      </div>
+      <div class="post">
+        <div style="display: flex; gap: 9px;">
+          <div class="h av" style="width: 30px; height: 30px; background: rgba(255,122,31,0.16); color: #FF7A1F; font-size: 10px;">RC</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="font-size: 11.5px; font-weight: 700;">Ray Calderon</span>
+              <span style="font-size: 10px; color: #8A8177;">@rayc &middot; 2d</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#8A8177" style="margin-left: auto;"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+            </div>
+            <div style="font-size: 11.5px; line-height: 1.5; margin-top: 3px; color: #D9D3CC;">Shop tip: if your engine light blinks in rhythm, that's not a vibe, that's a misfire. Bring it in before it brings you in. &#128295;</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; padding-right: 18px;">
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.2C4 15.5 3 13.9 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg> 14</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h13a4 4 0 0 0 4-4v-1"/></svg> 52</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-8.5C1 9.5 3 6 6.5 6c2 0 3.5 1 4.5 2.5C12 7 13.5 6 15.5 6 19 6 21 9.5 20.5 12.5 19.5 16.4 12 21 12 21z" transform="scale(0.95)"/></svg> 163</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post" style="border-bottom: none;">
+        <div style="display: flex; gap: 9px;">
+          <div class="h av" style="width: 30px; height: 30px; background: rgba(255,122,31,0.16); color: #FF7A1F; font-size: 10px;">RC</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="font-size: 11.5px; font-weight: 700;">Ray Calderon</span>
+              <span style="font-size: 10px; color: #8A8177;">@rayc &middot; 5d</span>
+            </div>
+            <div style="font-size: 11.5px; line-height: 1.5; margin-top: 3px; color: #D9D3CC;">Lift 2 is finally fixed. Owen owes me a coffee and an apology, in that order.</div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; padding-right: 18px;">
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 4-4 7-9 7-1 0-2-.1-3-.4L4 20l1.2-3.2C4 15.5 3 13.9 3 12c0-4 4-7 9-7s9 3 9 7z"/></svg> 6</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8a4 4 0 0 0-4 4v1M7 22l-4-4 4-4M3 18h13a4 4 0 0 0 4-4v-1"/></svg> 3</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.6-9.5-8.5C1 9.5 3 6 6.5 6c2 0 3.5 1 4.5 2.5C12 7 13.5 6 15.5 6 19 6 21 9.5 20.5 12.5 19.5 16.4 12 21 12 21z" transform="scale(0.95)"/></svg> 58</span>
+              <span class="act"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M12 3v13M7 8l5-5 5 5"/></svg></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Birdy &middot; Profile</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

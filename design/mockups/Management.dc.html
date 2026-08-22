@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.7) 100%); }
+    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .act { font-family: 'Space Grotesk', sans-serif; font-size: 10.5px; font-weight: 700; padding: 5px 10px; border: 1px solid rgba(255,255,255,0.14); background: rgba(255,255,255,0.05); color: #A8A29C; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes slideR { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
+    .slideR { opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes fillW { from { width: 0; } }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 940px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); padding: 24px 28px 26px; box-sizing: border-box;">
+    <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #FF7A1F, #FFB56B, rgba(255,181,107,0));"></div>
+    <div class="edgep" style="bottom: 0; left: 14px; right: 14px;"></div>
+
+    <div class="rise" style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 13px;">
+        <div class="cut" style="width: 40px; height: 40px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(255,122,31,0.4);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2M4 7h16l-1.2 12.5a2 2 0 0 1-2 1.5H7.2a2 2 0 0 1-2-1.5L4 7z"/></svg>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: #FFB56B;">BENNY'S &middot; BOSS MENU</div>
+          <div class="h" style="font-size: 19px; font-weight: 700; margin-top: 2px;">Company Management</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <div style="background: rgba(15,13,11,0.8); border: 1px solid rgba(255,255,255,0.09); padding: 10px 16px;">
+          <div class="lab">Society Funds</div>
+          <div class="h" style="font-size: 18px; font-weight: 700; color: #42D392; margin-top: 3px;">$142,300</div>
+        </div>
+        <div class="cut" style="height: 40px; padding: 0 18px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 12.5px; display: flex; align-items: center;">Hire Nearby</div>
+        <div style="height: 40px; padding: 0 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 12.5px; display: flex; align-items: center;">Withdraw</div>
+      </div>
+    </div>
+
+    <div class="rise" style="display: flex; gap: 10px; margin-top: 18px; animation-delay: 0.1s;">
+      <div style="flex: 1; background: #12100d; border: 1px solid rgba(255,255,255,0.07); padding: 12px 15px;">
+        <div class="lab">Employees</div>
+        <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 4px;">9 <span style="font-size: 11px; color: #42D392;">&middot; 5 on duty</span></div>
+      </div>
+      <div style="flex: 1; background: #12100d; border: 1px solid rgba(255,255,255,0.07); padding: 12px 15px;">
+        <div class="lab">Payroll / week</div>
+        <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 4px; color: #F4544E;">&minus;$8,400</div>
+      </div>
+      <div style="flex: 1; background: #12100d; border: 1px solid rgba(255,255,255,0.07); padding: 12px 15px;">
+        <div class="lab">Revenue / week</div>
+        <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 4px; color: #42D392;">+$21,750</div>
+      </div>
+      <div style="flex: 1.4; background: #12100d; border: 1px solid rgba(255,255,255,0.07); padding: 12px 15px;">
+        <div style="display: flex; justify-content: space-between;"><span class="lab">Weekly target</span><span class="h" style="font-size: 11px; font-weight: 700; color: #FFB56B;">72%</span></div>
+        <div style="margin-top: 9px; height: 6px; background: rgba(255,255,255,0.08);"><div style="width: 72%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B); animation: fillW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.5s both;"></div></div>
+      </div>
+    </div>
+
+    <div style="margin-top: 18px; border: 1px solid rgba(255,255,255,0.06);">
+      <div style="display: flex; align-items: center; gap: 14px; padding: 10px 16px; background: rgba(10,9,8,0.5); border-bottom: 1px solid rgba(255,255,255,0.08);">
+        <span class="lab" style="flex: 1;">Employee</span>
+        <span class="lab" style="width: 150px;">Grade</span>
+        <span class="lab" style="width: 90px;">Status</span>
+        <span class="lab" style="width: 216px;">Actions</span>
+      </div>
+
+      <div class="slideR" style="display: flex; align-items: center; gap: 14px; padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.045); background: rgba(255,122,31,0.05); border-left: 3px solid #FF7A1F; animation-delay: 0.16s;">
+        <div style="flex: 1; display: flex; align-items: center; gap: 11px;">
+          <div class="h" style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #FFB56B;">RC</div>
+          <div><div style="font-size: 13px; font-weight: 700;">Ray Calderon</div><div style="font-size: 10px; color: #8A8177;">EMB-2148 &middot; you</div></div>
+        </div>
+        <div style="width: 150px; display: flex; align-items: center; gap: 7px;"><span style="font-size: 12px; color: #FFB56B; font-weight: 700;">Foreman &middot; G3</span></div>
+        <div style="width: 90px;"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #42D392; background: rgba(66,211,146,0.1); border: 1px solid rgba(66,211,146,0.35); padding: 3px 8px;">ON DUTY</span></div>
+        <div style="width: 216px; display: flex; gap: 6px;"><span class="act" style="color: #FFB56B; border-color: rgba(255,122,31,0.4); background: rgba(255,122,31,0.1);">PROMOTE</span><span class="act">DEMOTE</span><span class="act" style="color: #F4544E; border-color: rgba(244,84,78,0.35); background: rgba(244,84,78,0.07);">FIRE</span></div>
+      </div>
+
+      <div class="slideR" style="display: flex; align-items: center; gap: 14px; padding: 11px 16px; border-bottom: 1px solid rgba(255,255,255,0.045); animation-delay: 0.23s;">
+        <div style="flex: 1; display: flex; align-items: center; gap: 11px;">
+          <div class="h" style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #A8A29C;">OR</div>
+          <div><div style="font-size: 13px; font-weight: 600;">Owen Reyes</div><div style="font-size: 10px; color: #8A8177;">EMB-3572</div></div>
+        </div>
+        <div style="width: 150px;"><span style="font-size: 12px; color: #D9D4CE; font-weight: 600;">Mechanic &middot; G2</span></div>
+        <div style="width: 90px;"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #42D392; background: rgba(66,211,146,0.1); border: 1px solid rgba(66,211,146,0.35); padding: 3px 8px;">ON DUTY</span></div>
+        <div style="width: 216px; display: flex; gap: 6px;"><span class="act">PROMOTE</span><span class="act">DEMOTE</span><span class="act" style="color: #F4544E; border-color: rgba(244,84,78,0.35); background: rgba(244,84,78,0.07);">FIRE</span></div>
+      </div>
+
+      <div class="slideR" style="display: flex; align-items: center; gap: 14px; padding: 11px 16px; animation-delay: 0.3s;">
+        <div style="flex: 1; display: flex; align-items: center; gap: 11px;">
+          <div class="h" style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #A8A29C;">LO</div>
+          <div><div style="font-size: 13px; font-weight: 600;">Lena Ortiz</div><div style="font-size: 10px; color: #8A8177;">EMB-4127</div></div>
+        </div>
+        <div style="width: 150px;"><span style="font-size: 12px; color: #D9D4CE; font-weight: 600;">Apprentice &middot; G1</span></div>
+        <div style="width: 90px;"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: #8A8177; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 3px 8px;">OFF</span></div>
+        <div style="width: 216px; display: flex; gap: 6px;"><span class="act">PROMOTE</span><span class="act">DEMOTE</span><span class="act" style="color: #F4544E; border-color: rgba(244,84,78,0.35); background: rgba(244,84,78,0.07);">FIRE</span></div>
+      </div>
+    </div>
+    <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 10.5px; color: #8A8177; font-weight: 600;">Showing 3 of 9 employees</span>
+      <div style="width: 46px; height: 3px; background: rgba(255,255,255,0.1);"><div style="width: 33%; height: 100%; background: #FF7A1F;"></div></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

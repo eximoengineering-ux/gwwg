@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%), linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.6) 100%); }
+    .ph { position: absolute; top: 24px; width: 306px; height: 648px; }
+    .phF { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 34px 80px rgba(0,0,0,0.7), inset 0 0 0 3px #060505; }
+    .scr { position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: linear-gradient(175deg, #16130f 0%, #0c0a09 100%); }
+    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505; z-index: 6; }
+    .sb { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px 0; font-size: 11.5px; font-weight: 700; }
+    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #8A8177; text-transform: uppercase; }
+    .av { font-family: 'Space Grotesk', sans-serif; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+    .bin { max-width: 190px; background: #221e19; border-radius: 14px 14px 14px 4px; padding: 8px 12px; font-size: 12px; line-height: 1.45; color: #E5E0D9; }
+    .bout { max-width: 190px; background: linear-gradient(140deg, #FF7A1F, #E8540E); border-radius: 14px 14px 4px 14px; padding: 8px 12px; font-size: 12px; line-height: 1.45; color: #1D1006; font-weight: 500; margin-left: auto; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes tdot { 0%, 60%, 100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-3px); opacity: 1; } }
+    .td { width: 5px; height: 5px; border-radius: 50%; background: #A8A29C; animation: tdot 1.2s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="ph rise" style="left: 60px;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 20px 0;">
+        <span class="h" style="font-size: 22px; font-weight: 700;">Messages</span>
+        <div style="width: 28px; height: 28px; border-radius: 8px; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.4); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      </div>
+      <div style="margin: 12px 20px 0; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px; padding: 0 12px;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20.5 20.5L16 16"/></svg>
+        <span style="font-size: 11.5px; color: #8A8177;">Search conversations</span>
+      </div>
+      <div style="padding: 6px 20px 0;">
+        <div style="display: flex; align-items: center; gap: 11px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+          <div class="av" style="width: 40px; height: 40px; background: rgba(66,211,146,0.15); color: #42D392; font-size: 13px;">MV</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 13px; font-weight: 700;">Mia Vasquez <svg width="9" height="9" viewBox="0 0 24 24" fill="#8A8177"><path d="M12 2l2 7h7l-5.6 4.4 2 7L12 16l-5.4 4.4 2-7L3 9h7z"/></svg></span>
+              <span style="font-size: 10px; color: #FF7A1F; font-weight: 700;">21:41</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+              <span style="font-size: 11px; color: #A8A29C; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">You still owe me a ride in that Sultan &#128293;</span>
+              <span class="h" style="min-width: 17px; height: 17px; border-radius: 8px; background: #FF7A1F; color: #17100A; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-left: 8px;">2</span>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+          <div class="av" style="width: 40px; height: 40px; background: rgba(255,122,31,0.15); color: #FF7A1F; font-size: 13px;">BC</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 13px; font-weight: 600;">Benny's Crew <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round"><path d="M11 5L6 9H2.5v6H6l5 4z"/><path d="M22 3L2 21" stroke="#8A8177"/></svg></span>
+              <span style="font-size: 10px; color: #8A8177;">20:55</span>
+            </div>
+            <div style="font-size: 11px; color: #A8A29C; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Owen: lift 2 is free tomorrow morning</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+          <div class="av" style="width: 40px; height: 40px; background: rgba(76,158,235,0.15); color: #4C9EEB; font-size: 13px;">MW</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 13px; font-weight: 600;">Marcus Webb</span>
+              <span style="font-size: 10px; color: #8A8177;">18:20</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px; font-size: 11px; color: #A8A29C; margin-top: 2px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5l5 5L21 5M8 17.5l3 3"/></svg>You: plates are clean, all legal officer</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+          <div class="av" style="width: 40px; height: 40px; background: rgba(232,176,75,0.15); color: #E8B04B; font-size: 13px;">F</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 13px; font-weight: 600;">Fleeca Alerts</span>
+              <span style="font-size: 10px; color: #8A8177;">18:22</span>
+            </div>
+            <div style="font-size: 11px; color: #A8A29C; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Card payment $1,250.00 &middot; LS DMV</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 11px; padding: 11px 0;">
+          <div class="av" style="width: 40px; height: 40px; background: rgba(255,255,255,0.07); color: #A8A29C; font-size: 13px;">LO</div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-size: 13px; font-weight: 600;">Lena Ortiz</span>
+              <span style="font-size: 10px; color: #8A8177;">Tue</span>
+            </div>
+            <div style="font-size: 11px; color: #A8A29C; margin-top: 2px;">thanks for the ride money!! &#128588;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Messages &middot; Inbox</div>
+  </div>
+
+  <div class="ph rise" style="left: 487px; animation-delay: 0.12s;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 14px 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.06);">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+        <div class="av" style="width: 32px; height: 32px; background: rgba(66,211,146,0.15); color: #42D392; font-size: 11px;">MV</div>
+        <div style="flex: 1;">
+          <div style="font-size: 13px; font-weight: 700;">Mia Vasquez</div>
+          <div style="font-size: 9.5px; color: #42D392;">online &middot; on duty</div>
+        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+      </div>
+      <div style="padding: 12px 14px 0; display: flex; flex-direction: column; gap: 8px;">
+        <div style="align-self: center; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177; background: rgba(255,255,255,0.05); border-radius: 999px; padding: 3px 10px;">TODAY</div>
+        <div class="bin">Ray, lift 2 broke down again &#128553;</div>
+        <div class="bin">Tow truck needed at Sandy, you in?</div>
+        <span style="font-size: 9px; color: #8A8177; margin-left: 4px;">21:38</span>
+        <div class="bout">On my way, grabbing the flatbed. Send me the pin?</div>
+        <span style="font-size: 9px; color: #8A8177; margin-left: auto; margin-right: 4px;">21:40 &middot; Read</span>
+        <div style="max-width: 200px; background: #221e19; border-radius: 16px; overflow: hidden;">
+          <div style="position: relative; height: 86px; background: linear-gradient(140deg, #1b2026, #232a2b 45%, #1a1f23);">
+            <div style="position: absolute; left: -10px; top: 34px; width: 220px; height: 8px; background: #2f363c; transform: rotate(-7deg);"></div>
+            <div style="position: absolute; left: 90px; top: -10px; width: 7px; height: 110px; background: #2f363c; transform: rotate(12deg);"></div>
+            <div style="position: absolute; left: 96px; top: 30px; width: 14px; height: 14px; border-radius: 50%; background: #FF7A1F; border: 3px solid #17100A; box-shadow: 0 0 12px rgba(255,122,31,0.9);"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 11px;">
+            <div>
+              <div style="font-size: 11px; font-weight: 700;">Sandy Shores Garage</div>
+              <div style="font-size: 9px; color: #8A8177; margin-top: 1px;">Pinned location &middot; 4.2 km</div>
+            </div>
+            <span style="font-size: 9.5px; font-weight: 700; color: #FF7A1F;">GO</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; margin-top: 2px;">
+          <div class="av" style="width: 22px; height: 22px; background: rgba(66,211,146,0.15); color: #42D392; font-size: 8px;">MV</div>
+          <div style="background: #221e19; border-radius: 12px; padding: 8px 11px; display: flex; gap: 3.5px; align-items: center;">
+            <span class="td"></span><span class="td" style="animation-delay: 0.15s;"></span><span class="td" style="animation-delay: 0.3s;"></span>
+          </div>
+        </div>
+      </div>
+      <div style="position: absolute; left: 12px; right: 12px; bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <div style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div style="flex: 1; height: 34px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; padding: 0 13px;"><span style="font-size: 11.5px; color: #8A8177;">Message&hellip;</span></div>
+        <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(255,122,31,0.35);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14M21 3l-7 18-3.5-7.5L3 10z"/></svg></div>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Messages &middot; Chat</div>
+  </div>
+
+  <div class="ph rise" style="left: 914px; animation-delay: 0.24s;">
+    <div class="phF"></div>
+    <div class="scr">
+      <div class="sb"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
+      <div style="text-align: center; margin-top: 26px;">
+        <div class="av" style="width: 84px; height: 84px; background: linear-gradient(150deg, rgba(66,211,146,0.3), rgba(66,211,146,0.08)); border: 2px solid rgba(66,211,146,0.5); color: #42D392; font-size: 26px; margin: 0 auto;">MV</div>
+        <div class="h" style="font-size: 20px; font-weight: 700; margin-top: 12px;">Mia Vasquez</div>
+        <div class="h" style="font-size: 11px; color: #8A8177; margin-top: 4px; letter-spacing: 0.08em;">555-0114 &middot; EMB-3021</div>
+        <div style="display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #42D392; background: rgba(66,211,146,0.1); border: 1px solid rgba(66,211,146,0.35); border-radius: 999px; padding: 3px 11px; margin-top: 9px;">EMS &middot; PARAMEDIC</div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 12px; margin-top: 20px;">
+        <div style="width: 64px; height: 52px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span style="font-size: 8px; font-weight: 700; color: #8A8177;">CALL</span></div>
+        <div style="width: 64px; height: 52px; border-radius: 12px; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14a2 2 0 0 1-2 2H8l-4.5 4V5a2 2 0 0 1 2-2H19a2 2 0 0 1 2 2v9z"/></svg><span style="font-size: 8px; font-weight: 700; color: #FF7A1F;">MESSAGE</span></div>
+        <div style="width: 64px; height: 52px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="3"/><circle cx="12" cy="12" r="2.4"/></svg><span style="font-size: 8px; font-weight: 700; color: #8A8177;">PAY</span></div>
+      </div>
+      <div style="margin: 20px 20px 0;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177;">SHARED MEDIA</span>
+          <span style="font-size: 10px; color: #FF7A1F; font-weight: 700;">See all</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 9px;">
+          <div style="height: 72px; border-radius: 8px; background: linear-gradient(140deg, #1d2430, #2a2018);"></div>
+          <div style="height: 72px; border-radius: 8px; background: linear-gradient(140deg, #232a2b, #1a1f23);"></div>
+          <div style="height: 72px; border-radius: 8px; background: linear-gradient(140deg, #2a2018, #1d2430); position: relative;"><span class="h" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: #F5F1EC; background: rgba(0,0,0,0.45); border-radius: 8px;">+14</span></div>
+        </div>
+      </div>
+      <div style="margin: 18px 20px 0; border-top: 1px solid rgba(255,255,255,0.06);">
+        <div style="display: flex; justify-content: space-between; padding: 12px 0; font-size: 12px; color: #D9D4CE; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05);"><span>Mute conversation</span><div style="width: 34px; height: 19px; border-radius: 8px; background: rgba(255,255,255,0.12); position: relative;"><div style="position: absolute; left: 2.5px; top: 2.5px; width: 14px; height: 14px; border-radius: 50%; background: #8A8177;"></div></div></div>
+        <div style="display: flex; justify-content: space-between; padding: 12px 0; font-size: 12px; color: #F4544E; font-weight: 600;"><span>Block contact</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2"><circle cx="12" cy="12" r="8.5"/><path d="M5.5 5.5l13 13"/></svg></div>
+      </div>
+    </div>
+    <div class="notch"></div>
+    <div class="cap">Messages &middot; Contact</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

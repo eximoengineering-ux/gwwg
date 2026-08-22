@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
+      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
+      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
+    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .mbar { height: 4px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
+    @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
+    .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div class="slideL" style="position: absolute; left: 56px; top: 44px; display: flex; align-items: center; gap: 14px;">
+    <div class="cut" style="width: 44px; height: 44px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 26px rgba(255,122,31,0.4);">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0B0A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16h14l-1.2-5.5a2 2 0 0 0-2-1.5H8.2a2 2 0 0 0-2 1.5zM7 19a1.6 1.6 0 1 0 0-3.2A1.6 1.6 0 0 0 7 19zM17 19a1.6 1.6 0 1 0 0-3.2A1.6 1.6 0 0 0 17 19z"/></svg>
+    </div>
+    <div>
+      <div class="lab" style="color: #FFB56B;">QB-GARAGES &middot; LEGION SQUARE</div>
+      <div class="h" style="font-size: 24px; font-weight: 700; margin-top: 2px;">Garage terminal</div>
+    </div>
+  </div>
+  <div class="rise" style="position: absolute; right: 56px; top: 52px; display: flex; gap: 8px; animation-delay: 0.2s;">
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); border-radius: 999px; padding: 7px 16px;">MY VEHICLES</span>
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 7px 16px;">SHARED KEYS</span>
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #F4544E; border: 1px solid rgba(244,84,78,0.4); border-radius: 999px; padding: 7px 16px;">IMPOUND (1)</span>
+  </div>
+
+  <!-- Featured vehicle -->
+  <div class="panel cut rise" style="position: absolute; left: 56px; top: 136px; width: 520px; padding: 0 0 18px; animation-delay: 0.1s; border-color: rgba(255,122,31,0.4); box-shadow: 0 0 30px rgba(255,122,31,0.1), 0 18px 50px rgba(0,0,0,0.5); overflow: hidden;">
+    <div style="height: 3px; background: linear-gradient(90deg, #FF7A1F, #E8540E);"></div>
+    <div style="position: relative; height: 168px; background: radial-gradient(400px 140px at 50% 66%, rgba(255,122,31,0.12) 0%, rgba(255,122,31,0) 70%), linear-gradient(180deg, rgba(20,17,14,0.4), rgba(10,9,8,0.7));">
+      <svg width="330" height="130" viewBox="0 0 240 96" style="position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);">
+        <ellipse cx="120" cy="84" rx="98" ry="8" fill="#000" opacity="0.55"/>
+        <path d="M28 76 L40 46 Q45 32 62 30 L92 25 Q120 10 156 14 L184 20 Q202 24 206 38 L212 76 Z" fill="#c2571f"/>
+        <path d="M92 25 Q120 10 156 14 L180 19 L166 32 L102 34 Z" fill="#241206" opacity="0.9"/>
+        <path d="M34 60 L48 60" stroke="#FFB56B" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="72" cy="76" r="15" fill="#0a0908"/><circle cx="72" cy="76" r="6.5" fill="#3b3733"/>
+        <circle cx="180" cy="76" r="15" fill="#0a0908"/><circle cx="180" cy="76" r="6.5" fill="#3b3733"/>
+      </svg>
+      <span class="h" style="position: absolute; left: 16px; top: 12px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; color: #FFB56B; background: rgba(12,11,10,0.7); border: 1px solid rgba(255,122,31,0.4); border-radius: 6px; padding: 4px 10px;">SELECTED &middot; 1 / 4</span>
+      <span style="position: absolute; right: 16px; top: 12px; font-size: 10px; font-weight: 700; color: #42D392; background: rgba(12,11,10,0.7); border-radius: 6px; padding: 4px 10px;">&#9679; STORED HERE</span>
+    </div>
+    <div style="padding: 14px 18px 0;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <span class="h" style="font-size: 19px; font-weight: 700;">Karin Sultan RS</span>
+          <span class="h" style="font-size: 10px; font-weight: 700; letter-spacing: 0.12em; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 9px; margin-left: 10px;">8ABC123</span>
+        </div>
+        <span class="lab">CLASS S &middot; SPORTS</span>
+      </div>
+      <div style="display: flex; gap: 14px; margin-top: 13px;">
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; color: #8A8177; letter-spacing: 0.1em; margin-bottom: 4px;"><span>FUEL</span><span style="color: #A8A29C;">84%</span></div>
+          <div class="mbar"><div style="width: 84%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div></div>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; color: #8A8177; letter-spacing: 0.1em; margin-bottom: 4px;"><span>ENGINE</span><span style="color: #A8A29C;">97%</span></div>
+          <div class="mbar"><div style="width: 97%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div></div>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; font-size: 9px; font-weight: 700; color: #8A8177; letter-spacing: 0.1em; margin-bottom: 4px;"><span>BODY</span><span style="color: #A8A29C;">91%</span></div>
+          <div class="mbar"><div style="width: 91%; height: 100%; background: linear-gradient(90deg, #4C9EEB, #8CC4F5);"></div></div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <div class="cut h" style="flex: 2; position: relative; overflow: hidden; text-align: center; font-size: 12px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 12px 0; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">TAKE OUT &middot; SPOT A2<div class="sheen"></div></div>
+        <div class="h" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 12px 0;">TRANSFER</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vehicle rail -->
+  <div class="rise" style="position: absolute; left: 616px; top: 136px; width: 300px; display: flex; flex-direction: column; gap: 9px; animation-delay: 0.24s;">
+    <div class="panel" style="border-radius: 12px; padding: 11px 14px; display: flex; align-items: center; gap: 11px;">
+      <div style="flex: 1;">
+        <div style="font-size: 12.5px; font-weight: 700;">Elegy Retro Custom</div>
+        <div style="font-size: 10px; color: #8A8177; margin-top: 2px;">4KLM980 &middot; Fuel 62% &middot; Spot B1</div>
+      </div>
+      <span style="font-size: 9px; font-weight: 700; color: #42D392;">&#9679; STORED</span>
+    </div>
+    <div class="panel" style="border-radius: 12px; padding: 11px 14px; display: flex; align-items: center; gap: 11px;">
+      <div style="flex: 1;">
+        <div style="font-size: 12.5px; font-weight: 700;">Bravado Bison</div>
+        <div style="font-size: 10px; color: #8A8177; margin-top: 2px;">2QRS445 &middot; Fuel 45% &middot; Spot C4</div>
+      </div>
+      <span style="font-size: 9px; font-weight: 700; color: #42D392;">&#9679; STORED</span>
+    </div>
+    <div class="panel" style="border-radius: 12px; padding: 11px 14px; display: flex; align-items: center; gap: 11px; opacity: 0.62;">
+      <div style="flex: 1;">
+        <div style="font-size: 12.5px; font-weight: 700;">Kamacho</div>
+        <div style="font-size: 10px; color: #8A8177; margin-top: 2px;">7TUV221 &middot; Out &middot; Sandy Shores</div>
+      </div>
+      <span class="h" style="font-size: 9.5px; font-weight: 700; color: #4C9EEB;">TRACK $50</span>
+    </div>
+    <div class="panel" style="border-radius: 12px; padding: 12px 14px; display: flex; align-items: center; gap: 10px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M17 9l4 4M21 9l-4 4"/></svg>
+      <div style="flex: 1;">
+        <div style="font-size: 11.5px; font-weight: 700;">Shared with you</div>
+        <div style="font-size: 10px; color: #8A8177; margin-top: 1px;">Mia's Faggio &middot; key expires 22:30</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Impound -->
+  <div class="panel cut rise" style="position: absolute; left: 956px; top: 136px; width: 268px; padding: 16px 18px 18px; animation-delay: 0.36s; border-color: rgba(244,84,78,0.4); box-shadow: 0 0 26px rgba(244,84,78,0.1), 0 18px 50px rgba(0,0,0,0.5);">
+    <div style="position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; background: linear-gradient(180deg, #F4544E, rgba(244,84,78,0.2)); box-shadow: 0 0 8px rgba(244,84,78,0.6); animation: pulseGlow 2.2s ease-in-out infinite;"></div>
+    <div style="display: flex; align-items: center; gap: 9px;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      <span class="h" style="font-size: 14px; font-weight: 700; color: #F4544E;">Impound lot</span>
+    </div>
+    <div style="margin-top: 13px; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 11px 13px; background: rgba(255,255,255,0.02);">
+      <div style="font-size: 12.5px; font-weight: 700;">Vapid Dominator</div>
+      <div style="font-size: 10px; color: #8A8177; margin-top: 2px;">5GHJ728 &middot; seized by LSPD &middot; Aug 21</div>
+      <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 10.5px;">
+        <span style="color: #8A8177; font-weight: 700;">RELEASE FEE</span><span class="h" style="font-weight: 700; color: #F4544E;">$650</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-top: 5px; font-size: 10.5px;">
+        <span style="color: #8A8177; font-weight: 700;">STORAGE / DAY</span><span class="h" style="font-weight: 700;">$25</span>
+      </div>
+      <div class="h" style="margin-top: 12px; text-align: center; font-size: 11px; font-weight: 700; color: #2A0A08; background: linear-gradient(135deg, #F4544E, #C2382F); border-radius: 8px; padding: 9px 0; box-shadow: 0 8px 20px rgba(244,84,78,0.3);">PAY &amp; RELEASE</div>
+    </div>
+    <div style="font-size: 10px; color: #8A8177; line-height: 1.55; margin-top: 11px;">Impounded vehicles are crushed after 14 days unpaid. An on-duty officer can waive the fee.</div>
+  </div>
+
+  <div class="lab rise" style="position: absolute; left: 56px; bottom: 34px; animation-delay: 0.45s;">QB-GARAGES &middot; TERMINAL &middot; VEHICLE RAIL &middot; SHARED KEYS &middot; IMPOUND</div>
+</div>
+</x-dc>
+</body>
+</html>
