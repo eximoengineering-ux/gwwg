@@ -1,7 +1,8 @@
 {
   "pages": [
     { "id": "page-1", "name": "Core & HUD" },
-    { "id": "page-2", "name": "Screens & Apps" }
+    { "id": "page-2", "name": "Screens & Apps" },
+    { "id": "page-3", "name": "EmberOS Phone" }
   ],
   "artboards": [
     { "file": "Main.dc.html", "title": "Brand & Design System", "x": 0, "y": 0, "w": 1280, "h": 860, "page": "page-1" },
@@ -20,11 +21,19 @@
     { "file": "Scoreboard.dc.html", "title": "Scoreboard — Players", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
     { "file": "Management.dc.html", "title": "Boss Menu — Management", "x": 1360, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
     { "file": "Admin.dc.html", "title": "Admin Panel", "x": 2720, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Clothing.dc.html", "title": "Wardrobe — Clothing", "x": 0, "y": 2550, "w": 1280, "h": 720, "page": "page-2" }
+    { "file": "Clothing.dc.html", "title": "Wardrobe — Clothing", "x": 0, "y": 2550, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "PhoneSettings.dc.html", "title": "EmberOS — Lock, Camera, Settings", "x": 0, "y": 0, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneCalls.dc.html", "title": "Phone App — Keypad, Recents, In Call", "x": 1360, "y": 0, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneMsg.dc.html", "title": "Messages — Inbox, Chat, Contact", "x": 2720, "y": 0, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneBank.dc.html", "title": "Fleeca App — Home, Transfer, Receipt", "x": 0, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneBirdy.dc.html", "title": "Birdy — Feed, Compose, Profile", "x": 1360, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneMail.dc.html", "title": "Mail & Alarms", "x": 2720, "y": 850, "w": 1280, "h": 720, "page": "page-3" },
+    { "file": "PhoneGarage.dc.html", "title": "Garage, Services & Crypto", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-3" }
   ],
   "annotations": [
     { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "page": "page-1", "text": "EMBER RP — QBCore UI redesign.\nSignature: ember-cut glass panels, orbital wheel, active-edge keyline, scanlines, 270° gauges, night-city scene, inward tilt — fully animated (staggered entrances, gauge sweeps, live loops; respects reduced motion). Identity is a placeholder." },
-    { "id": "batch2-brief", "x": 0, "y": -200, "w": 560, "page": "page-2", "text": "Screens & Apps — multicharacter, spawn, EmberOS phone, inventory, banking, shop, scoreboard, boss menu, admin, wardrobe.\nSame Ember system: cut panels, keylines, staggered entrances. NUI code follows approval." }
+    { "id": "batch2-brief", "x": 0, "y": -200, "w": 560, "page": "page-2", "text": "Screens & Apps — multicharacter, spawn, EmberOS phone, inventory, banking, shop, scoreboard, boss menu, admin, wardrobe.\nSame Ember system: cut panels, keylines, staggered entrances. NUI code follows approval." },
+    { "id": "batch3-brief", "x": 0, "y": -200, "w": 560, "page": "page-3", "text": "EmberOS Phone — every app in detail: lock screen, camera, settings, calls, messages, Fleeca banking, Birdy social, mail, alarms, garage, city services, EmberCoin crypto.\n21 screens, consistent world data (Ray Calderon / Mia Vasquez / Benny's), fully animated." }
   ],
-  "launch": { "view": "canvas", "page": "page-2" }
+  "launch": { "view": "canvas", "page": "page-3" }
 }
