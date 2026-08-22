@@ -23,6 +23,10 @@ Typography: **Space Grotesk** (display, headings, numbers) + **Instrument Sans**
 dialogs/cards. Accent gradient: `#FF7A1F → #E8540E` (135deg). Glow reserved
 for the single active element.
 
+Inward tilt: edge-anchored panels lean toward screen center with
+`transform: perspective(1200px) rotateY(±6–8deg)` (origin on the screen-edge
+side); bottom/center panels use `rotateX(4–6deg)` instead.
+
 ## Mockups (batch 1)
 
 `design/mockups/` holds the artboard sources (`*.dc.html` + `canvas.json`)
