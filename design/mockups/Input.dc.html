@@ -7,101 +7,85 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; color: #ECE6D9; }
-    a { color: #C3372B; } a:hover { color: #A32A1F; }
-    .serif { font-family: 'Instrument Serif', Georgia, serif; }
-    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
-    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 70% 16%, #1a1d22 0%, rgba(26,29,34,0) 60%), linear-gradient(180deg, #121317 0%, #14151a 52%, #0a0b0d 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.68) 100%); }
-    .card { position: relative; background: linear-gradient(175deg, #F4EFE4 0%, #EDE6D6 100%); color: #16140F; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
-    .card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(22,20,15,0.045) 1px, transparent 1px); background-size: 5px 5px; }
-    .lab { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.16em; color: #8A8478; text-transform: uppercase; }
-    .field { border-bottom: 1.5px dotted rgba(22,20,15,0.55); font-family: 'IBM Plex Mono', monospace; font-size: 14px; padding: 4px 2px 5px; }
-    .cell { font-family: 'IBM Plex Mono', monospace; width: 38px; height: 48px; border: 1.5px solid #16140F; background: #F7F2E8; display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 600; box-sizing: border-box; }
-    .ballot { width: 15px; height: 15px; border: 1.5px solid #16140F; display: inline-block; vertical-align: -2px; }
-    .stamp { display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 800; letter-spacing: 0.12em; color: #C3372B; border: 2.5px solid #C3372B; border-radius: 4px; transform: rotate(-7deg); opacity: 0.9; box-shadow: inset 0 0 0 1.5px #F1EBDF, inset 0 0 0 4px rgba(195,55,43,0.5); }
-    .btnInk { background: #16140F; color: #F1EBDF; font-weight: 700; }
-    .btnLine { border: 1.5px solid #16140F; color: #16140F; font-weight: 700; box-sizing: border-box; }
-    @keyframes deal { from { opacity: 0; transform: translate(-50%, -46%) rotate(-1.2deg); } to { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); } }
+    body { margin: 0; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #F2F3F7; }
+    a { color: #8B93FF; } a:hover { color: #AEB4FF; }
+    .d { font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; }
+    .num { font-variant-numeric: tabular-nums; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1000px 520px at 70% 12%, #1a1d28 0%, rgba(26,29,40,0) 60%),
+      radial-gradient(700px 400px at 18% 78%, rgba(139,147,255,0.05) 0%, rgba(139,147,255,0) 60%),
+      linear-gradient(180deg, #101116 0%, #12131a 52%, #0b0c10 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.6) 100%); }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #5D616E; }
+    .field { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; height: 46px; display: flex; align-items: center; padding: 0 15px; box-sizing: border-box; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04); }
+    @keyframes pop { from { opacity: 0; transform: translate(-50%, -47%) scale(0.96); } to { opacity: 1; transform: translate(-50%, -50%) scale(1); } }
     @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes stampIn { 0% { opacity: 0; transform: scale(1.8) rotate(-16deg); } 60% { opacity: 1; transform: scale(0.95) rotate(-6deg); } 100% { opacity: 0.9; transform: scale(1) rotate(-7deg); } }
-    @keyframes caret { 0%, 100% { border-color: rgba(195,55,43,0.9); } 50% { border-color: rgba(195,55,43,0.25); } }
+    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    @keyframes caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0b0d;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0b0c10;">
   <div class="scene"></div>
   <div class="vig"></div>
 
-  <div class="card" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 486px; padding: 30px 36px 28px; box-sizing: border-box; animation: deal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
-    <div style="position: absolute; left: 16px; top: 16px; width: 12px; height: 12px; border-left: 1.5px solid #16140F; border-top: 1.5px solid #16140F;"></div>
-    <div style="position: absolute; right: 16px; top: 16px; width: 12px; height: 12px; border-right: 1.5px solid #16140F; border-top: 1.5px solid #16140F;"></div>
-    <div style="position: absolute; left: 16px; bottom: 16px; width: 12px; height: 12px; border-left: 1.5px solid #16140F; border-bottom: 1.5px solid #16140F;"></div>
-    <div style="position: absolute; right: 16px; bottom: 16px; width: 12px; height: 12px; border-right: 1.5px solid #16140F; border-bottom: 1.5px solid #16140F;"></div>
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 440px; background: rgba(23,24,30,0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; backdrop-filter: blur(28px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 34px 90px rgba(0,0,0,0.6); padding: 28px 30px 26px; box-sizing: border-box; animation: pop 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;">
 
-    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-      <div>
-        <div class="lab" style="color: #C3372B;">Los Santos DMV &middot; Form 12-B</div>
-        <div class="serif" style="font-size: 31px; line-height: 1.05; margin-top: 6px;">Vehicle <span style="font-style: italic;">Registration</span></div>
-      </div>
-      <span class="mono" style="font-size: 9px; color: #8A8478; text-align: right; line-height: 1.6;">FILE 12B-2148<br>08 / 22 / 26</span>
-    </div>
-    <div style="height: 2.5px; border-top: 1.5px solid #16140F; border-bottom: 1px solid #16140F; margin: 16px 0 18px;"></div>
-
-    <div class="rise" style="animation-delay: 0.15s;">
-      <div class="lab">Plate Assignment</div>
-      <div style="display: flex; gap: 5px; margin-top: 8px;">
-        <div class="cell">M</div><div class="cell">A</div><div class="cell">R</div><div class="cell">L</div><div class="cell">0</div><div class="cell">2</div>
-        <div class="cell" style="border-color: #C3372B; animation: caret 1.4s ease-in-out infinite; box-shadow: 2px 2px 0 rgba(195,55,43,0.3); color: #C3372B;">1</div>
-        <div class="cell" style="border-style: dashed; color: #8A8478;">&nbsp;</div>
-      </div>
-    </div>
-
-    <div class="rise" style="display: flex; gap: 26px; margin-top: 18px; animation-delay: 0.24s;">
-      <div style="flex: 1.4;">
-        <div class="lab">Registered Owner</div>
-        <div class="field" style="margin-top: 6px;">Ray Calderon</div>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <div style="width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(140deg, rgba(139,147,255,0.22), rgba(139,147,255,0.08)); border: 1px solid rgba(139,147,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#AEB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13.5M4 19.5a1.5 1.5 0 0 0 3 0M20 19.5a1.5 1.5 0 0 1-3 0M8 8h8M8 12h5"/></svg>
       </div>
       <div style="flex: 1;">
-        <div class="lab">Citizen Nº</div>
-        <div class="field" style="margin-top: 6px;">MRL&ndash;2148</div>
+        <div class="d" style="font-size: 18px; font-weight: 600; letter-spacing: -0.01em;">Vehicle registration</div>
+        <div style="font-size: 12px; color: #9CA0AE; margin-top: 3px; font-weight: 500;">Los Santos DMV &middot; takes about a minute</div>
+      </div>
+      <div style="width: 30px; height: 30px; border-radius: 10px; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center;">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9CA0AE" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </div>
     </div>
 
-    <div class="rise" style="margin-top: 18px; animation-delay: 0.33s;">
-      <div class="lab">Class &mdash; mark one</div>
-      <div style="display: flex; gap: 22px; margin-top: 9px; font-size: 13.5px; font-weight: 600;">
-        <span><span class="ballot" style="background: #16140F; box-shadow: inset 0 0 0 2.5px #F1EBDF;"></span>&nbsp; Civilian</span>
-        <span style="color: #57524A;"><span class="ballot"></span>&nbsp; Commercial</span>
-        <span style="color: #57524A;"><span class="ballot"></span>&nbsp; Emergency</span>
+    <div class="rise" style="margin-top: 22px; animation-delay: 0.12s;">
+      <div class="lab">Plate</div>
+      <div class="field" style="margin-top: 7px; border-color: rgba(139,147,255,0.5); box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 0 0 3px rgba(139,147,255,0.14);">
+        <span class="d num" style="font-size: 15px; font-weight: 600; letter-spacing: 0.14em;">NOVA 21</span>
+        <span style="width: 2px; height: 18px; background: #8B93FF; margin-left: 3px; border-radius: 1px; animation: caret 1.2s step-end infinite;"></span>
+        <span class="num" style="margin-left: auto; font-size: 11px; color: #5D616E; font-weight: 600;">7 / 8</span>
       </div>
     </div>
 
-    <div class="rise" style="margin-top: 18px; border: 1px solid #16140F; padding: 12px 15px; animation-delay: 0.42s;">
-      <div class="mono" style="display: flex; justify-content: space-between; font-size: 11.5px;"><span style="color: #57524A;">Registration fee</span><span>$800.00</span></div>
-      <div class="mono" style="display: flex; justify-content: space-between; font-size: 11.5px; margin-top: 5px;"><span style="color: #57524A;">Comprehensive insurance</span><span>$450.00</span></div>
-      <div style="border-top: 1.5px dashed rgba(22,20,15,0.45); margin: 9px 0;"></div>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span class="lab">Total Due</span>
-        <span class="serif" style="font-size: 24px;">$1,250<span style="font-size: 14px; color: #57524A;">.00</span></span>
+    <div class="rise" style="display: flex; gap: 12px; margin-top: 16px; animation-delay: 0.2s;">
+      <div style="flex: 1;">
+        <div class="lab">Owner</div>
+        <div class="field" style="margin-top: 7px;"><span style="font-size: 13.5px; color: #C6C9D4; font-weight: 600;">Ray Calderon</span></div>
+      </div>
+      <div style="width: 120px;">
+        <div class="lab">Citizen ID</div>
+        <div class="field num" style="margin-top: 7px;"><span style="font-size: 13px; color: #9CA0AE; font-weight: 600;">NV-2148</span></div>
       </div>
     </div>
 
-    <div class="rise" style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 18px; animation-delay: 0.5s;">
-      <div style="flex: 1; margin-right: 20px;">
-        <div class="serif" style="font-style: italic; font-size: 21px; color: #2F5E8F; transform: rotate(-3deg); padding-left: 8px;">R. Calderon</div>
-        <div style="border-top: 1px solid #16140F; margin-top: 2px;"></div>
-        <div class="lab" style="margin-top: 4px;">Signature of applicant</div>
+    <div class="rise" style="margin-top: 16px; animation-delay: 0.28s;">
+      <div class="lab">Class</div>
+      <div style="display: flex; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 4px; margin-top: 7px;">
+        <div style="flex: 1; text-align: center; padding: 8px 0; border-radius: 9px; background: rgba(139,147,255,0.16); box-shadow: inset 0 0 0 1px rgba(139,147,255,0.35); color: #DDE0FF; font-size: 12.5px; font-weight: 800;">Civilian</div>
+        <div style="flex: 1; text-align: center; padding: 8px 0; color: #9CA0AE; font-size: 12.5px; font-weight: 600;">Commercial</div>
+        <div style="flex: 1; text-align: center; padding: 8px 0; color: #9CA0AE; font-size: 12.5px; font-weight: 600;">Emergency</div>
       </div>
-      <span class="stamp" style="font-size: 13px; padding: 7px 13px; animation: stampIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.85s both;">PAY $1,250</span>
     </div>
 
-    <div class="rise" style="display: flex; gap: 10px; margin-top: 20px; animation-delay: 0.6s;">
-      <div class="btnLine" style="flex: 1; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 13px;">Discard</div>
-      <div class="btnInk" style="flex: 1.6; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: 0.04em;">File &amp; Pay &middot; [&#8629;]</div>
+    <div class="rise" style="display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding: 13px 15px; border-radius: 12px; background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.06); animation-delay: 0.36s;">
+      <div>
+        <div style="font-size: 12.5px; font-weight: 700; color: #C6C9D4;">Total due today</div>
+        <div style="font-size: 11px; color: #5D616E; margin-top: 2px; font-weight: 500;">Registration $800 &middot; Insurance $450</div>
+      </div>
+      <span class="d num" style="font-size: 21px; font-weight: 700;">$1,250</span>
+    </div>
+
+    <div class="rise" style="display: flex; gap: 10px; margin-top: 20px; animation-delay: 0.44s;">
+      <div style="flex: 1; height: 46px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); color: #C6C9D4; font-weight: 700; font-size: 13.5px; display: flex; align-items: center; justify-content: center;">Cancel</div>
+      <div style="flex: 1.6; height: 46px; border-radius: 12px; background: linear-gradient(140deg, #8B93FF, #6E6BFF); color: #0E0F14; font-weight: 800; font-size: 13.5px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 26px rgba(110,107,255,0.35), inset 0 1px 0 rgba(255,255,255,0.35);">Confirm &amp; pay</div>
     </div>
   </div>
 </div>

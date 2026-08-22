@@ -7,92 +7,104 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; color: #ECE6D9; }
-    a { color: #C3372B; } a:hover { color: #A32A1F; }
-    .serif { font-family: 'Instrument Serif', Georgia, serif; }
-    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
-    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 70% 16%, #1a1d22 0%, rgba(26,29,34,0) 60%), linear-gradient(180deg, #121317 0%, #14151a 52%, #0a0b0d 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.55) 100%); }
-    .slip { position: relative; width: 322px; background: linear-gradient(175deg, #F4EFE4 0%, #EDE6D6 100%); color: #16140F; box-shadow: 0 14px 36px rgba(0,0,0,0.55); padding: 12px 16px 10px 22px; box-sizing: border-box; }
-    .slip::after { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 0; border-left: 2px dashed rgba(22,20,15,0.35); }
-    .lab { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.16em; color: #8A8478; text-transform: uppercase; }
-    .edge { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
-    @keyframes slipIn { from { opacity: 0; transform: translateX(34px) rotate(1.2deg); } to { opacity: 1; transform: none; } }
-    .slipIn { opacity: 0; animation: slipIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    body { margin: 0; font-family: 'Manrope', 'Segoe UI', system-ui, sans-serif; color: #F2F3F7; }
+    a { color: #8B93FF; } a:hover { color: #AEB4FF; }
+    .d { font-family: 'Sora', 'Segoe UI', system-ui, sans-serif; }
+    .num { font-variant-numeric: tabular-nums; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1000px 520px at 70% 12%, #1a1d28 0%, rgba(26,29,40,0) 60%),
+      radial-gradient(700px 400px at 18% 78%, rgba(139,147,255,0.05) 0%, rgba(139,147,255,0) 60%),
+      linear-gradient(180deg, #101116 0%, #12131a 52%, #0b0c10 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%); }
+    .toast { position: relative; width: 330px; background: rgba(23,24,30,0.82); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; backdrop-filter: blur(24px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 16px 40px rgba(0,0,0,0.45); overflow: hidden; }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #5D616E; }
+    .key { font-size: 11px; font-weight: 800; padding: 4px 9px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(139,147,255,0.35); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 2px 0 rgba(0,0,0,0.35); color: #AEB4FF; }
+    @keyframes in { from { opacity: 0; transform: translateY(-12px) scale(0.98); } to { opacity: 1; transform: none; } }
+    .in { opacity: 0; animation: in 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
     @keyframes drain { to { transform: scaleX(0); } }
-    .drain { transform-origin: left center; animation: drain 9s linear 1.2s forwards; }
-    @keyframes printOut { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+    .drain { transform-origin: left center; animation: drain 8s linear 1.2s forwards; }
     @keyframes growW { from { width: 0; } }
-    @keyframes stampIn { 0% { opacity: 0; transform: scale(1.7) rotate(-14deg); } 60% { opacity: 1; transform: scale(0.96) rotate(-5deg); } 100% { opacity: 0.88; transform: scale(1) rotate(-6deg); } }
-    .stamp { display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 800; letter-spacing: 0.12em; color: #2E7D5B; border: 2px solid #2E7D5B; border-radius: 3px; transform: rotate(-6deg); opacity: 0.88; box-shadow: inset 0 0 0 1.5px #F1EBDF, inset 0 0 0 3px rgba(46,125,91,0.5); }
+    @keyframes ripple { 0% { box-shadow: 0 0 0 0 rgba(139,147,255,0.35); } 70% { box-shadow: 0 0 0 8px rgba(139,147,255,0); } 100% { box-shadow: 0 0 0 0 rgba(139,147,255,0); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0b0d;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0b0c10;">
   <div class="scene"></div>
   <div class="vig"></div>
 
-  <div style="position: absolute; top: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
-    <div class="slip slipIn">
-      <div class="edge" style="background: #2E7D5B;"></div>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span class="lab" style="color: #2E7D5B;">Fleeca &middot; Receipt</span>
-        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:42</span>
-      </div>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
-        <div>
-          <div class="serif" style="font-size: 17px;">Deposit complete</div>
-          <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">$2,500 to savings &middot; Nº 88121</div>
+  <div style="position: absolute; top: 24px; right: 26px; display: flex; flex-direction: column; gap: 10px;">
+    <div class="toast in">
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px 12px;">
+        <div style="width: 34px; height: 34px; border-radius: 11px; background: rgba(95,212,162,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5FD4A2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
         </div>
-        <span class="stamp" style="font-size: 9px; padding: 2.5px 6px; animation: stampIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;">PAID</span>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 13.5px; font-weight: 800;">Deposit complete</span>
+            <span class="num" style="font-size: 10px; color: #5D616E; font-weight: 700;">now</span>
+          </div>
+          <div style="font-size: 12px; color: #9CA0AE; margin-top: 2px; line-height: 1.5; font-weight: 500;">$2,500 moved to your savings.</div>
+        </div>
       </div>
-      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 72%; height: 100%; background: #2E7D5B;"></div></div>
+      <div style="height: 2.5px; margin: 0 16px 10px; border-radius: 2px; background: rgba(255,255,255,0.07); overflow: hidden;"><div class="drain" style="width: 72%; height: 100%; border-radius: 2px; background: #5FD4A2;"></div></div>
     </div>
 
-    <div class="slip slipIn" style="animation-delay: 0.12s;">
-      <div class="edge" style="background: #16140F;"></div>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span class="lab">Job Centre &middot; Telegram</span>
-        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:40</span>
+    <div class="toast in" style="animation-delay: 0.1s;">
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px 12px;">
+        <div style="width: 34px; height: 34px; border-radius: 11px; background: rgba(139,147,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#AEB4FF" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.2" width="19" height="11.8" rx="3"/><path d="M8.3 7.2V5.6a2.3 2.3 0 0 1 2.3-2.3h2.8a2.3 2.3 0 0 1 2.3 2.3v1.6M2.5 12.4h19"/></svg>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 13.5px; font-weight: 800;">New contract</span>
+            <span class="num" style="font-size: 10px; color: #5D616E; font-weight: 700;">2m</span>
+          </div>
+          <div style="font-size: 12px; color: #9CA0AE; margin-top: 2px; line-height: 1.5; font-weight: 500;">A delivery run was posted at the depot.</div>
+        </div>
       </div>
-      <div class="serif" style="font-size: 17px; margin-top: 6px;">New contract posted</div>
-      <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">Delivery run at the depot &mdash; STOP &mdash; enquire within</div>
-      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 45%; height: 100%; background: #16140F; animation-duration: 6s;"></div></div>
+      <div style="height: 2.5px; margin: 0 16px 10px; border-radius: 2px; background: rgba(255,255,255,0.07); overflow: hidden;"><div class="drain" style="width: 45%; height: 100%; border-radius: 2px; background: #8B93FF; animation-duration: 6s;"></div></div>
     </div>
 
-    <div class="slip slipIn" style="animation-delay: 0.24s; transform: none;">
-      <div class="edge" style="background: #C3372B;"></div>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span class="lab" style="color: #C3372B;">Notice &middot; Returned</span>
-        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:37</span>
+    <div class="toast in" style="animation-delay: 0.2s;">
+      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px 12px;">
+        <div style="width: 34px; height: 34px; border-radius: 11px; background: rgba(255,107,107,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF8A8A" stroke-width="2.4" stroke-linecap="round"><path d="M12 5.5v8M12 17.2v.5"/></svg>
+        </div>
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline;">
+            <span style="font-size: 13.5px; font-weight: 800;">Vehicle locked</span>
+            <span class="num" style="font-size: 10px; color: #5D616E; font-weight: 700;">5m</span>
+          </div>
+          <div style="font-size: 12px; color: #9CA0AE; margin-top: 2px; line-height: 1.5; font-weight: 500;">Find the keys or pick the lock.</div>
+        </div>
       </div>
-      <div class="serif" style="font-size: 17px; margin-top: 6px; color: #C3372B;">Vehicle is locked</div>
-      <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">Find the keys or force the lock.</div>
-      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 88%; height: 100%; background: #C3372B; animation-duration: 12s;"></div></div>
+      <div style="height: 2.5px; margin: 0 16px 10px; border-radius: 2px; background: rgba(255,255,255,0.07); overflow: hidden;"><div class="drain" style="width: 88%; height: 100%; border-radius: 2px; background: #FF8A8A; animation-duration: 11s;"></div></div>
     </div>
   </div>
 
-  <div class="slip slipIn" style="position: absolute; left: 470px; top: 384px; width: auto; padding: 9px 16px 9px 22px; display: flex; align-items: center; gap: 10px; animation-delay: 0.3s;">
-    <span class="mono" style="font-size: 12px; font-weight: 600; border: 1.5px solid #C3372B; color: #C3372B; padding: 2px 8px; background: #F7F2E8;">E</span>
-    <span class="serif" style="font-size: 16px;">Open Trunk</span>
+  <div class="rise" style="position: absolute; left: 478px; top: 386px; display: flex; align-items: center; gap: 10px; background: rgba(23,24,30,0.82); border: 1px solid rgba(255,255,255,0.07); border-radius: 999px; backdrop-filter: blur(24px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 12px 30px rgba(0,0,0,0.4); padding: 9px 16px 9px 10px; animation-delay: 0.3s;">
+    <span class="key" style="animation: ripple 2s ease-out infinite;">E</span>
+    <span style="font-size: 13px; font-weight: 700; color: #C6C9D4;">Open trunk</span>
   </div>
 
-  <div style="position: absolute; left: 50%; bottom: 56px; transform: translateX(-50%); width: 400px;">
-    <div style="position: relative; height: 14px; background: #16140F; border-radius: 2px; box-shadow: 0 8px 22px rgba(0,0,0,0.6); z-index: 2;"></div>
-    <div class="slip" style="width: 368px; margin: -4px auto 0; padding: 13px 18px 12px 24px; animation: printOut 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <span class="lab" style="color: #C3372B;">Work Order &middot; In Progress</span>
-        <span class="serif" style="font-size: 20px;">64<span style="font-size: 12px; color: #8A8478;">%</span></span>
+  <div class="rise" style="position: absolute; left: 50%; bottom: 60px; margin-left: -195px; width: 390px; background: rgba(23,24,30,0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; backdrop-filter: blur(26px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 50px rgba(0,0,0,0.5); padding: 16px 20px 15px; box-sizing: border-box; animation-delay: 0.2s;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 9px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#AEB4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 6L3 18v3h3l5.5-5.5a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.5-3.5z"/></svg>
+        <span style="font-size: 13px; font-weight: 800;">Repairing engine</span>
       </div>
-      <div class="serif" style="font-size: 18px; margin-top: 4px;">Repairing engine&hellip;</div>
-      <div style="margin-top: 9px; height: 8px; border: 1px solid #16140F; padding: 1.5px; box-sizing: border-box;">
-        <div style="width: 64%; height: 100%; background: repeating-linear-gradient(45deg, #C3372B 0 6px, rgba(195,55,43,0.35) 6px 10px); animation: growW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.5s both;"></div>
-      </div>
-      <div class="mono" style="display: flex; justify-content: space-between; font-size: 9px; color: #8A8478; margin-top: 7px;">
-        <span>[X] TEAR UP ORDER</span><span>~4S REMAINING</span>
-      </div>
+      <span class="d num" style="font-size: 16px; font-weight: 700; color: #AEB4FF;">64%</span>
+    </div>
+    <div style="margin-top: 12px; height: 6px; border-radius: 3px; background: rgba(255,255,255,0.08); overflow: hidden;">
+      <div style="width: 64%; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #8B93FF, #AEB4FF); box-shadow: 0 0 12px rgba(139,147,255,0.5); animation: growW 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; margin-top: 9px;">
+      <span style="font-size: 11px; color: #5D616E; font-weight: 600;">Press X to cancel</span>
+      <span class="num" style="font-size: 11px; color: #5D616E; font-weight: 700;">~4s left</span>
     </div>
   </div>
 </div>
