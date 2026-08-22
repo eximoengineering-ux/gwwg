@@ -1,54 +1,42 @@
-# The Marlow Papers — FiveM UI Direction
+# Nova — FiveM UI Direction (three)
 
-Design source for a full QBCore/QBox NUI redesign in an original direction:
-**a city that runs on paper.** No dark glass, no neon — every interface is a
-printed artifact on ivory stock, laid on a dark desk. The "Marlow RP"
-identity is a placeholder and easy to swap.
+Third design direction, per feedback: **modern 2026, elegant and balanced.**
+Soft charcoal surfaces, one calm accent, generous rounding, quiet motion.
+Four starter boards (HUD, garage menu, dialog, notifications); the full set
+of screens follows once the direction is approved. "Nova RP" is a
+placeholder identity.
 
 ## Design tokens
 
 | Token | Value | Use |
 |---|---|---|
-| Ivory | `#F1EBDF` (gradient `#F4EFE4 → #EDE6D6`) | card stock |
-| Bright stock | `#F7F2E8` | fields, tiles, inner paper |
-| Manila | `#E4DBC6` | folders, photo boxes |
-| Ink | `#16140F` | type, rules, solid buttons |
-| Ink soft / faded | `#57524A` / `#8A8478` | secondary / metadata |
-| Vermilion | `#C3372B` | the one live action, stamps, selection |
-| Ledger green | `#2E7D5B` | credit, success |
-| Brass | `#B07818` | caution, pins |
-| Duty blue | `#2F5E8F` | police, signatures |
-| Desk | `#101113 → #08090a` | dark world behind the paper |
+| Base | `#0b0c10` scene → `#101116` | world backdrop |
+| Surface | `rgba(23,24,30,0.78–0.85)` + 24–28px blur | panels |
+| Hairline | `rgba(255,255,255,0.07)` + inset top light `0.07` | borders |
+| Accent | `#8B93FF` (hover `#AEB4FF`, gradient → `#6E6BFF`) | the one live color |
+| Success / Danger / Warn / Aqua | `#5FD4A2` / `#FF6B6B` / `#FFC46B` / `#6BC8E8` | status |
+| Text | `#F2F3F7` / `#9CA0AE` / `#5D616E` | primary / secondary / muted |
 
-Typography: **Instrument Serif** (+italic — display, names, big numerals),
-**Archivo** (UI labels, buttons, 400–800), **IBM Plex Mono** (serials,
-plates, ledgers, keybinds). Paper grain: 1px dot pattern at 4.5% ink.
+Typography: **Sora** (display, 500–700, tight tracking) + **Manrope**
+(UI, 400–800); numerals always `font-variant-numeric: tabular-nums`.
+Radius scale: 999px capsules, 22px dialogs, 14–18px panels/rows,
+11–12px controls. Keycaps: rounded 7–8px with inset top light and a
+2px drop — real keyboard feel.
 
-## Signature motifs
+Motion: entrances fade + 12px rise + 0.98 scale on
+`cubic-bezier(0.22, 1, 0.36, 1)`; meters grow from zero; quiet loops only
+(breathing status dot, voice bars, keybind ripple, toast drain).
+Disabled under `prefers-reduced-motion`.
 
-- **Cards deal in** (translate + slight rotate), stamps **slam** at 1.7×
-  and settle crooked, meters draw inside 1px ink frames.
-- Punched **ticket notches** and dashed perforations; **luggage tags** with
-  pointed ends and punched holes; receipt **tear edges**.
-- **Crop marks** on focused documents; double ledger rules (1.5px + 1px);
-  dotted **leader lines** to prices; barcodes as striped gradients.
-- Serif italic index numerals (01, 02…) instead of icons where possible;
-  one vermilion action per surface.
-- Reduced motion disables everything.
+## Boards
 
-## Artboards
+- `Main.dc.html` — HUD: rounded minimap card, capsule status bar with
+  voice meter, wallet capsule, speed panel with gear and belt dot
+- `Menu.dc.html` — garage list with soft selection ring and meta meters
+- `Input.dc.html` — DMV dialog: focus-ring plate field, segmented class
+  control, total row, gradient primary button
+- `Notify.dc.html` — toast stack with timed drains, keybind ripple chip,
+  progress card
 
-Page 1 — Core & HUD: system specimen sheet; HUD (pocket-watch minimap,
-status ticket, receipt wallet, odometer digits); valet-board garage menu;
-DMV Form 12-B with ballot boxes and a signature; reticle + strung paper
-tags for qb-target; a **fanned card deck** for the radial menu; telegram
-slips, a keybind slip and a printing work order.
-
-Page 2 — Screens & Apps: passport cards with MRZ lines + dossier folder;
-folded survey map with wax-red pins; Marlow OS e-paper phone; pockets/trunk
-cargo manifests with hotbar stubs; Fleeca passbook with DR/CR ledger and
-side tabs; diner price list + printed register receipt; nightly census
-with tally marks; Benny's letterhead payroll; staff case files with a
-two-signature ban; tailor's pattern wardrobe with fabric swatches.
-
-NUI implementation follows once the direction is approved.
+Earlier directions (Ember, The Marlow Papers) live in git history and the
+canvas version picker.
