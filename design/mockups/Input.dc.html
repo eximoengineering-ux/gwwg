@@ -27,6 +27,7 @@
     .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes shimmer { from { background-position: -200px 0; } to { background-position: 260px 0; } }
     @keyframes cellPulse { 0%, 100% { box-shadow: 0 0 0 3px rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.6); } 50% { box-shadow: 0 0 0 6px rgba(255,122,31,0.06); border-color: rgba(255,122,31,0.9); } }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
@@ -40,6 +41,7 @@
 
   <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) perspective(1200px) rotateX(4deg); width: 464px; box-shadow: 0 34px 90px rgba(0,0,0,0.7); animation: pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
     <div style="position: absolute; left: 0; top: 0; right: 16px; height: 3px; background: linear-gradient(90deg, #FF7A1F 0%, #FFB56B 40%, #FF7A1F 80%); background-size: 200px 3px; background-repeat: repeat-x; animation: shimmer 3s linear infinite;"></div>
+    <div class="edgep" style="bottom: 0; left: 14px; right: 14px;"></div>
     <div style="position: absolute; top: 0; right: 0; width: 23px; height: 23px; overflow: hidden;"><div style="position: absolute; top: 10px; right: -6px; width: 34px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0), #FF7A1F); transform: rotate(45deg);"></div></div>
 
     <div style="padding: 26px 30px 28px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box;">

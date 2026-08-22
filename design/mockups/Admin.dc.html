@@ -27,6 +27,7 @@
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
     .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
@@ -36,6 +37,7 @@
 
   <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1000px; height: 500px; box-shadow: 0 40px 100px rgba(0,0,0,0.7); display: flex; overflow: hidden;">
     <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #F4544E, #FF7A1F, rgba(255,122,31,0));"></div>
+    <div class="edgep" style="bottom: 0; left: 14px; right: 14px;"></div>
 
     <div style="width: 208px; border-right: 1px solid rgba(255,255,255,0.06); padding: 20px 13px; box-sizing: border-box; background: rgba(10,9,8,0.5);">
       <div class="slideL" style="display: flex; align-items: center; gap: 10px; padding: 0 6px 16px;">

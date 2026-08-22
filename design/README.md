@@ -27,7 +27,10 @@ for the single active element.
 Signature motif — the **Ember Cut**: sharp-cornered glass panels with one
 16px sliced corner (`clip-path`), a 3px ember keyline on the active edge, a
 diagonal slash accent at the cut, and faint scanlines
-(`repeating-linear-gradient`, 1px/3px) in the glass. Gauges are 270° SVG
+(`repeating-linear-gradient`, 1px/3px) in the glass, and a woven **edge
+pattern** trimming key panel rims: a 5px strip of 45° ember hairlines
+(`repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, transparent
+2px 6px)`) that fades out at both ends via a mask. Gauges are 270° SVG
 rings (`pathLength` dasharray); status rings are 100-unit circles. Keycaps,
 pills and toggles stay rounded (5px/14px); panels stay sharp.
 

@@ -26,6 +26,7 @@
     .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.2s ease-in-out 1.2s infinite; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     @keyframes fillW { from { width: 0; } }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
@@ -48,10 +49,11 @@
 
     <div class="panel cut" style="flex: 1; padding: 20px 22px; box-sizing: border-box; backdrop-filter: blur(14px);">
       <div style="position: absolute; top: 0; right: 0; width: 23px; height: 23px; overflow: hidden;"><div style="position: absolute; top: 10px; right: -6px; width: 34px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0), #FF7A1F); transform: rotate(45deg);"></div></div>
+      <div class="edgep" style="bottom: 0; left: 10px; right: 24px;"></div>
       <div style="position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0)); animation: pulseGlow 2.6s ease-in-out infinite;"></div>
       <div class="label" style="color: #FFB56B;">Signature Motif</div>
       <div class="h" style="font-size: 17px; font-weight: 700; margin-top: 8px;">The Ember Cut</div>
-      <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.55; margin-top: 6px;">Sharp panels, one sliced corner, an ember keyline on the active edge, faint scanlines in the glass. Glow is rationed to live status and the single active element.</div>
+      <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.55; margin-top: 6px;">Sharp panels, one sliced corner, an ember keyline on the active edge, faint scanlines in the glass &mdash; and a woven ember pattern trimming key panel rims. Glow is rationed to live status and the single active element.</div>
       <div style="display: flex; gap: 10px; margin-top: 14px;">
         <span class="kb kbon">E</span><span class="kb">ESC</span><span class="kb">&#8593;&#8595;</span>
         <span style="font-size: 11.5px; color: #6B655F; align-self: center; font-weight: 500;">unified keycaps</span>
@@ -117,6 +119,7 @@
   <div class="rise" style="display: flex; flex-direction: column; gap: 10px; animation-delay: 0.32s;">
     <div class="label">Core Components</div>
     <div class="panel" style="padding: 20px 22px; box-sizing: border-box; display: flex; align-items: center; gap: 20px;">
+      <div class="edgep" style="top: 0; left: 12px; right: 12px;"></div>
       <div class="cut" style="position: relative; overflow: hidden; height: 46px; padding: 0 26px; background: linear-gradient(135deg, #FF7A1F, #E8540E); color: #17100A; font-weight: 700; font-size: 14px; display: flex; align-items: center; box-shadow: 0 8px 24px rgba(255,122,31,0.35); letter-spacing: 0.02em;">Confirm<div class="sheen"></div></div>
       <div style="height: 46px; padding: 0 24px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 14px; display: flex; align-items: center;">Cancel</div>
       <div style="display: flex; gap: 5px;">

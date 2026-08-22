@@ -31,6 +31,7 @@
     .eqb { transform-origin: center bottom; animation: eq 0.9s ease-in-out infinite; }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
@@ -46,6 +47,7 @@
 
   <div style="position: absolute; top: 18px; left: 50%; transform: translateX(-50%) perspective(1200px) rotateX(9deg); transform-origin: center top; width: 380px;">
     <div class="panel drop" style="height: 36px; overflow: hidden;">
+      <div class="edgep" style="bottom: 0; left: 10px; right: 10px;"></div>
       <div style="position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.14) 0 1px, rgba(0,0,0,0) 1px 21px); opacity: 0.5; margin: 9px 0; animation: ticksScroll 2.6s linear infinite;"></div>
       <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; background: #FF7A1F; transform: translateX(-50%); box-shadow: 0 0 10px rgba(255,122,31,0.8);"></div>
       <div class="h" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); font-size: 12px; font-weight: 700; color: #6B655F;">W</div>
@@ -127,6 +129,7 @@
 
   <div style="position: absolute; right: 24px; bottom: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; transform: perspective(1200px) rotateY(-7deg); transform-origin: right center;">
     <div class="panel rise" style="display: flex; align-items: center; gap: 10px; padding: 8px 14px; animation-delay: 0.12s;">
+      <div class="edgep" style="top: 0; left: 8px; right: 8px;"></div>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D9D4CE" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.6h17.4v4.1h-3.1l-.7 2.6a2 2 0 0 1-1.9 1.5h-2.9l1.1-4.1H8.9L7.6 16H4.7L6 11.7H3V7.6zM20.4 7.6l1.1-2.6M6.8 9.7h6.2"/></svg>
       <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; color: #D9D4CE;">COMBAT SMG</span>
       <span style="width: 1px; height: 13px; background: rgba(255,255,255,0.12);"></span>
