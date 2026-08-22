@@ -7,132 +7,71 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
-    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
-    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
-    .scene { position: absolute; inset: 0; background:
-      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
-      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
-      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.72) 100%); }
-    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
-    .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
-    @keyframes wheelIn { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: scale(1); } }
-    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    body { margin: 0; font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; color: #ECE6D9; }
+    a { color: #C3372B; } a:hover { color: #A32A1F; }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 70% 16%, #1a1d22 0%, rgba(26,29,34,0) 60%), linear-gradient(180deg, #121317 0%, #14151a 52%, #0a0b0d 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.68) 100%); }
+    .fcard { position: absolute; left: -62px; top: -218px; width: 124px; height: 174px; background: linear-gradient(175deg, #F4EFE4 0%, #EDE6D6 100%); color: #16140F; box-shadow: 0 14px 34px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(22,20,15,0.25); transform-origin: 62px 262px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border-radius: 3px; }
+    .fcard::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(22,20,15,0.22); border-radius: 2px; pointer-events: none; }
+    .flabel { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 15px; }
+    @keyframes fan0 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(-45deg); } }
+    @keyframes fan1 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(-27deg); } }
+    @keyframes fan2 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(-9deg); } }
+    @keyframes fan3 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(9deg) translateY(-26px); } }
+    @keyframes fan4 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(27deg); } }
+    @keyframes fan5 { from { opacity: 0; transform: rotate(0deg) translateY(30px); } to { opacity: 1; transform: rotate(45deg); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
     .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes sweepArc { from { stroke-dasharray: 0 360; } }
-    @keyframes dashcrawl { to { stroke-dashoffset: -50; } }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .orbit { transform-origin: 230px 230px; animation: spin 36s linear infinite; }
-    .orbit2 { transform-origin: 230px 230px; animation: spin 60s linear infinite reverse; }
-    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
-    @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
-    @keyframes ambient { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    @keyframes pinIn { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: scale(1); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0b0d;">
   <div class="scene"></div>
-  <svg style="position: absolute; left: 0; bottom: 0; opacity: 0.55;" width="1280" height="210" viewBox="0 0 1280 210" preserveAspectRatio="none">
-    <polygon points="0,210 0,120 60,120 60,88 130,88 130,132 210,132 210,70 236,70 236,52 262,52 262,118 360,118 360,96 430,96 430,140 520,140 520,108 570,108 570,60 590,44 610,60 610,124 720,124 720,92 800,92 800,136 880,136 880,78 940,78 940,116 1040,116 1040,90 1120,90 1120,128 1200,128 1200,102 1280,102 1280,210" fill="#0c0e13"/>
-    <polygon points="0,210 0,160 90,160 90,142 180,142 180,168 300,168 300,150 420,150 420,176 560,176 560,154 700,154 700,170 840,170 840,148 980,148 980,172 1120,172 1120,156 1280,156 1280,210" fill="#08090d"/>
-  </svg>
   <div class="vig"></div>
 
-  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 640px; height: 320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,122,31,0.1), rgba(255,122,31,0)); filter: blur(30px); animation: ambient 5s ease-in-out infinite;"></div>
-
-  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px;">
-    <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px; animation: wheelIn 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
-      <defs>
-        <linearGradient id="emberSeg" x1="1" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#FFB56B"/>
-          <stop offset="0.5" stop-color="#FF7A1F"/>
-          <stop offset="1" stop-color="#E8540E"/>
-        </linearGradient>
-        <linearGradient id="hubGrad" x1="0" y1="0" x2="0.6" y2="1">
-          <stop offset="0" stop-color="#1a1713" stop-opacity="0.96"/>
-          <stop offset="1" stop-color="#0e0c0a" stop-opacity="0.94"/>
-        </linearGradient>
-        <filter id="segGlow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="0" stdDeviation="9" flood-color="#FF7A1F" flood-opacity="0.5"/>
-        </filter>
-      </defs>
-
-      <circle cx="230" cy="230" r="204" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-dasharray="1.5 11" style="animation: dashcrawl 6s linear infinite;"/>
-      <g class="orbit">
-        <circle cx="230" cy="26" r="2.6" fill="#FF7A1F" opacity="0.85"/>
-        <circle cx="434" cy="230" r="1.8" fill="#FFB56B" opacity="0.5"/>
-      </g>
-      <g class="orbit2">
-        <circle cx="230" cy="434" r="1.6" fill="#FFB56B" opacity="0.4"/>
-      </g>
-
-      <g transform="translate(20, 20)">
-      <circle cx="210" cy="210" r="182" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-      <circle cx="210" cy="210" r="118" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="62" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(-78 210 210)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(26,22,18,0.92)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(-78 210 210)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.1s both;"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="url(#emberSeg)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(-18 210 210)" filter="url(#segGlow)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.16s both;"/>
-      <circle cx="210" cy="210" r="186" fill="none" stroke="#FFB56B" stroke-width="2" pathLength="360" stroke-dasharray="40 320" stroke-linecap="round" transform="rotate(-20 210 210)" style="filter: drop-shadow(0 0 5px rgba(255,181,107,0.7)); animation: pulseGlow 2.4s ease-in-out infinite;"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="62" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(42 210 210)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(26,22,18,0.92)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(42 210 210)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.22s both;"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="62" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(102 210 210)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(26,22,18,0.92)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(102 210 210)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.28s both;"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="62" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(162 210 210)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(26,22,18,0.92)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(162 210 210)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.34s both;"/>
-
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="62" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(222 210 210)"/>
-      <circle cx="210" cy="210" r="150" fill="none" stroke="rgba(26,22,18,0.92)" stroke-width="58" pathLength="360" stroke-dasharray="36 324" stroke-linecap="round" transform="rotate(222 210 210)" style="animation: sweepArc 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) 0.4s both;"/>
-
-      <g transform="translate(274, 69.1)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="5.5" y="1.5" width="11" height="19" rx="2.8"/><path d="M9.3 4.6h3.4M11 17.2v.01"/>
-      </g>
-      <g transform="translate(348, 198)" stroke="#17100A" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/>
-      </g>
-      <g transform="translate(274, 328.9)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="6.8" r="3.8"/><path d="M3.2 20.4a7.8 7.8 0 0 1 15.6 0"/>
-      </g>
-      <g transform="translate(124, 328.9)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2.5" y="7.2" width="17" height="11.8" rx="2"/><path d="M7.8 7.2V5.6a2.3 2.3 0 0 1 2.3-2.3h1.8a2.3 2.3 0 0 1 2.3 2.3v1.6M2.5 12.4h17M11 11.2v2.5"/>
-      </g>
-      <g transform="translate(49, 199)" stroke="#D9D4CE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M15.5 3.5l3 3-11 11-4 1 1-4 11-11zM12.5 6.5l3 3M13.5 20.5h6.5"/>
-      </g>
-      <g transform="translate(123, 68.1)" stroke="#D9D4CE" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>
-      </g>
-
-      <g style="transform-box: fill-box; transform-origin: center; animation: breathe 4s ease-in-out infinite;">
-        <circle cx="210" cy="210" r="68" fill="url(#hubGrad)" stroke="rgba(255,122,31,0.35)" stroke-width="1"/>
-        <circle cx="210" cy="210" r="58" fill="none" stroke="rgba(255,181,107,0.25)" stroke-width="1.2" stroke-dasharray="2 8" style="animation: dashcrawl 8s linear infinite;"/>
-      </g>
-
-      <g transform="translate(192.5, 172.5) scale(1.46)" stroke="#FFB56B" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/>
-      </g>
-      </g>
-    </svg>
-
-    <div style="position: absolute; left: 50%; top: 230px; transform: translateX(-50%); text-align: center;">
-      <div class="rise" style="animation-delay: 0.35s;">
-        <div class="h" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">VEHICLE</div>
-        <div style="font-size: 10px; color: #6B655F; margin-top: 2px; white-space: nowrap;">6 actions</div>
+  <div style="position: absolute; left: 50%; top: 61%; width: 0; height: 0;">
+    <div class="fcard" style="opacity: 0; animation: fan0 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.05s forwards;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16140F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span class="flabel">Settings</span>
+    </div>
+    <div class="fcard" style="opacity: 0; animation: fan1 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.12s forwards;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16140F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3.5l3 3-11 11-4 1 1-4 11-11zM12.5 6.5l3 3M13.5 20.5h6.5"/></svg>
+      <span class="flabel">Edit</span>
+    </div>
+    <div class="fcard" style="opacity: 0; animation: fan2 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.19s forwards;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16140F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M9.3 4.6h3.4M11 17.2v.01"/></svg>
+      <span class="flabel">Phone</span>
+    </div>
+    <div class="fcard" style="opacity: 0; box-shadow: 0 0 0 2.5px #C3372B, 0 22px 48px rgba(0,0,0,0.6); animation: fan3 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.26s forwards;">
+      <div class="mono" style="position: absolute; top: 9px; right: 11px; font-size: 8.5px; color: #C3372B; font-weight: 600;">04/06</div>
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#C3372B" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0M9.6 17.4h4.8"/></svg>
+      <span class="flabel" style="font-size: 18px; color: #C3372B;">Vehicle</span>
+      <div style="position: absolute; bottom: 10px; left: 14px; right: 14px; border-top: 1.5px dashed rgba(195,55,43,0.5); padding-top: 5px; text-align: center;">
+        <span class="mono" style="font-size: 8px; color: #57524A; letter-spacing: 0.14em;">6 ACTIONS</span>
       </div>
+    </div>
+    <div class="fcard" style="opacity: 0; animation: fan4 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.33s forwards;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16140F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.3" r="3.8"/><path d="M4.2 21a7.8 7.8 0 0 1 15.6 0"/></svg>
+      <span class="flabel">Citizen</span>
+    </div>
+    <div class="fcard" style="opacity: 0; animation: fan5 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16140F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7.2" width="19" height="11.8" rx="2"/><path d="M8.3 7.2V5.6a2.3 2.3 0 0 1 2.3-2.3h2.8a2.3 2.3 0 0 1 2.3 2.3v1.6M2.5 12.4h19M12 11.2v2.5"/></svg>
+      <span class="flabel">Job</span>
+    </div>
+
+    <div style="position: absolute; left: -13px; top: 31px; width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #D9A94E, #B07818 55%, #7A5310); box-shadow: 0 4px 12px rgba(0,0,0,0.6), inset 0 1px 2px rgba(255,255,255,0.4); animation: pinIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;">
+      <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 7px; height: 7px; border-radius: 50%; background: #4a3208;"></div>
     </div>
   </div>
 
-  <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); display: flex; gap: 14px;">
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">F1</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Hold to open</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb kbon">LMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Select</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">RMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Back</span></div>
+  <div class="rise" style="position: absolute; left: 0; right: 0; top: 76%; text-align: center; animation-delay: 0.55s;">
+    <div class="serif" style="font-size: 24px; color: #EDE6D6;">Vehicle <span style="font-style: italic; color: #C3372B;">actions</span></div>
+    <div class="mono" style="font-size: 9.5px; color: #8A8478; margin-top: 6px; letter-spacing: 0.14em;">[F1] HOLD &middot; [LMB] DRAW CARD &middot; [RMB] BACK</div>
   </div>
 </div>
 </x-dc>

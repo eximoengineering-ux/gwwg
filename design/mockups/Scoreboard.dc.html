@@ -7,97 +7,95 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
-    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
-    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
-    .scene { position: absolute; inset: 0; background:
-      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
-      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.7) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
-    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
-    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
-    .jchip { display: flex; align-items: center; gap: 8px; padding: 8px 13px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
-    .row { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.045); }
-    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes slideR { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    body { margin: 0; font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; color: #ECE6D9; }
+    a { color: #C3372B; } a:hover { color: #A32A1F; }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 70% 16%, #1a1d22 0%, rgba(26,29,34,0) 60%), linear-gradient(180deg, #121317 0%, #14151a 52%, #0a0b0d 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.66) 100%); }
+    .card { position: relative; background: linear-gradient(175deg, #F4EFE4 0%, #EDE6D6 100%); color: #16140F; box-shadow: 0 30px 80px rgba(0,0,0,0.7); }
+    .card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(rgba(22,20,15,0.045) 1px, transparent 1px); background-size: 5px 5px; }
+    .lab { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.16em; color: #8A8478; text-transform: uppercase; }
+    .tally { display: inline-flex; align-items: flex-end; gap: 2px; height: 15px; }
+    .tally i { display: block; width: 2px; height: 14px; background: #16140F; }
+    .tally .x { width: 18px; height: 14px; position: relative; margin-left: -20px; }
+    .tally .x::after { content: ""; position: absolute; left: -1px; top: 6px; width: 20px; height: 2px; background: #C3372B; transform: rotate(-24deg); }
+    .prow { display: flex; align-items: center; gap: 14px; padding: 9px 4px; border-bottom: 1px solid rgba(22,20,15,0.18); }
+    @keyframes deal { from { opacity: 0; transform: translate(-50%, -46%) rotate(-1deg); } to { opacity: 1; transform: translate(-50%, -50%); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .rise { opacity: 0; animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0b0d;">
   <div class="scene"></div>
   <div class="vig"></div>
 
-  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 880px; box-shadow: 0 40px 100px rgba(0,0,0,0.7);">
-    <div style="position: absolute; left: 0; top: 0; right: 14px; height: 3px; background: linear-gradient(90deg, #FF7A1F, #FFB56B, rgba(255,181,107,0));"></div>
-
-    <div class="rise" style="display: flex; align-items: center; justify-content: space-between; padding: 22px 26px 0;">
-      <div style="display: flex; align-items: center; gap: 13px;">
-        <div class="cut" style="width: 38px; height: 38px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.5c3.2 3 5.5 5.9 5.5 9.4 0 3.4-2.5 5.9-5.5 5.9s-5.5-2.5-5.5-5.9c0-3.5 2.3-6.4 5.5-9.4z" fill="#0C0B0A"/><path d="M12 10c1.4 1.4 2.3 2.6 2.3 4.1 0 1.5-1 2.6-2.3 2.6s-2.3-1.1-2.3-2.6c0-1.5.9-2.7 2.3-4.1z" fill="#FF7A1F"/></svg>
-        </div>
-        <div>
-          <div class="h" style="font-size: 17px; font-weight: 700;">EMBER RP <span style="color: #6B655F; font-size: 12px; font-weight: 600;">&middot; Scoreboard</span></div>
-          <div style="font-size: 11px; color: #A8A29C; margin-top: 2px;">Server 1 &middot; Tsunami in <span class="h" style="color: #FFB56B; font-weight: 700;">04:12:30</span></div>
-        </div>
+  <div class="card" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 860px; padding: 28px 38px 22px; box-sizing: border-box; animation: deal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <div class="lab" style="color: #C3372B;">Marlow RP &middot; Nightly Census</div>
+        <div class="serif" style="font-size: 33px; line-height: 1; margin-top: 6px;">City Register</div>
       </div>
-      <div style="display: flex; align-items: center; gap: 9px;">
-        <span style="width: 7px; height: 7px; border-radius: 50%; background: #42D392; box-shadow: 0 0 8px rgba(66,211,146,0.9); animation: pulseGlow 2s ease-in-out infinite;"></span>
-        <span class="h" style="font-size: 16px; font-weight: 700;">128<span style="color: #6B655F; font-size: 12px;"> / 200</span></span>
+      <div style="text-align: right;">
+        <div class="serif" style="font-size: 27px;">128<span style="font-size: 15px; color: #8A8478;"> / 200 souls</span></div>
+        <div class="mono" style="font-size: 9px; color: #57524A; margin-top: 3px;">TIDE RETURNS IN 04:12:30</div>
+      </div>
+    </div>
+    <div style="height: 2.5px; border-top: 1.5px solid #16140F; border-bottom: 1px solid #16140F; margin: 15px 0 0;"></div>
+
+    <div class="rise" style="display: flex; gap: 30px; margin-top: 14px; align-items: center; animation-delay: 0.12s;">
+      <div style="display: flex; align-items: center; gap: 10px;"><span class="lab">Police</span><span class="tally"><i></i><i></i><i></i><i></i><span class="x"></span><i></i><i></i><i></i><i></i><span class="x"></span><i></i><i></i></span><span class="mono" style="font-size: 10.5px; font-weight: 600;">12</span></div>
+      <div style="display: flex; align-items: center; gap: 10px;"><span class="lab">EMS</span><span class="tally"><i></i><i></i><i></i><i></i><span class="x"></span><i></i></span><span class="mono" style="font-size: 10.5px; font-weight: 600;">6</span></div>
+      <div style="display: flex; align-items: center; gap: 10px;"><span class="lab">Mechanics</span><span class="tally"><i></i><i></i><i></i><i></i><span class="x"></span><i></i><i></i><i></i><i></i></span><span class="mono" style="font-size: 10.5px; font-weight: 600;">9</span></div>
+      <div style="display: flex; align-items: center; gap: 10px;"><span class="lab">Taxi</span><span class="tally"><i></i><i></i><i></i></span><span class="mono" style="font-size: 10.5px; font-weight: 600;">3</span></div>
+      <div class="mono" style="margin-left: auto; font-size: 9.5px; color: #57524A;">STAFF ON WATCH: <span style="color: #16140F; font-weight: 600;">4</span></div>
+    </div>
+
+    <div style="margin-top: 14px; border: 1.5px solid #16140F;">
+      <div class="prow" style="background: #16140F; border-bottom: none; padding: 8px 16px;">
+        <span class="lab" style="width: 46px; color: #8A8478;">Nº</span>
+        <span class="lab" style="flex: 1; color: #F1EBDF;">Resident</span>
+        <span class="lab" style="width: 160px; color: #F1EBDF;">Occupation</span>
+        <span class="lab" style="width: 56px; text-align: right; color: #8A8478;">Wire</span>
+      </div>
+      <div class="prow rise" style="padding: 9px 16px; animation-delay: 0.2s;">
+        <span class="mono" style="width: 46px; font-size: 11px; color: #8A8478;">012</span>
+        <span class="serif" style="flex: 1; font-size: 17px;">Marcus Webb</span>
+        <span class="mono" style="width: 160px; font-size: 10px; color: #2F5E8F; font-weight: 600;">POLICE &middot; SGT</span>
+        <span class="mono" style="width: 56px; text-align: right; font-size: 10.5px; color: #2E7D5B; font-weight: 600;">32</span>
+      </div>
+      <div class="prow rise" style="padding: 9px 13px 9px 16px; background: rgba(195,55,43,0.08); border-left: 3px solid #C3372B; animation-delay: 0.27s;">
+        <span class="mono" style="width: 46px; font-size: 11px; color: #C3372B; font-weight: 600;">214</span>
+        <span style="flex: 1; display: flex; align-items: baseline; gap: 10px;"><span class="serif" style="font-size: 17px;">Ray Calderon</span><span class="serif" style="font-style: italic; font-size: 12px; color: #C3372B;">&mdash; that's you</span></span>
+        <span class="mono" style="width: 160px; font-size: 10px; color: #16140F; font-weight: 600;">MECHANIC &middot; G3</span>
+        <span class="mono" style="width: 56px; text-align: right; font-size: 10.5px; color: #2E7D5B; font-weight: 600;">28</span>
+      </div>
+      <div class="prow rise" style="padding: 9px 16px; animation-delay: 0.34s;">
+        <span class="mono" style="width: 46px; font-size: 11px; color: #8A8478;">087</span>
+        <span class="serif" style="flex: 1; font-size: 17px;">Mia Vasquez</span>
+        <span class="mono" style="width: 160px; font-size: 10px; color: #2E7D5B; font-weight: 600;">EMS &middot; PARAMEDIC</span>
+        <span class="mono" style="width: 56px; text-align: right; font-size: 10.5px; color: #2E7D5B; font-weight: 600;">45</span>
+      </div>
+      <div class="prow rise" style="padding: 9px 16px; animation-delay: 0.41s;">
+        <span class="mono" style="width: 46px; font-size: 11px; color: #8A8478;">156</span>
+        <span class="serif" style="flex: 1; font-size: 17px;">Dexter Cole</span>
+        <span class="mono" style="width: 160px; font-size: 10px; color: #57524A; font-weight: 600;">CIVILIAN</span>
+        <span class="mono" style="width: 56px; text-align: right; font-size: 10.5px; color: #B07818; font-weight: 600;">96</span>
+      </div>
+      <div class="prow rise" style="padding: 9px 16px; border-bottom: none; animation-delay: 0.48s;">
+        <span class="mono" style="width: 46px; font-size: 11px; color: #8A8478;">203</span>
+        <span class="serif" style="flex: 1; font-size: 17px;">Lena Ortiz</span>
+        <span class="mono" style="width: 160px; font-size: 10px; color: #B07818; font-weight: 600;">TAXI</span>
+        <span class="mono" style="width: 56px; text-align: right; font-size: 10.5px; color: #C3372B; font-weight: 600;">180</span>
       </div>
     </div>
 
-    <div class="rise" style="display: flex; gap: 8px; padding: 16px 26px 0; animation-delay: 0.1s;">
-      <div class="jchip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 7.6-8 9-4.6-1.4-8-4.5-8-9V6l8-3z"/></svg><span style="font-size: 11.5px; font-weight: 600; color: #D9D4CE;">Police</span><span class="h" style="font-size: 11.5px; font-weight: 700; color: #4C9EEB;">12</span></div>
-      <div class="jchip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="7" width="17" height="12" rx="2"/><path d="M12 10v6M9 13h6"/></svg><span style="font-size: 11.5px; font-weight: 600; color: #D9D4CE;">EMS</span><span class="h" style="font-size: 11.5px; font-weight: 700; color: #42D392;">6</span></div>
-      <div class="jchip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7V5a2 2 0 0 0-2-2h0a2 2 0 0 0-2 2v2M4 7h16l-1.2 12.5a2 2 0 0 1-2 1.5H7.2a2 2 0 0 1-2-1.5L4 7z"/></svg><span style="font-size: 11.5px; font-weight: 600; color: #D9D4CE;">Mechanic</span><span class="h" style="font-size: 11.5px; font-weight: 700; color: #FFB56B;">9</span></div>
-      <div class="jchip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2.6 13.1l1.7-4.4a2.2 2.2 0 0 1 2.1-1.4h11.2a2.2 2.2 0 0 1 2.1 1.4l1.7 4.4M2.2 13.1h19.6a.9.9 0 0 1 .9.9v3.1h-2.5M1.3 14v3.1h2.5M6.9 17.4a1.85 1.85 0 1 0 .01 0M17.1 17.4a1.85 1.85 0 1 0 .01 0"/></svg><span style="font-size: 11.5px; font-weight: 600; color: #D9D4CE;">Taxi</span><span class="h" style="font-size: 11.5px; font-weight: 700; color: #E8B04B;">3</span></div>
-      <div class="jchip" style="margin-left: auto;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 4.2a3.4 3.4 0 0 1 0 6.6M21.5 20a6.5 6.5 0 0 0-4.5-6.2"/></svg><span style="font-size: 11.5px; font-weight: 600; color: #D9D4CE;">Staff online</span><span class="h" style="font-size: 11.5px; font-weight: 700; color: #B98CF0;">4</span></div>
-    </div>
-
-    <div style="margin: 16px 26px 22px; border: 1px solid rgba(255,255,255,0.06);">
-      <div class="row" style="background: rgba(10,9,8,0.5); border-bottom-color: rgba(255,255,255,0.08);">
-        <span class="lab" style="width: 44px;">ID</span>
-        <span class="lab" style="flex: 1;">Player</span>
-        <span class="lab" style="width: 130px;">Job</span>
-        <span class="lab" style="width: 60px; text-align: right;">Ping</span>
-      </div>
-      <div class="row slideR" style="animation-delay: 0.15s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">12</span>
-        <span style="flex: 1; font-size: 13px; font-weight: 600;">Marcus Webb</span>
-        <span style="width: 130px; font-size: 12px; color: #4C9EEB; font-weight: 600;">Police &middot; Sgt</span>
-        <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">32</span>
-      </div>
-      <div class="row" style="background: rgba(255,122,31,0.07); border-left: 3px solid #FF7A1F; opacity: 0; animation: slideR 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s forwards;">
-        <span class="h" style="width: 41px; font-size: 12.5px; font-weight: 700; color: #FFB56B;">214</span>
-        <span style="flex: 1; font-size: 13px; font-weight: 700; color: #FFFFFF;">Ray Calderon <span style="font-size: 10px; color: #FFB56B; font-weight: 700; letter-spacing: 0.1em; margin-left: 6px;">YOU</span></span>
-        <span style="width: 130px; font-size: 12px; color: #FFB56B; font-weight: 600;">Mechanic &middot; G3</span>
-        <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">28</span>
-      </div>
-      <div class="row slideR" style="animation-delay: 0.29s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">87</span>
-        <span style="flex: 1; font-size: 13px; font-weight: 600;">Mia Vasquez</span>
-        <span style="width: 130px; font-size: 12px; color: #42D392; font-weight: 600;">EMS &middot; Paramedic</span>
-        <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">45</span>
-      </div>
-      <div class="row slideR" style="animation-delay: 0.36s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">156</span>
-        <span style="flex: 1; font-size: 13px; font-weight: 600;">Dexter Cole</span>
-        <span style="width: 130px; font-size: 12px; color: #A8A29C; font-weight: 600;">Civilian</span>
-        <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #E8B04B;">96</span>
-      </div>
-      <div class="row slideR" style="border-bottom: none; animation-delay: 0.43s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">203</span>
-        <span style="flex: 1; font-size: 13px; font-weight: 600;">Lena Ortiz</span>
-        <span style="width: 130px; font-size: 12px; color: #E8B04B; font-weight: 600;">Taxi</span>
-        <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #F4544E;">180</span>
-      </div>
+    <div class="rise mono" style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 8.5px; color: #8A8478; letter-spacing: 0.16em; animation-delay: 0.55s;">
+      <span>SHOWING 5 OF 128 &middot; [&#8593;&#8595;] SCROLL</span>
+      <span>WIRE = PING, LOWER IS BETTER</span>
     </div>
   </div>
 </div>

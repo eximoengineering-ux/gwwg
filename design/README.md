@@ -1,71 +1,54 @@
-# Ember RP — QBCore UI Redesign
+# The Marlow Papers — FiveM UI Direction
 
-Design source for a full QBCore/QBox NUI redesign. Dark modern style: near-black
-backgrounds, ember-orange accent, balanced glassmorphism. English UI.
-The "Ember RP" identity (name + flame mark) is a placeholder and easy to swap.
+Design source for a full QBCore/QBox NUI redesign in an original direction:
+**a city that runs on paper.** No dark glass, no neon — every interface is a
+printed artifact on ivory stock, laid on a dark desk. The "Marlow RP"
+identity is a placeholder and easy to swap.
 
 ## Design tokens
 
 | Token | Value | Use |
 |---|---|---|
-| Abyss | `#0C0B0A` | base background |
-| Coal | `#171512` | raised background |
-| Surface | `rgba(21,19,16,0.85)` + 14px blur | glass panels |
-| Hairline | `rgba(255,255,255,0.08)` | borders |
-| Ember | `#FF7A1F` | accent, active states |
-| Flare | `#FFB56B` | accent highlight |
-| Text | `#F5F1EC` / `#A8A29C` / `#6B655F` | primary / secondary / muted |
-| Mint / Coral / Sky | `#42D392` / `#F4544E` / `#4C9EEB` | success / error / info |
-| Amber / Cyan | `#E8B04B` / `#45C8D8` | hunger, fuel / thirst, oxygen |
-| Violet | `#B98CF0` | stamina / stress |
-| Scene | `#0e1119 → #131620 → #0a0c11` | in-game backdrop gradient (not a UI surface) |
+| Ivory | `#F1EBDF` (gradient `#F4EFE4 → #EDE6D6`) | card stock |
+| Bright stock | `#F7F2E8` | fields, tiles, inner paper |
+| Manila | `#E4DBC6` | folders, photo boxes |
+| Ink | `#16140F` | type, rules, solid buttons |
+| Ink soft / faded | `#57524A` / `#8A8478` | secondary / metadata |
+| Vermilion | `#C3372B` | the one live action, stamps, selection |
+| Ledger green | `#2E7D5B` | credit, success |
+| Brass | `#B07818` | caution, pins |
+| Duty blue | `#2F5E8F` | police, signatures |
+| Desk | `#101113 → #08090a` | dark world behind the paper |
 
-Typography: **Space Grotesk** (display, headings, numbers) + **Instrument Sans**
-(body, UI text). Accent gradient: `#FF7A1F → #E8540E` (135deg). Glow reserved
-for the single active element.
+Typography: **Instrument Serif** (+italic — display, names, big numerals),
+**Archivo** (UI labels, buttons, 400–800), **IBM Plex Mono** (serials,
+plates, ledgers, keybinds). Paper grain: 1px dot pattern at 4.5% ink.
 
-Signature motif — the **Ember Cut**: sharp-cornered glass panels with one
-16px sliced corner (`clip-path`), a 3px ember keyline on the active edge, a
-diagonal slash accent at the cut, and faint scanlines
-(`repeating-linear-gradient`, 1px/3px) in the glass. Gauges are 270° SVG
-rings (`pathLength` dasharray); status rings are 100-unit circles. Keycaps,
-pills and toggles stay rounded (5px/14px); panels stay sharp.
+## Signature motifs
 
-Motion language: staggered entrances (fade + 28–36px translate, 0.5–0.65s,
-`cubic-bezier(0.2, 0.8, 0.2, 1)`, 80–120ms stagger); gauges and status rings
-sweep in by animating `stroke-dasharray`; bars fill from zero. Ambient loops
-(compass tick scroll, voice EQ, glow pulses, sheen sweeps, dash crawl, toast
-drain, progressbar stripe scroll) cycle in 0.9–5s. Everything is disabled
-under `prefers-reduced-motion: reduce`.
+- **Cards deal in** (translate + slight rotate), stamps **slam** at 1.7×
+  and settle crooked, meters draw inside 1px ink frames.
+- Punched **ticket notches** and dashed perforations; **luggage tags** with
+  pointed ends and punched holes; receipt **tear edges**.
+- **Crop marks** on focused documents; double ledger rules (1.5px + 1px);
+  dotted **leader lines** to prices; barcodes as striped gradients.
+- Serif italic index numerals (01, 02…) instead of icons where possible;
+  one vermilion action per surface.
+- Reduced motion disables everything.
 
-Inward tilt: edge-anchored panels lean toward screen center with
-`transform: perspective(1200px) rotateY(±6–8deg)` (origin on the screen-edge
-side); bottom/center panels use `rotateX(4–6deg)` instead.
+## Artboards
 
-## Mockups (batch 1)
+Page 1 — Core & HUD: system specimen sheet; HUD (pocket-watch minimap,
+status ticket, receipt wallet, odometer digits); valet-board garage menu;
+DMV Form 12-B with ballot boxes and a signature; reticle + strung paper
+tags for qb-target; a **fanned card deck** for the radial menu; telegram
+slips, a keybind slip and a printing work order.
 
-`design/mockups/` holds the artboard sources (`*.dc.html` + `canvas.json`)
-for the shared design canvas:
+Page 2 — Screens & Apps: passport cards with MRZ lines + dossier folder;
+folded survey map with wax-red pins; Marlow OS e-paper phone; pockets/trunk
+cargo manifests with hotbar stubs; Fleeca passbook with DR/CR ledger and
+side tabs; diner price list + printed register receipt; nightly census
+with tally marks; Benny's letterhead payroll; staff case files with a
+two-signature ban; tailor's pattern wardrobe with fabric swatches.
 
-- `Main.dc.html` — brand & design-system board
-- `HUD.dc.html` — status rings, minimap, money, speedometer
-- `Menu.dc.html` — qb-menu context menu
-- `Input.dc.html` — qb-input form dialog
-- `Target.dc.html` — qb-target third-eye options
-- `Radial.dc.html` — qb-radialmenu
-- `Notify.dc.html` — notifications, drawtext keybind, progressbar
-
-Page 2 — Screens & Apps (all remaining surfaces, same system):
-
-- `Multichar.dc.html` — character select + details card
-- `Spawn.dc.html` — map-style spawn selector (last location / apartment / motel)
-- `Phone.dc.html` — EmberOS phone: clock, notification, app grid, dock
-- `Inventory.dc.html` — pockets/trunk grids, weight bars, hotbar, item actions
-- `Banking.dc.html` — Fleeca app: sidebar, balance, quick actions, transactions
-- `Shop.dc.html` — 24/7 store: category tabs, product grid, basket, cash/bank
-- `Scoreboard.dc.html` — server header, job counts, player table
-- `Management.dc.html` — boss menu: society stats, employee table
-- `Admin.dc.html` — staff panel: categories, toggles, player actions
-- `Clothing.dc.html` — wardrobe: category rail, variation carousel, outfits
-
-NUI implementation follows once mockups are approved.
+NUI implementation follows once the direction is approved.

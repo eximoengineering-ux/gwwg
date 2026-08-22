@@ -7,118 +7,92 @@
 <body>
 <x-dc>
 <helmet>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Archivo:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
-    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
-    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
-    .scene { position: absolute; inset: 0; background:
-      radial-gradient(1100px 560px at 72% 14%, #1d2534 0%, rgba(29,37,52,0) 60%),
-      radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
-      linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
-    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.58) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
-    .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
-    .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
-    .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
-    .toast { width: 344px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,0.5); }
-    @keyframes slideR { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes slideScale { from { opacity: 0; transform: translateX(36px) scale(0.97); } to { opacity: 0.85; transform: translateX(0) scale(0.97); } }
+    body { margin: 0; font-family: 'Archivo', 'Segoe UI', system-ui, sans-serif; color: #ECE6D9; }
+    a { color: #C3372B; } a:hover { color: #A32A1F; }
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+    .mono { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+    .scene { position: absolute; inset: 0; background: radial-gradient(1100px 560px at 70% 16%, #1a1d22 0%, rgba(26,29,34,0) 60%), linear-gradient(180deg, #121317 0%, #14151a 52%, #0a0b0d 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.55) 100%); }
+    .slip { position: relative; width: 322px; background: linear-gradient(175deg, #F4EFE4 0%, #EDE6D6 100%); color: #16140F; box-shadow: 0 14px 36px rgba(0,0,0,0.55); padding: 12px 16px 10px 22px; box-sizing: border-box; }
+    .slip::after { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 0; border-left: 2px dashed rgba(22,20,15,0.35); }
+    .lab { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; font-weight: 600; letter-spacing: 0.16em; color: #8A8478; text-transform: uppercase; }
+    .edge { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+    @keyframes slipIn { from { opacity: 0; transform: translateX(34px) rotate(1.2deg); } to { opacity: 1; transform: none; } }
+    .slipIn { opacity: 0; animation: slipIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes drain { to { transform: scaleX(0); } }
     .drain { transform-origin: left center; animation: drain 9s linear 1.2s forwards; }
-    @keyframes stripes { to { background-position: 15px 0; } }
-    @keyframes fillW { from { width: 0; } }
-    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes capPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,122,31,0.3); } 50% { box-shadow: 0 0 0 5px rgba(255,122,31,0); } }
+    @keyframes printOut { from { opacity: 0; transform: translate(-50%, 34px); } to { opacity: 1; transform: translateX(-50%); } }
+    @keyframes growW { from { width: 0; } }
+    @keyframes stampIn { 0% { opacity: 0; transform: scale(1.7) rotate(-14deg); } 60% { opacity: 1; transform: scale(0.96) rotate(-5deg); } 100% { opacity: 0.88; transform: scale(1) rotate(-6deg); } }
+    .stamp { display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 800; letter-spacing: 0.12em; color: #2E7D5B; border: 2px solid #2E7D5B; border-radius: 3px; transform: rotate(-6deg); opacity: 0.88; box-shadow: inset 0 0 0 1.5px #F1EBDF, inset 0 0 0 3px rgba(46,125,91,0.5); }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 </helmet>
-<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0b0d;">
   <div class="scene"></div>
-  <svg style="position: absolute; left: 0; bottom: 0; opacity: 0.75;" width="1280" height="210" viewBox="0 0 1280 210" preserveAspectRatio="none">
-    <polygon points="0,210 0,120 60,120 60,88 130,88 130,132 210,132 210,70 236,70 236,52 262,52 262,118 360,118 360,96 430,96 430,140 520,140 520,108 570,108 570,60 590,44 610,60 610,124 720,124 720,92 800,92 800,136 880,136 880,78 940,78 940,116 1040,116 1040,90 1120,90 1120,128 1200,128 1200,102 1280,102 1280,210" fill="#0c0e13"/>
-    <polygon points="0,210 0,160 90,160 90,142 180,142 180,168 300,168 300,150 420,150 420,176 560,176 560,154 700,154 700,170 840,170 840,148 980,148 980,172 1120,172 1120,156 1280,156 1280,210" fill="#08090d"/>
-    <rect x="222" y="80" width="3" height="4" fill="#FFB56B" opacity="0.55"/><rect x="585" y="66" width="3" height="4" fill="#FF7A1F" opacity="0.7"/>
-    <circle cx="590" cy="44" r="2.4" fill="#FF7A1F" opacity="0.9"/>
-  </svg>
   <div class="vig"></div>
 
-  <div style="position: absolute; top: 24px; right: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 9px; transform: perspective(1200px) rotateY(-7deg); transform-origin: right center;">
-    <div class="panel cut toast slideR">
-      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #42D392, rgba(66,211,146,0.2));"></div>
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
-        <div style="width: 32px; height: 32px; background: rgba(66,211,146,0.13); border: 1px solid rgba(66,211,146,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
-        </div>
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: baseline; justify-content: space-between;">
-            <span style="font-size: 13.5px; font-weight: 700;">Deposit complete</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">NOW</span>
-          </div>
-          <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">$2,500 transferred to your savings account.</div>
-        </div>
+  <div style="position: absolute; top: 24px; right: 24px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end;">
+    <div class="slip slipIn">
+      <div class="edge" style="background: #2E7D5B;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="lab" style="color: #2E7D5B;">Fleeca &middot; Receipt</span>
+        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:42</span>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 72%; height: 100%; background: #42D392;"></div></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+        <div>
+          <div class="serif" style="font-size: 17px;">Deposit complete</div>
+          <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">$2,500 to savings &middot; Nº 88121</div>
+        </div>
+        <span class="stamp" style="font-size: 9px; padding: 2.5px 6px; animation: stampIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;">PAID</span>
+      </div>
+      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 72%; height: 100%; background: #2E7D5B;"></div></div>
     </div>
 
-    <div class="panel cut toast slideR" style="animation-delay: 0.12s;">
-      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2));"></div>
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
-        <div style="width: 32px; height: 32px; background: rgba(255,122,31,0.13); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5.5A1.5 1.5 0 0 1 9.5 4h5A1.5 1.5 0 0 1 16 5.5V7M3 12h18"/></svg>
-        </div>
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: baseline; justify-content: space-between;">
-            <span style="font-size: 13.5px; font-weight: 700;">New contract available</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">2M</span>
-          </div>
-          <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">A delivery job was posted at the depot. Check your job center.</div>
-        </div>
+    <div class="slip slipIn" style="animation-delay: 0.12s;">
+      <div class="edge" style="background: #16140F;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="lab">Job Centre &middot; Telegram</span>
+        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:40</span>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 45%; height: 100%; background: #FF7A1F; animation-duration: 6s;"></div></div>
+      <div class="serif" style="font-size: 17px; margin-top: 6px;">New contract posted</div>
+      <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">Delivery run at the depot &mdash; STOP &mdash; enquire within</div>
+      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 45%; height: 100%; background: #16140F; animation-duration: 6s;"></div></div>
     </div>
 
-    <div class="panel cut toast" style="border-color: rgba(244,84,78,0.4); opacity: 0; animation: slideScale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.24s forwards;">
-      <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #F4544E, rgba(244,84,78,0.2));"></div>
-      <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
-        <div style="width: 32px; height: 32px; background: rgba(244,84,78,0.13); border: 1px solid rgba(244,84,78,0.5); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v9M12 17.5v.5"/></svg>
-        </div>
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: baseline; justify-content: space-between;">
-            <span style="font-size: 13.5px; font-weight: 700;">Action failed</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">5M</span>
-          </div>
-          <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">This vehicle is locked. Find the keys or lockpick it.</div>
-        </div>
+    <div class="slip slipIn" style="animation-delay: 0.24s; transform: none;">
+      <div class="edge" style="background: #C3372B;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span class="lab" style="color: #C3372B;">Notice &middot; Returned</span>
+        <span class="mono" style="font-size: 8.5px; color: #8A8478;">21:37</span>
       </div>
-      <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 88%; height: 100%; background: #F4544E; animation-duration: 12s;"></div></div>
+      <div class="serif" style="font-size: 17px; margin-top: 6px; color: #C3372B;">Vehicle is locked</div>
+      <div style="font-size: 11.5px; color: #57524A; margin-top: 2px;">Find the keys or force the lock.</div>
+      <div style="margin-top: 8px; height: 2.5px; background: rgba(22,20,15,0.12);"><div class="drain" style="width: 88%; height: 100%; background: #C3372B; animation-duration: 12s;"></div></div>
     </div>
   </div>
 
-  <div class="panel rise" style="position: absolute; left: 470px; top: 384px; display: flex; align-items: center; gap: 10px; padding: 9px 15px 9px 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.45); animation-delay: 0.4s;">
-    <span class="kb kbon" style="font-size: 12px; padding: 3px 9px; animation: capPulse 1.8s ease-out infinite;">E</span>
-    <span style="font-size: 13px; font-weight: 600; color: #D9D4CE;">Open Trunk</span>
+  <div class="slip slipIn" style="position: absolute; left: 470px; top: 384px; width: auto; padding: 9px 16px 9px 22px; display: flex; align-items: center; gap: 10px; animation-delay: 0.3s;">
+    <span class="mono" style="font-size: 12px; font-weight: 600; border: 1.5px solid #C3372B; color: #C3372B; padding: 2px 8px; background: #F7F2E8;">E</span>
+    <span class="serif" style="font-size: 16px;">Open Trunk</span>
   </div>
 
-  <div class="panel cut" style="position: absolute; left: 50%; bottom: 60px; transform: translateX(-50%) perspective(1200px) rotateX(6deg); transform-origin: center bottom; width: 400px; box-shadow: 0 16px 44px rgba(0,0,0,0.55); padding: 15px 19px; box-sizing: border-box;">
-    <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2));"></div>
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <div style="display: flex; align-items: center; gap: 9px;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 6L3 18v3h3l5.5-5.5a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.5-3.5z"/></svg>
-        <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; color: #D9D4CE;">REPAIRING ENGINE</span>
+  <div style="position: absolute; left: 50%; bottom: 56px; transform: translateX(-50%); width: 400px;">
+    <div style="position: relative; height: 14px; background: #16140F; border-radius: 2px; box-shadow: 0 8px 22px rgba(0,0,0,0.6); z-index: 2;"></div>
+    <div class="slip" style="width: 368px; margin: -4px auto 0; padding: 13px 18px 12px 24px; animation: printOut 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s both; position: relative; left: 50%; transform: translateX(-50%);">
+      <div style="display: flex; justify-content: space-between; align-items: baseline;">
+        <span class="lab" style="color: #C3372B;">Work Order &middot; In Progress</span>
+        <span class="serif" style="font-size: 20px;">64<span style="font-size: 12px; color: #8A8478;">%</span></span>
       </div>
-      <span class="h" style="font-size: 16px; font-weight: 700; color: #FFB56B;">64<span style="font-size: 11px; color: #6B655F;">%</span></span>
-    </div>
-    <div style="margin-top: 11px; height: 9px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 12px, rgba(0,0,0,0) 12px 15px); overflow: hidden;">
-      <div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 12px, rgba(0,0,0,0) 12px 15px); filter: drop-shadow(0 0 6px rgba(255,122,31,0.6)); animation: fillW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.3s both, stripes 0.9s linear infinite;"></div>
-    </div>
-    <div style="margin-top: 9px; display: flex; justify-content: space-between; align-items: center;">
-      <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Press X to cancel</span>
-      <span class="h" style="font-size: 10.5px; color: #6B655F; font-weight: 600;">~4s LEFT</span>
+      <div class="serif" style="font-size: 18px; margin-top: 4px;">Repairing engine&hellip;</div>
+      <div style="margin-top: 9px; height: 8px; border: 1px solid #16140F; padding: 1.5px; box-sizing: border-box;">
+        <div style="width: 64%; height: 100%; background: repeating-linear-gradient(45deg, #C3372B 0 6px, rgba(195,55,43,0.35) 6px 10px); animation: growW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.5s both;"></div>
+      </div>
+      <div class="mono" style="display: flex; justify-content: space-between; font-size: 9px; color: #8A8478; margin-top: 7px;">
+        <span>[X] TEAR UP ORDER</span><span>~4S REMAINING</span>
+      </div>
     </div>
   </div>
 </div>

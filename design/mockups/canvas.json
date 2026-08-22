@@ -4,27 +4,27 @@
     { "id": "page-2", "name": "Screens & Apps" }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "title": "Brand & Design System", "x": 0, "y": 0, "w": 1280, "h": 860, "page": "page-1" },
-    { "file": "HUD.dc.html", "title": "HUD — Status, Minimap, Vehicle", "x": 0, "y": 990, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Menu.dc.html", "title": "qb-menu — Context Menu", "x": 1360, "y": 990, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Input.dc.html", "title": "qb-input — Form Dialog", "x": 2720, "y": 990, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Target.dc.html", "title": "qb-target — Third Eye", "x": 0, "y": 1840, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Radial.dc.html", "title": "qb-radialmenu — Orbital Menu", "x": 1360, "y": 1840, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Notify.dc.html", "title": "Notifications & Progressbar", "x": 2720, "y": 1840, "w": 1280, "h": 720, "page": "page-1" },
-    { "file": "Multichar.dc.html", "title": "Multicharacter — Select", "x": 0, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Spawn.dc.html", "title": "Spawn Selector", "x": 1360, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Phone.dc.html", "title": "Phone — EmberOS", "x": 2720, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Inventory.dc.html", "title": "Inventory — Pockets & Trunk", "x": 0, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Banking.dc.html", "title": "Banking — Fleeca", "x": 1360, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Shop.dc.html", "title": "Shop — 24/7", "x": 2720, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Scoreboard.dc.html", "title": "Scoreboard — Players", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Management.dc.html", "title": "Boss Menu — Management", "x": 1360, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Admin.dc.html", "title": "Admin Panel", "x": 2720, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
-    { "file": "Clothing.dc.html", "title": "Wardrobe — Clothing", "x": 0, "y": 2550, "w": 1280, "h": 720, "page": "page-2" }
+    { "file": "Main.dc.html", "title": "The Marlow Papers — System", "x": 0, "y": 0, "w": 1280, "h": 900, "page": "page-1" },
+    { "file": "HUD.dc.html", "title": "HUD — Ticket, Watch, Odometer", "x": 0, "y": 1030, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Menu.dc.html", "title": "qb-menu — Valet Board", "x": 1360, "y": 1030, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Input.dc.html", "title": "qb-input — Form 12-B", "x": 2720, "y": 1030, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Target.dc.html", "title": "qb-target — Reticle & Tags", "x": 0, "y": 1880, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Radial.dc.html", "title": "qb-radialmenu — Card Fan", "x": 1360, "y": 1880, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Notify.dc.html", "title": "Telegrams & Work Orders", "x": 2720, "y": 1880, "w": 1280, "h": 720, "page": "page-1" },
+    { "file": "Multichar.dc.html", "title": "Multicharacter — Passports", "x": 0, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Spawn.dc.html", "title": "Spawn — Folded Map", "x": 1360, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Phone.dc.html", "title": "Phone — Marlow OS", "x": 2720, "y": 0, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Inventory.dc.html", "title": "Inventory — Manifests", "x": 0, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Banking.dc.html", "title": "Banking — Passbook", "x": 1360, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Shop.dc.html", "title": "Shop — Price List & Receipt", "x": 2720, "y": 850, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Scoreboard.dc.html", "title": "Scoreboard — City Register", "x": 0, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Management.dc.html", "title": "Boss Menu — Letterhead", "x": 1360, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Admin.dc.html", "title": "Admin — Case Files", "x": 2720, "y": 1700, "w": 1280, "h": 720, "page": "page-2" },
+    { "file": "Clothing.dc.html", "title": "Wardrobe — Tailor's Pattern", "x": 0, "y": 2550, "w": 1280, "h": 720, "page": "page-2" }
   ],
   "annotations": [
-    { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "page": "page-1", "text": "EMBER RP — QBCore UI redesign.\nSignature: ember-cut glass panels, orbital wheel, active-edge keyline, scanlines, 270° gauges, night-city scene, inward tilt — fully animated (staggered entrances, gauge sweeps, live loops; respects reduced motion). Identity is a placeholder." },
-    { "id": "batch2-brief", "x": 0, "y": -200, "w": 560, "page": "page-2", "text": "Screens & Apps — multicharacter, spawn, EmberOS phone, inventory, banking, shop, scoreboard, boss menu, admin, wardrobe.\nSame Ember system: cut panels, keylines, staggered entrances. NUI code follows approval." }
+    { "id": "batch1-brief", "x": 0, "y": -240, "w": 560, "page": "page-1", "text": "THE MARLOW PAPERS — a city that runs on paper.\nBrand-new direction, nothing like previous work: ivory stock on a dark desk, ink type (Instrument Serif + Archivo + Plex Mono), vermilion stamps, punched tickets, ledger rules, crop marks. Cards deal in, stamps slam, meters draw. Identity is a placeholder." },
+    { "id": "batch2-brief", "x": 0, "y": -200, "w": 560, "page": "page-2", "text": "Screens & Apps — passports with MRZ lines, folded survey map, e-paper phone, cargo manifests, bank passbook with DR/CR ledger, diner price list + printed receipt, census with tally marks, letterhead payroll, case-file admin, tailor's pattern.\nNUI code follows approval." }
   ],
-  "launch": { "view": "canvas", "page": "page-2" }
+  "launch": { "view": "canvas", "page": "page-1" }
 }
