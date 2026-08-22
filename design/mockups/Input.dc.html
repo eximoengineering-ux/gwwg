@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .flabel { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #A8A29C; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 18%, #1c2330 0%, rgba(28,35,48,0) 62%),
+      radial-gradient(860px 480px at 16% 85%, #2a2018 0%, rgba(42,32,24,0) 60%),
+      linear-gradient(180deg, #10131b 0%, #12151d 46%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.7) 100%); }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 432px; background: rgba(19,17,15,0.92); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; backdrop-filter: blur(16px); box-shadow: 0 30px 80px rgba(0,0,0,0.65); overflow: hidden;">
+    <div style="height: 3px; background: linear-gradient(90deg, #FF7A1F, #FFB56B, rgba(255,181,107,0));"></div>
+    <div style="padding: 26px 28px 28px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+          <div class="h" style="font-size: 19px; font-weight: 700;">Vehicle Registration</div>
+          <div style="font-size: 12.5px; color: #A8A29C; margin-top: 3px;">Los Santos DMV &middot; Form 12-B</div>
+        </div>
+        <div style="width: 32px; height: 32px; border-radius: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="flabel">Plate Number</div>
+        <div style="height: 46px; border-radius: 10px; background: #0F0E0C; border: 1px solid rgba(255,122,31,0.55); box-shadow: 0 0 0 3px rgba(255,122,31,0.12); display: flex; align-items: center; padding: 0 15px; box-sizing: border-box;">
+          <span class="h" style="font-size: 15px; font-weight: 600; letter-spacing: 0.08em;">EMBER 01</span>
+          <span style="margin-left: 2px; width: 2px; height: 19px; background: #FF7A1F;"></span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 14px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+          <div class="flabel">Owner</div>
+          <div style="height: 46px; border-radius: 10px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.11); display: flex; align-items: center; padding: 0 15px; box-sizing: border-box;">
+            <span style="font-size: 14px; color: #D9D4CE;">Ray Calderon</span>
+          </div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+          <div class="flabel">Class</div>
+          <div style="height: 46px; border-radius: 10px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.11); display: flex; align-items: center; justify-content: space-between; padding: 0 15px; box-sizing: border-box;">
+            <span style="font-size: 14px; color: #D9D4CE;">Civilian</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 11px;">
+        <div style="width: 21px; height: 21px; border-radius: 6px; background: linear-gradient(135deg, #FF7A1F, #F0640F); display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(255,122,31,0.35);">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+        </div>
+        <span style="font-size: 13.5px; color: #D9D4CE; font-weight: 500;">Include comprehensive insurance <span style="color: #6B655F;">(+$450)</span></span>
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 2px;">
+        <div style="flex: 1; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #D9D4CE; font-weight: 600; font-size: 14px; display: flex; align-items: center; justify-content: center;">Cancel</div>
+        <div style="flex: 1.4; height: 46px; border-radius: 10px; background: linear-gradient(135deg, #FF7A1F, #F0640F); color: #17100A; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 8px 24px rgba(255,122,31,0.35);">
+          Submit &middot; $1,250
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif; color: #F5F1EC; }
+    a { color: #FF7A1F; } a:hover { color: #FFB56B; }
+    .h { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .scene { position: absolute; inset: 0; background:
+      radial-gradient(1100px 560px at 72% 18%, #1c2330 0%, rgba(28,35,48,0) 62%),
+      radial-gradient(860px 480px at 16% 85%, #2a2018 0%, rgba(42,32,24,0) 60%),
+      linear-gradient(180deg, #10131b 0%, #12151d 46%, #0a0c11 100%); }
+    .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+  </style>
+</helmet>
+<div style="position: relative; width: 1280px; height: 720px; overflow: hidden; background: #0a0c11;">
+  <div class="scene"></div>
+  <div class="vig"></div>
+
+  <div style="position: absolute; right: 70px; top: 96px; width: 352px; display: flex; flex-direction: column; gap: 10px;">
+
+    <div style="background: rgba(21,19,16,0.88); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; backdrop-filter: blur(14px); box-shadow: 0 18px 50px rgba(0,0,0,0.55); padding: 16px 18px; display: flex; align-items: center; gap: 13px;">
+      <div style="width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, #FF7A1F, #E8540E); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(255,122,31,0.35);">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17100A" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13M4 13h16a1 1 0 0 1 1 1v3h-2.5M3 14v3h2.5M7 17a1.8 1.8 0 1 0 0 .01M17 17a1.8 1.8 0 1 0 0 .01M9 17h6"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div class="h" style="font-size: 16px; font-weight: 700; letter-spacing: 0.02em;">Garage &mdash; Legion Square</div>
+        <div style="font-size: 12px; color: #A8A29C; margin-top: 2px;">4 vehicles stored &middot; 1 out</div>
+      </div>
+    </div>
+
+    <div style="background: rgba(21,19,16,0.88); border: 1px solid rgba(255,122,31,0.55); border-radius: 12px; backdrop-filter: blur(14px); padding: 13px 16px; display: flex; align-items: center; gap: 13px; box-shadow: 0 0 24px rgba(255,122,31,0.18), 0 14px 40px rgba(0,0,0,0.5); transform: translateX(-6px);">
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 14.5px; font-weight: 700; color: #FFFFFF;">Sultan RS</div>
+        <div style="font-size: 12px; color: #FFB56B; margin-top: 2px;">Plate 8ABC123 &middot; Fuel 84% &middot; Engine 97%</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="background: rgba(21,19,16,0.82); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; backdrop-filter: blur(14px); padding: 13px 16px; display: flex; align-items: center; gap: 13px;">
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 14.5px; font-weight: 600;">Elegy Retro Custom</div>
+        <div style="font-size: 12px; color: #A8A29C; margin-top: 2px;">Plate 4KLM980 &middot; Fuel 42% &middot; Engine 88%</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="background: rgba(21,19,16,0.82); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; backdrop-filter: blur(14px); padding: 13px 16px; display: flex; align-items: center; gap: 13px;">
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h6l-1 7 9-11h-6l1-7z"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 14.5px; font-weight: 600;">Bravado Bison</div>
+        <div style="font-size: 12px; color: #A8A29C; margin-top: 2px;">Plate 2QRS445 &middot; Fuel 96% &middot; Engine 100%</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+
+    <div style="background: rgba(18,16,14,0.7); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; backdrop-filter: blur(14px); padding: 13px 16px; display: flex; align-items: center; gap: 13px; opacity: 0.55;">
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 14.5px; font-weight: 600; color: #A8A29C;">Kamacho</div>
+        <div style="font-size: 12px; color: #6B655F; margin-top: 2px;">Out &mdash; last seen Sandy Shores</div>
+      </div>
+      <span style="font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; color: #F4544E; background: rgba(244,84,78,0.1); border: 1px solid rgba(244,84,78,0.35); border-radius: 6px; padding: 3px 8px;">OUT</span>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: 14px; margin-top: 4px;">
+      <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">&#8593;&#8595;</span><span style="font-size: 11.5px; color: #6B655F; font-weight: 500;">Navigate</span></div>
+      <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #FF7A1F; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); border-radius: 5px; padding: 2px 7px;">&#8629;</span><span style="font-size: 11.5px; color: #6B655F; font-weight: 500;">Select</span></div>
+      <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">ESC</span><span style="font-size: 11.5px; color: #6B655F; font-weight: 500;">Close</span></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
