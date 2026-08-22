@@ -17,20 +17,19 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
     .slot { position: relative; width: 72px; height: 72px; border-radius: 12px; background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.09); display: flex; align-items: center; justify-content: center; }
     .qty { position: absolute; right: 5px; top: 4px; font-size: 9px; font-weight: 700; color: #A8A29C; }
-    .kb { position: absolute; left: 5px; top: 4px; font-size: 8.5px; font-weight: 700; color: #6B655F; }
+    .kb { position: absolute; left: 5px; top: 4px; font-size: 8.5px; font-weight: 700; color: #8A8177; }
     .dur { position: absolute; left: 6px; right: 6px; bottom: 5px; height: 3px; border-radius: 999px; background: rgba(255,255,255,0.1); overflow: hidden; }
     .mrow { display: flex; align-items: center; gap: 10px; padding: 9px 12px; font-size: 12px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
-    @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pop { 0% { opacity: 0; transform: scale(0.92); } 100% { opacity: 1; transform: scale(1); } }
     .pop { opacity: 0; animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
@@ -56,7 +55,7 @@
     <div class="lab" style="margin-bottom: 10px;">HOTBAR &middot; SHOWS 3S ON SCROLL</div>
     <div style="display: flex; gap: 10px;">
       <div class="slot" style="border-color: rgba(255,122,31,0.6); background: rgba(255,122,31,0.08); box-shadow: 0 0 20px rgba(255,122,31,0.18);">
-        <span class="kb" style="color: #FFB56B;">1</span><span class="qty">24</span>
+        <span class="kb" style="color: #FFB56B;">1</span>
         <svg width="34" height="34" viewBox="0 0 48 48"><rect x="6" y="20" width="26" height="9" rx="2.5" fill="#3a3733"/><rect x="28" y="17" width="13" height="6" rx="2" fill="#2c2926"/><rect x="10" y="29" width="6" height="10" rx="2" fill="#2c2926" transform="rotate(14 13 34)"/><rect x="20" y="29" width="5" height="8" rx="2" fill="#242220"/><rect x="6" y="22" width="26" height="2.4" fill="rgba(255,255,255,0.14)"/></svg>
         <div class="dur"><div style="width: 86%; height: 100%; background: #42D392;"></div></div>
       </div>
@@ -107,15 +106,15 @@
       </div>
     </div>
     <div style="display: flex; flex-direction: column; gap: 7px; margin-top: 14px;">
-      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">SERIAL</span><span class="h" style="font-weight: 700;">EMB-77Q4-K812</span></div>
-      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">AMMO</span><span class="h" style="font-weight: 700;">24 / 120 &middot; 9MM</span></div>
-      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">ATTACHMENTS</span><span class="h" style="font-weight: 700; color: #FFB56B;">SUPPRESSOR &middot; GRIP</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">SERIAL</span><span class="h" style="font-weight: 700;">EMB-77Q4-K812</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">AMMO</span><span class="h" style="font-weight: 700;">24 / 120 &middot; 9MM</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">ATTACHMENTS</span><span class="h" style="font-weight: 700; color: #FFB56B;">SUPPRESSOR &middot; GRIP</span></div>
     </div>
     <div style="margin-top: 13px;">
-      <div style="display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; color: #6B655F; letter-spacing: 0.08em; margin-bottom: 5px;"><span>CONDITION</span><span style="color: #42D392;">86%</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.08em; margin-bottom: 5px;"><span>CONDITION</span><span style="color: #42D392;">86%</span></div>
       <div style="height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden;"><div style="width: 86%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div></div>
     </div>
-    <div style="font-size: 10.5px; color: #6B655F; line-height: 1.55; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">Registered to Ray Calderon. Degrades with use &mdash; service it at a weapons bench to restore condition.</div>
+    <div style="font-size: 10.5px; color: #8A8177; line-height: 1.55; margin-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px;">Registered to Ray Calderon. Degrades with use &mdash; service it at a weapons bench to restore condition.</div>
   </div>
 
   <!-- Give / split dialog -->
@@ -123,15 +122,15 @@
     <span class="h" style="font-size: 13.5px; font-weight: 700;">Split stack</span>
     <div class="lab" style="margin-top: 2px;">BANDAGE &times; 12</div>
     <div style="display: flex; align-items: center; gap: 14px; margin-top: 16px; justify-content: center;">
-      <div style="width: 30px; height: 30px; border-radius: 9px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></div>
+      <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14"/></svg></div>
       <span class="h" style="font-size: 26px; font-weight: 700; color: #FFB56B;">5</span>
-      <div style="width: 30px; height: 30px; border-radius: 9px; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+      <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(255,122,31,0.12); border: 1px solid rgba(255,122,31,0.4); display: flex; align-items: center; justify-content: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
     </div>
     <div style="position: relative; height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 16px;">
       <div style="width: 42%; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
       <div style="position: absolute; left: 42%; top: 50%; transform: translate(-50%, -50%); width: 13px; height: 13px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 0 0 4px rgba(255,122,31,0.25);"></div>
     </div>
-    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #6B655F; font-weight: 700; margin-top: 6px;"><span>KEEP 7</span><span>SPLIT 5</span></div>
+    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #8A8177; font-weight: 700; margin-top: 6px;"><span>KEEP 7</span><span>SPLIT 5</span></div>
     <div class="cut h" style="margin-top: 15px; text-align: center; font-size: 11.5px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 10px 0; box-shadow: 0 8px 22px rgba(255,122,31,0.35);">CONFIRM SPLIT</div>
   </div>
 
@@ -139,19 +138,19 @@
   <div class="panel cut rise" style="position: absolute; left: 976px; top: 330px; width: 248px; padding: 16px 18px 18px; animation-delay: 0.4s; box-shadow: 0 18px 50px rgba(0,0,0,0.5);">
     <div class="lab">CARRY WEIGHT</div>
     <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 7px;">
-      <span class="h" style="font-size: 22px; font-weight: 700;">38.4</span>
-      <span style="font-size: 11px; color: #6B655F; font-weight: 700;">/ 60.0 KG</span>
+      <span class="h" style="font-size: 22px; font-weight: 700;">14.2</span>
+      <span style="font-size: 11px; color: #8A8177; font-weight: 700;">/ 40.0 KG</span>
     </div>
     <div style="height: 6px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 10px; overflow: hidden;">
-      <div style="width: 64%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
+      <div style="width: 36%; height: 100%; background: linear-gradient(90deg, #FF7A1F, #FFB56B);"></div>
     </div>
-    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(232,176,75,0.07); border: 1px solid rgba(232,176,75,0.28); border-radius: 10px; padding: 9px 11px;">
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(232,176,75,0.07); border: 1px solid rgba(232,176,75,0.28); border-radius: 8px; padding: 9px 11px;">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8B04B" stroke-width="2" stroke-linecap="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>
       <span style="font-size: 10px; color: #E8B04B; line-height: 1.5;">Above 90% you walk slower and can't sprint.</span>
     </div>
     <div style="display: flex; align-items: center; gap: 8px; margin-top: 13px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 11px;">
       <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">TAB</span>
-      <span style="font-size: 10.5px; color: #6B655F;">Open inventory</span>
+      <span style="font-size: 10.5px; color: #8A8177;">Open inventory</span>
     </div>
   </div>
 

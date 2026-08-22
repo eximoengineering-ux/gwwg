@@ -17,18 +17,18 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
     .tgOn { width: 36px; height: 20px; border-radius: 999px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative; flex-shrink: 0; }
     .tgOn::after { content: ''; position: absolute; right: 2.5px; top: 2.5px; width: 15px; height: 15px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 2px 5px rgba(0,0,0,0.35); }
     .tgOff { width: 36px; height: 20px; border-radius: 999px; background: rgba(255,255,255,0.1); position: relative; flex-shrink: 0; }
-    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 15px; height: 15px; border-radius: 50%; background: #6B655F; }
+    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 15px; height: 15px; border-radius: 50%; background: #8A8177; }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
     @keyframes bubble { 0% { transform: translateY(0); opacity: 0.7; } 100% { transform: translateY(-26px); opacity: 0; } }
@@ -111,7 +111,7 @@
     <div class="lab" style="position: absolute; left: 14px; top: 12px;">CINEMATIC</div>
     <div style="position: absolute; left: 0; right: 0; top: 34px; height: 26px; background: #060505;"></div>
     <div style="position: absolute; left: 0; right: 0; bottom: 30px; height: 26px; background: #060505;"></div>
-    <div style="position: absolute; left: 14px; bottom: 6px; font-size: 9.5px; color: #6B655F; font-weight: 600;">HUD hidden &middot; bars ease in</div>
+    <div style="position: absolute; left: 14px; bottom: 6px; font-size: 9.5px; color: #8A8177; font-weight: 600;">HUD hidden &middot; bars ease in</div>
     <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); text-align: center;">
       <span class="h" style="font-size: 10px; font-weight: 700; letter-spacing: 0.2em; color: #FFB56B;">EMBER RP</span>
     </div>

@@ -17,14 +17,14 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
     .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
@@ -74,7 +74,7 @@
           <span class="lab" style="background: rgba(255,255,255,0.06); border-radius: 6px; padding: 3px 8px;">2 KEYS</span>
         </div>
       </div>
-      <div class="h" style="font-size: 11px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); border-radius: 9px; padding: 8px 14px; position: relative; overflow: hidden;">SELECT<div class="sheen"></div></div>
+      <div class="h" style="font-size: 11px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); border-radius: 8px; padding: 8px 14px; position: relative; overflow: hidden;">SELECT<div class="sheen"></div></div>
     </div>
 
     <div class="arow rise" style="margin-top: 10px; animation-delay: 0.2s;">
@@ -118,32 +118,32 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zM4 8l2-4h12l2 4M12 12v4"/></svg>
         <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Stash</div>
         <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">18 / 50 kg used</div>
-        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #FFB56B; border: 1px solid rgba(255,122,31,0.4); border-radius: 5px; padding: 2px 6px;">1</span>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #FFB56B; border: 1px solid rgba(255,122,31,0.4); border-radius: 6px; padding: 2px 6px;">1</span>
       </div>
       <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B98CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l-2 3h4zM6 7h12l1 13H5zM9 11v3M15 11v3"/></svg>
         <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Wardrobe</div>
         <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">5 saved outfits</div>
-        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 5px; padding: 2px 6px;">2</span>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">2</span>
       </div>
       <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0M18 8v6M15 11h6"/></svg>
         <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Invite in</div>
         <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">2 players nearby</div>
-        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 5px; padding: 2px 6px;">3</span>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">3</span>
       </div>
       <div style="border: 1px solid rgba(255,255,255,0.09); background: rgba(255,255,255,0.03); border-radius: 12px; padding: 13px 12px; position: relative;">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-5M10 17l-5-5 5-5M5 12h11"/></svg>
         <div style="font-size: 12.5px; font-weight: 700; margin-top: 8px;">Leave</div>
         <div style="font-size: 10px; color: #A8A29C; margin-top: 2px;">Exit to Alta Street</div>
-        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 5px; padding: 2px 6px;">4</span>
+        <span class="h" style="position: absolute; right: 10px; top: 10px; font-size: 9px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.16); border-radius: 6px; padding: 2px 6px;">4</span>
       </div>
     </div>
     <div style="display: flex; align-items: center; gap: 8px; margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px;">
       <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">ESC</span>
-      <span style="font-size: 10.5px; color: #6B655F;">Close &middot; hold</span>
+      <span style="font-size: 10.5px; color: #8A8177;">Close &middot; hold</span>
       <span class="h" style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 3px 8px;">H</span>
-      <span style="font-size: 10.5px; color: #6B655F;">for door lock</span>
+      <span style="font-size: 10.5px; color: #8A8177;">for door lock</span>
     </div>
   </div>
 
@@ -154,12 +154,12 @@
       <span class="h" style="font-size: 26px; font-weight: 700;">$850</span>
       <span style="font-size: 11px; color: #42D392; font-weight: 700;">PAID</span>
     </div>
-    <div style="font-size: 10.5px; color: #6B655F; margin-top: 3px;">Next payment due Aug 25 &middot; auto-pay from Fleeca &bull;&bull;&bull;&bull;2148</div>
+    <div style="font-size: 10.5px; color: #8A8177; margin-top: 3px;">Next payment due Aug 25 &middot; auto-pay from Fleeca &bull;&bull;&bull;&bull;2148</div>
     <div style="height: 5px; border-radius: 999px; background: rgba(255,255,255,0.08); margin-top: 12px; overflow: hidden;">
-      <div style="width: 90%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div>
+      <div style="width: 71%; height: 100%; background: linear-gradient(90deg, #42D392, #7BE3AE);"></div>
     </div>
-    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #6B655F; font-weight: 700; margin-top: 5px;"><span>MONTH PROGRESS</span><span>27 / 30 DAYS</span></div>
-    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(76,158,235,0.07); border: 1px solid rgba(76,158,235,0.25); border-radius: 10px; padding: 9px 11px;">
+    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #8A8177; font-weight: 700; margin-top: 5px;"><span>MONTH PROGRESS</span><span>22 / 31 DAYS</span></div>
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(76,158,235,0.07); border: 1px solid rgba(76,158,235,0.25); border-radius: 8px; padding: 9px 11px;">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
       <span style="font-size: 10.5px; color: #8CC4F5; line-height: 1.5;">Missed rent locks the door after 7 days &mdash; items stay safe in the stash.</span>
     </div>

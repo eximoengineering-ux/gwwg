@@ -14,7 +14,7 @@ The "Ember RP" identity (name + flame mark) is a placeholder and easy to swap.
 | Hairline | `rgba(255,255,255,0.08)` | borders |
 | Ember | `#FF7A1F` | accent, active states |
 | Flare | `#FFB56B` | accent highlight |
-| Text | `#F5F1EC` / `#A8A29C` / `#6B655F` | primary / secondary / muted |
+| Text | `#F5F1EC` / `#A8A29C` / `#8A8177` | primary / secondary / muted — all ≥4.5:1 on panel surfaces (WCAG AA) |
 | Mint / Coral / Sky | `#42D392` / `#F4544E` / `#4C9EEB` | success / error / info |
 | Amber / Cyan | `#E8B04B` / `#45C8D8` | hunger, fuel / thirst, oxygen |
 | Violet | `#B98CF0` | stamina / stress |
@@ -31,10 +31,15 @@ diagonal slash accent at the cut, and faint scanlines
 pattern** trimming key panel rims: a 5px strip of 45° ember hairlines
 (`repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, transparent
 2px 6px)`) that fades out at both ends via a mask. Gauges are 270° SVG
-rings (`pathLength` dasharray); status rings are 100-unit circles. Keycaps,
-pills and toggles stay rounded (5px/14px); panels stay sharp.
+rings (`pathLength` dasharray); status rings are 100-unit circles.
 
-Motion language: staggered entrances (fade + 28–36px translate, 0.5–0.65s,
+**Radius scale (unified):** `6px` micro chips/tags · `8px` buttons, fields,
+keys · `12px` rows, list items, inner cards · `16px` cards, dialogs ·
+`999px` pills/toggles · phone device only: screen 32 / frame 40. Panels
+themselves stay sharp (ember cut). No other radius values are used.
+
+Motion language: staggered entrances (fade + 28–36px translate, **0.4s**
+(hero moves 0.45s, gauge draws up to 0.7s),
 `cubic-bezier(0.2, 0.8, 0.2, 1)`, 80–120ms stagger); gauges and status rings
 sweep in by animating `stroke-dasharray`; bars fill from zero. Ambient loops
 (compass tick scroll, voice EQ, glow pulses, sheen sweeps, dash crawl, toast
@@ -44,6 +49,26 @@ under `prefers-reduced-motion: reduce`.
 Inward tilt: edge-anchored panels lean toward screen center with
 `transform: perspective(1200px) rotateY(±6–8deg)` (origin on the screen-edge
 side); bottom/center panels use `rotateX(4–6deg)` instead.
+
+## UX rules for the NUI build
+
+Carried into production code (mockups are drawn at reduced scale):
+
+- **Contrast:** text ≥4.5:1, large text/glyphs ≥3:1 (tokens above comply).
+- **Focus:** every focusable control gets a visible ring — `outline: 2px
+  solid #FF7A1F; outline-offset: 2px` — never removed.
+- **Hit areas:** interactive controls ≥44×44px at 1080p, ≥8px apart.
+- **Type minimums:** body ≥14px, labels ≥12px in production; one type scale
+  (12/14/16/18/24/32).
+- **Motion:** micro-interactions 150–300ms, entrances 400ms, exits ~60–70%
+  of enter; only `transform`/`opacity` animate; everything off under
+  `prefers-reduced-motion`.
+- **Feedback:** pressed state within 100ms; async buttons disable + show
+  progress; destructive actions use Coral, are spatially separated, and
+  confirm first (see the delete guard on the Charcreate board).
+- **Color never alone:** every state color pairs with an icon or label
+  (e.g. STORED/OUT/IMPOUNDED dots + text).
+- **One primary CTA per screen;** secondary actions are outlined/ghost.
 
 ## Mockups (batch 1)
 

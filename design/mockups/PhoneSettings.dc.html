@@ -17,18 +17,18 @@
     .ph { position: absolute; top: 24px; width: 306px; height: 648px; }
     .phF { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 34px 80px rgba(0,0,0,0.7), inset 0 0 0 3px #060505; }
     .scr { position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: linear-gradient(175deg, #16130f 0%, #0c0a09 100%); }
-    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 10px; background: #060505; z-index: 6; }
+    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505; z-index: 6; }
     .sb { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px 0; font-size: 11.5px; font-weight: 700; }
-    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #6B655F; text-transform: uppercase; }
+    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #8A8177; text-transform: uppercase; }
     .setrow { display: flex; align-items: center; gap: 11px; padding: 8px 14px; }
     .setic { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .tgOn { width: 38px; height: 22px; border-radius: 999px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative; flex-shrink: 0; box-shadow: inset 0 1px 2px rgba(0,0,0,0.25); }
     .tgOn::after { content: ''; position: absolute; right: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 2px 5px rgba(0,0,0,0.35); }
     .tgOff { width: 38px; height: 22px; border-radius: 999px; background: rgba(255,255,255,0.1); position: relative; flex-shrink: 0; }
-    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #6B655F; }
+    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #8A8177; }
     .chev { flex-shrink: 0; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes breathe { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.9; } 50% { transform: translateX(-50%) scale(1.08); opacity: 1; } }
     @keyframes shutterPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(245,241,236,0.35); } 55% { box-shadow: 0 0 0 8px rgba(245,241,236,0); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
@@ -57,25 +57,25 @@
         <div class="h" style="font-size: 58px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; margin-top: 8px; text-shadow: 0 8px 30px rgba(0,0,0,0.6);">21:42</div>
         <div style="font-size: 12px; color: #A8A29C; font-weight: 600; margin-top: 6px;">Saturday, August 22</div>
       </div>
-      <div style="position: relative; z-index: 2; margin: 30px 18px 0; border-radius: 15px; background: rgba(20,17,14,0.72); border: 1px solid rgba(255,255,255,0.09); backdrop-filter: blur(10px); padding: 11px 13px;">
+      <div style="position: relative; z-index: 2; margin: 30px 18px 0; border-radius: 16px; background: rgba(20,17,14,0.72); border: 1px solid rgba(255,255,255,0.09); backdrop-filter: blur(10px); padding: 11px 13px;">
         <div style="display: flex; align-items: center; gap: 9px;">
-          <div style="width: 30px; height: 30px; border-radius: 9px; background: rgba(255,122,31,0.16); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></div>
+          <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(255,122,31,0.16); display: flex; align-items: center; justify-content: center;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></div>
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 11.5px; font-weight: 700;">Fleeca</span>
-              <span style="font-size: 9px; color: #6B655F;">now</span>
+              <span style="font-size: 9px; color: #8A8177;">now</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Transfer of $300 to Mia V. completed</div>
           </div>
         </div>
       </div>
-      <div style="position: relative; z-index: 2; margin: 8px 18px 0; border-radius: 15px; background: rgba(20,17,14,0.72); border: 1px solid rgba(255,255,255,0.09); backdrop-filter: blur(10px); padding: 11px 13px;">
+      <div style="position: relative; z-index: 2; margin: 8px 18px 0; border-radius: 16px; background: rgba(20,17,14,0.72); border: 1px solid rgba(255,255,255,0.09); backdrop-filter: blur(10px); padding: 11px 13px;">
         <div style="display: flex; align-items: center; gap: 9px;">
-          <div class="h" style="width: 30px; height: 30px; border-radius: 9px; background: rgba(66,211,146,0.16); color: #42D392; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">MV</div>
+          <div class="h" style="width: 30px; height: 30px; border-radius: 8px; background: rgba(66,211,146,0.16); color: #42D392; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">MV</div>
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 11.5px; font-weight: 700;">Mia Vasquez</span>
-              <span style="font-size: 9px; color: #6B655F;">21:41</span>
+              <span style="font-size: 9px; color: #8A8177;">21:41</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">You still owe me a ride in that Sultan &#128293;</div>
           </div>
@@ -125,19 +125,19 @@
           <span style="position: absolute; right: 0; bottom: 0; width: 14px; height: 14px; border-right: 2px solid #E8B04B; border-bottom: 2px solid #E8B04B;"></span>
           <svg width="14" height="14" viewBox="0 0 24 24" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);"><circle cx="12" cy="12" r="3" fill="none" stroke="#E8B04B" stroke-width="1.6"/></svg>
         </div>
-        <span class="h" style="position: absolute; left: 12px; top: 10px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: #E8B04B; background: rgba(0,0,0,0.5); border-radius: 5px; padding: 3px 8px;">AE / AF LOCK</span>
-        <span class="h" style="position: absolute; right: 12px; top: 10px; font-size: 9px; font-weight: 700; color: #F5F1EC; background: rgba(0,0,0,0.5); border-radius: 5px; padding: 3px 8px;">1x</span>
+        <span class="h" style="position: absolute; left: 12px; top: 10px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; color: #E8B04B; background: rgba(0,0,0,0.5); border-radius: 6px; padding: 3px 8px;">AE / AF LOCK</span>
+        <span class="h" style="position: absolute; right: 12px; top: 10px; font-size: 9px; font-weight: 700; color: #F5F1EC; background: rgba(0,0,0,0.5); border-radius: 6px; padding: 3px 8px;">1x</span>
       </div>
       <div class="sb" style="position: relative; z-index: 3;"><span class="h">21:42</span><span style="color: #A8A29C; font-size: 10px;">&#9679;&#9679;&#9679; &nbsp;64%</span></div>
       <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 128px; background: rgba(5,5,5,0.92); z-index: 3;">
         <div style="display: flex; justify-content: center; gap: 17px; padding-top: 11px;">
-          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #6B655F;">VIDEO</span>
+          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177;">VIDEO</span>
           <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #E8B04B;">PHOTO</span>
-          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #6B655F;">PORTRAIT</span>
-          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #6B655F;">PANO</span>
+          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177;">PORTRAIT</span>
+          <span class="h" style="font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177;">PANO</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 13px 30px 0;">
-          <div style="width: 38px; height: 38px; border-radius: 9px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.25); background: linear-gradient(140deg, #2a1d10, #120d08); position: relative;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.25); background: linear-gradient(140deg, #2a1d10, #120d08); position: relative;">
             <svg width="100%" height="100%" viewBox="0 0 38 38" preserveAspectRatio="none"><path d="M0 28 L10 18 L16 22 L26 12 L38 20 L38 38 L0 38 Z" fill="#0b0908"/><circle cx="28" cy="9" r="4" fill="#FF7A1F" opacity="0.6"/></svg>
           </div>
           <div style="width: 62px; height: 62px; border-radius: 50%; border: 3.5px solid #F5F1EC; display: flex; align-items: center; justify-content: center; animation: shutterPulse 2.4s ease-out infinite;">
@@ -161,21 +161,21 @@
       <div style="padding: 18px 16px 0;">
         <span class="h" style="font-size: 22px; font-weight: 700;">Settings</span>
       </div>
-      <div style="margin: 9px 16px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="margin: 9px 16px 0; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
         <div class="h" style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(150deg, #FF7A1F, #E8540E); color: #17100A; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(255,122,31,0.35);">RC</div>
         <div style="flex: 1;">
           <div style="font-size: 13.5px; font-weight: 700;">Ray Calderon</div>
-          <div style="font-size: 10px; color: #6B655F; margin-top: 1px;">555-0173 &middot; EMB-2148 &middot; Citizen ID 4021</div>
+          <div style="font-size: 10px; color: #8A8177; margin-top: 1px;">555-0173 &middot; EMB-2148 &middot; Citizen ID 4021</div>
         </div>
-        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
       </div>
 
-      <div style="margin: 9px 16px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); overflow: hidden;">
+      <div style="margin: 9px 16px 0; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); overflow: hidden;">
         <div class="setrow" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
           <div class="setic" style="background: rgba(255,122,31,0.15);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.8C4.6 6 8.1 4.4 12 4.4S19.4 6 22 8.8M5.2 12.4c1.8-1.9 4.2-3 6.8-3s5 1.1 6.8 3M8.5 16c1-.9 2.2-1.5 3.5-1.5s2.5.6 3.5 1.5M12 19.6h.01"/></svg></div>
           <span style="flex: 1; font-size: 12px; font-weight: 600;">Wi-Fi</span>
-          <span style="font-size: 10.5px; color: #6B655F;">BennysGuest</span>
-          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          <span style="font-size: 10.5px; color: #8A8177;">BennysGuest</span>
+          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
         </div>
         <div class="setrow" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
           <div class="setic" style="background: rgba(76,158,235,0.15);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10-5 5V2l5 5L7 17"/></svg></div>
@@ -189,7 +189,7 @@
         </div>
       </div>
 
-      <div style="margin: 9px 16px 0; border-radius: 15px; border: 1px solid rgba(255,122,31,0.28); background: rgba(255,122,31,0.05); overflow: hidden;">
+      <div style="margin: 9px 16px 0; border-radius: 16px; border: 1px solid rgba(255,122,31,0.28); background: rgba(255,122,31,0.05); overflow: hidden;">
         <div class="setrow">
           <div class="setic" style="background: rgba(255,122,31,0.18);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.9 17.9A9 9 0 0 1 5.1 5.1M9.9 4.2A9 9 0 0 1 19.8 14.1M3 3l18 18"/></svg></div>
           <div style="flex: 1;">
@@ -200,30 +200,30 @@
         </div>
       </div>
 
-      <div style="margin: 9px 16px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); overflow: hidden;">
+      <div style="margin: 9px 16px 0; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); overflow: hidden;">
         <div class="setrow" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
           <div class="setic" style="background: rgba(69,200,216,0.15);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#45C8D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
           <span style="flex: 1; font-size: 12px; font-weight: 600;">Wallpaper</span>
-          <span style="font-size: 10.5px; color: #6B655F;">Ember Night</span>
-          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          <span style="font-size: 10.5px; color: #8A8177;">Ember Night</span>
+          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
         </div>
         <div class="setrow" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
           <div class="setic" style="background: rgba(66,211,146,0.15);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#42D392" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4zM15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9.5 9.5 0 0 1 0 13"/></svg></div>
           <span style="flex: 1; font-size: 12px; font-weight: 600;">Sounds &amp; ringtone</span>
-          <span style="font-size: 10.5px; color: #6B655F;">Cinder</span>
-          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          <span style="font-size: 10.5px; color: #8A8177;">Cinder</span>
+          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
         </div>
         <div class="setrow">
           <div class="setic" style="background: rgba(244,84,78,0.15);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
           <span style="flex: 1; font-size: 12px; font-weight: 600;">Privacy &amp; blocked</span>
-          <span style="font-size: 10.5px; color: #6B655F;">2 blocked</span>
-          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+          <span style="font-size: 10.5px; color: #8A8177;">2 blocked</span>
+          <svg class="chev" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
         </div>
       </div>
 
-      <div style="margin: 9px 16px 0; border-radius: 15px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); padding: 12px 14px;">
+      <div style="margin: 9px 16px 0; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); padding: 12px 14px;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #6B655F;">STORAGE</span>
+          <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #8A8177;">STORAGE</span>
           <span class="h" style="font-size: 10px; font-weight: 700; color: #A8A29C;">37.2 / 64 GB</span>
         </div>
         <div style="display: flex; height: 6px; border-radius: 999px; overflow: hidden; margin-top: 8px; background: rgba(255,255,255,0.07);">
@@ -232,12 +232,12 @@
           <div style="width: 10%; background: #42D392;"></div>
         </div>
         <div style="display: flex; gap: 12px; margin-top: 7px;">
-          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #6B655F;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #FF7A1F;"></span>PHOTOS</span>
-          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #6B655F;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #4C9EEB;"></span>APPS</span>
-          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #6B655F;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #42D392;"></span>MESSAGES</span>
+          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #8A8177;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #FF7A1F;"></span>PHOTOS</span>
+          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #8A8177;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #4C9EEB;"></span>APPS</span>
+          <span style="display: flex; align-items: center; gap: 4px; font-size: 8.5px; font-weight: 700; color: #8A8177;"><span style="width: 6px; height: 6px; border-radius: 2px; background: #42D392;"></span>MESSAGES</span>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 8px; font-size: 9px; color: #6B655F; font-weight: 600; letter-spacing: 0.08em;">EMBEROS 3.1 &middot; EMBER RP</div>
+      <div style="text-align: center; margin-top: 8px; font-size: 9px; color: #8A8177; font-weight: 600; letter-spacing: 0.08em;">EMBEROS 3.1 &middot; EMBER RP</div>
     </div>
     <div class="notch"></div>
     <div class="cap">EmberOS &middot; Settings</div>

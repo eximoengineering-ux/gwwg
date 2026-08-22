@@ -20,18 +20,18 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px; }
     .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
     .toast { width: 344px; overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,0.5); }
     @keyframes slideR { from { opacity: 0; transform: translateX(36px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideR { opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes slideScale { from { opacity: 0; transform: translateX(36px) scale(0.97); } to { opacity: 0.85; transform: translateX(0) scale(0.97); } }
     @keyframes drain { to { transform: scaleX(0); } }
     .drain { transform-origin: left center; animation: drain 9s linear 1.2s forwards; }
     @keyframes stripes { to { background-position: 15px 0; } }
     @keyframes fillW { from { width: 0; } }
     @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes capPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,122,31,0.3); } 50% { box-shadow: 0 0 0 5px rgba(255,122,31,0); } }
     .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
@@ -57,7 +57,7 @@
         <div style="flex: 1;">
           <div style="display: flex; align-items: baseline; justify-content: space-between;">
             <span style="font-size: 13.5px; font-weight: 700;">Deposit complete</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">NOW</span>
+            <span class="h" style="font-size: 10px; color: #8A8177; font-weight: 600;">NOW</span>
           </div>
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">$2,500 transferred to your savings account.</div>
         </div>
@@ -74,7 +74,7 @@
         <div style="flex: 1;">
           <div style="display: flex; align-items: baseline; justify-content: space-between;">
             <span style="font-size: 13.5px; font-weight: 700;">New contract available</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">2M</span>
+            <span class="h" style="font-size: 10px; color: #8A8177; font-weight: 600;">2M</span>
           </div>
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">A delivery job was posted at the depot. Check your job center.</div>
         </div>
@@ -82,7 +82,7 @@
       <div style="height: 3px; background: rgba(255,255,255,0.06);"><div class="drain" style="width: 45%; height: 100%; background: #FF7A1F; animation-duration: 6s;"></div></div>
     </div>
 
-    <div class="panel cut toast" style="border-color: rgba(244,84,78,0.4); opacity: 0; animation: slideScale 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.24s forwards;">
+    <div class="panel cut toast" style="border-color: rgba(244,84,78,0.4); opacity: 0; animation: slideScale 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.24s forwards;">
       <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #F4544E, rgba(244,84,78,0.2));"></div>
       <div style="display: flex; align-items: flex-start; gap: 12px; padding: 13px 16px;">
         <div style="width: 32px; height: 32px; background: rgba(244,84,78,0.13); border: 1px solid rgba(244,84,78,0.5); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -91,7 +91,7 @@
         <div style="flex: 1;">
           <div style="display: flex; align-items: baseline; justify-content: space-between;">
             <span style="font-size: 13.5px; font-weight: 700;">Action failed</span>
-            <span class="h" style="font-size: 10px; color: #6B655F; font-weight: 600;">5M</span>
+            <span class="h" style="font-size: 10px; color: #8A8177; font-weight: 600;">5M</span>
           </div>
           <div style="font-size: 12.5px; color: #A8A29C; line-height: 1.45; margin-top: 2px;">This vehicle is locked. Find the keys or lockpick it.</div>
         </div>
@@ -113,14 +113,14 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4.5 4.5 0 0 0-6 6L3 18v3h3l5.5-5.5a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.5-3.5z"/></svg>
         <span style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; color: #D9D4CE;">REPAIRING ENGINE</span>
       </div>
-      <span class="h" style="font-size: 16px; font-weight: 700; color: #FFB56B;">64<span style="font-size: 11px; color: #6B655F;">%</span></span>
+      <span class="h" style="font-size: 16px; font-weight: 700; color: #FFB56B;">64<span style="font-size: 11px; color: #8A8177;">%</span></span>
     </div>
     <div style="margin-top: 11px; height: 9px; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 12px, rgba(0,0,0,0) 12px 15px); overflow: hidden;">
       <div style="width: 64%; height: 100%; background: repeating-linear-gradient(90deg, #FF7A1F 0 12px, rgba(0,0,0,0) 12px 15px); filter: drop-shadow(0 0 6px rgba(255,122,31,0.6)); animation: fillW 1.2s cubic-bezier(0.3, 0.7, 0.2, 1) 0.3s both, stripes 0.9s linear infinite;"></div>
     </div>
     <div style="margin-top: 9px; display: flex; justify-content: space-between; align-items: center;">
-      <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Press X to cancel</span>
-      <span class="h" style="font-size: 10.5px; color: #6B655F; font-weight: 600;">~4s LEFT</span>
+      <span style="font-size: 11px; color: #8A8177; font-weight: 500;">Press X to cancel</span>
+      <span class="h" style="font-size: 10.5px; color: #8A8177; font-weight: 600;">~4s LEFT</span>
     </div>
   </div>
 </div>

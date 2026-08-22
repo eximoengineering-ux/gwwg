@@ -24,7 +24,7 @@
     .cell { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; width: 40px; height: 50px; background: #0F0E0C; border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700; }
     @keyframes pop { from { opacity: 0; transform: translate(-50%, -47%) perspective(1200px) rotateX(4deg) scale(0.95); } to { opacity: 1; transform: translate(-50%, -50%) perspective(1200px) rotateX(4deg) scale(1); } }
     @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes shimmer { from { background-position: -200px 0; } to { background-position: 260px 0; } }
     @keyframes cellPulse { 0%, 100% { box-shadow: 0 0 0 3px rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.6); } 50% { box-shadow: 0 0 0 6px rgba(255,122,31,0.06); border-color: rgba(255,122,31,0.9); } }
     .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
@@ -39,7 +39,7 @@
   </svg>
   <div class="vig"></div>
 
-  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) perspective(1200px) rotateX(4deg); width: 464px; box-shadow: 0 34px 90px rgba(0,0,0,0.7); animation: pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
+  <div class="panel cut" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) perspective(1200px) rotateX(4deg); width: 464px; box-shadow: 0 34px 90px rgba(0,0,0,0.7); animation: pop 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
     <div style="position: absolute; left: 0; top: 0; right: 16px; height: 3px; background: linear-gradient(90deg, #FF7A1F 0%, #FFB56B 40%, #FF7A1F 80%); background-size: 200px 3px; background-repeat: repeat-x; animation: shimmer 3s linear infinite;"></div>
     <div class="edgep" style="bottom: 0; left: 14px; right: 14px;"></div>
     <div style="position: absolute; top: 0; right: 0; width: 23px; height: 23px; overflow: hidden;"><div style="position: absolute; top: 10px; right: -6px; width: 34px; height: 2px; background: linear-gradient(90deg, rgba(255,122,31,0), #FF7A1F); transform: rotate(45deg);"></div></div>
@@ -63,7 +63,7 @@
         <div class="flabel">Plate Number</div>
         <div style="display: flex; gap: 6px;">
           <div class="cell">E</div><div class="cell">M</div><div class="cell">B</div><div class="cell">E</div><div class="cell">R</div>
-          <div class="cell" style="color: #6B655F;">&middot;</div>
+          <div class="cell" style="color: #8A8177;">&middot;</div>
           <div class="cell">0</div>
           <div class="cell" style="border-color: rgba(255,122,31,0.6); box-shadow: 0 0 0 3px rgba(255,122,31,0.12); color: #FFB56B; animation: cellPulse 1.6s ease-in-out infinite;">1</div>
         </div>
@@ -79,7 +79,7 @@
         <div style="width: 128px; display: flex; flex-direction: column; gap: 9px;">
           <div class="flabel">Insurance</div>
           <div style="height: 46px; display: flex; align-items: center; gap: 10px;">
-            <div style="width: 52px; height: 28px; border-radius: 14px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative; box-shadow: 0 4px 14px rgba(255,122,31,0.35); flex-shrink: 0;"><div style="position: absolute; right: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #17100A;"></div></div>
+            <div style="width: 52px; height: 28px; border-radius: 16px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative; box-shadow: 0 4px 14px rgba(255,122,31,0.35); flex-shrink: 0;"><div style="position: absolute; right: 3px; top: 3px; width: 22px; height: 22px; border-radius: 50%; background: #17100A;"></div></div>
             <span style="font-size: 12px; color: #A8A29C; font-weight: 600;">+$450</span>
           </div>
         </div>
@@ -98,7 +98,7 @@
         <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: #A8A29C;"><span>Registration fee</span><span class="h" style="font-weight: 600;">$800</span></div>
         <div style="display: flex; justify-content: space-between; font-size: 12.5px; color: #A8A29C;"><span>Comprehensive insurance</span><span class="h" style="font-weight: 600;">$450</span></div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
-          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #6B655F;">TOTAL</span>
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8A8177;">TOTAL</span>
           <span class="h" style="font-size: 20px; font-weight: 700; color: #FFB56B;">$1,250</span>
         </div>
       </div>

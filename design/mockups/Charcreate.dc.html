@@ -17,16 +17,16 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
-    .fld { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.1); border-radius: 9px; padding: 10px 13px; font-size: 13px; font-weight: 600; }
-    .seg { flex: 1; text-align: center; font-size: 11px; font-weight: 700; padding: 8px 0; color: #6B655F; }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .fld { background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 13px; font-size: 13px; font-weight: 600; }
+    .seg { flex: 1; text-align: center; font-size: 11px; font-weight: 700; padding: 8px 0; color: #8A8177; }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes caret { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
@@ -60,11 +60,11 @@
     <div style="display: flex; gap: 12px; margin-top: 16px;">
       <div style="flex: 1;">
         <div class="lab" style="margin-bottom: 6px;">FIRST NAME</div>
-        <div class="fld">Ray</div>
+        <div class="fld">Dante</div>
       </div>
       <div style="flex: 1;">
         <div class="lab" style="margin-bottom: 6px;">LAST NAME</div>
-        <div class="fld" style="border-color: rgba(255,122,31,0.55); box-shadow: 0 0 0 3px rgba(255,122,31,0.12);">Calderon<span style="border-right: 2px solid #FF7A1F; margin-left: 1px; animation: caret 1.2s step-end infinite;">&nbsp;</span></div>
+        <div class="fld" style="border-color: rgba(255,122,31,0.55); box-shadow: 0 0 0 3px rgba(255,122,31,0.12);">Cruz<span style="border-right: 2px solid #FF7A1F; margin-left: 1px; animation: caret 1.2s step-end infinite;">&nbsp;</span></div>
       </div>
     </div>
     <div style="display: flex; gap: 12px; margin-top: 14px;">
@@ -78,22 +78,22 @@
       </div>
       <div style="flex: 1;">
         <div class="lab" style="margin-bottom: 6px;">NATIONALITY</div>
-        <div class="fld" style="display: flex; justify-content: space-between; align-items: center;">San Andreas <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
+        <div class="fld" style="display: flex; justify-content: space-between; align-items: center;">San Andreas <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></div>
       </div>
     </div>
     <div style="margin-top: 14px;">
       <div class="lab" style="margin-bottom: 6px;">GENDER</div>
-      <div style="display: flex; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 10px; overflow: hidden;">
+      <div style="display: flex; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; overflow: hidden;">
         <div class="seg h" style="color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E);">MALE</div>
         <div class="seg h">FEMALE</div>
       </div>
     </div>
-    <div style="display: flex; align-items: center; gap: 9px; margin-top: 16px; background: rgba(255,122,31,0.06); border: 1px solid rgba(255,122,31,0.22); border-radius: 10px; padding: 9px 12px;">
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 16px; background: rgba(255,122,31,0.06); border: 1px solid rgba(255,122,31,0.22); border-radius: 8px; padding: 9px 12px;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/></svg>
       <span style="font-size: 10.5px; color: #FFB56B; line-height: 1.5;">Name and date of birth are permanent. Choose a name that fits the city's roleplay rules.</span>
     </div>
     <div style="display: flex; gap: 10px; margin-top: 18px;">
-      <div class="h" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 11px 0;">BACK</div>
+      <div class="h" style="flex: 1; text-align: center; font-size: 12px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 11px 0;">BACK</div>
       <div class="cut h" style="flex: 2; position: relative; overflow: hidden; text-align: center; font-size: 12px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 12px 0; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">CONTINUE TO APPEARANCE<div class="sheen"></div></div>
     </div>
   </div>
@@ -108,7 +108,7 @@
       <div style="position: relative; width: 118px; height: 118px;">
         <svg width="118" height="118" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.6"/>
-          <circle cx="50" cy="50" r="46" fill="none" stroke="#FF7A1F" stroke-width="1.6" stroke-linecap="round" pathLength="100" stroke-dasharray="34 66" transform="rotate(-90 50 50)" style="animation: pulseGlow 2.6s ease-in-out infinite;"/>
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#FF7A1F" stroke-width="1.6" stroke-linecap="round" pathLength="100" stroke-dasharray="62 38" transform="rotate(-90 50 50)" style="animation: pulseGlow 2.6s ease-in-out infinite;"/>
           <circle cx="50" cy="42" r="15" fill="rgba(255,122,31,0.16)" stroke="rgba(255,122,31,0.5)" stroke-width="1.4"/>
           <path d="M25 82c3-14 12-21 25-21s22 7 25 21" fill="rgba(255,122,31,0.16)" stroke="rgba(255,122,31,0.5)" stroke-width="1.4"/>
         </svg>
@@ -137,7 +137,7 @@
   <div class="panel cut rise" style="position: absolute; left: 936px; top: 132px; width: 288px; padding: 18px 20px 20px; animation-delay: 0.32s; border-color: rgba(244,84,78,0.4); box-shadow: 0 0 30px rgba(244,84,78,0.12), 0 18px 50px rgba(0,0,0,0.55);">
     <div style="position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; background: linear-gradient(180deg, #F4544E, rgba(244,84,78,0.2)); box-shadow: 0 0 8px rgba(244,84,78,0.6); animation: pulseGlow 2s ease-in-out infinite;"></div>
     <div style="display: flex; align-items: center; gap: 10px;">
-      <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(244,84,78,0.14); border: 1px solid rgba(244,84,78,0.4); display: flex; align-items: center; justify-content: center;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(244,84,78,0.14); border: 1px solid rgba(244,84,78,0.4); display: flex; align-items: center; justify-content: center;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7M3 7h18M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>
       </div>
       <div>
@@ -145,12 +145,12 @@
         <div class="lab" style="margin-top: 1px;">IRREVERSIBLE ACTION</div>
       </div>
     </div>
-    <div style="font-size: 11.5px; color: #A8A29C; line-height: 1.6; margin-top: 12px;">You are about to permanently delete <b style="color: #F5F1EC;">Owen Reyes</b> — Mechanic &middot; Grade 2. All money, vehicles and items will be lost.</div>
+    <div style="font-size: 11.5px; color: #A8A29C; line-height: 1.6; margin-top: 12px;">You are about to permanently delete <b style="color: #F5F1EC;">Mia Vasquez</b> — Paramedic &middot; Grade 2. All money, vehicles and items will be lost.</div>
     <div class="lab" style="margin-top: 14px; margin-bottom: 6px;">TYPE "DELETE" TO CONFIRM</div>
     <div class="fld h" style="border-color: rgba(244,84,78,0.5); letter-spacing: 0.2em;">DELE<span style="border-right: 2px solid #F4544E; animation: caret 1.2s step-end infinite;">&nbsp;</span></div>
     <div style="display: flex; gap: 9px; margin-top: 15px;">
-      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 10px 0;">CANCEL</div>
-      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #2A0A08; background: linear-gradient(135deg, #F4544E, #C2382F); border-radius: 10px; padding: 10px 0; opacity: 0.55;">DELETE</div>
+      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #A8A29C; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 10px 0;">CANCEL</div>
+      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #2A0A08; background: linear-gradient(135deg, #F4544E, #C2382F); border-radius: 8px; padding: 10px 0; opacity: 0.55;">DELETE</div>
     </div>
   </div>
 

@@ -19,16 +19,16 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
     .cat { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: rgba(26,23,19,0.9); border: 1px solid rgba(255,255,255,0.08); }
     .sw { width: 26px; height: 26px; border: 1px solid rgba(255,255,255,0.15); box-sizing: border-box; }
     .arr { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); }
     @keyframes slideL { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes slideR { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideR { opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     @keyframes riseC { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translateX(-50%); } }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
@@ -74,13 +74,13 @@
       <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2)); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
         <span class="lab" style="color: #FFB56B;">Jackets</span>
-        <span class="h" style="font-size: 12px; font-weight: 700; color: #FFB56B;">12<span style="color: #6B655F;"> / 48</span></span>
+        <span class="h" style="font-size: 12px; font-weight: 700; color: #FFB56B;">12<span style="color: #8A8177;"> / 48</span></span>
       </div>
       <div style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
         <div class="arr" style="width: 30px; height: 30px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></div>
         <div style="flex: 1; text-align: center;">
           <div style="font-size: 13.5px; font-weight: 700;">Bomber &middot; Ember Edition</div>
-          <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px;">Benny's exclusive</div>
+          <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px;">Benny's exclusive</div>
         </div>
         <div class="arr" style="width: 30px; height: 30px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></div>
       </div>
@@ -89,7 +89,7 @@
     <div class="panel slideR" style="padding: 17px 19px; animation-delay: 0.1s;">
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
         <span class="lab">Texture</span>
-        <span class="h" style="font-size: 12px; font-weight: 700; color: #A8A29C;">4<span style="color: #6B655F;"> / 8</span></span>
+        <span class="h" style="font-size: 12px; font-weight: 700; color: #A8A29C;">4<span style="color: #8A8177;"> / 8</span></span>
       </div>
       <div style="display: flex; gap: 7px; margin-top: 12px;">
         <div class="sw" style="background: #2b2620;"></div>
@@ -107,7 +107,7 @@
         <span class="h" style="font-size: 10.5px; font-weight: 700; color: #FFB56B; background: rgba(255,122,31,0.1); border: 1px solid rgba(255,122,31,0.4); padding: 5px 11px;">WORK FIT</span>
         <span class="h" style="font-size: 10.5px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); padding: 5px 11px;">CASUAL</span>
         <span class="h" style="font-size: 10.5px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); padding: 5px 11px;">RACE NIGHT</span>
-        <span class="h" style="font-size: 10.5px; font-weight: 700; color: #6B655F; border: 1px dashed rgba(255,255,255,0.2); padding: 5px 11px;">+ SAVE</span>
+        <span class="h" style="font-size: 10.5px; font-weight: 700; color: #8A8177; border: 1px dashed rgba(255,255,255,0.2); padding: 5px 11px;">+ SAVE</span>
       </div>
     </div>
 
@@ -117,9 +117,9 @@
     </div>
   </div>
 
-  <div style="position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; gap: 14px; opacity: 0; animation: riseC 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;">
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">&#8592;&#8594;</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Rotate</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">Z</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Zoom</span></div>
+  <div style="position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); display: flex; gap: 14px; opacity: 0; animation: riseC 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s forwards;">
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px;">&#8592;&#8594;</span><span style="font-size: 11px; color: #8A8177; font-weight: 500;">Rotate</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px;">Z</span><span style="font-size: 11px; color: #8A8177; font-weight: 500;">Zoom</span></div>
   </div>
 </div>
 </x-dc>

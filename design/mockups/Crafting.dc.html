@@ -17,17 +17,17 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
-    .rrow { display: flex; align-items: center; gap: 12px; padding: 11px 13px; border-radius: 11px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.025); }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .rrow { display: flex; align-items: center; gap: 12px; padding: 11px 13px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.025); }
     .mat { display: flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; }
     .atn { position: absolute; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid rgba(255,122,31,0.6); background: rgba(12,11,10,0.85); display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 700; color: #FFB56B; }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes fillW { from { width: 0; } }
     @keyframes stripes { 0% { background-position: 0 0; } 100% { background-position: 24px 0; } }
@@ -88,14 +88,14 @@
       <div style="flex: 1;">
         <div style="font-size: 13px; font-weight: 600;">Armor plate</div>
         <div style="display: flex; gap: 10px; margin-top: 5px;">
-          <span class="mat" style="color: #6B655F;">Requires Mechanic Lv 4</span>
+          <span class="mat" style="color: #8A8177;">Requires Mechanic Lv 4</span>
         </div>
       </div>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
     </div>
 
     <div style="margin-top: 15px;">
-      <div style="display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; color: #6B655F; letter-spacing: 0.1em; margin-bottom: 6px;"><span>CRAFTING &middot; REPAIR KIT</span><span style="color: #FFB56B;">64% &middot; ~4S LEFT</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 9.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.1em; margin-bottom: 6px;"><span>CRAFTING &middot; REPAIR KIT</span><span style="color: #FFB56B;">64% &middot; ~4S LEFT</span></div>
       <div style="height: 12px; border-radius: 999px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.09); overflow: hidden; padding: 2px;">
         <div style="width: 64%; height: 100%; border-radius: 999px; background: repeating-linear-gradient(-55deg, #FF7A1F 0 8px, #E8540E 8px 16px); background-size: 24px 100%; animation: fillW 1.4s cubic-bezier(0.2, 0.8, 0.2, 1), stripes 0.9s linear infinite;"></div>
       </div>
@@ -108,7 +108,7 @@
       <span class="h" style="font-size: 15px; font-weight: 700;">Weapon attachments</span>
       <span class="lab">COMBAT SMG &middot; EMB-77Q4-K812</span>
     </div>
-    <div style="position: relative; height: 180px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; background: radial-gradient(400px 160px at 50% 45%, rgba(255,122,31,0.07) 0%, rgba(255,122,31,0) 70%), rgba(10,9,8,0.5);">
+    <div style="position: relative; height: 180px; margin-top: 12px; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; background: radial-gradient(400px 160px at 50% 45%, rgba(255,122,31,0.07) 0%, rgba(255,122,31,0) 70%), rgba(10,9,8,0.5);">
       <svg width="270" height="110" viewBox="0 0 200 82" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -52%);">
         <rect x="24" y="30" width="110" height="18" rx="4" fill="#3a3733"/>
         <rect x="118" y="24" width="58" height="12" rx="3" fill="#2c2926"/>
@@ -126,28 +126,28 @@
       <span class="lab" style="position: absolute; left: 12px; bottom: 10px;">S SUPPRESSOR &middot; G GRIP FITTED</span>
     </div>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px;">
-      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(66,211,146,0.35); background: rgba(66,211,146,0.06); border-radius: 10px; padding: 9px 11px;">
+      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(66,211,146,0.35); background: rgba(66,211,146,0.06); border-radius: 8px; padding: 9px 11px;">
         <span class="h" style="width: 22px; height: 22px; border-radius: 50%; background: rgba(66,211,146,0.15); color: #42D392; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">S</span>
         <div style="flex: 1;">
           <div style="font-size: 11.5px; font-weight: 700;">Suppressor</div>
           <div style="font-size: 9.5px; color: #42D392;">Fitted &middot; click to remove</div>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255,122,31,0.4); background: rgba(255,122,31,0.06); border-radius: 10px; padding: 9px 11px; box-shadow: 0 0 16px rgba(255,122,31,0.1);">
+      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255,122,31,0.4); background: rgba(255,122,31,0.06); border-radius: 8px; padding: 9px 11px; box-shadow: 0 0 16px rgba(255,122,31,0.1);">
         <span class="h" style="width: 22px; height: 22px; border-radius: 50%; background: rgba(255,122,31,0.15); color: #FFB56B; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">M</span>
         <div style="flex: 1;">
           <div style="font-size: 11.5px; font-weight: 700;">Extended mag</div>
           <div style="font-size: 9.5px; color: #FFB56B;">In inventory &middot; click to fit</div>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); border-radius: 10px; padding: 9px 11px; opacity: 0.65;">
+      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); border-radius: 8px; padding: 9px 11px; opacity: 0.65;">
         <span class="h" style="width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.07); color: #A8A29C; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">O</span>
         <div style="flex: 1;">
           <div style="font-size: 11.5px; font-weight: 600;">Holo optic</div>
-          <div style="font-size: 9.5px; color: #6B655F;">Not owned &middot; Ammunation</div>
+          <div style="font-size: 9.5px; color: #8A8177;">Not owned &middot; Ammunation</div>
         </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(66,211,146,0.35); background: rgba(66,211,146,0.06); border-radius: 10px; padding: 9px 11px;">
+      <div style="display: flex; align-items: center; gap: 10px; border: 1px solid rgba(66,211,146,0.35); background: rgba(66,211,146,0.06); border-radius: 8px; padding: 9px 11px;">
         <span class="h" style="width: 22px; height: 22px; border-radius: 50%; background: rgba(66,211,146,0.15); color: #42D392; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center;">G</span>
         <div style="flex: 1;">
           <div style="font-size: 11.5px; font-weight: 700;">Vertical grip</div>
@@ -167,7 +167,7 @@
       <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;"><span>Plastic</span><span class="h" style="color: #F4544E; font-weight: 700;">&times;1</span></div>
       <div style="display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-weight: 600;"><span>Electronics</span><span class="h" style="color: #FFB56B; font-weight: 700;">&times;2</span></div>
     </div>
-    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(255,122,31,0.06); border: 1px solid rgba(255,122,31,0.22); border-radius: 10px; padding: 9px 11px;">
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 14px; background: rgba(255,122,31,0.06); border: 1px solid rgba(255,122,31,0.22); border-radius: 8px; padding: 9px 11px;">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFB56B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></svg>
       <span style="font-size: 10px; color: #FFB56B; line-height: 1.5;">Scrap yards &amp; the recycler sell materials.</span>
     </div>

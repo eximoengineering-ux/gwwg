@@ -17,11 +17,11 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.05) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.72) 100%); }
-    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px; }
     .kbon { color: #FF7A1F; background: rgba(255,122,31,0.12); border-color: rgba(255,122,31,0.4); }
     @keyframes wheelIn { from { opacity: 0; transform: scale(0.88); } to { opacity: 1; transform: scale(1); } }
     @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes sweepArc { from { stroke-dasharray: 0 360; } }
     @keyframes dashcrawl { to { stroke-dashoffset: -50; } }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -44,7 +44,7 @@
   <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 640px; height: 320px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,122,31,0.1), rgba(255,122,31,0)); filter: blur(30px); animation: ambient 5s ease-in-out infinite;"></div>
 
   <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px;">
-    <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px; animation: wheelIn 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
+    <svg width="460" height="460" viewBox="0 0 460 460" style="position: absolute; left: -20px; top: -20px; animation: wheelIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
       <defs>
         <linearGradient id="emberSeg" x1="1" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#FFB56B"/>
@@ -124,15 +124,15 @@
     <div style="position: absolute; left: 50%; top: 230px; transform: translateX(-50%); text-align: center;">
       <div class="rise" style="animation-delay: 0.35s;">
         <div class="h" style="font-size: 14px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">VEHICLE</div>
-        <div style="font-size: 10px; color: #6B655F; margin-top: 2px; white-space: nowrap;">6 actions</div>
+        <div style="font-size: 10px; color: #8A8177; margin-top: 2px; white-space: nowrap;">6 actions</div>
       </div>
     </div>
   </div>
 
   <div style="position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); display: flex; gap: 14px;">
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">F1</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Hold to open</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb kbon">LMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Select</span></div>
-    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">RMB</span><span style="font-size: 11px; color: #6B655F; font-weight: 500;">Back</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">F1</span><span style="font-size: 11px; color: #8A8177; font-weight: 500;">Hold to open</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb kbon">LMB</span><span style="font-size: 11px; color: #8A8177; font-weight: 500;">Select</span></div>
+    <div style="display: flex; align-items: center; gap: 7px;"><span class="kb">RMB</span><span style="font-size: 11px; color: #8A8177; font-weight: 500;">Back</span></div>
   </div>
 </div>
 </x-dc>

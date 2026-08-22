@@ -18,14 +18,14 @@
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.62) 100%); }
     .app { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .tile { position: relative; width: 48px; height: 48px; border-radius: 13px; display: flex; align-items: center; justify-content: center; overflow: hidden;
+    .tile { position: relative; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 2px rgba(0,0,0,0.28), 0 6px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4); }
     .tile::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 100% at 30% 12%, rgba(255,255,255,0.16), rgba(255,255,255,0) 45%, rgba(0,0,0,0.16) 100%); pointer-events: none; }
     .dtile { background: radial-gradient(130% 110% at 30% 18%, #2b2b31 0%, #1a1a1f 60%, #131317 100%); }
     .aname { font-size: 8.5px; font-weight: 600; color: #A8A29C; letter-spacing: 0.02em; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
     @keyframes phoneUp { from { opacity: 0; transform: translate(-50%, -44%) rotate(1.5deg); } to { opacity: 1; transform: translate(-50%, -50%) rotate(0deg); } }
     @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: none; } }
     @keyframes riseC { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
@@ -61,7 +61,7 @@
   <div class="scene"></div>
   <div class="vig"></div>
 
-  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 306px; height: 648px; animation: phoneUp 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
+  <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 306px; height: 648px; animation: phoneUp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;">
     <div style="position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 40px 90px rgba(0,0,0,0.7), 0 0 40px rgba(255,122,31,0.08), inset 0 0 0 3px #060505;"></div>
     <div style="position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: radial-gradient(340px 260px at 85% -5%, rgba(255,122,31,0.22), rgba(255,122,31,0) 60%), radial-gradient(300px 300px at 0% 105%, rgba(76,158,235,0.1), rgba(76,158,235,0) 55%), linear-gradient(175deg, #14110e 0%, #0c0a09 100%);">
 
@@ -78,14 +78,14 @@
         <div style="font-size: 11.5px; color: #A8A29C; margin-top: 5px;">Saturday, August 22 &middot; Los Santos 24&deg;</div>
       </div>
 
-      <div style="margin: 16px 14px 0; background: rgba(30,26,22,0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 15px; padding: 11px 13px; display: flex; gap: 10px; align-items: flex-start; opacity: 0; animation: slideDown 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;">
-        <div class="tile" style="width: 30px; height: 30px; border-radius: 9px; background: #F2C531; flex-shrink: 0;">
+      <div style="margin: 16px 14px 0; background: rgba(30,26,22,0.85); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 11px 13px; display: flex; gap: 10px; align-items: flex-start; opacity: 0; animation: slideDown 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s forwards;">
+        <div class="tile" style="width: 30px; height: 30px; border-radius: 8px; background: #F2C531; flex-shrink: 0;">
           <svg width="26" height="26" viewBox="0 0 48 48"><ellipse cx="24" cy="40" rx="12" ry="2.6" fill="rgba(0,0,0,0.28)" filter="url(#sB3)"/><g transform="rotate(-5 24 24)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="#8F94A1" transform="translate(1.6 2.2)" filter="url(#sB)"/><g clip-path="url(#kBu)"><path d="M26 10.2c9.3 1 16.1 7 15.4 14.1-.7 7-8.6 12-17.9 11-1.8-.2-3.4-.6-4.9-1.1L12 37l2.5-4.9c-3.3-2.6-5-6.3-4.6-10.3.7-7 8.8-12.6 16.1-11.6z" fill="url(#cW)"/><ellipse cx="18" cy="15" rx="15" ry="9" fill="rgba(255,255,255,0.85)" filter="url(#sB2)"/><ellipse cx="33" cy="34" rx="16" ry="10" fill="rgba(122,128,142,0.5)" filter="url(#sB2)"/></g></g></svg>
         </div>
         <div style="flex: 1;">
           <div style="display: flex; justify-content: space-between; align-items: baseline;">
             <span style="font-size: 11.5px; font-weight: 700;">Mia Vasquez</span>
-            <span style="font-size: 9px; color: #6B655F;">1m</span>
+            <span style="font-size: 9px; color: #8A8177;">1m</span>
           </div>
           <div style="font-size: 11px; color: #A8A29C; margin-top: 2px; line-height: 1.4;">You still owe me a ride in that Sultan &#128293;</div>
         </div>
@@ -142,7 +142,7 @@
         </div><span class="aname">Settings</span></div>
       </div>
 
-      <div class="rise" style="position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(34,29,24,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 8px 6px; animation-delay: 0.55s;">
+      <div class="rise" style="position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(34,29,24,0.75); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 8px 6px; animation-delay: 0.55s;">
         <div class="tile" style="width: 42px; height: 42px; border-radius: 12px; background: #3E7BFA;">
           <svg width="38" height="38" viewBox="0 0 48 48"><g transform="rotate(-8 24 24)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="#8F94A1" transform="translate(2 2.6)" filter="url(#sB)"/><g clip-path="url(#kPh)"><path d="M11.5 14.5c-.8 5.5 3.4 12.6 8.9 18.1 5.5 5.5 12.6 9.7 18.1 8.9 2.6-.4 4.6-2 5-4.4l.7-3.6c.3-1.7-.6-3.3-2.2-4l-4.6-1.9c-1.4-.6-3-.2-4 1l-1.6 1.9c-3.3-2-7.2-5.9-9.2-9.2l1.9-1.6c1.2-1 1.6-2.6 1-4L23.6 11c-.7-1.6-2.3-2.5-4-2.2l-3.6.7c-2.4.4-4 2.4-4.5 5z" fill="url(#cW)"/><ellipse cx="15" cy="13" rx="12" ry="9" fill="rgba(255,255,255,0.9)" filter="url(#sB2)"/><ellipse cx="36" cy="38" rx="14" ry="10" fill="rgba(122,128,142,0.55)" filter="url(#sB2)"/></g></g></svg>
         </div>
@@ -157,12 +157,12 @@
         </div>
       </div>
     </div>
-    <div style="position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 10px; background: #060505;"></div>
+    <div style="position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505;"></div>
   </div>
 
-  <div style="position: absolute; left: 50%; bottom: 18px; display: flex; align-items: center; gap: 7px; opacity: 0; animation: riseC 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards; transform: translateX(-50%);">
-    <span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px;">M</span>
-    <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Close phone</span>
+  <div style="position: absolute; left: 50%; bottom: 18px; display: flex; align-items: center; gap: 7px; opacity: 0; animation: riseC 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s forwards; transform: translateX(-50%);">
+    <span class="h" style="font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px;">M</span>
+    <span style="font-size: 11px; color: #8A8177; font-weight: 500;">Close phone</span>
   </div>
 </div>
 </x-dc>

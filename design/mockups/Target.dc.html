@@ -20,10 +20,10 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 5px; padding: 2px 7px; }
+    .kb { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; font-size: 11px; font-weight: 700; color: #A8A29C; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; padding: 2px 7px; }
     .num { font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #A8A29C; flex-shrink: 0; }
     @keyframes slideR { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideR { opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes slideAct { from { opacity: 0; transform: translateX(34px); } to { opacity: 1; transform: translateX(7px); } }
     @keyframes dashcrawl { to { stroke-dashoffset: -48; } }
     @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
@@ -64,13 +64,13 @@
       <div style="position: absolute; left: 0; top: 5px; bottom: 5px; width: 2px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.2));"></div>
       <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: #FFB56B;">SULTAN RS</span>
       <span style="width: 1px; height: 10px; background: rgba(255,255,255,0.15);"></span>
-      <span class="h" style="font-size: 10px; font-weight: 600; color: #6B655F;">8ABC123</span>
+      <span class="h" style="font-size: 10px; font-weight: 600; color: #8A8177;">8ABC123</span>
       <span style="width: 1px; height: 10px; background: rgba(255,255,255,0.15);"></span>
-      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
       <span class="h" style="font-size: 10px; font-weight: 600; color: #A8A29C;">2.1M</span>
     </div>
 
-    <div class="panel cut" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-color: rgba(255,122,31,0.6); box-shadow: 0 0 24px rgba(255,122,31,0.2), 0 12px 34px rgba(0,0,0,0.5); opacity: 0; animation: slideAct 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.28s forwards;">
+    <div class="panel cut" style="display: flex; align-items: center; gap: 12px; padding: 12px 16px 12px 12px; border-color: rgba(255,122,31,0.6); box-shadow: 0 0 24px rgba(255,122,31,0.2), 0 12px 34px rgba(0,0,0,0.5); opacity: 0; animation: slideAct 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.28s forwards;">
       <div style="position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
       <div class="num" style="background: rgba(255,122,31,0.14); border-color: rgba(255,122,31,0.45); color: #FFB56B;">1</div>
       <div style="width: 30px; height: 30px; background: rgba(255,122,31,0.14); border: 1px solid rgba(255,122,31,0.45); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -98,7 +98,7 @@
 
     <div class="slideR" style="display: flex; align-items: center; gap: 7px; margin-top: 3px; margin-left: 2px; animation-delay: 0.54s;">
       <span class="kb">ALT</span>
-      <span style="font-size: 11px; color: #6B655F; font-weight: 500;">Hold to keep open</span>
+      <span style="font-size: 11px; color: #8A8177; font-weight: 500;">Hold to keep open</span>
     </div>
   </div>
 </div>

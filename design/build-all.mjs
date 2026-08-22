@@ -21,7 +21,7 @@ const SECTIONS = [
   { name: 'Screens & Apps', boards: [
     ['Multichar.dc.html', 'Multicharacter — Select', 720],
     ['Spawn.dc.html', 'Spawn Selector', 720],
-    ['Phone.dc.html', 'Phone — EmberOS Home', 720],
+    ['Phone.dc.html', 'Phone — EmberOS', 720],
     ['Inventory.dc.html', 'Inventory — Pockets & Trunk', 720],
     ['Banking.dc.html', 'Banking — Fleeca', 720],
     ['Shop.dc.html', 'Shop — 24/7', 720],

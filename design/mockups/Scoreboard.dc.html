@@ -19,13 +19,13 @@
     .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
+    .lab { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
     .jchip { display: flex; align-items: center; gap: 8px; padding: 8px 13px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
     .row { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,0.045); }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes slideR { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
-    .slideR { opacity: 0; animation: slideR 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideR { opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     .edgep { position: absolute; height: 5px; background: repeating-linear-gradient(-45deg, rgba(255,122,31,0.5) 0 2px, rgba(255,122,31,0) 2px 6px); -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); pointer-events: none; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
@@ -45,13 +45,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2.5c3.2 3 5.5 5.9 5.5 9.4 0 3.4-2.5 5.9-5.5 5.9s-5.5-2.5-5.5-5.9c0-3.5 2.3-6.4 5.5-9.4z" fill="#0C0B0A"/><path d="M12 10c1.4 1.4 2.3 2.6 2.3 4.1 0 1.5-1 2.6-2.3 2.6s-2.3-1.1-2.3-2.6c0-1.5.9-2.7 2.3-4.1z" fill="#FF7A1F"/></svg>
         </div>
         <div>
-          <div class="h" style="font-size: 17px; font-weight: 700;">EMBER RP <span style="color: #6B655F; font-size: 12px; font-weight: 600;">&middot; Scoreboard</span></div>
+          <div class="h" style="font-size: 17px; font-weight: 700;">EMBER RP <span style="color: #8A8177; font-size: 12px; font-weight: 600;">&middot; Scoreboard</span></div>
           <div style="font-size: 11px; color: #A8A29C; margin-top: 2px;">Server 1 &middot; Tsunami in <span class="h" style="color: #FFB56B; font-weight: 700;">04:12:30</span></div>
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 9px;">
         <span style="width: 7px; height: 7px; border-radius: 50%; background: #42D392; box-shadow: 0 0 8px rgba(66,211,146,0.9); animation: pulseGlow 2s ease-in-out infinite;"></span>
-        <span class="h" style="font-size: 16px; font-weight: 700;">128<span style="color: #6B655F; font-size: 12px;"> / 200</span></span>
+        <span class="h" style="font-size: 16px; font-weight: 700;">128<span style="color: #8A8177; font-size: 12px;"> / 200</span></span>
       </div>
     </div>
 
@@ -71,31 +71,31 @@
         <span class="lab" style="width: 60px; text-align: right;">Ping</span>
       </div>
       <div class="row slideR" style="animation-delay: 0.15s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">12</span>
+        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #8A8177;">12</span>
         <span style="flex: 1; font-size: 13px; font-weight: 600;">Marcus Webb</span>
         <span style="width: 130px; font-size: 12px; color: #4C9EEB; font-weight: 600;">Police &middot; Sgt</span>
         <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">32</span>
       </div>
-      <div class="row" style="background: rgba(255,122,31,0.07); border-left: 3px solid #FF7A1F; opacity: 0; animation: slideR 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s forwards;">
+      <div class="row" style="background: rgba(255,122,31,0.07); border-left: 3px solid #FF7A1F; opacity: 0; animation: slideR 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.22s forwards;">
         <span class="h" style="width: 41px; font-size: 12.5px; font-weight: 700; color: #FFB56B;">214</span>
         <span style="flex: 1; font-size: 13px; font-weight: 700; color: #FFFFFF;">Ray Calderon <span style="font-size: 10px; color: #FFB56B; font-weight: 700; letter-spacing: 0.1em; margin-left: 6px;">YOU</span></span>
         <span style="width: 130px; font-size: 12px; color: #FFB56B; font-weight: 600;">Mechanic &middot; G3</span>
         <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">28</span>
       </div>
       <div class="row slideR" style="animation-delay: 0.29s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">87</span>
+        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #8A8177;">87</span>
         <span style="flex: 1; font-size: 13px; font-weight: 600;">Mia Vasquez</span>
         <span style="width: 130px; font-size: 12px; color: #42D392; font-weight: 600;">EMS &middot; Paramedic</span>
         <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #42D392;">45</span>
       </div>
       <div class="row slideR" style="animation-delay: 0.36s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">156</span>
+        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #8A8177;">156</span>
         <span style="flex: 1; font-size: 13px; font-weight: 600;">Dexter Cole</span>
         <span style="width: 130px; font-size: 12px; color: #A8A29C; font-weight: 600;">Civilian</span>
         <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #E8B04B;">96</span>
       </div>
       <div class="row slideR" style="border-bottom: none; animation-delay: 0.43s;">
-        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #6B655F;">203</span>
+        <span class="h" style="width: 44px; font-size: 12.5px; font-weight: 700; color: #8A8177;">203</span>
         <span style="flex: 1; font-size: 13px; font-weight: 600;">Lena Ortiz</span>
         <span style="width: 130px; font-size: 12px; color: #E8B04B; font-weight: 600;">Taxi</span>
         <span class="h" style="width: 60px; text-align: right; font-size: 12px; font-weight: 700; color: #F4544E;">180</span>

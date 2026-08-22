@@ -17,17 +17,17 @@
     .ph { position: absolute; top: 24px; width: 306px; height: 648px; }
     .phF { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(160deg, #23201c, #0d0b0a); border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 34px 80px rgba(0,0,0,0.7), inset 0 0 0 3px #060505; }
     .scr { position: absolute; left: 10px; top: 10px; right: 10px; bottom: 10px; border-radius: 32px; overflow: hidden; background: linear-gradient(175deg, #16130f 0%, #0c0a09 100%); }
-    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 10px; background: #060505; z-index: 6; }
+    .notch { position: absolute; left: 50%; top: 16px; transform: translateX(-50%); width: 74px; height: 18px; border-radius: 8px; background: #060505; z-index: 6; }
     .sb { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px 0; font-size: 11.5px; font-weight: 700; }
-    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #6B655F; text-transform: uppercase; }
+    .cap { position: absolute; top: 680px; left: 0; width: 306px; text-align: center; font-size: 10.5px; line-height: 1; font-weight: 700; letter-spacing: 0.14em; color: #8A8177; text-transform: uppercase; }
     .mrow { display: flex; gap: 10px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
     .dot { width: 7px; height: 7px; border-radius: 50%; background: #FF7A1F; margin-top: 6px; flex-shrink: 0; box-shadow: 0 0 8px rgba(255,122,31,0.6); }
     .tgOn { width: 38px; height: 22px; border-radius: 999px; background: linear-gradient(135deg, #FF7A1F, #E8540E); position: relative; flex-shrink: 0; box-shadow: inset 0 1px 2px rgba(0,0,0,0.25); }
     .tgOn::after { content: ''; position: absolute; right: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #F5F1EC; box-shadow: 0 2px 5px rgba(0,0,0,0.35); }
     .tgOff { width: 38px; height: 22px; border-radius: 999px; background: rgba(255,255,255,0.1); position: relative; flex-shrink: 0; }
-    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #6B655F; }
+    .tgOff::after { content: ''; position: absolute; left: 2.5px; top: 2.5px; width: 17px; height: 17px; border-radius: 50%; background: #8A8177; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes ringBell { 0%, 12%, 100% { transform: rotate(0); } 3% { transform: rotate(12deg); } 6% { transform: rotate(-10deg); } 9% { transform: rotate(6deg); } }
     .bell { animation: ringBell 3.4s ease-in-out infinite; transform-origin: 50% 20%; }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
@@ -50,9 +50,9 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A8A29C" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 11px; padding: 8px 12px; margin-top: 12px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-          <span style="font-size: 11.5px; color: #6B655F;">Search mail</span>
+        <div style="display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 8px 12px; margin-top: 12px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          <span style="font-size: 11.5px; color: #8A8177;">Search mail</span>
         </div>
       </div>
       <div style="margin-top: 8px;">
@@ -64,7 +64,7 @@
               <span style="font-size: 10px; color: #FF7A1F; font-weight: 600;">20:06</span>
             </div>
             <div style="font-size: 11px; font-weight: 700; color: #D9D3CC; margin-top: 2px;">Payroll confirmation &mdash; week 34</div>
-            <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Hi Ray, your weekly payroll of $1,250 was sent to Fleeca account ending 2148...</div>
+            <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Hi Ray, your weekly payroll of $1,250 was sent to Fleeca account ending 2148...</div>
           </div>
         </div>
         <div class="mrow" style="background: rgba(255,122,31,0.04);">
@@ -72,11 +72,11 @@
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 12.5px; font-weight: 700;">Los Santos DMV</span>
-              <span style="font-size: 10px; color: #6B655F;">18:24</span>
+              <span style="font-size: 10px; color: #8A8177;">18:24</span>
             </div>
             <div style="font-size: 11px; font-weight: 700; color: #D9D3CC; margin-top: 2px;">Receipt &mdash; Form 12-B vehicle registration</div>
-            <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Your registration for plate 8ABC123 has been processed. Total paid: $1,250...</div>
-            <div style="display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 7px; padding: 4px 9px;">
+            <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Your registration for plate 8ABC123 has been processed. Total paid: $1,250...</div>
+            <div style="display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 4px 9px;">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
               <span style="font-size: 9px; font-weight: 700; color: #A8A29C;">receipt_12B.pdf</span>
             </div>
@@ -87,10 +87,10 @@
           <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 12.5px; font-weight: 700;">Dynasty 8 Real Estate</span>
-              <span style="font-size: 10px; color: #6B655F;">17:22</span>
+              <span style="font-size: 10px; color: #8A8177;">17:22</span>
             </div>
             <div style="font-size: 11px; font-weight: 700; color: #D9D3CC; margin-top: 2px;">Apartment 3C &mdash; rent due in 3 days</div>
-            <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">A friendly reminder that rent for Alta St. Apt 3C ($850) is due on Aug 25...</div>
+            <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">A friendly reminder that rent for Alta St. Apt 3C ($850) is due on Aug 25...</div>
           </div>
         </div>
         <div class="mrow">
@@ -98,10 +98,10 @@
           <div style="flex: 1; min-width: 0; opacity: 0.72;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 12.5px; font-weight: 600;">Fleeca Bank</span>
-              <span style="font-size: 10px; color: #6B655F;">Yesterday</span>
+              <span style="font-size: 10px; color: #8A8177;">Yesterday</span>
             </div>
             <div style="font-size: 11px; font-weight: 600; color: #A8A29C; margin-top: 2px;">Your August statement is ready</div>
-            <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">View your monthly statement for account ****2148 in the Fleeca app...</div>
+            <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">View your monthly statement for account ****2148 in the Fleeca app...</div>
           </div>
         </div>
         <div class="mrow" style="border-bottom: none;">
@@ -109,10 +109,10 @@
           <div style="flex: 1; min-width: 0; opacity: 0.72;">
             <div style="display: flex; justify-content: space-between; align-items: baseline;">
               <span style="font-size: 12.5px; font-weight: 600;">Premium Deluxe Motorsport</span>
-              <span style="font-size: 10px; color: #6B655F;">Aug 19</span>
+              <span style="font-size: 10px; color: #8A8177;">Aug 19</span>
             </div>
             <div style="font-size: 11px; font-weight: 600; color: #A8A29C; margin-top: 2px;">Trade-in offer for your Bravado Bison</div>
-            <div style="font-size: 10.5px; color: #6B655F; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Simeon here! I have a once-in-a-lifetime offer just for you, my friend...</div>
+            <div style="font-size: 10.5px; color: #8A8177; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Simeon here! I have a once-in-a-lifetime offer just for you, my friend...</div>
           </div>
         </div>
       </div>
@@ -143,9 +143,9 @@
           <div class="h" style="width: 34px; height: 34px; border-radius: 50%; background: rgba(76,158,235,0.15); color: #4C9EEB; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">DMV</div>
           <div style="flex: 1;">
             <div style="font-size: 12px; font-weight: 700;">Los Santos DMV</div>
-            <div style="font-size: 10px; color: #6B655F;">no-reply@dmv.sa.gov &middot; to me</div>
+            <div style="font-size: 10px; color: #8A8177;">no-reply@dmv.sa.gov &middot; to me</div>
           </div>
-          <span style="font-size: 10px; color: #6B655F;">18:24</span>
+          <span style="font-size: 10px; color: #8A8177;">18:24</span>
         </div>
         <div style="font-size: 11.5px; line-height: 1.65; color: #D9D3CC; margin-top: 13px;">
           Dear Mr. Calderon,<br><br>
@@ -155,37 +155,37 @@
           <div style="height: 3px; background: linear-gradient(90deg, #FF7A1F, #E8540E);"></div>
           <div style="padding: 11px 13px; background: rgba(255,255,255,0.025);">
             <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);">
-              <span style="font-size: 10px; color: #6B655F; font-weight: 600; letter-spacing: 0.06em;">PLATE</span><span class="h" style="font-size: 10.5px; font-weight: 700;">8ABC123</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 600; letter-spacing: 0.06em;">PLATE</span><span class="h" style="font-size: 10.5px; font-weight: 700;">8ABC123</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);">
-              <span style="font-size: 10px; color: #6B655F; font-weight: 600; letter-spacing: 0.06em;">VEHICLE</span><span style="font-size: 10.5px; font-weight: 600;">Karin Sultan RS</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 600; letter-spacing: 0.06em;">VEHICLE</span><span style="font-size: 10.5px; font-weight: 600;">Karin Sultan RS</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);">
-              <span style="font-size: 10px; color: #6B655F; font-weight: 600; letter-spacing: 0.06em;">REGISTRATION</span><span style="font-size: 10.5px; font-weight: 600;">$800</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 600; letter-spacing: 0.06em;">REGISTRATION</span><span style="font-size: 10.5px; font-weight: 600;">$800</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dashed rgba(255,255,255,0.08);">
-              <span style="font-size: 10px; color: #6B655F; font-weight: 600; letter-spacing: 0.06em;">INSPECTION</span><span style="font-size: 10.5px; font-weight: 600;">$450</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 600; letter-spacing: 0.06em;">INSPECTION</span><span style="font-size: 10.5px; font-weight: 600;">$450</span>
             </div>
             <div style="display: flex; justify-content: space-between; padding: 6px 0 2px;">
               <span style="font-size: 10.5px; color: #F5F1EC; font-weight: 700; letter-spacing: 0.06em;">TOTAL PAID</span><span class="h" style="font-size: 12px; font-weight: 700; color: #FF7A1F;">$1,250</span>
             </div>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: 9px; margin-top: 11px; border: 1px solid rgba(255,255,255,0.09); border-radius: 11px; padding: 9px 12px; background: rgba(255,255,255,0.03);">
+        <div style="display: flex; align-items: center; gap: 9px; margin-top: 11px; border: 1px solid rgba(255,255,255,0.09); border-radius: 12px; padding: 9px 12px; background: rgba(255,255,255,0.03);">
           <div style="width: 30px; height: 30px; border-radius: 8px; background: rgba(244,84,78,0.14); display: flex; align-items: center; justify-content: center;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F4544E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
           </div>
           <div style="flex: 1;">
             <div style="font-size: 11px; font-weight: 700;">receipt_12B.pdf</div>
-            <div style="font-size: 9.5px; color: #6B655F;">PDF &middot; 84 KB</div>
+            <div style="font-size: 9.5px; color: #8A8177;">PDF &middot; 84 KB</div>
           </div>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>
         </div>
         <div style="display: flex; gap: 8px; margin-top: 13px;">
-          <div style="flex: 1; text-align: center; font-size: 11px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 9px 0;">
+          <div style="flex: 1; text-align: center; font-size: 11px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 9px 0;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F5F1EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 5px;"><path d="M9 14l-5-5 5-5M4 9h11a5 5 0 0 1 5 5v3"/></svg>Reply
           </div>
-          <div style="flex: 1; text-align: center; font-size: 11px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 9px 0;">
+          <div style="flex: 1; text-align: center; font-size: 11px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 9px 0;">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F5F1EC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 5px;"><path d="M15 14l5-5-5-5M20 9H9a5 5 0 0 0-5 5v3"/></svg>Forward
           </div>
         </div>
@@ -204,7 +204,7 @@
         <span class="h" style="font-size: 22px; font-weight: 700;">Alarms</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
       </div>
-      <div style="margin: 14px 16px 0; border: 1px solid rgba(255,122,31,0.25); background: rgba(255,122,31,0.06); border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 11px;">
+      <div style="margin: 14px 16px 0; border: 1px solid rgba(255,122,31,0.25); background: rgba(255,122,31,0.06); border-radius: 16px; padding: 12px 14px; display: flex; align-items: center; gap: 11px;">
         <svg class="bell" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
         <div style="flex: 1;">
           <div style="font-size: 11.5px; font-weight: 700; color: #FFB56B;">Next alarm in 32h 18m</div>
@@ -216,7 +216,7 @@
           <div style="flex: 1;">
             <div style="display: flex; align-items: baseline; gap: 6px;">
               <span class="h" style="font-size: 27px; font-weight: 600;">06:00</span>
-              <span style="font-size: 10px; color: #6B655F; font-weight: 700;">AM</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 700;">AM</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 2px;">Shift start &middot; Mon Tue Wed Thu Fri</div>
           </div>
@@ -226,7 +226,7 @@
           <div style="flex: 1;">
             <div style="display: flex; align-items: baseline; gap: 6px;">
               <span class="h" style="font-size: 27px; font-weight: 600;">07:30</span>
-              <span style="font-size: 10px; color: #6B655F; font-weight: 700;">AM</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 700;">AM</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 2px;">Gym with Marcus &middot; Sat</div>
           </div>
@@ -236,7 +236,7 @@
           <div style="flex: 1;">
             <div style="display: flex; align-items: baseline; gap: 6px;">
               <span class="h" style="font-size: 27px; font-weight: 600;">12:45</span>
-              <span style="font-size: 10px; color: #6B655F; font-weight: 700;">PM</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 700;">PM</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 2px;">Rent reminder &middot; 25th of month</div>
           </div>
@@ -246,7 +246,7 @@
           <div style="flex: 1;">
             <div style="display: flex; align-items: baseline; gap: 6px;">
               <span class="h" style="font-size: 27px; font-weight: 600;">09:15</span>
-              <span style="font-size: 10px; color: #6B655F; font-weight: 700;">PM</span>
+              <span style="font-size: 10px; color: #8A8177; font-weight: 700;">PM</span>
             </div>
             <div style="font-size: 10.5px; color: #A8A29C; margin-top: 2px;">Call Mia back &middot; once</div>
           </div>
@@ -259,16 +259,16 @@
           <div style="font-size: 8.5px; font-weight: 700; color: #FF7A1F; letter-spacing: 0.08em; margin-top: 3px;">ALARMS</div>
         </div>
         <div style="flex: 1; text-align: center;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <div style="font-size: 8.5px; font-weight: 700; color: #6B655F; letter-spacing: 0.08em; margin-top: 3px;">CLOCK</div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div style="font-size: 8.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.08em; margin-top: 3px;">CLOCK</div>
         </div>
         <div style="flex: 1; text-align: center;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6M16.2 16.2L12 12" /></svg>
-          <div style="font-size: 8.5px; font-weight: 700; color: #6B655F; letter-spacing: 0.08em; margin-top: 3px;">STOPWATCH</div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 6v6M16.2 16.2L12 12" /></svg>
+          <div style="font-size: 8.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.08em; margin-top: 3px;">STOPWATCH</div>
         </div>
         <div style="flex: 1; text-align: center;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M8 3v4l4 5 4-5V3M8 21v-4l4-5 4 5v4"/></svg>
-          <div style="font-size: 8.5px; font-weight: 700; color: #6B655F; letter-spacing: 0.08em; margin-top: 3px;">TIMER</div>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M8 3v4l4 5 4-5V3M8 21v-4l4-5 4 5v4"/></svg>
+          <div style="font-size: 8.5px; font-weight: 700; color: #8A8177; letter-spacing: 0.08em; margin-top: 3px;">TIMER</div>
         </div>
       </div>
     </div>

@@ -17,15 +17,15 @@
       radial-gradient(700px 380px at 22% 30%, rgba(255,122,31,0.06) 0%, rgba(255,122,31,0) 60%),
       linear-gradient(180deg, #0e1119 0%, #131620 52%, #0a0c11 100%); }
     .vig { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0.66) 100%); }
-    .panel { position: relative; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
+    .panel { position: relative; box-sizing: border-box; background: linear-gradient(160deg, rgba(26,23,19,0.94), rgba(14,12,10,0.92)); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(14px); }
     .panel::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(255,255,255,0.016) 0 1px, rgba(0,0,0,0) 1px 3px); }
     .cut { clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
-    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6B655F; }
-    .prod { position: relative; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); border-radius: 13px; padding: 12px; }
+    .lab { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8177; }
+    .prod { position: relative; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); border-radius: 12px; padding: 12px; }
     @keyframes slideL { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: none; } }
-    .slideL { opacity: 0; animation: slideL 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .slideL { opacity: 0; animation: slideL 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-    .rise { opacity: 0; animation: rise 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    .rise { opacity: 0; animation: rise 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
     @keyframes pulseGlow { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
     @keyframes shine { 0% { left: -60%; } 100% { left: 140%; } }
     .sheen { position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%); transform: skewX(-18deg); animation: shine 3.4s ease-in-out 1.4s infinite; }
@@ -65,7 +65,7 @@
     <div class="prod panel cut" style="border-color: rgba(255,122,31,0.5); box-shadow: 0 0 24px rgba(255,122,31,0.12);">
       <div style="position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; background: linear-gradient(180deg, #FF7A1F, rgba(255,122,31,0.25)); box-shadow: 0 0 8px rgba(255,122,31,0.7); animation: pulseGlow 2.4s ease-in-out infinite;"></div>
       <div style="display: flex; gap: 12px; align-items: center;">
-        <div style="width: 74px; height: 56px; border-radius: 10px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 74px; height: 56px; border-radius: 8px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
           <svg width="52" height="34" viewBox="0 0 72 46"><rect x="8" y="14" width="44" height="11" rx="3" fill="#3a3733"/><rect x="46" y="12" width="18" height="7" rx="2" fill="#2c2926"/><rect x="14" y="25" width="9" height="15" rx="3" fill="#2c2926" transform="rotate(10 18 32)"/><rect x="8" y="16" width="44" height="2.6" fill="rgba(255,255,255,0.14)"/></svg>
         </div>
         <div style="flex: 1;">
@@ -81,7 +81,7 @@
     </div>
     <div class="prod">
       <div style="display: flex; gap: 12px; align-items: center;">
-        <div style="width: 74px; height: 56px; border-radius: 10px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 74px; height: 56px; border-radius: 8px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
           <svg width="40" height="34" viewBox="0 0 56 46"><rect x="10" y="8" width="36" height="24" rx="3" fill="#5a4a2f"/><rect x="14" y="12" width="28" height="16" rx="2" fill="#3e321f"/><text x="28" y="24" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#d9c9a3">9MM</text><rect x="18" y="34" width="20" height="4" rx="2" fill="#2c2620"/></svg>
         </div>
         <div style="flex: 1;">
@@ -97,7 +97,7 @@
     </div>
     <div class="prod">
       <div style="display: flex; gap: 12px; align-items: center;">
-        <div style="width: 74px; height: 56px; border-radius: 10px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 74px; height: 56px; border-radius: 8px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
           <svg width="36" height="38" viewBox="0 0 48 52"><path d="M24 6l14 7v11c0 9-5.6 14.7-14 18-8.4-3.3-14-9-14-18V13z" fill="#22456f"/><path d="M24 10l10 5v9c0 6.5-4 10.7-10 13.4z" fill="#2f5d9e"/></svg>
         </div>
         <div style="flex: 1;">
@@ -113,7 +113,7 @@
     </div>
     <div class="prod" style="opacity: 0.6;">
       <div style="display: flex; gap: 12px; align-items: center;">
-        <div style="width: 74px; height: 56px; border-radius: 10px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
+        <div style="width: 74px; height: 56px; border-radius: 8px; background: rgba(10,9,8,0.6); border: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;">
           <svg width="52" height="30" viewBox="0 0 72 40"><rect x="4" y="14" width="52" height="9" rx="3" fill="#3a3733"/><rect x="50" y="11" width="18" height="6" rx="2" fill="#2c2926"/><rect x="12" y="23" width="8" height="13" rx="3" fill="#2c2926" transform="rotate(10 16 29)"/><rect x="30" y="23" width="6" height="10" rx="2" fill="#242220"/></svg>
         </div>
         <div style="flex: 1;">
@@ -123,7 +123,7 @@
             <span class="h" style="font-size: 15px; font-weight: 700;">$8,400</span>
           </div>
         </div>
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B655F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8A8177" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
       </div>
     </div>
   </div>
@@ -137,25 +137,25 @@
     </div>
     <div style="margin-top: 12px;">
       <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px;">
-        <span style="font-weight: 600;">CT-9 Pistol <span style="color: #6B655F;">&times;1</span></span><span class="h" style="font-weight: 700;">$1,150</span>
+        <span style="font-weight: 600;">CT-9 Pistol <span style="color: #8A8177;">&times;1</span></span><span class="h" style="font-weight: 700;">$1,150</span>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px;">
-        <span style="font-weight: 600;">9mm rounds &times;50 <span style="color: #6B655F;">&times;2</span></span><span class="h" style="font-weight: 700;">$360</span>
+        <span style="font-weight: 600;">9mm rounds &times;50 <span style="color: #8A8177;">&times;2</span></span><span class="h" style="font-weight: 700;">$360</span>
       </div>
       <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 0; font-size: 12px;">
-        <span style="font-weight: 600;">Body armor <span style="color: #6B655F;">&times;1</span></span><span class="h" style="font-weight: 700;">$425</span>
+        <span style="font-weight: 600;">Body armor <span style="color: #8A8177;">&times;1</span></span><span class="h" style="font-weight: 700;">$425</span>
       </div>
     </div>
     <div style="border-top: 1px dashed rgba(255,255,255,0.12); margin-top: 6px; padding-top: 11px;">
-      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">SUBTOTAL</span><span class="h" style="font-weight: 700;">$1,935</span></div>
-      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px;"><span style="color: #6B655F; font-weight: 700; letter-spacing: 0.08em;">FIREARM TAX 5%</span><span class="h" style="font-weight: 700;">$97</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">SUBTOTAL</span><span class="h" style="font-weight: 700;">$1,935</span></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; margin-top: 6px;"><span style="color: #8A8177; font-weight: 700; letter-spacing: 0.08em;">FIREARM TAX 5%</span><span class="h" style="font-weight: 700;">$97</span></div>
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 9px;"><span class="h" style="font-size: 13px; font-weight: 700;">TOTAL</span><span class="h" style="font-size: 21px; font-weight: 700; color: #FFB56B;">$2,032</span></div>
     </div>
     <div style="display: flex; gap: 10px; margin-top: 14px;">
       <div class="cut h" style="flex: 1; position: relative; overflow: hidden; text-align: center; font-size: 11.5px; font-weight: 700; color: #17100A; background: linear-gradient(135deg, #FF7A1F, #E8540E); padding: 11px 0; box-shadow: 0 10px 26px rgba(255,122,31,0.35);">PAY CASH<div class="sheen"></div></div>
-      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.16); border-radius: 10px; padding: 11px 0;">PAY BANK</div>
+      <div class="h" style="flex: 1; text-align: center; font-size: 11.5px; font-weight: 700; color: #F5F1EC; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; padding: 11px 0;">PAY BANK</div>
     </div>
-    <div style="display: flex; align-items: center; gap: 9px; margin-top: 13px; background: rgba(76,158,235,0.07); border: 1px solid rgba(76,158,235,0.25); border-radius: 10px; padding: 9px 12px;">
+    <div style="display: flex; align-items: center; gap: 9px; margin-top: 13px; background: rgba(76,158,235,0.07); border: 1px solid rgba(76,158,235,0.25); border-radius: 8px; padding: 9px 12px;">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4C9EEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H4zM8 21h8M12 17v4"/></svg>
       <span style="font-size: 10.5px; color: #8CC4F5; line-height: 1.5;">Serialized purchase &mdash; the weapon serial is registered to your citizen ID and visible to LSPD.</span>
     </div>
