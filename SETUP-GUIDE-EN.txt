@@ -1,0 +1,182 @@
+═══════════════════════════════════════════════════════════════════
+            Icon Monde Professional Website Setup Guide
+═══════════════════════════════════════════════════════════════════
+
+🎨 Welcome to Icon Monde Professional Website!
+
+This guide will help you install the website on your personal computer.
+
+═══════════════════════════════════════════════════════════════════
+                      Included Files
+═══════════════════════════════════════════════════════════════════
+
+✅ index.html              - Main Page
+✅ styles/main.css         - Stylesheet
+✅ js/main.js              - Main JavaScript
+✅ js/booking.js           - Booking System
+✅ README.md               - Full Documentation
+
+═══════════════════════════════════════════════════════════════════
+                      Installation Steps
+═══════════════════════════════════════════════════════════════════
+
+1️⃣ Extract Files:
+   - Extract website-export.zip or website-export.tar.gz
+   - Copy all files to:
+     C:\Users\pc\Desktop\web\
+
+2️⃣ Required Structure:
+   C:\Users\pc\Desktop\web\
+   ├── index.html
+   ├── styles/
+   │   └── main.css
+   ├── js/
+   │   ├── main.js
+   │   └── booking.js
+   └── README.md
+
+3️⃣ Running the Website:
+
+   Method 1: Direct Open
+   ━━━━━━━━━━━━━━━━━━━
+   - Open index.html directly in your browser (Windows Explorer)
+   - Double-click the file
+
+   Method 2: Local Server (Recommended)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   a) Using Python (if installed):
+      - Open Command Prompt
+      - Navigate to folder:
+        cd C:\Users\pc\Desktop\web
+      - Run server:
+        python -m http.server 8000
+      - Open browser and type:
+        http://localhost:8000
+
+   b) Using Node.js (if installed):
+      - Open Command Prompt
+      - Navigate to folder:
+        cd C:\Users\pc\Desktop\web
+      - Run server:
+        npx http-server
+      - Open the displayed URL
+
+   c) Using Live Server in VS Code:
+      - Open folder in VS Code
+      - Press Alt+L then Alt+O
+      - Website opens automatically
+
+═══════════════════════════════════════════════════════════════════
+                      Website Sections
+═══════════════════════════════════════════════════════════════════
+
+🏠 Homepage
+   - Hero section with dynamic animations
+   - Call-to-action buttons
+
+ℹ️ About
+   - 4 cards showcasing main services
+   - Company information
+
+💼 Services
+   - 6 main services
+   - Detailed descriptions
+   - Professional numbering (01-06)
+
+🎬 Portfolio
+   - 6 showcase projects
+   - Detailed information
+
+📊 Statistics
+   - Animated counters
+   - 4 key metrics
+
+📅 Booking
+   - Advanced booking form
+   - Available time slots
+   - Data validation
+
+📞 Contact
+   - Contact information
+   - Business hours
+   - Location
+
+═══════════════════════════════════════════════════════════════════
+                      Technical Features
+═══════════════════════════════════════════════════════════════════
+
+✨ Design:
+   - Professional color scheme (blue + gold)
+   - Advanced typography
+   - Fully Responsive (mobile + tablet + desktop)
+
+🎬 Animations:
+   - Professional entrance effects
+   - Advanced hover effects
+   - Blob and parallax effects
+   - Smooth transitions
+
+⚡ Performance:
+   - Vanilla JavaScript (no external libraries)
+   - Fast loading
+   - Performance optimized
+
+💾 Data:
+   - Local storage
+   - Booking system
+   - Booking tracking
+
+═══════════════════════════════════════════════════════════════════
+                      Important Tips
+═══════════════════════════════════════════════════════════════════
+
+❗ Maintain Structure:
+   - Ensure styles/ and js/ folders exist
+   - Don't rename or move files
+
+🔗 Links:
+   - Verify all links in index.html
+   - Must point to styles/main.css and js/*.js
+
+📱 Testing:
+   - Test on different devices (mobile, tablet, desktop)
+   - Use F12 to open DevTools and check errors
+
+🌐 Browsers:
+   - Supports all modern browsers
+   - Chrome, Firefox, Safari, Edge
+
+═══════════════════════════════════════════════════════════════════
+                      Troubleshooting
+═══════════════════════════════════════════════════════════════════
+
+❌ Website doesn't work:
+   ✓ Verify all files exist
+   ✓ Check folder names (case-sensitive on Linux/Mac)
+   ✓ Use Local Server instead of direct file open
+
+❌ No styling or animations:
+   ✓ Open DevTools (F12)
+   ✓ Verify CSS and JS are loaded
+   ✓ Check Console for errors
+
+❌ Form doesn't work:
+   ✓ Ensure js/booking.js is loaded
+   ✓ Check Console for errors
+   ✓ Refresh page (F5)
+
+═══════════════════════════════════════════════════════════════════
+                      Additional Information
+═══════════════════════════════════════════════════════════════════
+
+📧 Email: info@iconemonde.com
+📞 Phone: +966 50 000 0000
+🌐 Location: Riyadh, Saudi Arabia
+
+═══════════════════════════════════════════════════════════════════
+
+Developed by Claude Code
+All rights reserved © 2024
+
+═══════════════════════════════════════════════════════════════════
