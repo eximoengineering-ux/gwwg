@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    :root{
+      --bg0:#0B0B0C; --bg1:#141416; --bg2:#1C1C1F; --bg3:#242428;
+      --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.14);
+      --txt:#F5F5F3; --txt2:#A8A8A4; --txt3:#78786F;
+      --or:#FF7A1F; --or-hi:#FFA45C; --or-dim:rgba(255,122,31,.14); --or-line:rgba(255,122,31,.35);
+      --ok:#3ECF8E; --warn:#FFC53D; --err:#FF5D5D; --info:#5CA8FF;
+      --r-sm:6px; --r-md:8px; --r-lg:12px;
+    }
+    body{margin:0;background:#0B0B0C;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F5F5F3;}
+    a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+    .sec-title{display:flex;align-items:center;gap:12px;}
+    .sec-title h2{font-size:20px;font-weight:800;margin:0;}
+    .sec-title .en{font-size:12px;font-weight:600;color:#78786F;letter-spacing:.12em;text-transform:uppercase;}
+    .sec-title .bar{width:28px;height:3px;border-radius:2px;background:#FF7A1F;}
+    .lbl{font-size:12px;font-weight:600;color:#A8A8A4;}
+    .lbl2{font-size:11px;font-weight:500;color:#78786F;font-family:'Segoe UI',Tahoma,sans-serif;}
+  </style>
+</helmet>
+<div dir="rtl" style="width:1500px;min-height:2080px;background:#0B0B0C;padding:56px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px;">
+
+  <!-- ===== Header ===== -->
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:32px;">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#FF7A1F,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#14100B;">MT</div>
+        <h1 style="margin:0;font-size:30px;font-weight:900;">نظام التصميم <span style="color:#FF7A1F;">MT NUI</span></h1>
+      </div>
+      <p style="margin:0;font-size:14px;color:#A8A8A4;max-width:640px;line-height:1.7;">المرجع الموحّد لكل واجهات السيرفر: الألوان، الخطوط، المسافات، الأيقونات والمكوّنات. كل واجهة جديدة تُبنى من هذه العناصر حصراً.</p>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span style="font-size:11px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,122,31,.14);color:#FFA45C;border:1px solid rgba(255,122,31,.35);">v1.0 — للمراجعة</span>
+      <span style="font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;background:#1C1C1F;color:#A8A8A4;border:1px solid rgba(255,255,255,.08);">Cairo · RTL/LTR</span>
+    </div>
+  </div>
+
+  <!-- ===== Colors ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>الألوان</h2><span class="en">Colors</span></div>
+    <div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:20px;">
+      <!-- backgrounds -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <span class="lbl">الخلفيات — Surfaces</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#0B0B0C;border:1px solid rgba(255,255,255,.14);"></div><div><div class="lbl">bg-0 أرضية</div><div class="lbl2">#0B0B0C</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#141416;border:1px solid rgba(255,255,255,.14);"></div><div><div class="lbl">bg-1 لوحة</div><div class="lbl2">#141416</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);"></div><div><div class="lbl">bg-2 بطاقة</div><div class="lbl2">#1C1C1F</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#242428;border:1px solid rgba(255,255,255,.14);"></div><div><div class="lbl">bg-3 مرتفع</div><div class="lbl2">#242428</div></div></div>
+        </div>
+      </div>
+      <!-- primary -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <span class="lbl">الأساسي — Primary</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#FF7A1F;"></div><div><div class="lbl">برتقالي 500</div><div class="lbl2">#FF7A1F</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#FFA45C;"></div><div><div class="lbl">برتقالي 300</div><div class="lbl2">#FFA45C</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#E85D04;"></div><div><div class="lbl">برتقالي 600</div><div class="lbl2">#E85D04</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:rgba(255,122,31,.14);border:1px solid rgba(255,122,31,.35);"></div><div><div class="lbl">تعبئة خافتة</div><div class="lbl2">14% / حد 35%</div></div></div>
+        </div>
+      </div>
+      <!-- text -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <span class="lbl">النصوص — Text</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#F5F5F3;"></div><div><div class="lbl">أساسي 18:1</div><div class="lbl2">#F5F5F3</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#A8A8A4;"></div><div><div class="lbl">ثانوي 7:1</div><div class="lbl2">#A8A8A4</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#78786F;"></div><div><div class="lbl">خافت 3.5:1</div><div class="lbl2">#78786F</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#14100B;border:1px solid rgba(255,255,255,.14);"></div><div><div class="lbl">فوق البرتقالي</div><div class="lbl2">#14100B</div></div></div>
+        </div>
+      </div>
+      <!-- semantic -->
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <span class="lbl">دلالية — Semantic</span>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#3ECF8E;"></div><div><div class="lbl">نجاح</div><div class="lbl2">#3ECF8E</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#FFC53D;"></div><div><div class="lbl">تحذير</div><div class="lbl2">#FFC53D</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#FF5D5D;"></div><div><div class="lbl">خطر</div><div class="lbl2">#FF5D5D</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;"><div style="width:56px;height:40px;border-radius:6px;background:#5CA8FF;"></div><div><div class="lbl">معلومة</div><div class="lbl2">#5CA8FF</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Typography ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>الخطوط</h2><span class="en">Typography — Cairo</span></div>
+    <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:20px;">
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:32px;font-weight:900;">عنوان رئيسي</span><span class="lbl2">Display · 32 / 900</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:24px;font-weight:800;">عنوان صفحة</span><span class="lbl2">Title · 24 / 800</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:18px;font-weight:700;">عنوان قسم</span><span class="lbl2">Heading · 18 / 700</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:14px;font-weight:500;color:#A8A8A4;">نص أساسي للمحتوى والفقرات داخل الواجهات</span><span class="lbl2">Body · 14 / 500</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:12px;font-weight:600;color:#78786F;">تسمية توضيحية صغيرة</span><span class="lbl2">Caption · 12 / 600</span></div>
+      </div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;" dir="ltr"><span style="font-size:32px;font-weight:900;">Main Title</span><span class="lbl2">LTR — English</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;" dir="ltr"><span style="font-size:14px;font-weight:500;color:#A8A8A4;">Body text works in both directions with Cairo.</span><span class="lbl2">Body · 14</span></div>
+        <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:14px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <span class="lbl">أرقام العدادات — tabular</span>
+            <span class="lbl2">font-variant-numeric: tabular-nums</span>
+          </div>
+          <span dir="ltr" style="font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;color:#FF7A1F;">148 <span style="font-size:13px;color:#78786F;font-weight:600;">KM/H</span></span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="lbl">ارتفاع السطر للنصوص 1.6 — العناوين 1.25</span>
+          <span class="lbl2">line-height</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Spacing + Radius + Elevation ===== -->
+  <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="sec-title"><div class="bar"></div><h2>المسافات</h2><span class="en">4/8 Grid</span></div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;align-items:flex-end;gap:12px;height:120px;box-sizing:border-box;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:4px;height:4px;background:#FF7A1F;border-radius:2px;"></div><span class="lbl2">4</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:8px;height:8px;background:#FF7A1F;border-radius:2px;"></div><span class="lbl2">8</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:12px;height:12px;background:#FF7A1F;border-radius:3px;"></div><span class="lbl2">12</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:16px;height:16px;background:#FF7A1F;border-radius:3px;"></div><span class="lbl2">16</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:24px;height:24px;background:#FF7A1F;border-radius:4px;"></div><span class="lbl2">24</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:32px;height:32px;background:#FF7A1F;border-radius:5px;"></div><span class="lbl2">32</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;"><div style="width:48px;height:48px;background:rgba(255,122,31,.35);border-radius:6px;"></div><span class="lbl2">48</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="sec-title"><div class="bar"></div><h2>الزوايا</h2><span class="en">Radius</span></div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;align-items:center;gap:16px;height:120px;box-sizing:border-box;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:56px;height:56px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:6px;"></div><span class="lbl2">6 · أزرار</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:56px;height:56px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:8px;"></div><span class="lbl2">8 · بطاقات</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:56px;height:56px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:12px;"></div><span class="lbl2">12 · نوافذ</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:56px;height:56px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:999px;"></div><span class="lbl2">دائري · حالة</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div class="sec-title"><div class="bar"></div><h2>الحركة</h2><span class="en">Motion</span></div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px 24px;display:flex;flex-direction:column;gap:10px;height:120px;box-sizing:border-box;justify-content:center;">
+        <div style="display:flex;justify-content:space-between;"><span class="lbl">دخول العناصر</span><span class="lbl2">200ms · ease-out</span></div>
+        <div style="display:flex;justify-content:space-between;"><span class="lbl">خروج العناصر</span><span class="lbl2">140ms · ease-in</span></div>
+        <div style="display:flex;justify-content:space-between;"><span class="lbl">تتابع القوائم</span><span class="lbl2">+40ms لكل عنصر</span></div>
+        <div style="display:flex;justify-content:space-between;"><span class="lbl">ضغط الأزرار</span><span class="lbl2">scale 0.97 · 100ms</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Icons ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>الأيقونات</h2><span class="en">SVG · Stroke 1.75 · 24px</span></div>
+    <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
+    </div>
+  </div>
+
+  <!-- ===== Buttons ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>الأزرار</h2><span class="en">Buttons · min-height 44px</span></div>
+    <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:#FF7A1F;color:#14100B;font-weight:800;font-size:14px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 18px rgba(255,122,31,.3);">تأكيد</div>
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,122,31,.14);color:#FFA45C;border:1px solid rgba(255,122,31,.35);font-weight:700;font-size:14px;display:flex;align-items:center;">ثانوي</div>
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:#1C1C1F;color:#F5F5F3;border:1px solid rgba(255,255,255,.14);font-weight:700;font-size:14px;display:flex;align-items:center;">محايد</div>
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:transparent;color:#A8A8A4;font-weight:700;font-size:14px;display:flex;align-items:center;">شفاف</div>
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,93,93,.12);color:#FF5D5D;border:1px solid rgba(255,93,93,.35);font-weight:700;font-size:14px;display:flex;align-items:center;">حذف</div>
+      <div style="height:44px;padding:0 24px;border-radius:6px;background:#1C1C1F;color:#78786F;border:1px solid rgba(255,255,255,.08);font-weight:700;font-size:14px;display:flex;align-items:center;opacity:.5;">معطّل</div>
+      <div style="width:44px;height:44px;border-radius:6px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-inline-start:auto;">
+        <span class="lbl">مفتاح لوحة:</span>
+        <span dir="ltr" style="min-width:30px;height:30px;padding:0 8px;border-radius:6px;background:#242428;border:1px solid rgba(255,255,255,.2);border-bottom-width:3px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;font-family:'Segoe UI',Tahoma,sans-serif;box-sizing:border-box;">E</span>
+        <span dir="ltr" style="min-width:30px;height:30px;padding:0 8px;border-radius:6px;background:#242428;border:1px solid rgba(255,255,255,.2);border-bottom-width:3px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;font-family:'Segoe UI',Tahoma,sans-serif;box-sizing:border-box;">ESC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Forms ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>حقول الإدخال</h2><span class="en">Forms</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:20px;">
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span class="lbl">الاسم الكامل</span>
+          <div style="height:44px;border-radius:6px;background:#0B0B0C;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;padding:0 14px;color:#78786F;font-size:14px;box-sizing:border-box;">اكتب الاسم…</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span class="lbl" style="color:#FFA45C;">رقم اللوحة — حالة تركيز</span>
+          <div style="height:44px;border-radius:6px;background:#0B0B0C;border:1px solid #FF7A1F;box-shadow:0 0 0 3px rgba(255,122,31,.18);display:flex;align-items:center;padding:0 14px;color:#F5F5F3;font-size:14px;box-sizing:border-box;">MT 4821</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span class="lbl" style="color:#FF5D5D;">المبلغ — حالة خطأ</span>
+          <div style="height:44px;border-radius:6px;background:#0B0B0C;border:1px solid #FF5D5D;display:flex;align-items:center;padding:0 14px;color:#F5F5F3;font-size:14px;box-sizing:border-box;">-500</div>
+          <span style="font-size:11px;color:#FF5D5D;font-weight:600;">المبلغ يجب أن يكون أكبر من صفر</span>
+        </div>
+      </div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <span class="lbl">نوع المركبة</span>
+          <div style="height:44px;border-radius:6px;background:#0B0B0C;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;box-sizing:border-box;">
+            <span>سيدان</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8A8A4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="lbl">تفعيل الإشعارات</span>
+          <div style="width:46px;height:26px;border-radius:999px;background:#FF7A1F;position:relative;"><div style="position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:999px;background:#14100B;"></div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="lbl">وضع التخفي</span>
+          <div style="width:46px;height:26px;border-radius:999px;background:#242428;border:1px solid rgba(255,255,255,.14);position:relative;box-sizing:border-box;"><div style="position:absolute;top:2px;right:2px;width:20px;height:20px;border-radius:999px;background:#78786F;"></div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:20px;height:20px;border-radius:5px;background:#FF7A1F;display:flex;align-items:center;justify-content:center;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#14100B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+          </div>
+          <span class="lbl" style="color:#F5F5F3;">أوافق على قوانين السيرفر</span>
+        </div>
+      </div>
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:18px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">شدة الصوت</span><span class="lbl2" dir="ltr">65%</span></div>
+          <div style="height:6px;border-radius:999px;background:#242428;position:relative;">
+            <div style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:65%;border-radius:999px;background:linear-gradient(90deg,#E85D04,#FF7A1F);"></div>
+            <div style="position:absolute;top:50%;inset-inline-start:65%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:999px;background:#F5F5F3;box-shadow:0 2px 6px rgba(0,0,0,.5);"></div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <span class="lbl">شريط تقدّم</span>
+          <div style="height:8px;border-radius:999px;background:#242428;overflow:hidden;"><div style="height:100%;width:42%;border-radius:999px;background:#FF7A1F;"></div></div>
+          <span class="lbl2">تفكيك القفل… 42%</span>
+        </div>
+        <div style="height:44px;border-radius:6px;background:#0B0B0C;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;gap:10px;padding:0 14px;box-sizing:border-box;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78786F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <span style="color:#78786F;font-size:14px;">بحث…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Components ===== -->
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="sec-title"><div class="bar"></div><h2>مكوّنات أساسية</h2><span class="en">Components</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:20px;">
+      <!-- card + list rows -->
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;">
+        <div style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-weight:800;font-size:15px;">رأس بطاقة</span>
+          <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(62,207,142,.12);color:#3ECF8E;">متصل</span>
+        </div>
+        <div style="padding:8px;display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;background:rgba(255,122,31,.14);border:1px solid rgba(255,122,31,.35);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:14px;color:#FFA45C;">عنصر محدد</span><span class="lbl2">الحالة النشطة</span></div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A8A8A4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:14px;">عنصر عادي</span><span class="lbl2">وصف مختصر</span></div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#78786F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;opacity:.45;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A8A8A4" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+            <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:14px;">عنصر معطّل</span><span class="lbl2">غير متاح حالياً</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- badges/tabs/tooltip -->
+      <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span class="lbl">شارات — Badges</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,122,31,.14);color:#FFA45C;border:1px solid rgba(255,122,31,.35);">VIP</span>
+            <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(62,207,142,.12);color:#3ECF8E;">نشط</span>
+            <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,197,61,.12);color:#FFC53D;">قيد الانتظار</span>
+            <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,93,93,.12);color:#FF5D5D;">مطلوب</span>
+            <span style="font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(92,168,255,.12);color:#5CA8FF;">جديد</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span class="lbl">تبويبات — Tabs</span>
+          <div style="display:flex;gap:4px;background:#0B0B0C;border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:4px;">
+            <div style="flex:1;height:36px;border-radius:6px;background:#FF7A1F;color:#14100B;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;">الكل</div>
+            <div style="flex:1;height:36px;border-radius:6px;color:#A8A8A4;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">مركبات</div>
+            <div style="flex:1;height:36px;border-radius:6px;color:#A8A8A4;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">أسلحة</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <span class="lbl">تلميح — Tooltip</span>
+          <div style="align-self:flex-start;background:#242428;border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:8px 12px;font-size:12px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.5);">اضغط <span dir="ltr" style="color:#FFA45C;font-weight:800;">G</span> لإلقاء الغرض</div>
+        </div>
+      </div>
+      <!-- glass panel spec -->
+      <div style="border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:14px;background:linear-gradient(135deg,#2a2018 0%,#141416 55%);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(420px 200px at 85% -10%,rgba(255,122,31,.22),transparent 70%);"></div>
+        <div style="position:relative;background:rgba(19,19,21,.86);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:16px;backdrop-filter:blur(14px);display:flex;flex-direction:column;gap:8px;">
+          <span style="font-weight:800;font-size:14px;">لوحة فوق اللعبة</span>
+          <span class="lbl2" dir="ltr">rgba(19,19,21,.86) + blur 14px</span>
+          <span style="font-size:12px;color:#A8A8A4;line-height:1.7;">كل النوافذ العائمة فوق شاشة اللعب تستخدم هذه الخلفية لضمان القراءة فوق أي مشهد.</span>
+        </div>
+        <div style="position:relative;display:flex;gap:8px;">
+          <div style="flex:1;background:rgba(19,19,21,.86);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;">
+            <span class="lbl2">حد نشط</span>
+            <div style="height:3px;border-radius:2px;background:#FF7A1F;width:60%;"></div>
+          </div>
+          <div style="flex:1;background:rgba(19,19,21,.86);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;">
+            <span class="lbl2">ظل النوافذ</span>
+            <span style="font-size:10px;color:#78786F;" dir="ltr">0 16px 48px rgba(0,0,0,.55)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

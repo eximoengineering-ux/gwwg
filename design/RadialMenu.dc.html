@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0B0C;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F5F5F3;}
+    a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+  </style>
+</helmet>
+<div dir="rtl" style="width:820px;height:860px;background:
+  radial-gradient(500px 500px at 50% 55%, rgba(255,122,31,.06), transparent 70%),
+  #0B0B0C;padding:36px 40px;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <h1 style="margin:0;font-size:22px;font-weight:900;">القائمة الدائرية <span style="color:#FF7A1F;">mt_radialmenu</span></h1>
+      <p style="margin:0;font-size:13px;color:#A8A8A4;">تُفتح بالضغط المستمر على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> — الخلفية خلفها تُعتم بنسبة 50%</p>
+    </div>
+  </div>
+
+  <div style="position:relative;width:720px;height:720px;align-self:center;">
+    <svg width="720" height="720" viewBox="0 0 720 720">
+      <!-- segments: base shape rotated -->
+      <g>
+        <!-- active (top) -->
+        <path d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z"
+              fill="#FF7A1F" stroke="#FFA45C" stroke-width="1.5" style="filter:drop-shadow(0 0 18px rgba(255,122,31,.55));"/>
+        <path transform="rotate(45,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(90,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(135,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(180,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(225,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(270,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path transform="rotate(315,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+      </g>
+
+      <!-- icons (24px, centered at radius 197.5) -->
+      <!-- top: vehicle (active → dark icon) -->
+      <g transform="translate(348,150.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14100B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
+      </g>
+      <!-- NE: phone -->
+      <g transform="translate(487.7,208.3)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      </g>
+      <!-- E: wallet -->
+      <g transform="translate(545.5,348)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+      </g>
+      <!-- SE: emotes (smile) -->
+      <g transform="translate(487.7,487.7)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+      </g>
+      <!-- S: clothes (shirt) -->
+      <g transform="translate(348,545.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+      </g>
+      <!-- SW: interact (hand) -->
+      <g transform="translate(208.3,487.7)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="m7 15-1.8-1.8a2 2 0 0 0-2.8 2.8L8 21.6c1 1 2.4 1.6 3.8 1.6H15a5 5 0 0 0 5-5v-5a2 2 0 0 0-4 0"/></svg>
+      </g>
+      <!-- W: job (briefcase) -->
+      <g transform="translate(150.5,348)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </g>
+      <!-- NW: settings -->
+      <g transform="translate(208.3,208.3)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </g>
+
+      <!-- center hub -->
+      <circle cx="360" cy="360" r="100" fill="#141416" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
+      <circle cx="360" cy="360" r="88" fill="none" stroke="rgba(255,122,31,.35)" stroke-width="1" stroke-dasharray="4 6"/>
+    </svg>
+    <!-- center labels (HTML for proper Arabic shaping) -->
+    <div style="position:absolute;top:0;left:0;width:720px;height:720px;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;">
+        <span style="font-size:19px;font-weight:900;color:#FFA45C;">المركبة</span>
+        <span style="font-size:11px;font-weight:600;color:#78786F;">قفل · صندوق · محرك</span>
+        <span style="font-size:10px;font-weight:700;color:#78786F;margin-top:6px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:5px;padding:2px 8px;" dir="ltr">ESC للإغلاق</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
+    <span style="font-size:12px;color:#A8A8A4;font-weight:600;">القطاع النشط يتوسّع بمقدار 4% مع توهج · فتح القائمة 200ms بدوران خفيف <span dir="ltr">(-6°→0°)</span></span>
+    <span style="font-size:11px;color:#78786F;font-weight:700;">8 قطاعات كحد أقصى</span>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
