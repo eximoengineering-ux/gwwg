@@ -449,6 +449,24 @@
    "h": 340,
    "title": "عناصر HUD الدقيقة",
    "page": "page-5"
+  },
+  {
+   "file": "Target.dc.html",
+   "x": 1560,
+   "y": 1600,
+   "w": 800,
+   "h": 580,
+   "title": "الهدف والتتبع — Target UI",
+   "page": "page-4"
+  },
+  {
+   "file": "Interact.dc.html",
+   "x": 2480,
+   "y": 1600,
+   "w": 1000,
+   "h": 580,
+   "title": "مؤشرات التفاعل — Interact UI",
+   "page": "page-4"
   }
  ],
  "annotations": [
