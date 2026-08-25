@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
+    a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
+    .num{font-variant-numeric:tabular-nums;}
+    .tick{display:inline-block;width:8px;height:9px;border-radius:3px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);transform:skewX(-14deg);margin-inline-end:8px;vertical-align:middle;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,138,53,.3) 0 2px,transparent 2px 9px);}
+    .cham{border-radius:16px;}
+    .cham8{border-radius:12px;}
+    .shadow{filter:drop-shadow(0 16px 36px rgba(0,0,0,.5));}
+    .panel{background:linear-gradient(160deg,#241C15 0%,#161311 45%,#100E0D 100%);border:1px solid rgba(255,164,92,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);box-sizing:border-box;}
+    .lbl{font-size:12px;font-weight:700;color:#B3ADA3;}
+    .val{font-size:10px;font-weight:600;color:#7A756C;letter-spacing:.02em;}
+    .seg{height:5px;border-radius:3px;}
+    .br{position:absolute;width:10px;height:10px;border-radius:2px;}
+    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:7px;background:#262019;border:1px solid rgba(255,164,92,.22);box-shadow:inset 0 -2px 0 rgba(0,0,0,.5);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;box-sizing:border-box;transform:skewX(-6deg);}
+    .btnp{height:40px;padding:0 22px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(255,122,31,.4), inset 0 1px 0 rgba(255,255,255,.35);transform:skewX(-6deg);}
+    .btnp>span{display:inline-block;transform:skewX(6deg);display:flex;align-items:center;gap:8px;}
+    .btns{height:40px;padding:0 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+    .fld{height:40px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid rgba(255,164,92,.12);display:flex;align-items:center;padding:0 12px;font-size:13px;box-sizing:border-box;gap:8px;}
+    .item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;}
+    .badge{font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px;}
+    .slot{width:60px;height:60px;background:linear-gradient(160deg,#241C15,#100E0D);border:1px solid rgba(255,164,92,.13);border-radius:12px;position:relative;display:flex;align-items:center;justify-content:center;box-sizing:border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);}
+    .tabrow{display:flex;gap:4px;background:rgba(10,9,8,.55);border:1px solid rgba(255,164,92,.1);border-radius:12px;padding:4px;}
+    .tab-on{border-radius:9px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-6deg);}
+    .tab-on>span{display:inline-block;transform:skewX(6deg);}
+    .tab-off{border-radius:9px;color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;}
+    .sldr{height:5px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;flex:1;}
+    .sldr .f{position:absolute;inset-inline-start:0;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#F26B0A,#FF9A3D);box-shadow:0 0 10px rgba(255,122,31,.45);}
+    .sldr .k{position:absolute;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:999px;background:#F7F4EF;border:3px solid #FF8A35;box-sizing:border-box;box-shadow:0 2px 8px rgba(0,0,0,.6);}
+    .glowline{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#FF8A35 30%,#FF8A35 70%,transparent);box-shadow:0 0 14px rgba(255,138,53,.55);}
+  </style>
+</helmet>
+<div dir="rtl" style="width:560px;min-height:580px;background:#0B0A09;padding:26px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;position:relative;"><div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,190,130,.05) 1px, transparent 1.4px);background-size:26px 26px;opacity:.5;pointer-events:none;"></div><div style="display:flex;align-items:center;justify-content:space-between;position:relative;flex-shrink:0;"><div style="display:flex;flex-direction:column;gap:1px;"><span class="kicker"><span class="tick"></span><span dir="ltr">mt_ambulance</span></span><span style="font-size:19px;font-weight:900;">الإسعاف</span><span style="font-size:11px;color:#7A756C;font-weight:600;">فحص المصاب وتحديد العلاج</span></div></div><div class="shadow"><div class="cham panel" style="width:100%;padding:18px;display:flex;gap:16px;position:relative;overflow:hidden;"><div class="stripes" style="position:absolute;top:0;left:14px;width:76px;height:4px;transform:skewX(-30deg);"></div><div style="width:130px;display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0;"><svg width="90" height="180" viewBox="0 0 240 420" fill="none"><ellipse cx="120" cy="70" rx="37" ry="41" fill="#141417" stroke="rgba(255,255,255,.1)"/><path d="M60 190c0-30 27-52 60-52s60 22 60 52l8 120c1 12-8 22-20 22h-16l-6 88h-52l-6-88H72c-12 0-21-10-20-22l8-120z" fill="#141417" stroke="rgba(255,255,255,.1)"/><circle cx="120" cy="70" r="14" fill="rgba(255,93,93,.35)" stroke="#FF5D5D"/><circle cx="85" cy="230" r="12" fill="rgba(245,184,64,.3)" stroke="#F5B840"/></svg><span class="val">اضغط على منطقة الإصابة</span></div><div style="flex:1;display:flex;flex-direction:column;gap:10px;"><div style="display:flex;align-items:center;justify-content:space-between;"><span style="font-size:15px;font-weight:900;">أحمد الحربي</span><span class="badge" style="background:rgba(255,93,93,.1);color:#FF5D5D;">حرجة</span></div><div style="display:flex;align-items:center;gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5D5D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg><div style="display:flex;gap:3px;flex:1;" dir="ltr"><div class="seg" style="flex:1;background:#FF5D5D;"></div><div class="seg" style="flex:1;background:#FF5D5D;"></div><div class="seg" style="flex:1;background:#FF5D5D;"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div></div><span class="val num" dir="ltr">28%</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);"><span style="font-size:12px;font-weight:700;">الرأس — ارتجاج</span><span class="badge" style="background:#FF5D5D1a;color:#FF5D5D;">خطير</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);"><span style="font-size:12px;font-weight:700;">الذراع اليسرى — كسر</span><span class="badge" style="background:#F5B8401a;color:#F5B840;">متوسط</span></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);"><span style="font-size:12px;font-weight:700;">نزيف داخلي</span><span class="badge" style="background:#FF5D5D1a;color:#FF5D5D;">خطير</span></div><div style="display:flex;gap:8px;margin-top:auto;"><div class="btnp" style="flex:1;height:38px;font-size:12px;"><span>بدء العلاج</span></div><div class="btns" style="height:38px;font-size:12px;">حقنة إنعاش</div><div class="btns" style="height:38px;font-size:12px;">نقل للمستشفى</div></div></div></div></div></div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <script src="./interactive.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
+    a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
+    .num{font-variant-numeric:tabular-nums;}
+    .tick{display:inline-block;width:8px;height:9px;border-radius:3px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);transform:skewX(-14deg);margin-inline-end:8px;vertical-align:middle;}
+    .panel{background:linear-gradient(160deg,#241C15 0%,#161311 45%,#100E0D 100%);border:1px solid rgba(255,164,92,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);box-sizing:border-box;border-radius:14px;}
+    .shadow{filter:drop-shadow(0 16px 36px rgba(0,0,0,.5));}
+    .glowline{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#FF8A35 30%,#FF8A35 70%,transparent);box-shadow:0 0 14px rgba(255,138,53,.55);}
+    .btn{height:40px;padding:0 20px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(255,122,31,.4), inset 0 1px 0 rgba(255,255,255,.35);transform:skewX(-6deg);}
+    .btn>span{display:inline-block;transform:skewX(6deg);display:flex;align-items:center;gap:8px;}
+    .stat{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(255,138,53,.06);}
+  </style>
+</helmet>
+<div dir="rtl" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:40px;padding:40px;flex-wrap:wrap;">
+
+  <!-- ═══ weapon detail ═══ -->
+  <div class="shadow" style="display:flex;flex-direction:column;gap:14px;transform:perspective(1200px) rotateY(-7deg) rotateX(1deg);">
+    <div class="panel" style="padding:16px;width:320px;position:relative;overflow:hidden;box-shadow:" data-interactive="panel">inset 0 1px 0 rgba(255,255,255,.07), -8px 16px 36px rgba(0,0,0,.6);">
+      <div class="glowline" style="position:absolute;top:0;left:16px;right:16px;"></div>
+
+      <!-- header -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(255,122,31,.2),rgba(255,138,53,.15));border:1px solid rgba(255,164,92,.25);display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7l1.35 2.45a2 2 0 0 0 1.6.55h10.9a2 2 0 0 0 1.6-.55L20 7"/><path d="M12 4v16"/><circle cx="12" cy="4" r="2"/><path d="M6 19h12v2H6z"/></svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:15px;font-weight:900;">مسدس GlocK-19</span>
+          <span class="kicker">سلاح · ذخيرة</span>
+        </div>
+      </div>
+
+      <!-- description -->
+      <p style="margin:0 0 14px;font-size:12px;color:#B3ADA3;line-height:1.6;">مسدس شبه آلي من الجيل الرابع، موثوق وسهل الاستخدام. نطاق فعال: 25 متر.</p>
+
+      <!-- stats -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+        <div class="stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span style="font-size:11px;font-weight:700;">الذخيرة</span>
+          <span class="num" dir="ltr" style="margin-left:auto;font-weight:800;">15 / 30</span>
+        </div>
+        <div class="stat">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span style="font-size:11px;font-weight:700;">الحالة</span>
+          <span class="num" dir="ltr" style="margin-left:auto;font-weight:800;">ممتازة</span>
+        </div>
+      </div>
+
+      <!-- actions -->
+      <div style="display:flex;gap:8px;">
+        <div class="btn" style="flex:1;">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#1A120B" stroke="none"><path d="M7 4.5v15l13-7.5z"/></svg>
+            تجهيز
+          </span>
+        </div>
+        <div style="height:40px;padding:0 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B3ADA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ item detail ═══ -->
+  <div class="shadow" style="display:flex;flex-direction:column;gap:14px;transform:perspective(1200px) rotateY(4deg) rotateX(-1deg);">
+    <div class="panel" style="padding:16px;width:320px;position:relative;overflow:hidden;box-shadow:" data-interactive="panel">inset 0 1px 0 rgba(255,255,255,.07), 4px 12px 32px rgba(0,0,0,.55);">
+      <div class="glowline" style="position:absolute;top:0;left:16px;right:16px;"></div>
+
+      <!-- header -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(62,207,142,.2),rgba(62,207,142,.15));border:1px solid rgba(62,207,142,.25);display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a1 1 0 0 1 0 4H4a1 1 0 0 1 0-4z"/><path d="M6 11c0-3 2.5-5 6-5s6 2 6 5"/><path d="M5 15c0 2 2 4 4 4h6c2 0 4-2 4-4"/></svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:15px;font-weight:900;">شطيرة شيكن</span>
+          <span class="kicker">طعام · استهلاك فوري</span>
+        </div>
+      </div>
+
+      <!-- description -->
+      <p style="margin:0 0 14px;font-size:12px;color:#B3ADA3;line-height:1.6;">وجبة خفيفة لذيذة تملأ معدتك. تزيد الصحة بـ 15 نقطة.</p>
+
+      <!-- effects -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:14px;">
+        <span class="kicker" style="color:#3ECF8E;">التأثيرات</span>
+        <div class="stat" style="background:rgba(62,207,142,.06);border:1px solid rgba(62,207,142,.15);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span style="font-size:11px;font-weight:700;">+15 صحة</span>
+        </div>
+        <div class="stat" style="background:rgba(92,168,255,.06);border:1px solid rgba(92,168,255,.15);">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4.25 2.5"/></svg>
+          <span style="font-size:11px;font-weight:700;">-2% الجوع</span>
+        </div>
+      </div>
+
+      <!-- actions -->
+      <div style="display:flex;gap:8px;">
+        <div class="btn" style="flex:1;background:linear-gradient(180deg,#3ECF8E,#22aa66);">
+          <span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#0B0A09" stroke="none"><path d="M7 4.5v15l13-7.5z"/></svg>
+            استخدام
+          </span>
+        </div>
+        <div style="height:40px;padding:0 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B3ADA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ money detail ═══ -->
+  <div class="shadow" style="display:flex;flex-direction:column;gap:14px;transform:perspective(1200px) rotateY(-5deg) rotateX(0.5deg);">
+    <div class="panel" style="padding:16px;width:320px;position:relative;overflow:hidden;box-shadow:" data-interactive="panel">inset 0 1px 0 rgba(255,255,255,.07), -6px 14px 34px rgba(0,0,0,.58);">
+      <div class="glowline" style="position:absolute;top:0;left:16px;right:16px;"></div>
+
+      <!-- header -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <div style="width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,rgba(245,184,64,.2),rgba(245,184,64,.15));border:1px solid rgba(245,184,64,.25);display:flex;align-items:center;justify-content:center;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5B840" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/></svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;">
+          <span style="font-size:15px;font-weight:900;">أموال نقدية</span>
+          <span class="kicker" dir="ltr">Cash</span>
+        </div>
+      </div>
+
+      <!-- amount -->
+      <div style="background:rgba(245,184,64,.06);border:1px solid rgba(245,184,64,.15);border-radius:8px;padding:12px;margin-bottom:14px;text-align:center;">
+        <span class="num" dir="ltr" style="font-size:24px;font-weight:900;color:#F5B840;">$8,500</span>
+        <p style="margin:6px 0 0;font-size:11px;color:#B3ADA3;">المبلغ المتاح في حقيبتك</p>
+      </div>
+
+      <!-- options -->
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="height:38px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          إعطاء اللاعب المالية
+        </div>
+        <div style="height:38px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+          إيداع في البنك
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
+    a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
+    .num{font-variant-numeric:tabular-nums;}
+    .tick{display:inline-block;width:8px;height:9px;border-radius:3px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);transform:skewX(-14deg);margin-inline-end:8px;vertical-align:middle;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,138,53,.3) 0 2px,transparent 2px 9px);}
+    .cham{border-radius:16px;}
+    .cham8{border-radius:12px;}
+    .shadow{filter:drop-shadow(0 16px 36px rgba(0,0,0,.5));}
+    .panel{background:linear-gradient(160deg,#241C15 0%,#161311 45%,#100E0D 100%);border:1px solid rgba(255,164,92,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);box-sizing:border-box;}
+    .lbl{font-size:12px;font-weight:700;color:#B3ADA3;}
+    .val{font-size:10px;font-weight:600;color:#7A756C;letter-spacing:.02em;}
+    .seg{height:5px;border-radius:3px;}
+    .br{position:absolute;width:10px;height:10px;border-radius:2px;}
+    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:7px;background:#262019;border:1px solid rgba(255,164,92,.22);box-shadow:inset 0 -2px 0 rgba(0,0,0,.5);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;box-sizing:border-box;transform:skewX(-6deg);}
+    .btnp{height:40px;padding:0 22px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(255,122,31,.4), inset 0 1px 0 rgba(255,255,255,.35);transform:skewX(-6deg);}
+    .btnp>span{display:inline-block;transform:skewX(6deg);display:flex;align-items:center;gap:8px;}
+    .btns{height:40px;padding:0 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+    .fld{height:40px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid rgba(255,164,92,.12);display:flex;align-items:center;padding:0 12px;font-size:13px;box-sizing:border-box;gap:8px;}
+    .item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;}
+    .badge{font-size:10px;font-weight:800;padding:3px 10px;border-radius:999px;}
+    .slot{width:60px;height:60px;background:linear-gradient(160deg,#241C15,#100E0D);border:1px solid rgba(255,164,92,.13);border-radius:12px;position:relative;display:flex;align-items:center;justify-content:center;box-sizing:border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);}
+    .tabrow{display:flex;gap:4px;background:rgba(10,9,8,.55);border:1px solid rgba(255,164,92,.1);border-radius:12px;padding:4px;}
+    .tab-on{border-radius:9px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-6deg);}
+    .tab-on>span{display:inline-block;transform:skewX(6deg);}
+    .tab-off{border-radius:9px;color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;}
+    .sldr{height:5px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;flex:1;}
+    .sldr .f{position:absolute;inset-inline-start:0;top:0;bottom:0;border-radius:3px;background:linear-gradient(90deg,#F26B0A,#FF9A3D);box-shadow:0 0 10px rgba(255,122,31,.45);}
+    .sldr .k{position:absolute;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:999px;background:#F7F4EF;border:3px solid #FF8A35;box-sizing:border-box;box-shadow:0 2px 8px rgba(0,0,0,.6);}
+    .glowline{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#FF8A35 30%,#FF8A35 70%,transparent);box-shadow:0 0 14px rgba(255,138,53,.55);}
+  </style>
+</helmet>
+<div dir="rtl" style="width:560px;min-height:380px;background:#0B0A09;padding:26px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;position:relative;"><div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,190,130,.05) 1px, transparent 1.4px);background-size:26px 26px;opacity:.5;pointer-events:none;"></div><div style="display:flex;align-items:center;justify-content:space-between;position:relative;flex-shrink:0;"><div style="display:flex;flex-direction:column;gap:1px;"><span class="kicker"><span class="tick"></span><span dir="ltr">mt_idcard</span></span><span style="font-size:19px;font-weight:900;">البطاقة الشخصية</span><span style="font-size:11px;color:#7A756C;font-weight:600;">تظهر عند إبراز الهوية لأي لاعب</span></div></div><div class="shadow" style="align-self:center;"><div class="cham panel" style="width:460px;padding:18px;display:flex;gap:16px;position:relative;overflow:hidden;border-top:1px solid rgba(255,122,31,.35);"><div class="stripes" style="position:absolute;top:0;left:14px;width:90px;height:4px;transform:skewX(-30deg);"></div><span style="position:absolute;bottom:-28px;inset-inline-start:8px;font-size:100px;font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;" dir="ltr">MT</span><div style="width:92px;height:112px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="52" height="66" viewBox="0 0 60 76" fill="none"><ellipse cx="30" cy="20" rx="13" ry="14" fill="#26262A"/><path d="M8 66c0-14 10-22 22-22s22 8 22 22v10H8z" fill="#26262A"/></svg></div><div style="display:flex;flex-direction:column;gap:7px;flex:1;position:relative;"><div style="display:flex;align-items:center;justify-content:space-between;"><span class="kicker" style="color:#FFA45C;">City ID</span><div style="width:26px;height:26px;border-radius:10px;background:linear-gradient(135deg,#FF9A3D,#F26B0A);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:10px;color:#1A120B;transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">MT</span></div></div><span style="font-size:19px;font-weight:900;line-height:1.2;">سعود فهد العتيبي</span><div style="display:grid;grid-template-columns:1fr 1fr;gap:5px 14px;"><div style="display:flex;flex-direction:column;"><span class="val">الرقم المدني</span><span class="num" dir="ltr" style="font-size:12px;font-weight:800;">CID-1042</span></div><div style="display:flex;flex-direction:column;"><span class="val">تاريخ الميلاد</span><span class="num" dir="ltr" style="font-size:12px;font-weight:800;">1992/03/14</span></div><div style="display:flex;flex-direction:column;"><span class="val">الجنسية</span><span style="font-size:12px;font-weight:800;">لوس سانتوس</span></div><div style="display:flex;flex-direction:column;"><span class="val">فصيلة الدم</span><span class="num" dir="ltr" style="font-size:12px;font-weight:800;">O+</span></div></div><div style="display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.07);padding-top:7px;"><span class="badge" style="background:rgba(62,207,142,.1);color:#3ECF8E;">سارية</span><div style="display:flex;gap:2px;align-items:flex-end;" dir="ltr"><div style="width:2px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:1px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:3px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:1px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:2px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:1px;height:12px;background:rgba(255,255,255,.3);"></div><div style="width:3px;height:12px;background:rgba(255,255,255,.3);"></div></div></div></div></div></div></div>
+</x-dc>
+</body>
+</html>
