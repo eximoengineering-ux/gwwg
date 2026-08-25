@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="إيكون عالم - شركة إنتاج وتصميم فيديوهات ومواقع وتطبيقات احترافية">
+    <meta name="keywords" content="تصميم، فيديوهات، مواقع، UI/UX، تطبيقات">
+    <title>إيكون عالم - شركة الإنتاج والتصميم الرقمي</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>إيكون عالم</h1>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الشركة</a></li>
+                    <li><a href="#services">الخدمات</a></li>
+                    <li><a href="#portfolio">الأعمال</a></li>
+                    <li><a href="#booking">احجز موعد</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">نحول أفكارك إلى واقع رقمي</h1>
+                    <p class="hero-subtitle">فيديوهات احترافية • مواقع عصرية • تطبيقات ذكية • تصاميم فاخرة</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">احجز استشارة</button>
+                        <button class="btn btn-secondary" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">شاهد الأعمال</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-shape"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <div class="floating-box box-1"></div>
+            <div class="floating-box box-2"></div>
+            <div class="floating-box box-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>عن إيكون عالم</h2>
+                <p>نحن فريق متخصص في تحويل الأفكار الإبداعية إلى منتجات رقمية عالية الجودة</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎬</div>
+                    <h3>إنتاج فيديوهات</h3>
+                    <p>فيديوهات احترافية لإعلاناتك وشركتك بأعلى معايير الجودة</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>تصميم مواقع</h3>
+                    <p>مواقع عصرية وسريعة تجذب عملاءك وتزيد المبيعات</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">📱</div>
+                    <h3>تطبيقات ذكية</h3>
+                    <p>تطبيقات موبايل وويب تحل مشاكل حقيقية</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🎨</div>
+                    <h3>تصميم UI/UX</h3>
+                    <p>واجهات مستخدم فاخرة تجمع بين الجمال والوظيفة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>خدماتنا</h2>
+                <p>مجموعة شاملة من الخدمات لتعزيز وجودك الرقمي</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>إنتاج الفيديوهات</h3>
+                    <ul>
+                        <li>فيديوهات تسويقية احترافية</li>
+                        <li>محتوى لوسائل التواصل</li>
+                        <li>فيديوهات توضيحية</li>
+                        <li>تحرير واخراج متقدم</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>تصميم المواقع</h3>
+                    <ul>
+                        <li>مواقع متجاوبة</li>
+                        <li>تحسين محركات البحث</li>
+                        <li>سرعة عالية</li>
+                        <li>أمان وحماية</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>تطبيقات الويب</h3>
+                    <ul>
+                        <li>تطبيقات ويب تفاعلية</li>
+                        <li>أنظمة إدارة محتوى</li>
+                        <li>منصات تجارة إلكترونية</li>
+                        <li>API وتكاملات</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>تطبيقات الموبايل</h3>
+                    <ul>
+                        <li>تطبيقات iOS و Android</li>
+                        <li>تطبيقات هجينة</li>
+                        <li>قواعد بيانات قوية</li>
+                        <li>دعم ما بعد الإطلاق</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <h3>تصميم UI/UX</h3>
+                    <ul>
+                        <li>تجربة مستخدم متميزة</li>
+                        <li>تصميم واجهات جميلة</li>
+                        <li>بحث تنافسي شامل</li>
+                        <li>الاختبار والتحسين</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <h3>التسويق الرقمي</h3>
+                    <ul>
+                        <li>استراتيجيات تسويقية</li>
+                        <li>إدارة وسائل التواصل</li>
+                        <li>حملات إعلانية موجهة</li>
+                        <li>تحليل والتقارير</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>أعمالنا</h2>
+                <p>مشاريع ناجحة حققت نتائج استثنائية لعملائنا</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🎬 موقع شركة تقنية</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>موقع شركة تقنية رائدة</h3>
+                        <p>موقع متقدم مع نظام إدارة محتوى متطور</p>
+                        <span class="tech-tags">HTML • CSS • JavaScript • React</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">📱 تطبيق الموبايل</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>تطبيق موبايل للتجارة الإلكترونية</h3>
+                        <p>تطبيق بميزات تسوق متقدمة وآمنة</p>
+                        <span class="tech-tags">React Native • Node.js • MongoDB</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🎨 حملة فيديو</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>حملة فيديوهات تسويقية</h3>
+                        <p>سلسلة فيديوهات احترافية زادت المبيعات 300%</p>
+                        <span class="tech-tags">4K • Motion Graphics • Cinematic</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🏪 متجر إلكتروني</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>متجر إلكتروني فاخر</h3>
+                        <p>منصة تسويق متكاملة مع دفع آمن</p>
+                        <span class="tech-tags">E-commerce • Stripe • SEO</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">💼 منصة B2B</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>منصة B2B للخدمات</h3>
+                        <p>نظام متقدم لإدارة العقود والفواتير</p>
+                        <span class="tech-tags">Dashboard • Analytics • API</span>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">🎯 موقع تسويق</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>موقع تسويقي بأداء عالي</h3>
+                        <p>موقع محسّن للسرعة والمبيعات</p>
+                        <span class="tech-tags">Next.js • Optimization • CRM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2>احجز استشارة مجانية</h2>
+                <p>اختر الموعد المناسب لك والتحدث مع فريقنا</p>
+            </div>
+            <div class="booking-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" name="name" required placeholder="أدخل اسمك">
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف</label>
+                        <input type="tel" name="phone" required placeholder="+966500000000">
+                    </div>
+                    <div class="form-group">
+                        <label>اسم الشركة</label>
+                        <input type="text" name="company" required placeholder="اسم شركتك">
+                    </div>
+                    <div class="form-group">
+                        <label>نوع الخدمة المطلوبة</label>
+                        <select name="service" required>
+                            <option value="">اختر الخدمة</option>
+                            <option value="video">إنتاج فيديوهات</option>
+                            <option value="website">تصميم موقع</option>
+                            <option value="app">تطبيق موبايل</option>
+                            <option value="ui-ux">تصميم UI/UX</option>
+                            <option value="marketing">تسويق رقمي</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>اختر موعداً مفضلاً</label>
+                        <input type="datetime-local" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رسالة إضافية</label>
+                        <textarea name="message" rows="4" placeholder="أخبرنا عن مشروعك..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">تأكيد الحجز</button>
+                </form>
+                <div class="booking-calendar">
+                    <div class="calendar">
+                        <h3>المواعيد المتاحة</h3>
+                        <div id="availableTimes" class="available-times">
+                            <!-- سيتم ملؤها بـ JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <p>مشروع منجز</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <p>رضا العملاء</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12+</div>
+                    <p>سنوات الخبرة</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <p>فريق متخصص</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معنا</h2>
+                <p>هل لديك سؤال؟ نحن هنا للمساعدة</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="icon">📍</div>
+                    <h3>العنوان</h3>
+                    <p>الرياض، المملكة العربية السعودية</p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">📞</div>
+                    <h3>الهاتف</h3>
+                    <p>+966 50 000 0000</p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>info@iconemonde.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="icon">⏰</div>
+                    <h3>ساعات العمل</h3>
+                    <p>السبت - الخميس: 9AM - 6PM</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">𝕏</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">📷</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 إيكون عالم. جميع الحقوق محفوظة.</p>
+            <p>صُمم وطُوّر بـ ❤️ من قبل فريق إيكون عالم</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
