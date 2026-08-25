@@ -9,41 +9,41 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#070708;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
-    .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7A756C;}
     .sec{display:flex;align-items:baseline;gap:12px;position:relative;}
     .sec h2{font-size:19px;font-weight:900;margin:0;}
     .sec .ghost{position:absolute;top:-26px;inset-inline-end:0;font-size:64px;font-weight:900;color:rgba(255,255,255,.035);line-height:1;pointer-events:none;}
-    .card{background:linear-gradient(180deg,#1B1B1E,#101012);border-top:1px solid rgba(255,255,255,.08);box-sizing:border-box;}
-    .cham{clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);}
+    .card{background:linear-gradient(160deg,#241C15 0%,#161311 45%,#100E0D 100%);border:1px solid rgba(255,164,92,.13);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);box-sizing:border-box;}
+    .cham{border-radius:16px;}
     .shadow{filter:drop-shadow(0 16px 34px rgba(0,0,0,.45));}
-    .lbl{font-size:12px;font-weight:700;color:#A5A39D;}
-    .val{font-size:10px;font-weight:600;color:#6E6C66;letter-spacing:.02em;}
+    .lbl{font-size:12px;font-weight:700;color:#B3ADA3;}
+    .val{font-size:10px;font-weight:600;color:#7A756C;letter-spacing:.02em;}
     .num{font-variant-numeric:tabular-nums;}
-    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;box-sizing:border-box;transform:skewX(-8deg);}
+    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:10px;background:#262019;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;box-sizing:border-box;transform:skewX(-6deg);}
     .sw{display:flex;align-items:center;gap:10px;}
-    .sw .box{width:52px;height:38px;border-radius:6px;flex-shrink:0;}
-    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
+    .sw .box{width:52px;height:38px;border-radius:10px;flex-shrink:0;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,138,53,.3) 0 2px,transparent 2px 9px);}
     .stripes-w{background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 12px);}
     .dots{background-image:radial-gradient(rgba(255,255,255,.09) 1.2px, transparent 1.6px);background-size:14px 14px;}
-    .tick{display:inline-block;width:10px;height:12px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-18deg);align-self:center;}
+    .tick{display:inline-block;width:10px;height:12px;border-radius:2px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);transform:skewX(-14deg);align-self:center;}
     .seg{width:12px;height:4px;border-radius:1px;}
     .br{position:absolute;width:10px;height:10px;}
   </style>
 </helmet>
-<div dir="rtl" style="width:1500px;min-height:2860px;background:#070708;padding:56px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;">
+<div dir="rtl" style="width:1500px;min-height:2860px;background:#0B0A09;padding:56px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;">
 
   <!-- ═══════════ Header ═══════════ -->
   <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:30px;position:relative;">
-    <span style="position:absolute;top:-30px;inset-inline-end:0;font-size:120px;font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;" dir="ltr">V3</span>
+    <span style="position:absolute;top:-30px;inset-inline-end:0;font-size:120px;font-weight:900;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;" dir="ltr">V4</span>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <span class="kicker" style="color:#FFA45C;">Design System · v3</span>
+      <span class="kicker" style="color:#FFA45C;">Design System · v4</span>
       <div style="display:flex;align-items:center;gap:16px;">
-        <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#FF8A35,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:21px;color:#14100B;box-shadow:0 8px 28px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.4);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">MT</span></div>
+        <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#FF9A3D,#F26B0A);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:21px;color:#1A120B;box-shadow:0 8px 28px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.4);transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">MT</span></div>
         <h1 style="margin:0;font-size:34px;font-weight:900;line-height:1.15;">نظام التصميم <span style="color:#FF7A1F;">MT NUI</span></h1>
       </div>
-      <p style="margin:0;font-size:14px;color:#A5A39D;max-width:700px;line-height:1.75;">اللغة البصرية v3 بعد التغذية من مراجع Behance وPinterest: زوايا مشطوفة، أقواس زوايا للتركيز، أشرطة مقسّمة بعلامات، أرقام شبحية ضخمة، وخطوط نداء — فوق هوية البرتقالي على الأسود والنمط المائل.</p>
+      <p style="margin:0;font-size:14px;color:#B3ADA3;max-width:700px;line-height:1.75;">اللغة البصرية v4 «الزجاج الكهرماني»: أسطح دافئة متدرجة، زوايا ناعمة فخمة، خطوط توهج بدل الحدود القاسية، أقواس تركيز، أشرطة مقسّمة وأرقام شبحية — فوق هوية البرتقالي والنمط المائل.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
       <span style="font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;background:rgba(255,122,31,.1);color:#FFA45C;border:1px solid rgba(255,122,31,.3);">للمراجعة</span>
@@ -57,24 +57,24 @@
     <div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:18px;">
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">Surfaces</span>
-        <div class="sw"><div class="box" style="background:#070708;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">أرضية الشاشة</div><div class="val">#070708</div></div></div>
-        <div class="sw"><div class="box" style="background:linear-gradient(180deg,#1B1B1E,#101012);border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">لوحة متدرّجة</div><div class="val">#1B1B1E → #101012</div></div></div>
+        <div class="sw"><div class="box" style="background:#0B0A09;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">أرضية الشاشة</div><div class="val">#0B0A09</div></div></div>
+        <div class="sw"><div class="box" style="background:linear-gradient(160deg,#241C15,#100E0D);border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">لوحة متدرّجة</div><div class="val">#241C15 → #100E0D</div></div></div>
         <div class="sw"><div class="box" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">تعبئة محايدة</div><div class="val">white 5%</div></div></div>
-        <div class="sw"><div class="box" style="background:#1B1B1F;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">مفاتيح وتلميحات</div><div class="val">#1B1B1F</div></div></div>
+        <div class="sw"><div class="box" style="background:#262019;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">مفاتيح وتلميحات</div><div class="val">#262019</div></div></div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">Primary</span>
         <div class="sw"><div class="box" style="background:#FF7A1F;"></div><div><div class="lbl">برتقالي 500</div><div class="val">#FF7A1F · 7.3:1</div></div></div>
         <div class="sw"><div class="box" style="background:#FFA45C;"></div><div><div class="lbl">برتقالي 300</div><div class="val">#FFA45C</div></div></div>
-        <div class="sw"><div class="box" style="background:linear-gradient(180deg,#FF8A35,#E85D04);"></div><div><div class="lbl">تدرّج الأزرار</div><div class="val">#FF8A35 → #E85D04</div></div></div>
+        <div class="sw"><div class="box" style="background:linear-gradient(180deg,#FF9A3D,#F26B0A);"></div><div><div class="lbl">تدرّج الأزرار</div><div class="val">#FF9A3D → #F26B0A</div></div></div>
         <div class="sw"><div class="box" style="background:rgba(255,122,31,.1);border:1px solid rgba(255,122,31,.3);"></div><div><div class="lbl">تعبئة خافتة</div><div class="val">10% / حد 30%</div></div></div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">Text</span>
-        <div class="sw"><div class="box" style="background:#F6F5F2;"></div><div><div class="lbl">أساسي</div><div class="val">#F6F5F2 · 18:1</div></div></div>
-        <div class="sw"><div class="box" style="background:#A5A39D;"></div><div><div class="lbl">ثانوي</div><div class="val">#A5A39D · 7:1</div></div></div>
-        <div class="sw"><div class="box" style="background:#6E6C66;"></div><div><div class="lbl">خافت / Kicker</div><div class="val">#6E6C66 · 3.2:1</div></div></div>
-        <div class="sw"><div class="box" style="background:#14100B;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">فوق البرتقالي</div><div class="val">#14100B</div></div></div>
+        <div class="sw"><div class="box" style="background:#F7F4EF;"></div><div><div class="lbl">أساسي</div><div class="val">#F7F4EF · 18:1</div></div></div>
+        <div class="sw"><div class="box" style="background:#B3ADA3;"></div><div><div class="lbl">ثانوي</div><div class="val">#B3ADA3 · 7:1</div></div></div>
+        <div class="sw"><div class="box" style="background:#7A756C;"></div><div><div class="lbl">خافت / Kicker</div><div class="val">#7A756C · 3.2:1</div></div></div>
+        <div class="sw"><div class="box" style="background:#1A120B;border:1px solid rgba(255,255,255,.12);"></div><div><div class="lbl">فوق البرتقالي</div><div class="val">#1A120B</div></div></div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">Semantic</span>
@@ -94,8 +94,8 @@
         <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:32px;font-weight:900;">عنوان رئيسي</span><span class="val">Display · 32-110 / 900</span></div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:24px;font-weight:900;">عنوان صفحة</span><span class="val">Title · 24 / 900</span></div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:17px;font-weight:800;">عنوان قسم</span><span class="val">Heading · 17 / 800</span></div>
-        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:14px;font-weight:600;color:#A5A39D;">نص أساسي للمحتوى والفقرات داخل الواجهات</span><span class="val">Body · 14 / 600</span></div>
-        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:12px;font-weight:700;color:#A5A39D;">تسمية حقول وأزرار</span><span class="val">Label · 12 / 700</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:14px;font-weight:600;color:#B3ADA3;">نص أساسي للمحتوى والفقرات داخل الواجهات</span><span class="val">Body · 14 / 600</span></div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:12px;font-weight:700;color:#B3ADA3;">تسمية حقول وأزرار</span><span class="val">Label · 12 / 700</span></div>
         <div style="display:flex;align-items:baseline;justify-content:space-between;"><span class="kicker">Section Kicker</span><span class="val">10 / 700 · tracking .16em · uppercase</span></div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:24px 28px;display:flex;flex-direction:column;gap:16px;justify-content:center;position:relative;overflow:hidden;">
@@ -125,10 +125,10 @@
     <div class="sec"><span class="tick"></span><h2>لغة الواجهة</h2><span class="kicker">Chamfer · Brackets · Segments · Callout</span><span class="ghost num" dir="ltr">03</span></div>
     <div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:18px;">
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
-        <span class="kicker">شطف الزوايا — <span dir="ltr">Chamfer</span></span>
+        <span class="kicker">الزوايا الناعمة — <span dir="ltr">Soft Radius</span></span>
         <div class="cham" style="height:64px;background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.12);"></div>
-        <span class="val" dir="ltr">clip-path: 12px cut (panels) · 8-10px (small)</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">قطع زاويتين متقابلتين — يوازي اتجاه الميلان. الظل عبر <span dir="ltr">drop-shadow</span> والحدّ خط علوي فقط.</span>
+        <span class="val" dir="ltr">radius: 16 لوحات · 12 بطاقات · 10 عناصر</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">زوايا ناعمة فخمة، حدّ كهرماني كامل 13% مع لمعة علوية داخلية — الظل عبر <span dir="ltr">drop-shadow</span>.</span>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">أقواس الزوايا — <span dir="ltr">Brackets</span></span>
@@ -140,7 +140,7 @@
           <div style="position:absolute;inset:8px;background:rgba(255,255,255,.04);border-radius:4px;"></div>
         </div>
         <span class="val" dir="ltr">10px L-corners · 2px · primary</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">للعنصر المحدد أو المُركَّز فقط — الخريطة، البطاقة المختارة، حقل التركيز.</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">للعنصر المحدد أو المُركَّز فقط — الخريطة، البطاقة المختارة، حقل التركيز.</span>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">أشرطة مقسّمة — <span dir="ltr">Segments</span></span>
@@ -153,17 +153,17 @@
           </div>
         </div>
         <span class="val" dir="ltr">5 segs (status) · ruler ticks (loading/RPM)</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">تحل مكان الأشرطة المصمتة — قراءة أسرع للقيمة من بعيد.</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">تحل مكان الأشرطة المصمتة — قراءة أسرع للقيمة من بعيد.</span>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">خط النداء — <span dir="ltr">Callout</span></span>
         <div style="display:flex;align-items:center;height:64px;">
           <div style="width:5px;height:5px;border-radius:999px;background:#FF7A1F;box-shadow:0 0 10px 2px rgba(255,122,31,.6);"></div>
           <div style="width:52px;height:1px;background:linear-gradient(90deg,#FF7A1F,rgba(255,122,31,.1));"></div>
-          <div class="cham" style="background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.12);padding:8px 14px;font-size:12px;font-weight:700;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);">تسمية مرتبطة</div>
+          <div class="cham" style="background:rgba(255,255,255,.05);border-top:1px solid rgba(255,255,255,.12);padding:8px 14px;font-size:12px;font-weight:700;border-radius:12px;">تسمية مرتبطة</div>
         </div>
         <span class="val" dir="ltr">dot + hairline + chamfered label</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">لربط معلومة بعنصر في المشهد — مؤشر التفاعل ولوحة إحصاءات الشخصية.</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">لربط معلومة بعنصر في المشهد — مؤشر التفاعل ولوحة إحصاءات الشخصية.</span>
       </div></div>
     </div>
   </div>
@@ -174,28 +174,28 @@
     <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;">
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">نمط الخطوط — <span dir="ltr">Stripes 45°</span></span>
-        <div class="stripes" style="height:64px;border-radius:6px;border:1px solid rgba(255,122,31,.2);"></div>
+        <div class="stripes" style="height:64px;border-radius:10px;border:1px solid rgba(255,122,31,.2);"></div>
         <span class="val" dir="ltr">repeating-linear-gradient(-45deg, primary 35% 0 2px, transparent 2px 9px)</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">شرائط اللوحات وحوافها، تعبئة القطاع النشط، وداخل أشرطة التقدّم بنسخة بيضاء 30%.</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">شرائط اللوحات وحوافها، تعبئة القطاع النشط، وداخل أشرطة التقدّم بنسخة بيضاء 30%.</span>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">شبكة نقاط — <span dir="ltr">Dot Grid</span></span>
-        <div class="dots" style="height:64px;border-radius:6px;border:1px solid rgba(255,255,255,.08);"></div>
+        <div class="dots" style="height:64px;border-radius:10px;border:1px solid rgba(255,255,255,.08);"></div>
         <span class="val" dir="ltr">radial-gradient(white 9% 1.2px, transparent 1.6px) · 14-26px</span>
-        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">خلفيات الشاشات الكاملة والمساحات الفارغة — لا تُستخدم خلف نصوص.</span>
+        <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">خلفيات الشاشات الكاملة والمساحات الفارغة — لا تُستخدم خلف نصوص.</span>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:20px;display:flex;flex-direction:column;gap:14px;">
         <span class="kicker">الميلان — <span dir="ltr">Slant</span></span>
         <div style="display:flex;align-items:center;gap:14px;">
-          <div style="height:40px;padding:0 22px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:13px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.3), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">زر مائل</span></div>
+          <div style="height:40px;padding:0 22px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:13px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.3), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">زر مائل</span></div>
           <span class="tick" style="width:12px;height:16px;"></span>
           <div class="stripes" style="width:70px;height:8px;border-radius:2px;transform:skewX(-24deg);"></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:5px;">
-          <div style="display:flex;justify-content:space-between;"><span class="lbl">أزرار أساسية ومفاتيح وشعار وألواح أيقونات</span><span class="val" dir="ltr">skewX(-8°)</span></div>
-          <div style="display:flex;justify-content:space-between;"><span class="lbl">علامات الأقسام والمؤشرات</span><span class="val" dir="ltr">skewX(-18°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">أزرار أساسية ومفاتيح وشعار وألواح أيقونات</span><span class="val" dir="ltr">skewX(-6°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">علامات الأقسام والمؤشرات</span><span class="val" dir="ltr">skewX(-14°)</span></div>
           <div style="display:flex;justify-content:space-between;"><span class="lbl">الأشرطة والشرائح الزخرفية</span><span class="val" dir="ltr">skewX(-24°/-30°)</span></div>
-          <div style="display:flex;justify-content:space-between;"><span class="lbl" style="color:#FFA45C;">النص داخل المائل يُعاد باستقامة</span><span class="val" dir="ltr">inner skewX(+8°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl" style="color:#FFA45C;">النص داخل المائل يُعاد باستقامة</span><span class="val" dir="ltr">inner skewX(+6°)</span></div>
           <div style="display:flex;justify-content:space-between;"><span class="lbl" style="color:#FF5D5D;">ممنوع: حقول الإدخال والفقرات</span><span class="val">usability</span></div>
         </div>
       </div></div>
@@ -206,20 +206,20 @@
   <div style="display:flex;flex-direction:column;gap:18px;">
     <div class="sec"><span class="tick"></span><h2>الأيقونات</h2><span class="kicker">SVG · Stroke 1.75 · 16 / 20 / 24</span><span class="ghost num" dir="ltr">05</span></div>
     <div class="shadow"><div class="card cham" style="padding:22px 28px;display:flex;align-items:center;justify-content:space-between;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F7F4EF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l2.5 2.5"/></svg>
     </div></div>
@@ -229,12 +229,12 @@
   <div style="display:flex;flex-direction:column;gap:18px;">
     <div class="sec"><span class="tick"></span><h2>الأزرار</h2><span class="kicker">min-height 44px</span><span class="ghost num" dir="ltr">06</span></div>
     <div class="shadow"><div class="card cham" style="padding:22px 28px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-      <div style="height:44px;padding:0 26px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:14px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">أساسي</span></div>
-      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,122,31,.1);color:#FFA45C;border:1px solid rgba(255,122,31,.3);font-weight:700;font-size:14px;display:flex;align-items:center;transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">ثانوي</span></div>
-      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,255,255,.05);color:#F6F5F2;border:1px solid rgba(255,255,255,.1);font-weight:700;font-size:14px;display:flex;align-items:center;">محايد</div>
-      <div style="height:44px;padding:0 24px;border-radius:6px;background:transparent;color:#A5A39D;font-weight:700;font-size:14px;display:flex;align-items:center;">شفاف</div>
-      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,93,93,.1);color:#FF5D5D;border:1px solid rgba(255,93,93,.3);font-weight:700;font-size:14px;display:flex;align-items:center;">حذف</div>
-      <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,255,255,.04);color:#6E6C66;font-weight:700;font-size:14px;display:flex;align-items:center;opacity:.5;">معطّل</div>
+      <div style="height:44px;padding:0 26px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:14px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">أساسي</span></div>
+      <div style="height:44px;padding:0 24px;border-radius:10px;background:rgba(255,122,31,.1);color:#FFA45C;border:1px solid rgba(255,122,31,.3);font-weight:700;font-size:14px;display:flex;align-items:center;transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">ثانوي</span></div>
+      <div style="height:44px;padding:0 24px;border-radius:10px;background:rgba(255,255,255,.05);color:#F7F4EF;border:1px solid rgba(255,255,255,.1);font-weight:700;font-size:14px;display:flex;align-items:center;">محايد</div>
+      <div style="height:44px;padding:0 24px;border-radius:10px;background:transparent;color:#B3ADA3;font-weight:700;font-size:14px;display:flex;align-items:center;">شفاف</div>
+      <div style="height:44px;padding:0 24px;border-radius:10px;background:rgba(255,93,93,.1);color:#FF5D5D;border:1px solid rgba(255,93,93,.3);font-weight:700;font-size:14px;display:flex;align-items:center;">حذف</div>
+      <div style="height:44px;padding:0 24px;border-radius:10px;background:rgba(255,255,255,.04);color:#7A756C;font-weight:700;font-size:14px;display:flex;align-items:center;opacity:.5;">معطّل</div>
       <div style="display:flex;align-items:center;gap:8px;margin-inline-start:auto;">
         <span class="lbl">مفاتيح:</span>
         <span class="kbd" dir="ltr">E</span>
@@ -251,51 +251,51 @@
       <div class="shadow"><div class="card cham" style="padding:22px;display:flex;flex-direction:column;gap:16px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <span class="lbl">الاسم الكامل</span>
-          <div style="height:44px;border-radius:6px;background:rgba(7,7,8,.7);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 14px;color:#6E6C66;font-size:14px;box-sizing:border-box;">اكتب الاسم…</div>
+          <div style="height:44px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;padding:0 14px;color:#7A756C;font-size:14px;box-sizing:border-box;">اكتب الاسم…</div>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
           <span class="lbl" style="color:#FFA45C;">حالة تركيز — أقواس زوايا</span>
           <div style="position:relative;">
             <div class="br" style="top:-3px;inset-inline-start:-3px;border-top:1.5px solid #FF7A1F;border-inline-start:1.5px solid #FF7A1F;"></div>
             <div class="br" style="bottom:-3px;inset-inline-end:-3px;border-bottom:1.5px solid #FF7A1F;border-inline-end:1.5px solid #FF7A1F;"></div>
-            <div style="height:44px;border-radius:6px;background:rgba(7,7,8,.7);border:1px solid #FF7A1F;box-shadow:0 0 0 3px rgba(255,122,31,.14);display:flex;align-items:center;padding:0 14px;font-size:14px;box-sizing:border-box;"><span dir="ltr">MT 4821</span></div>
+            <div style="height:44px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid #FF7A1F;box-shadow:0 0 0 3px rgba(255,122,31,.14);display:flex;align-items:center;padding:0 14px;font-size:14px;box-sizing:border-box;"><span dir="ltr">MT 4821</span></div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;">
           <span class="lbl" style="color:#FF5D5D;">حالة خطأ</span>
-          <div style="height:44px;border-radius:6px;background:rgba(7,7,8,.7);border:1px solid #FF5D5D;display:flex;align-items:center;padding:0 14px;font-size:14px;box-sizing:border-box;" dir="ltr">-500</div>
+          <div style="height:44px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid #FF5D5D;display:flex;align-items:center;padding:0 14px;font-size:14px;box-sizing:border-box;" dir="ltr">-500</div>
           <span style="font-size:11px;color:#FF5D5D;font-weight:600;">المبلغ يجب أن يكون أكبر من صفر</span>
         </div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:22px;display:flex;flex-direction:column;gap:18px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
           <span class="lbl">قائمة منسدلة</span>
-          <div style="height:44px;border-radius:6px;background:rgba(7,7,8,.7);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;box-sizing:border-box;">
+          <div style="height:44px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:14px;box-sizing:border-box;">
             <span>سيدان</span>
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#B3ADA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </div>
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <span class="lbl">تبديل مفعّل</span>
-          <div style="width:46px;height:26px;border-radius:999px;background:linear-gradient(180deg,#FF8A35,#E85D04);position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);"><div style="position:absolute;top:3px;inset-inline-end:3px;width:20px;height:20px;border-radius:999px;background:#14100B;"></div></div>
+          <div style="width:46px;height:26px;border-radius:999px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);position:relative;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);"><div style="position:absolute;top:3px;inset-inline-end:3px;width:20px;height:20px;border-radius:999px;background:#1A120B;"></div></div>
         </div>
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <span class="lbl">تبديل معطّل</span>
-          <div style="width:46px;height:26px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);position:relative;box-sizing:border-box;"><div style="position:absolute;top:2px;inset-inline-start:2px;width:20px;height:20px;border-radius:999px;background:#6E6C66;"></div></div>
+          <div style="width:46px;height:26px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);position:relative;box-sizing:border-box;"><div style="position:absolute;top:2px;inset-inline-start:2px;width:20px;height:20px;border-radius:999px;background:#7A756C;"></div></div>
         </div>
         <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:20px;height:20px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#14100B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+          <div style="width:20px;height:20px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A120B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
           </div>
-          <span class="lbl" style="color:#F6F5F2;">أوافق على قوانين السيرفر</span>
+          <span class="lbl" style="color:#F7F4EF;">أوافق على قوانين السيرفر</span>
         </div>
       </div></div>
       <div class="shadow"><div class="card cham" style="padding:22px;display:flex;flex-direction:column;gap:18px;">
         <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="display:flex;justify-content:space-between;"><span class="lbl">شدة الصوت</span><span class="val num" dir="ltr">65%</span></div>
           <div style="height:4px;border-radius:2px;background:rgba(255,255,255,.08);position:relative;">
-            <div style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:65%;border-radius:2px;background:linear-gradient(90deg,#E85D04,#FF7A1F);"></div>
-            <div style="position:absolute;top:50%;inset-inline-start:65%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:999px;background:#F6F5F2;box-shadow:0 2px 8px rgba(0,0,0,.6);"></div>
+            <div style="position:absolute;inset-inline-start:0;top:0;bottom:0;width:65%;border-radius:2px;background:linear-gradient(90deg,#F26B0A,#FF9A3D);"></div>
+            <div style="position:absolute;top:50%;inset-inline-start:65%;transform:translate(-50%,-50%);width:15px;height:15px;border-radius:999px;background:#F7F4EF;box-shadow:0 2px 8px rgba(0,0,0,.6);"></div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px;">
@@ -304,9 +304,9 @@
             <div class="seg" style="flex:1;background:#FF7A1F;"></div><div class="seg" style="flex:1;background:#FF7A1F;"></div><div class="seg" style="flex:1;background:#FF7A1F;"></div><div class="seg" style="flex:1;background:#FF7A1F;"></div><div class="seg" style="flex:1;background:#FF7A1F;"></div><div class="seg" style="flex:1;background:#FF7A1F;box-shadow:0 0 8px rgba(255,122,31,.6);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.12);"></div>
           </div>
         </div>
-        <div style="height:44px;border-radius:6px;background:rgba(7,7,8,.7);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;padding:0 14px;box-sizing:border-box;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6E6C66" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-          <span style="color:#6E6C66;font-size:14px;">بحث…</span>
+        <div style="height:44px;border-radius:10px;background:rgba(10,9,8,.55);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;padding:0 14px;box-sizing:border-box;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#7A756C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <span style="color:#7A756C;font-size:14px;">بحث…</span>
         </div>
       </div></div>
     </div>
@@ -326,22 +326,22 @@
           <div style="position:relative;">
             <div class="br" style="top:-1px;inset-inline-start:2px;border-top:1.5px solid #FF7A1F;border-inline-start:1.5px solid #FF7A1F;"></div>
             <div class="br" style="bottom:-1px;inset-inline-end:2px;border-bottom:1.5px solid #FF7A1F;border-inline-end:1.5px solid #FF7A1F;"></div>
-            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:6px;background:rgba(255,122,31,.1);">
+            <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;background:rgba(255,122,31,.1);">
               <span class="val num" dir="ltr" style="color:#FFA45C;font-weight:800;">01</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
               <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:13px;color:#FFA45C;">عنصر محدد</span><span class="val">أقواس + تعبئة 10%</span></div>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </div>
           </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:6px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;">
             <span class="val num" dir="ltr">02</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B3ADA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:13px;">عنصر عادي</span><span class="val">وصف مختصر</span></div>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6C66" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A756C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:6px;opacity:.4;">
+          <div style="display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;opacity:.4;">
             <span class="val num" dir="ltr">03</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B3ADA3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></svg>
             <div style="display:flex;flex-direction:column;flex:1;"><span style="font-weight:700;font-size:13px;">عنصر معطّل</span><span class="val">غير متاح حالياً</span></div>
           </div>
         </div>
@@ -360,32 +360,32 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <span class="kicker">Tabs</span>
-          <div style="display:flex;gap:4px;background:rgba(7,7,8,.7);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:4px;">
-            <div style="flex:1;height:34px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">الكل</span></div>
-            <div style="flex:1;height:34px;border-radius:6px;color:#A5A39D;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;">مركبات</div>
-            <div style="flex:1;height:34px;border-radius:6px;color:#A5A39D;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;">أسلحة</div>
+          <div style="display:flex;gap:4px;background:rgba(10,9,8,.55);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:4px;">
+            <div style="flex:1;height:34px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">الكل</span></div>
+            <div style="flex:1;height:34px;border-radius:10px;color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;">مركبات</div>
+            <div style="flex:1;height:34px;border-radius:10px;color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;">أسلحة</div>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;">
           <span class="kicker">Tooltip</span>
-          <div style="align-self:flex-start;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:8px 12px;font-size:12px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;">اضغط <span class="kbd" dir="ltr" style="height:20px;min-width:20px;font-size:10px;">G</span> لإلقاء الغرض</div>
+          <div style="align-self:flex-start;background:#262019;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:8px 12px;font-size:12px;font-weight:600;box-shadow:0 8px 24px rgba(0,0,0,.5);display:flex;align-items:center;gap:8px;">اضغط <span class="kbd" dir="ltr" style="height:20px;min-width:20px;font-size:10px;">G</span> لإلقاء الغرض</div>
         </div>
       </div></div>
       <!-- glass spec -->
-      <div style="border-radius:6px;padding:20px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(135deg,#221910 0%,#0E0E10 55%);border:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;box-sizing:border-box;">
+      <div style="border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(135deg,#221910 0%,#14110E 55%);border:1px solid rgba(255,255,255,.07);position:relative;overflow:hidden;box-sizing:border-box;">
         <div style="position:absolute;inset:0;background:radial-gradient(420px 200px at 85% -10%,rgba(255,122,31,.2),transparent 70%);"></div>
-        <div class="cham" style="position:relative;background:rgba(12,12,14,.82);border-top:1px solid rgba(255,255,255,.08);padding:16px;backdrop-filter:blur(18px);display:flex;flex-direction:column;gap:6px;">
+        <div class="cham" style="position:relative;background:rgba(19,16,13,.9);border-top:1px solid rgba(255,255,255,.08);padding:16px;backdrop-filter:blur(18px);display:flex;flex-direction:column;gap:6px;">
           <span class="kicker" style="color:#FFA45C;">HUD Glass</span>
-          <span style="font-weight:800;font-size:14px;">زجاج فوق اللعب — مشطوف</span>
-          <span class="val" dir="ltr">rgba(12,12,14,.9) · blur 18 يُضاف داخل اللعبة · top hairline 8%</span>
-          <span style="font-size:12px;color:#A5A39D;line-height:1.7;">كل العناصر العائمة فوق المشهد: شطف 12px، ظل drop-shadow، وحدّ علوي واحد فقط.</span>
+          <span style="font-weight:800;font-size:14px;">زجاج فوق اللعب — ناعم</span>
+          <span class="val" dir="ltr">rgba(19,16,13,.9) · حد كهرماني 14% · blur يُضاف داخل اللعبة</span>
+          <span style="font-size:12px;color:#B3ADA3;line-height:1.7;">كل العناصر العائمة فوق المشهد: زوايا 14-16px، حدّ كهرماني، وخط توهج علوي للوحات البطلة.</span>
         </div>
         <div style="position:relative;display:flex;gap:8px;">
-          <div class="cham" style="flex:1;background:rgba(12,12,14,.82);border-top:1px solid rgba(255,255,255,.08);padding:10px 12px;display:flex;flex-direction:column;gap:4px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);">
+          <div class="cham" style="flex:1;background:rgba(19,16,13,.9);border-top:1px solid rgba(255,255,255,.08);padding:10px 12px;display:flex;flex-direction:column;gap:4px;border-radius:12px;">
             <span class="val">مؤشر نشط</span>
             <div style="height:3px;border-radius:2px;background:#FF7A1F;width:60%;box-shadow:0 0 8px rgba(255,122,31,.6);"></div>
           </div>
-          <div class="cham" style="flex:1;background:rgba(12,12,14,.82);border-top:1px solid rgba(255,255,255,.08);padding:10px 12px;display:flex;flex-direction:column;gap:4px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);">
+          <div class="cham" style="flex:1;background:rgba(19,16,13,.9);border-top:1px solid rgba(255,255,255,.08);padding:10px 12px;display:flex;flex-direction:column;gap:4px;border-radius:12px;">
             <span class="val">ظل اللوحات</span>
             <span class="val" dir="ltr" style="font-size:9px;">drop-shadow(0 16px 34px black 50%)</span>
           </div>

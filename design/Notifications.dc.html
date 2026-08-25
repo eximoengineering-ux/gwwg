@@ -9,127 +9,135 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#070708;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
-    .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
     .num{font-variant-numeric:tabular-nums;}
-    .tick{display:inline-block;width:8px;height:9px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-18deg);margin-inline-end:8px;vertical-align:middle;}
-    .cham{clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);}
-    .shadow{filter:drop-shadow(0 12px 28px rgba(0,0,0,.5));}
-    .toast{background:linear-gradient(180deg,#1B1B1E,#101012);display:flex;align-items:center;gap:12px;padding:12px 15px;box-sizing:border-box;border-top:1px solid rgba(255,255,255,.08);}
-    .plate{width:36px;height:36px;display:flex;align-items:center;justify-content:center;transform:skewX(-8deg);border-radius:6px;flex-shrink:0;}
+    .tick{display:inline-block;width:8px;height:9px;border-radius:3px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);transform:skewX(-14deg);margin-inline-end:8px;vertical-align:middle;}
+    .shadow{filter:drop-shadow(0 12px 30px rgba(0,0,0,.5));}
+    .toast{background:linear-gradient(160deg,#241C15 0%,#161311 45%,#100E0D 100%);border:1px solid rgba(255,164,92,.13);border-radius:14px;display:flex;align-items:center;gap:12px;padding:12px 15px;box-sizing:border-box;box-shadow:inset 0 1px 0 rgba(255,255,255,.07);}
+    .chip{position:relative;width:42px;height:42px;flex-shrink:0;}
+    .chip .inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
     .ttitle{font-size:13px;font-weight:800;line-height:1.4;}
-    .tbody{font-size:11px;color:#A5A39D;font-weight:600;line-height:1.6;}
-    .seg{width:11px;height:4px;border-radius:1px;}
+    .tbody{font-size:11px;color:#B3ADA3;font-weight:600;line-height:1.6;}
+    .glowline{height:2px;border-radius:2px;background:linear-gradient(90deg,transparent,#FF8A35 30%,#FF8A35 70%,transparent);box-shadow:0 0 14px rgba(255,138,53,.55);}
   </style>
 </helmet>
-<div dir="rtl" style="width:520px;min-height:1080px;background:#070708;padding:40px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;">
+<div dir="rtl" style="width:520px;min-height:1080px;background:#0B0A09;padding:40px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;">
 
-  <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:20px;position:relative;">
-    <span style="position:absolute;top:-18px;inset-inline-end:0;font-size:72px;font-weight:900;color:rgba(255,255,255,.035);line-height:1;pointer-events:none;" dir="ltr">03</span>
+  <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,164,92,.12);padding-bottom:20px;position:relative;">
+    <span style="position:absolute;top:-18px;inset-inline-end:0;font-size:72px;font-weight:900;color:rgba(255,235,210,.035);line-height:1;pointer-events:none;" dir="ltr">03</span>
     <span class="kicker"><span class="tick"></span>Notifications</span>
     <h1 style="margin:0;font-size:24px;font-weight:900;">الإشعارات</h1>
-    <p style="margin:0;font-size:13px;color:#A5A39D;line-height:1.7;">بطاقة مشطوفة الزوايا، لوح أيقونة مائل بلون الحالة، ومؤقّت من علامات مقسّمة تفرغ مع الوقت — المعنى لا يعتمد على اللون وحده.</p>
+    <p style="margin:0;font-size:13px;color:#B3ADA3;line-height:1.7;">حلقة المؤقّت تلتف حول أيقونة الحالة وتفرغ مع الوقت — المعنى لا يعتمد على اللون وحده.</p>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
     <span class="kicker"><span class="tick" style="background:#3ECF8E;"></span>نجاح — <span dir="ltr">Success</span></span>
-    <div class="shadow"><div class="toast cham">
-      <div class="plate" style="background:rgba(62,207,142,.12);border:1px solid rgba(62,207,142,.35);">
-        <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
+    <div class="shadow"><div class="toast">
+      <div class="chip">
+        <svg width="42" height="42" viewBox="0 0 42 42" style="position:absolute;inset:0;transform:rotate(-90deg);">
+          <circle cx="21" cy="21" r="19" fill="rgba(62,207,142,.1)" stroke="rgba(255,255,255,.09)" stroke-width="2.5"/>
+          <circle cx="21" cy="21" r="19" fill="none" stroke="#3ECF8E" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="84 119.4"/>
+        </svg>
+        <div class="inner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
+      <div style="display:flex;flex-direction:column;gap:1px;">
         <span class="ttitle">تم التحويل بنجاح</span>
         <span class="tbody">وصل مبلغ <span dir="ltr" style="color:#3ECF8E;font-weight:800;">$2,500</span> إلى حساب أحمد</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:3px;" dir="ltr">
-        <div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div>
       </div>
     </div></div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
     <span class="kicker"><span class="tick" style="background:#FF5D5D;"></span>خطأ — <span dir="ltr">Error</span></span>
-    <div class="shadow"><div class="toast cham">
-      <div class="plate" style="background:rgba(255,93,93,.12);border:1px solid rgba(255,93,93,.35);">
-        <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF5D5D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9l-6 6M9 9l6 6"/><circle cx="12" cy="12" r="10"/></svg>
+    <div class="shadow"><div class="toast">
+      <div class="chip">
+        <svg width="42" height="42" viewBox="0 0 42 42" style="position:absolute;inset:0;transform:rotate(-90deg);">
+          <circle cx="21" cy="21" r="19" fill="rgba(255,93,93,.1)" stroke="rgba(255,255,255,.09)" stroke-width="2.5"/>
+          <circle cx="21" cy="21" r="19" fill="none" stroke="#FF5D5D" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="54 119.4"/>
+        </svg>
+        <div class="inner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FF5D5D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9l-6 6M9 9l6 6"/><circle cx="12" cy="12" r="10"/></svg></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
+      <div style="display:flex;flex-direction:column;gap:1px;">
         <span class="ttitle">فشلت العملية</span>
         <span class="tbody">لا تملك رصيداً كافياً — ينقصك <span dir="ltr" style="color:#FF5D5D;font-weight:800;">$740</span></span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:3px;" dir="ltr">
-        <div class="seg" style="background:#FF5D5D;"></div><div class="seg" style="background:#FF5D5D;"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div>
       </div>
     </div></div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
     <span class="kicker"><span class="tick" style="background:#F5B840;"></span>تحذير — <span dir="ltr">Warning</span></span>
-    <div class="shadow"><div class="toast cham">
-      <div class="plate" style="background:rgba(245,184,64,.12);border:1px solid rgba(245,184,64,.35);">
-        <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F5B840" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+    <div class="shadow"><div class="toast">
+      <div class="chip">
+        <svg width="42" height="42" viewBox="0 0 42 42" style="position:absolute;inset:0;transform:rotate(-90deg);">
+          <circle cx="21" cy="21" r="19" fill="rgba(245,184,64,.1)" stroke="rgba(255,255,255,.09)" stroke-width="2.5"/>
+          <circle cx="21" cy="21" r="19" fill="none" stroke="#F5B840" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="96 119.4"/>
+        </svg>
+        <div class="inner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F5B840" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.7 18-8-14a2 2 0 0 0-3.4 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
+      <div style="display:flex;flex-direction:column;gap:1px;">
         <span class="ttitle">الوقود منخفض</span>
         <span class="tbody">تبقّى أقل من <span dir="ltr">15%</span> — أقرب محطة على بعد 400م</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:3px;" dir="ltr">
-        <div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div>
       </div>
     </div></div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
     <span class="kicker"><span class="tick" style="background:#5CA8FF;"></span>معلومة — <span dir="ltr">Info</span></span>
-    <div class="shadow"><div class="toast cham">
-      <div class="plate" style="background:rgba(92,168,255,.12);border:1px solid rgba(92,168,255,.35);">
-        <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+    <div class="shadow"><div class="toast">
+      <div class="chip">
+        <svg width="42" height="42" viewBox="0 0 42 42" style="position:absolute;inset:0;transform:rotate(-90deg);">
+          <circle cx="21" cy="21" r="19" fill="rgba(92,168,255,.1)" stroke="rgba(255,255,255,.09)" stroke-width="2.5"/>
+          <circle cx="21" cy="21" r="19" fill="none" stroke="#5CA8FF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="36 119.4"/>
+        </svg>
+        <div class="inner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
+      <div style="display:flex;flex-direction:column;gap:1px;">
         <span class="ttitle">اجتماع المدينة</span>
         <span class="tbody">يبدأ الاجتماع العام في البلدية بعد 10 دقائق</span>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:3px;" dir="ltr">
-        <div class="seg" style="background:#5CA8FF;"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div><div class="seg" style="background:rgba(255,255,255,.14);"></div>
       </div>
     </div></div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
     <span class="kicker"><span class="tick"></span>بلاغ وظيفة — <span dir="ltr">Dispatch</span></span>
-    <div class="shadow"><div class="toast cham" style="flex-direction:column;align-items:stretch;gap:12px;border-top-color:rgba(255,122,31,.45);position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:12px;width:76px;height:4px;transform:skewX(-30deg);background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);"></div>
+    <div class="shadow"><div class="toast" style="flex-direction:column;align-items:stretch;gap:12px;border-color:rgba(255,164,92,.35);position:relative;overflow:hidden;">
+      <div class="glowline" style="position:absolute;top:0;left:22px;right:22px;"></div>
       <div style="display:flex;align-items:center;gap:12px;">
-        <div class="plate" style="background:rgba(255,122,31,.12);border:1px solid rgba(255,122,31,.4);">
-          <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <div class="chip">
+          <svg width="42" height="42" viewBox="0 0 42 42" style="position:absolute;inset:0;transform:rotate(-90deg);">
+            <circle cx="21" cy="21" r="19" fill="rgba(255,138,53,.12)" stroke="rgba(255,255,255,.09)" stroke-width="2.5"/>
+            <circle cx="21" cy="21" r="19" fill="none" stroke="#FF8A35" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="72 119.4"/>
+          </svg>
+          <div class="inner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
           <div style="display:flex;align-items:center;justify-content:space-between;">
-            <span class="ttitle">بلاغ 10-90 — سرقة متجر</span>
+            <span class="ttitle">بلاغ <span dir="ltr">10-90</span> — سرقة متجر</span>
             <span class="kicker num" dir="ltr" style="font-size:9px;">#D-4821</span>
           </div>
           <span class="tbody">متجر <span dir="ltr">LTD</span> — شارع غروف · مشتبه به مسلّح</span>
         </div>
       </div>
       <div style="display:flex;gap:10px;">
-        <div style="flex:1;height:36px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">استلام البلاغ</span></div>
-        <div style="height:36px;padding:0 16px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#A5A39D;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">تجاهل</span></div>
+        <div style="flex:1;height:38px;border-radius:10px;background:linear-gradient(180deg,#FF9A3D,#F26B0A);color:#1A120B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(255,122,31,.4), inset 0 1px 0 rgba(255,255,255,.35);transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">استلام البلاغ</span></div>
+        <div style="height:38px;padding:0 16px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,164,92,.16);color:#B3ADA3;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;transform:skewX(-6deg);"><span style="display:inline-block;transform:skewX(6deg);">تجاهل</span></div>
       </div>
     </div></div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker"><span class="tick" style="background:#6E6C66;"></span>مصغّر — <span dir="ltr">Compact</span></span>
-    <div class="shadow" style="align-self:flex-start;"><div class="toast cham" style="align-items:center;padding:9px 15px;">
+    <span class="kicker"><span class="tick" style="background:#7A756C;"></span>مصغّر — <span dir="ltr">Compact</span></span>
+    <div class="shadow" style="align-self:flex-start;"><div class="toast" style="align-items:center;padding:9px 15px;border-radius:999px;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <span style="font-size:12px;font-weight:700;">تم قفل المركبة</span>
     </div></div>
   </div>
 
-  <div class="cham" style="background:rgba(255,122,31,.06);background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.05) 0 2px,transparent 2px 10px);border-top:1px solid rgba(255,122,31,.3);padding:14px 18px;display:flex;flex-direction:column;gap:6px;">
+  <div style="border-radius:14px;background:rgba(255,138,53,.06);background-image:repeating-linear-gradient(-45deg,rgba(255,138,53,.05) 0 2px,transparent 2px 10px);border:1px solid rgba(255,164,92,.25);padding:14px 18px;display:flex;flex-direction:column;gap:6px;">
     <span class="kicker" style="color:#FFA45C;">Behavior</span>
-    <span style="font-size:12px;color:#A5A39D;line-height:1.8;">دخول انزلاقي <span dir="ltr">200ms ease-out</span> · خروج <span dir="ltr">140ms ease-in</span> · تتابع <span dir="ltr">+40ms</span> · حد أقصى 4 متراكمة والأقدم يُزاح · البلاغات التفاعلية تبقى 10 ثوانٍ.</span>
+    <span style="font-size:12px;color:#B3ADA3;line-height:1.8;">دخول انزلاقي <span dir="ltr">200ms ease-out</span> · خروج <span dir="ltr">140ms ease-in</span> · تتابع <span dir="ltr">+40ms</span> · حد أقصى 4 متراكمة والأقدم يُزاح · البلاغات التفاعلية تبقى 10 ثوانٍ.</span>
   </div>
 
 </div>
