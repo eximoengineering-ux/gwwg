@@ -9,82 +9,86 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#09090B;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
+    body{margin:0;background:#070708;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
     @keyframes shimmer{0%{transform:translateX(-100%);}100%{transform:translateX(400%);}}
-    @keyframes breathe{0%,100%{opacity:.45;}50%{opacity:.9;}}
+    @keyframes breathe{0%,100%{opacity:.4;}50%{opacity:.85;}}
     .kicker{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6E6C66;}
     .num{font-variant-numeric:tabular-nums;}
     .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
-    .stripes-w{background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 12px);}
+    .br{position:absolute;width:16px;height:16px;}
+    .tickcol{width:2px;height:8px;background:rgba(255,255,255,.12);}
   </style>
 </helmet>
 <div dir="rtl" style="width:1440px;height:810px;position:relative;overflow:hidden;background:
-  radial-gradient(1200px 560px at 50% -20%, rgba(255,122,31,.12), transparent 62%),
-  radial-gradient(1000px 520px at 88% 112%, rgba(232,93,4,.07), transparent 60%),
-  linear-gradient(180deg,#0E0F14 0%,#09090B 100%);">
+  radial-gradient(1100px 620px at 82% -10%, rgba(255,122,31,.12), transparent 60%),
+  radial-gradient(900px 520px at 8% 112%, rgba(232,93,4,.08), transparent 60%),
+  linear-gradient(180deg,#0D0E13 0%,#070708 100%);">
 
-  <!-- fine grid, faded to center -->
-  <div style="position:absolute;inset:0;background:
-    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),
-    linear-gradient(0deg,rgba(255,255,255,.018) 1px,transparent 1px);
-    background-size:72px 72px;"></div>
-  <div style="position:absolute;inset:0;background:radial-gradient(900px 560px at 50% 46%, transparent 25%, rgba(9,9,11,.85) 100%);"></div>
-  <!-- light beam -->
-  <div style="position:absolute;top:-140px;left:50%;transform:translateX(-50%) rotate(3deg);width:340px;height:560px;background:linear-gradient(180deg,rgba(255,122,31,.1),transparent 75%);filter:blur(42px);animation:breathe 5s ease-in-out infinite;"></div>
+  <!-- dot grid + vignette -->
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1.4px);background-size:26px 26px;opacity:.5;"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(1100px 640px at 40% 45%, transparent 30%, rgba(7,7,8,.88) 100%);"></div>
 
-  <div class="stripes" style="position:absolute;top:150px;inset-inline-end:-30px;width:240px;height:52px;transform:skewX(-24deg);opacity:.25;"></div>
-  <div class="stripes" style="position:absolute;bottom:200px;inset-inline-start:-40px;width:300px;height:40px;transform:skewX(-24deg);opacity:.18;"></div>
+  <!-- ghost monogram backdrop -->
+  <span style="position:absolute;bottom:-140px;inset-inline-end:-60px;font-size:560px;font-weight:900;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;" dir="ltr">MT</span>
 
-  <!-- top strip: quiet text, no boxes -->
-  <div style="position:absolute;top:34px;inset-inline-start:56px;inset-inline-end:56px;display:flex;align-items:center;justify-content:space-between;">
-    <div style="display:flex;align-items:center;gap:18px;">
-      <span style="font-size:12px;font-weight:700;color:#A5A39D;">اللاعبون <span class="num" dir="ltr" style="color:#FFA45C;font-weight:800;">128/200</span></span>
-      <div style="width:1px;height:14px;background:rgba(255,255,255,.12);"></div>
-      <span style="font-size:12px;font-weight:700;color:#A5A39D;">ديسكورد <span dir="ltr" style="color:#6E6C66;">[رابط السيرفر]</span></span>
+  <!-- frame corner brackets -->
+  <div class="br" style="top:26px;left:26px;border-top:2px solid rgba(255,122,31,.55);border-left:2px solid rgba(255,122,31,.55);"></div>
+  <div class="br" style="top:26px;right:26px;border-top:2px solid rgba(255,122,31,.55);border-right:2px solid rgba(255,122,31,.55);"></div>
+  <div class="br" style="bottom:26px;left:26px;border-bottom:2px solid rgba(255,122,31,.55);border-left:2px solid rgba(255,122,31,.55);"></div>
+  <div class="br" style="bottom:26px;right:26px;border-bottom:2px solid rgba(255,122,31,.55);border-right:2px solid rgba(255,122,31,.55);"></div>
+
+  <!-- decorative striped slabs -->
+  <div class="stripes" style="position:absolute;top:120px;inset-inline-end:220px;width:220px;height:44px;transform:skewX(-24deg);opacity:.22;"></div>
+  <div class="stripes" style="position:absolute;top:174px;inset-inline-end:300px;width:120px;height:16px;transform:skewX(-24deg);opacity:.35;"></div>
+
+  <!-- ═══ identity block: asymmetric, inline-start ═══ -->
+  <div style="position:absolute;top:170px;inset-inline-start:110px;display:flex;flex-direction:column;gap:22px;max-width:640px;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#FF8A35,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#14100B;box-shadow:0 10px 30px rgba(255,122,31,.4), inset 0 1px 0 rgba(255,255,255,.4);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">MT</span></div>
+      <div style="padding:4px 14px;border:1px solid rgba(255,122,31,.3);background:rgba(255,122,31,.08);border-radius:6px;transform:skewX(-10deg);"><span class="kicker" style="color:#FFA45C;display:inline-block;transform:skewX(10deg);">Roleplay City</span></div>
     </div>
-    <div style="display:flex;align-items:center;gap:12px;">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E6C66" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-      <span style="font-size:11px;font-weight:700;color:#6E6C66;">مقطع 2 / 6</span>
-      <div style="width:90px;height:2px;border-radius:2px;background:rgba(255,255,255,.1);position:relative;" dir="ltr"><div style="position:absolute;left:0;top:0;bottom:0;width:55%;border-radius:2px;background:#FF7A1F;"></div></div>
-      <div style="width:28px;height:28px;border-radius:999px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="#A5A39D" stroke="none"><path d="M6 4h3v16H6zM15 4h3v16h-3z"/></svg>
-      </div>
+    <div style="position:relative;" dir="ltr">
+      <h1 style="margin:0;font-size:110px;font-weight:900;line-height:.94;letter-spacing:-.01em;">MT<br><span style="color:#FF7A1F;text-shadow:0 0 40px rgba(255,122,31,.35);">ROLEPLAY</span></h1>
+      <span style="position:absolute;top:-24px;left:4px;font-size:110px;font-weight:900;line-height:.94;letter-spacing:-.01em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.07);pointer-events:none;">MT</span>
     </div>
-  </div>
-
-  <!-- identity lockup -->
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-56%);display:flex;flex-direction:column;align-items:center;gap:26px;">
-    <div style="position:relative;">
-      <div style="position:absolute;inset:-36px;background:radial-gradient(closest-side, rgba(255,122,31,.22), transparent);border-radius:999px;"></div>
-      <div style="position:relative;width:84px;height:84px;border-radius:12px;background:linear-gradient(135deg,#FF8A35,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:34px;color:#14100B;box-shadow:0 24px 60px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.4);">MT</div>
-    </div>
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-      <div style="display:flex;align-items:center;gap:14px;">
-        <div style="width:44px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2));"></div>
-        <div style="padding:4px 14px;border:1px solid rgba(255,122,31,.3);background:rgba(255,122,31,.08);border-radius:6px;transform:skewX(-10deg);"><span class="kicker" style="color:#FFA45C;display:inline-block;transform:skewX(10deg);">Roleplay City</span></div>
-        <div style="width:44px;height:1px;background:linear-gradient(-90deg,transparent,rgba(255,255,255,.2));"></div>
-      </div>
-      <h1 style="margin:0;font-size:58px;font-weight:900;letter-spacing:.01em;line-height:1;" dir="ltr">MT <span style="color:#FF7A1F;">ROLEPLAY</span></h1>
-      <p style="margin:0;font-size:15px;font-weight:600;color:#A5A39D;">مدينة واقعية · اقتصاد متكامل · قصتك تبدأ هنا</p>
+    <p style="margin:0;font-size:16px;font-weight:600;color:#A5A39D;line-height:1.8;">مدينة واقعية · اقتصاد متكامل · قصتك تبدأ هنا</p>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5A5.9 5.9 0 0 0 18 7.5 6 6 0 0 0 6 7.5c0 1.5.5 2.9 1.5 4 .8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+      <span style="font-size:13px;font-weight:600;color:#A5A39D;">اضغط مطوّلاً على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> لفتح القائمة الدائرية والوصول السريع لكل التفاعلات</span>
     </div>
   </div>
 
-  <!-- tip: single quiet line -->
-  <div style="position:absolute;bottom:132px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5A5.9 5.9 0 0 0 18 7.5 6 6 0 0 0 6 7.5c0 1.5.5 2.9 1.5 4 .8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-    <span style="font-size:13px;font-weight:600;color:#A5A39D;">اضغط مطوّلاً على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> لفتح القائمة الدائرية والوصول السريع لكل التفاعلات</span>
+  <!-- ═══ top-end strip: players + music ═══ -->
+  <div style="position:absolute;top:44px;inset-inline-start:110px;display:flex;align-items:center;gap:18px;">
+    <span style="font-size:12px;font-weight:700;color:#A5A39D;">اللاعبون <span class="num" dir="ltr" style="color:#FFA45C;font-weight:800;">128/200</span></span>
+    <div style="width:1px;height:14px;background:rgba(255,255,255,.12);"></div>
+    <span style="font-size:12px;font-weight:700;color:#A5A39D;">ديسكورد <span dir="ltr" style="color:#6E6C66;">[رابط السيرفر]</span></span>
+  </div>
+  <div style="position:absolute;top:44px;inset-inline-end:64px;display:flex;align-items:center;gap:12px;">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E6C66" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+    <span style="font-size:11px;font-weight:700;color:#6E6C66;">مقطع 2 / 6</span>
+    <div style="width:90px;height:2px;border-radius:2px;background:rgba(255,255,255,.1);position:relative;" dir="ltr"><div style="position:absolute;left:0;top:0;bottom:0;width:55%;border-radius:2px;background:#FF7A1F;"></div></div>
+    <div style="width:28px;height:28px;border-radius:999px;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="#A5A39D" stroke="none"><path d="M6 4h3v16H6zM15 4h3v16h-3z"/></svg>
+    </div>
   </div>
 
-  <!-- progress: full-bleed hairline -->
+  <!-- ═══ progress: ghost percent + ruler ticks + hairline ═══ -->
   <div style="position:absolute;bottom:0;left:0;right:0;">
-    <div style="display:flex;align-items:baseline;justify-content:space-between;padding:0 56px 14px;">
-      <span style="font-size:12px;font-weight:700;color:#6E6C66;">تحميل خرائط المدينة…</span>
-      <span class="num" dir="ltr" style="font-size:22px;font-weight:900;color:#FFA45C;">72<span style="font-size:12px;color:#6E6C66;font-weight:700;">%</span></span>
+    <span class="num" style="position:absolute;bottom:44px;inset-inline-end:96px;font-size:150px;font-weight:900;color:rgba(255,255,255,.05);line-height:1;pointer-events:none;" dir="ltr">72<span style="font-size:60px;">%</span></span>
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;padding:0 64px 12px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <span style="font-size:12px;font-weight:700;color:#6E6C66;">تحميل خرائط المدينة…</span>
+        <div style="display:flex;gap:6px;align-items:flex-end;" dir="ltr">
+          <div class="tickcol" style="height:12px;background:#FF7A1F;"></div><div class="tickcol" style="background:#FF7A1F;"></div><div class="tickcol" style="background:#FF7A1F;"></div><div class="tickcol" style="height:12px;background:#FF7A1F;"></div><div class="tickcol" style="background:#FF7A1F;"></div><div class="tickcol" style="background:#FF7A1F;"></div><div class="tickcol" style="height:12px;background:#FF7A1F;"></div><div class="tickcol" style="background:#FF7A1F;"></div><div class="tickcol"></div><div class="tickcol" style="height:12px;"></div><div class="tickcol"></div><div class="tickcol"></div>
+        </div>
+      </div>
+      <span class="num" dir="ltr" style="font-size:24px;font-weight:900;color:#FFA45C;">72<span style="font-size:12px;color:#6E6C66;font-weight:700;">%</span></span>
     </div>
     <div style="height:3px;background:rgba(255,255,255,.06);position:relative;overflow:hidden;" dir="ltr">
       <div style="height:100%;width:72%;background:linear-gradient(90deg,#E85D04,#FF7A1F);position:relative;overflow:hidden;box-shadow:0 0 16px rgba(255,122,31,.6);">
-        <div class="stripes-w" style="position:absolute;inset:0;opacity:.5;"></div>
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 12px);opacity:.5;"></div>
         <div style="position:absolute;top:0;bottom:0;width:25%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimmer 2s ease-in-out infinite;"></div>
       </div>
     </div>

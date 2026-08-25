@@ -9,166 +9,199 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#09090B;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
+    body{margin:0;background:#070708;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
     @keyframes pulseWarn{0%,100%{opacity:1;}50%{opacity:.3;}}
     @keyframes slideIn{from{transform:translateY(-10px);opacity:0;}to{transform:translateY(0);opacity:1;}}
     .num{font-variant-numeric:tabular-nums;}
-    .glass{background:rgba(14,14,16,.78);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.07);box-shadow:0 16px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);}
     .kicker{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
     .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
+    .cham{clip-path:polygon(12px 0,100% 0,100% calc(100% - 12px),calc(100% - 12px) 100%,0 100%,0 12px);}
+    .glass{background:rgba(12,12,14,.82);backdrop-filter:blur(18px);}
+    .shadow{filter:drop-shadow(0 16px 34px rgba(0,0,0,.5));}
+    .seg{width:11px;height:4px;border-radius:1px;}
+    .br{position:absolute;width:10px;height:10px;}
   </style>
 </helmet>
 <div dir="rtl" style="width:1440px;height:810px;position:relative;overflow:hidden;background:
   radial-gradient(1000px 500px at 18% 108%, rgba(255,122,31,.13), transparent 62%),
-  radial-gradient(1400px 800px at 50% -30%, #171A22 0%, transparent 65%),
-  linear-gradient(180deg,#11131A 0%,#0B0C10 55%,#09090B 100%);">
+  radial-gradient(1400px 800px at 50% -30%, #151821 0%, transparent 65%),
+  linear-gradient(180deg,#10121A 0%,#0A0B0F 55%,#070708 100%);">
 
-  <!-- environment depth: silhouettes + scrim -->
-  <div style="position:absolute;bottom:0;left:0;right:0;height:340px;background:linear-gradient(180deg,transparent, rgba(5,5,6,.7));"></div>
-  <div style="position:absolute;bottom:150px;left:200px;width:210px;height:190px;background:rgba(255,255,255,.02);border-radius:2px;"></div>
-  <div style="position:absolute;bottom:130px;left:450px;width:140px;height:250px;background:rgba(255,255,255,.025);border-radius:2px;"></div>
-  <div style="position:absolute;bottom:160px;right:300px;width:250px;height:160px;background:rgba(255,255,255,.02);border-radius:2px;"></div>
-  <div style="position:absolute;bottom:210px;right:180px;width:90px;height:280px;background:rgba(255,255,255,.018);border-radius:2px;"></div>
+  <!-- environment depth -->
+  <div style="position:absolute;bottom:0;left:0;right:0;height:340px;background:linear-gradient(180deg,transparent, rgba(4,4,5,.72));"></div>
+  <div style="position:absolute;bottom:150px;left:200px;width:210px;height:190px;background:rgba(255,255,255,.02);"></div>
+  <div style="position:absolute;bottom:130px;left:450px;width:140px;height:250px;background:rgba(255,255,255,.025);"></div>
+  <div style="position:absolute;bottom:160px;right:300px;width:250px;height:160px;background:rgba(255,255,255,.02);"></div>
+  <div style="position:absolute;bottom:210px;right:180px;width:90px;height:280px;background:rgba(255,255,255,.018);"></div>
 
-  <!-- ═══ Top inline-start: brand + wallet, one quiet panel ═══ -->
+  <!-- ═══ Top inline-start: brand + wallet (chamfered) ═══ -->
   <div style="position:absolute;top:28px;inset-inline-start:28px;display:flex;flex-direction:column;gap:10px;">
-    <div class="glass" style="border-radius:8px;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 16px;">
-      <div style="width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#FF7A1F,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#14100B;box-shadow:0 2px 10px rgba(255,122,31,.4);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">MT</span></div>
+    <div class="shadow"><div class="cham glass" style="display:flex;align-items:center;gap:10px;padding:9px 16px;border-top:1px solid rgba(255,255,255,.08);">
+      <div style="width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#FF7A1F,#E85D04);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:11px;color:#14100B;transform:skewX(-8deg);box-shadow:0 2px 10px rgba(255,122,31,.4);"><span style="display:inline-block;transform:skewX(8deg);">MT</span></div>
       <div style="display:flex;flex-direction:column;">
         <span style="font-size:12px;font-weight:800;line-height:1.3;">MT ROLEPLAY</span>
         <span class="num kicker" dir="ltr" style="line-height:1.4;">ID 245 &nbsp;·&nbsp; 21:47</span>
       </div>
-    </div>
-    <div class="glass" style="border-radius:8px;padding:4px 0;min-width:168px;box-sizing:border-box;">
-      <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
-        <span class="num" dir="ltr" style="font-size:15px;font-weight:800;color:#F6F5F2;letter-spacing:.02em;">$12,450</span>
+    </div></div>
+    <div class="shadow"><div class="cham glass" style="min-width:172px;box-sizing:border-box;border-top:1px solid rgba(255,255,255,.08);">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>
+        <span class="num" dir="ltr" style="font-size:15px;font-weight:800;letter-spacing:.02em;">$12,450</span>
       </div>
-      <div style="height:1px;background:rgba(255,255,255,.06);margin:0 12px;"></div>
-      <div style="display:flex;align-items:center;gap:10px;padding:7px 16px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 18V10M9 18V10M15 18V10M20 18V10"/><path d="m2 10 10-6 10 6"/></svg>
+      <div class="stripes" style="height:3px;opacity:.6;"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 16px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 18V10M9 18V10M15 18V10M20 18V10"/><path d="m2 10 10-6 10 6"/></svg>
         <span class="num" dir="ltr" style="font-size:13px;font-weight:700;color:#A5A39D;letter-spacing:.02em;">$86,300</span>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- ═══ Toast v2 (top inline-end): icon chip carries ring timer ═══ -->
+  <!-- ═══ Toast (top inline-end): chamfer + slanted icon plate + tick timer ═══ -->
   <div dir="rtl" style="position:absolute;top:28px;inset-inline-end:28px;animation:slideIn .2s ease-out;">
-    <div class="glass" style="border-radius:8px;display:flex;align-items:center;gap:12px;padding:10px 14px;min-width:280px;box-sizing:border-box;">
-      <div style="position:relative;width:40px;height:40px;flex-shrink:0;">
-        <svg width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset:0;transform:rotate(-90deg);">
-          <circle cx="20" cy="20" r="18" fill="rgba(62,207,142,.1)" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
-          <circle cx="20" cy="20" r="18" fill="none" stroke="#3ECF8E" stroke-width="2" stroke-linecap="round" stroke-dasharray="79 113"/>
-        </svg>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
-        </div>
+    <div class="shadow"><div class="cham glass" style="display:flex;align-items:center;gap:12px;padding:11px 16px;min-width:290px;box-sizing:border-box;border-top:1px solid rgba(255,255,255,.08);">
+      <div style="width:36px;height:36px;background:rgba(62,207,142,.12);border:1px solid rgba(62,207,142,.35);display:flex;align-items:center;justify-content:center;transform:skewX(-8deg);border-radius:6px;flex-shrink:0;">
+        <svg style="transform:skewX(8deg);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1px;">
+      <div style="display:flex;flex-direction:column;gap:1px;flex:1;">
         <span style="font-size:13px;font-weight:800;">تم حفظ المركبة</span>
         <span style="font-size:11px;color:#A5A39D;font-weight:600;">أُرسلت السيارة إلى الكراج B</span>
       </div>
-    </div>
+      <div style="display:flex;flex-direction:column;gap:3px;" dir="ltr">
+        <div class="seg" style="background:#3ECF8E;"></div>
+        <div class="seg" style="background:#3ECF8E;"></div>
+        <div class="seg" style="background:#3ECF8E;"></div>
+        <div class="seg" style="background:rgba(255,255,255,.14);"></div>
+        <div class="seg" style="background:rgba(255,255,255,.14);"></div>
+      </div>
+    </div></div>
   </div>
 
-  <!-- ═══ Interaction prompt ═══ -->
-  <div dir="rtl" style="position:absolute;bottom:230px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;">
+  <!-- ═══ Interaction callout: dot + line + chamfered label ═══ -->
+  <div dir="rtl" style="position:absolute;bottom:214px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;">
     <div style="width:5px;height:5px;border-radius:999px;background:#FF7A1F;box-shadow:0 0 12px 3px rgba(255,122,31,.6);"></div>
-    <div class="glass" style="border-radius:8px;display:flex;align-items:center;gap:12px;padding:9px 16px 9px 12px;">
+    <div style="width:1px;height:22px;background:linear-gradient(180deg,#FF7A1F,rgba(255,122,31,.1));"></div>
+    <div class="shadow"><div class="cham glass" style="display:flex;align-items:center;gap:12px;padding:9px 16px 9px 12px;border-top:1px solid rgba(255,255,255,.08);">
       <span dir="ltr" style="min-width:26px;height:26px;padding:0 7px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;box-sizing:border-box;box-shadow:0 2px 10px rgba(255,122,31,.45), inset 0 1px 0 rgba(255,255,255,.35);transform:skewX(-8deg);">E</span>
       <span style="font-size:13px;font-weight:700;">فتح باب المركبة</span>
-    </div>
+    </div></div>
   </div>
 
-  <!-- ═══ Bottom inline-start: status strip + minimap ═══ -->
+  <!-- ═══ Bottom inline-start: minimap (brackets) + status dock ═══ -->
   <div dir="rtl" style="position:absolute;bottom:28px;inset-inline-start:28px;display:flex;flex-direction:column;gap:10px;">
-    <!-- status strip: icon + micro-bar units -->
-    <div class="glass" style="border-radius:8px;display:flex;align-items:center;gap:18px;padding:10px 18px;align-self:flex-start;">
-      <div style="width:4px;height:28px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-12deg);box-shadow:0 0 8px rgba(255,122,31,.4);"></div>
+    <!-- street callout -->
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div style="width:8px;height:9px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-18deg);"></div>
+      <span style="font-size:12px;font-weight:800;">شارع فينوود</span>
+      <span style="font-size:11px;color:#6E6C66;font-weight:600;">لوس سانتوس</span>
+      <div style="flex:1;height:1px;background:linear-gradient(-90deg,rgba(255,122,31,.4),transparent);min-width:40px;"></div>
+    </div>
+    <!-- minimap with corner brackets -->
+    <div style="position:relative;width:290px;height:158px;">
+      <div class="br" style="top:-3px;inset-inline-start:-3px;border-top:2px solid #FF7A1F;border-inline-start:2px solid #FF7A1F;"></div>
+      <div class="br" style="top:-3px;inset-inline-end:-3px;border-top:2px solid #FF7A1F;border-inline-end:2px solid #FF7A1F;"></div>
+      <div class="br" style="bottom:-3px;inset-inline-start:-3px;border-bottom:2px solid #FF7A1F;border-inline-start:2px solid #FF7A1F;"></div>
+      <div class="br" style="bottom:-3px;inset-inline-end:-3px;border-bottom:2px solid #FF7A1F;border-inline-end:2px solid #FF7A1F;"></div>
+      <div class="cham" style="position:absolute;inset:0;background:#0E0F12;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:
+          linear-gradient(90deg,transparent 48%,rgba(255,255,255,.05) 49%,rgba(255,255,255,.05) 51%,transparent 52%),
+          linear-gradient(0deg,transparent 34%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.05) 37%,transparent 38%),
+          linear-gradient(32deg,transparent 60%,rgba(255,255,255,.04) 61%,rgba(255,255,255,.04) 63%,transparent 64%),
+          radial-gradient(220px 130px at 18% 82%, rgba(92,168,255,.07), transparent 60%);"></div>
+        <div style="position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);">
+          <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid #FF7A1F;filter:drop-shadow(0 0 7px rgba(255,122,31,.9));"></div>
+        </div>
+        <div style="position:absolute;top:8px;inset-inline-end:8px;width:20px;height:20px;border-radius:6px;background:rgba(7,7,8,.7);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:rgba(246,245,242,.65);">N</div>
+      </div>
+    </div>
+    <!-- status dock: icon + segmented bars -->
+    <div class="shadow"><div class="cham glass" style="display:flex;align-items:center;gap:16px;padding:10px 16px;border-top:1px solid rgba(255,255,255,.08);align-self:flex-start;">
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
-        <div style="width:30px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:85%;background:#FF7A1F;border-radius:2px;"></div></div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
+        <div style="display:flex;gap:2px;" dir="ltr">
+          <div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div>
+        </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
-        <div style="width:30px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:50%;background:#5CA8FF;border-radius:2px;"></div></div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+        <div style="display:flex;gap:2px;" dir="ltr">
+          <div class="seg" style="background:#5CA8FF;"></div><div class="seg" style="background:#5CA8FF;"></div><div class="seg" style="background:#5CA8FF;"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div>
+        </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
-        <div style="width:30px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:65%;background:#F5B840;border-radius:2px;"></div></div>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+        <div style="display:flex;gap:2px;" dir="ltr">
+          <div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:#F5B840;"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div>
+        </div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:6px;animation:pulseWarn 1.6s ease-in-out infinite;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-        <div style="width:30px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:22%;background:#5CA8FF;border-radius:2px;"></div></div>
-      </div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <div style="width:30px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:90%;background:#3ECF8E;border-radius:2px;"></div></div>
-      </div>
-      <div style="width:1px;height:26px;background:rgba(255,255,255,.08);"></div>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5CA8FF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
         <div style="display:flex;gap:2px;" dir="ltr">
-          <div style="width:9px;height:3px;border-radius:2px;background:#FF7A1F;"></div>
-          <div style="width:9px;height:3px;border-radius:2px;background:#FF7A1F;"></div>
-          <div style="width:9px;height:3px;border-radius:2px;background:rgba(255,255,255,.12);"></div>
+          <div class="seg" style="background:#5CA8FF;"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div>
         </div>
       </div>
-    </div>
-    <!-- minimap with in-frame street scrim -->
-    <div style="width:290px;height:158px;border-radius:8px;border:1px solid rgba(255,255,255,.08);background:#0F1013;position:relative;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05);">
-      <div style="position:absolute;inset:0;background:
-        linear-gradient(90deg,transparent 48%,rgba(255,255,255,.05) 49%,rgba(255,255,255,.05) 51%,transparent 52%),
-        linear-gradient(0deg,transparent 34%,rgba(255,255,255,.05) 35%,rgba(255,255,255,.05) 37%,transparent 38%),
-        linear-gradient(32deg,transparent 60%,rgba(255,255,255,.04) 61%,rgba(255,255,255,.04) 63%,transparent 64%),
-        radial-gradient(220px 130px at 18% 82%, rgba(92,168,255,.07), transparent 60%);"></div>
-      <div style="position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);">
-        <div style="width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid #FF7A1F;filter:drop-shadow(0 0 7px rgba(255,122,31,.9));"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <div style="display:flex;gap:2px;" dir="ltr">
+          <div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div><div class="seg" style="background:#3ECF8E;"></div>
+        </div>
       </div>
-      <div style="position:absolute;top:8px;inset-inline-end:8px;width:20px;height:20px;border-radius:6px;background:rgba(9,9,11,.7);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:rgba(246,245,242,.65);">N</div>
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:18px 12px 8px;background:linear-gradient(0deg,rgba(6,6,8,.85),transparent);display:flex;align-items:center;gap:7px;">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FF7A1F" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span style="font-size:11px;font-weight:700;">شارع فينوود</span>
-        <span style="font-size:10px;color:#6E6C66;font-weight:600;">لوس سانتوس</span>
+      <div style="width:1px;height:28px;background:rgba(255,255,255,.09);"></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+        <div style="display:flex;gap:2px;" dir="ltr">
+          <div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:#FF7A1F;"></div><div class="seg" style="background:rgba(255,255,255,.13);"></div>
+        </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
-  <!-- ═══ Bottom inline-end: speed cluster with arc gauge ═══ -->
+  <!-- ═══ Bottom inline-end: speed cluster (chamfer + ghost type + tick RPM) ═══ -->
   <div dir="rtl" style="position:absolute;bottom:28px;inset-inline-end:28px;">
-    <div class="glass" style="border-radius:12px;padding:18px 22px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;box-sizing:border-box;position:relative;overflow:hidden;">
-      <div class="stripes" style="position:absolute;top:0;inset-inline-start:-8px;width:104px;height:5px;transform:skewX(-30deg);"></div>
-      <div style="position:relative;width:200px;height:118px;" dir="ltr">
-        <svg width="200" height="118" viewBox="0 0 200 118">
-          <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="7" stroke-linecap="round"/>
-          <path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="url(#rpmGrad)" stroke-width="7" stroke-linecap="round" stroke-dasharray="163 252" style="filter:drop-shadow(0 0 8px rgba(255,122,31,.45));"/>
-          <defs>
-            <linearGradient id="rpmGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#E85D04"/>
-              <stop offset="1" stop-color="#FF7A1F"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:2px;">
-          <span class="num" style="font-size:46px;font-weight:900;line-height:1;letter-spacing:-.01em;">87</span>
-          <span class="kicker" style="margin-top:4px;">KM/H</span>
+    <div class="shadow"><div class="cham glass" style="padding:16px 22px 14px;display:flex;flex-direction:column;gap:10px;box-sizing:border-box;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.08);min-width:250px;">
+      <div class="stripes" style="position:absolute;top:0;inset-inline-start:-8px;width:110px;height:4px;transform:skewX(-30deg);"></div>
+      <span style="position:absolute;top:2px;inset-inline-end:10px;font-size:64px;font-weight:900;color:rgba(255,255,255,.04);line-height:1;pointer-events:none;" dir="ltr">KMH</span>
+      <!-- speed row -->
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;position:relative;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:2px;">
+          <span class="kicker">Gear</span>
+          <div style="position:relative;width:30px;height:30px;display:flex;align-items:center;justify-content:center;">
+            <div class="br" style="top:0;left:0;border-top:1.5px solid rgba(255,122,31,.6);border-left:1.5px solid rgba(255,122,31,.6);width:7px;height:7px;"></div>
+            <div class="br" style="bottom:0;right:0;border-bottom:1.5px solid rgba(255,122,31,.6);border-right:1.5px solid rgba(255,122,31,.6);width:7px;height:7px;"></div>
+            <span class="num" dir="ltr" style="font-size:18px;font-weight:900;color:#FFA45C;">3</span>
+          </div>
         </div>
-        <span class="kicker" style="position:absolute;left:10px;bottom:0;">RPM</span>
-        <span class="num" style="position:absolute;right:6px;bottom:0;font-size:14px;font-weight:900;color:#FFA45C;">3<span class="kicker" style="font-size:8px;color:#6E6C66;"> GEAR</span></span>
+        <div style="display:flex;align-items:baseline;gap:8px;" dir="ltr">
+          <span class="num" style="font-size:52px;font-weight:900;line-height:1;letter-spacing:-.01em;text-shadow:0 0 24px rgba(255,122,31,.25);">87</span>
+          <span class="kicker">km/h</span>
+        </div>
       </div>
-      <div style="width:100%;height:1px;background:rgba(255,255,255,.06);"></div>
-      <div style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:14px;">
+      <!-- RPM ticks -->
+      <div dir="ltr" style="display:flex;align-items:flex-end;gap:3px;position:relative;">
+        <div style="flex:1;height:8px;background:#FF7A1F;border-radius:1px;"></div>
+        <div style="flex:1;height:10px;background:#FF7A1F;border-radius:1px;"></div>
+        <div style="flex:1;height:12px;background:#FF7A1F;border-radius:1px;"></div>
+        <div style="flex:1;height:14px;background:#FF7A1F;border-radius:1px;box-shadow:0 0 8px rgba(255,122,31,.6);"></div>
+        <div style="flex:1;height:16px;background:#FFA45C;border-radius:1px;"></div>
+        <div style="flex:1;height:18px;background:rgba(255,255,255,.13);border-radius:1px;"></div>
+        <div style="flex:1;height:20px;background:rgba(255,255,255,.13);border-radius:1px;"></div>
+        <div style="flex:1;height:22px;background:rgba(255,93,93,.25);border-radius:1px;"></div>
+      </div>
+      <div style="height:1px;background:rgba(255,255,255,.07);"></div>
+      <!-- fuel + indicators -->
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;">
         <div style="display:flex;align-items:center;gap:8px;flex:1;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16"/><path d="M2 22h12"/><path d="M13 10h2a2 2 0 0 1 2 2v5a1.5 1.5 0 0 0 3 0V9l-3-3"/></svg>
-          <div style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden;" dir="ltr"><div style="height:100%;width:68%;background:#A5A39D;border-radius:2px;"></div></div>
+          <div style="display:flex;gap:2px;flex:1;" dir="ltr">
+            <div class="seg" style="flex:1;background:#A5A39D;"></div><div class="seg" style="flex:1;background:#A5A39D;"></div><div class="seg" style="flex:1;background:#A5A39D;"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.13);"></div><div class="seg" style="flex:1;background:rgba(255,255,255,.13);"></div>
+          </div>
         </div>
         <div style="display:flex;gap:10px;align-items:center;">
-          <svg style="animation:pulseWarn 1.2s ease-in-out infinite;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF5D5D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12"/><path d="M4 4v9a3 3 0 0 0 3 3h8"/><circle cx="8" cy="9" r="1.6"/></svg>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+          <svg style="animation:pulseWarn 1.2s ease-in-out infinite;" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF5D5D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a4 4 0 0 1 4 4v12"/><path d="M4 4v9a3 3 0 0 0 3 3h8"/><circle cx="8" cy="9" r="1.6"/></svg>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3ECF8E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 
 </div>

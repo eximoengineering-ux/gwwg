@@ -9,17 +9,21 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#09090B;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
+    body{margin:0;background:#070708;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
     .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
+    .num{font-variant-numeric:tabular-nums;}
     .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
   </style>
 </helmet>
 <div dir="rtl" style="width:820px;height:920px;background:
-  radial-gradient(520px 520px at 50% 54%, rgba(255,122,31,.07), transparent 70%),
-  #09090B;padding:36px 40px 28px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;">
+  radial-gradient(520px 520px at 50% 54%, rgba(255,122,31,.08), transparent 70%),
+  #070708;padding:36px 40px 28px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden;">
 
-  <div style="display:flex;flex-direction:column;gap:4px;">
+  <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px, transparent 1.4px);background-size:26px 26px;opacity:.5;"></div>
+  <span style="position:absolute;top:6px;inset-inline-end:20px;font-size:80px;font-weight:900;color:rgba(255,255,255,.035);line-height:1;pointer-events:none;" dir="ltr">06</span>
+
+  <div style="display:flex;flex-direction:column;gap:4px;position:relative;">
     <div style="align-self:flex-start;padding:3px 12px;border:1px solid rgba(255,122,31,.3);background:rgba(255,122,31,.08);border-radius:6px;transform:skewX(-10deg);"><span class="kicker" style="color:#FFA45C;display:inline-block;transform:skewX(10deg);">mt_radialmenu</span></div>
     <h1 style="margin:0;font-size:24px;font-weight:900;">القائمة الدائرية</h1>
     <p style="margin:0;font-size:13px;color:#A5A39D;">ضغط مستمر على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> — المشهد خلفها يُعتم 50% ويُموّه</p>
@@ -33,13 +37,17 @@
           <stop offset="1" stop-color="#E85D04"/>
         </linearGradient>
         <linearGradient id="segBase" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="rgba(28,28,31,.96)"/>
-          <stop offset="1" stop-color="rgba(17,17,19,.96)"/>
+          <stop offset="0" stop-color="rgba(26,26,29,.97)"/>
+          <stop offset="1" stop-color="rgba(15,15,17,.97)"/>
         </linearGradient>
         <pattern id="diagP" width="8" height="8" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="2.5" height="8" fill="rgba(255,255,255,.15)"/></pattern>
       </defs>
-      <!-- active indicator arc just outside the active segment -->
+
+      <!-- outer tick ruler ring -->
+      <circle cx="360" cy="360" r="284" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="7" stroke-dasharray="1.5 13.4"/>
+      <!-- active glow arc -->
       <path d="M267.6,110.9 A265,265 0 0 1 452.4,110.9" fill="none" stroke="#FF7A1F" stroke-width="3" stroke-linecap="round" style="filter:drop-shadow(0 0 10px rgba(255,122,31,.8));"/>
+
       <g>
         <path d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z"
               fill="url(#segActive)" style="filter:drop-shadow(0 0 22px rgba(255,122,31,.45));"/>
@@ -79,13 +87,13 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A5A39D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       </g>
 
-      <!-- center hub -->
-      <circle cx="360" cy="360" r="128" fill="#101012" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
-      <circle cx="360" cy="360" r="114" fill="none" stroke="rgba(255,122,31,.3)" stroke-width="1" stroke-dasharray="3 7"/>
+      <!-- center hub with bracket marks -->
+      <circle cx="360" cy="360" r="128" fill="#0E0E10" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
+      <path d="M348 240 h24 M348 480 h24 M240 348 v24 M480 348 v24" stroke="rgba(255,122,31,.5)" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <div style="position:absolute;top:0;left:0;width:720px;height:720px;display:flex;align-items:center;justify-content:center;pointer-events:none;">
       <div style="display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;">
-        <span class="kicker" style="color:#FFA45C;font-size:9px;">Vehicle</span>
+        <span class="kicker num" style="color:#FFA45C;font-size:9px;" dir="ltr">1 / 8 · Vehicle</span>
         <span style="font-size:22px;font-weight:900;line-height:1.2;">المركبة</span>
         <span style="font-size:11px;font-weight:600;color:#6E6C66;">قفل · صندوق · محرك</span>
         <div style="display:flex;align-items:center;gap:6px;margin-top:10px;">
@@ -96,7 +104,7 @@
     </div>
   </div>
 
-  <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;position:relative;">
     <div class="stripes" style="width:36px;height:8px;border-radius:2px;transform:skewX(-24deg);opacity:.5;"></div>
     <span style="font-size:11px;color:#6E6C66;font-weight:600;">القطاع النشط يتوسّع 4% مع توهج · فتح 200ms بدوران <span dir="ltr">-6°→0°</span> · 8 قطاعات كحد أقصى</span>
     <div class="stripes" style="width:36px;height:8px;border-radius:2px;transform:skewX(-24deg);opacity:.5;"></div>
