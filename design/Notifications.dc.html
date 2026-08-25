@@ -17,18 +17,19 @@
     .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
     .chip{position:relative;width:40px;height:40px;flex-shrink:0;}
     .chip .inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+    .tick{display:inline-block;width:8px;height:9px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-18deg);margin-inline-end:8px;vertical-align:middle;}
   </style>
 </helmet>
 <div dir="rtl" style="width:520px;min-height:1080px;background:#09090B;padding:40px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px;">
 
   <div style="display:flex;flex-direction:column;gap:6px;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:20px;">
-    <span class="kicker">Notifications</span>
+    <span class="kicker"><span class="tick"></span>Notifications</span>
     <h1 style="margin:0;font-size:24px;font-weight:900;">الإشعارات</h1>
     <p style="margin:0;font-size:13px;color:#A5A39D;line-height:1.7;">حلقة المؤقّت تلتف حول أيقونة الحالة وتفرغ مع الوقت — عنصر واحد يحمل الدلالة والعدّ معاً. المعنى لا يعتمد على اللون وحده.</p>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">نجاح — <span dir="ltr">Success</span></span>
+    <span class="kicker"><span class="tick" style="background:#3ECF8E;"></span>نجاح — <span dir="ltr">Success</span></span>
     <div class="toast">
       <div class="chip">
         <svg width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset:0;transform:rotate(-90deg);">
@@ -47,7 +48,7 @@
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">خطأ — <span dir="ltr">Error</span></span>
+    <span class="kicker"><span class="tick" style="background:#FF5D5D;"></span>خطأ — <span dir="ltr">Error</span></span>
     <div class="toast">
       <div class="chip">
         <svg width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset:0;transform:rotate(-90deg);">
@@ -66,7 +67,7 @@
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">تحذير — <span dir="ltr">Warning</span></span>
+    <span class="kicker"><span class="tick" style="background:#F5B840;"></span>تحذير — <span dir="ltr">Warning</span></span>
     <div class="toast">
       <div class="chip">
         <svg width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset:0;transform:rotate(-90deg);">
@@ -85,7 +86,7 @@
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">معلومة — <span dir="ltr">Info</span></span>
+    <span class="kicker"><span class="tick" style="background:#5CA8FF;"></span>معلومة — <span dir="ltr">Info</span></span>
     <div class="toast">
       <div class="chip">
         <svg width="40" height="40" viewBox="0 0 40 40" style="position:absolute;inset:0;transform:rotate(-90deg);">
@@ -104,7 +105,7 @@
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">بلاغ وظيفة — <span dir="ltr">Dispatch</span></span>
+    <span class="kicker"><span class="tick"></span>بلاغ وظيفة — <span dir="ltr">Dispatch</span></span>
     <div class="toast" style="flex-direction:column;align-items:stretch;gap:12px;border-color:rgba(255,122,31,.25);">
       <div style="display:flex;align-items:center;gap:12px;">
         <div class="chip">
@@ -125,21 +126,21 @@
         </div>
       </div>
       <div style="display:flex;gap:8px;">
-        <div style="flex:1;height:36px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);">استلام البلاغ</div>
+        <div style="flex:1;height:36px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">استلام البلاغ</span></div>
         <div style="height:36px;padding:0 16px;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#A5A39D;font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center;">تجاهل</div>
       </div>
     </div>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:8px;">
-    <span class="kicker">مصغّر — <span dir="ltr">Compact</span></span>
+    <span class="kicker"><span class="tick" style="background:#6E6C66;"></span>مصغّر — <span dir="ltr">Compact</span></span>
     <div class="toast" style="align-items:center;padding:9px 14px;align-self:flex-start;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA45C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <span style="font-size:12px;font-weight:700;">تم قفل المركبة</span>
     </div>
   </div>
 
-  <div style="background:rgba(255,122,31,.06);border:1px solid rgba(255,122,31,.2);border-radius:8px;padding:14px 18px;display:flex;flex-direction:column;gap:6px;">
+  <div style="background:rgba(255,122,31,.06);background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.05) 0 2px,transparent 2px 10px);border:1px solid rgba(255,122,31,.2);border-radius:8px;padding:14px 18px;display:flex;flex-direction:column;gap:6px;">
     <span class="kicker" style="color:#FFA45C;">Behavior</span>
     <span style="font-size:12px;color:#A5A39D;line-height:1.8;">دخول انزلاقي <span dir="ltr">200ms ease-out</span> · خروج <span dir="ltr">140ms ease-in</span> · تتابع <span dir="ltr">+40ms</span> · حد أقصى 4 متراكمة والأقدم يُزاح · البلاغات التفاعلية تبقى 10 ثوانٍ.</span>
   </div>

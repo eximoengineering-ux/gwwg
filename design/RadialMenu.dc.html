@@ -12,6 +12,7 @@
     body{margin:0;background:#09090B;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
     .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
   </style>
 </helmet>
 <div dir="rtl" style="width:820px;height:920px;background:
@@ -19,7 +20,7 @@
   #09090B;padding:36px 40px 28px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;">
 
   <div style="display:flex;flex-direction:column;gap:4px;">
-    <span class="kicker">mt_radialmenu</span>
+    <div style="align-self:flex-start;padding:3px 12px;border:1px solid rgba(255,122,31,.3);background:rgba(255,122,31,.08);border-radius:6px;transform:skewX(-10deg);"><span class="kicker" style="color:#FFA45C;display:inline-block;transform:skewX(10deg);">mt_radialmenu</span></div>
     <h1 style="margin:0;font-size:24px;font-weight:900;">القائمة الدائرية</h1>
     <p style="margin:0;font-size:13px;color:#A5A39D;">ضغط مستمر على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> — المشهد خلفها يُعتم 50% ويُموّه</p>
   </div>
@@ -35,12 +36,14 @@
           <stop offset="0" stop-color="rgba(28,28,31,.96)"/>
           <stop offset="1" stop-color="rgba(17,17,19,.96)"/>
         </linearGradient>
+        <pattern id="diagP" width="8" height="8" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="2.5" height="8" fill="rgba(255,255,255,.15)"/></pattern>
       </defs>
       <!-- active indicator arc just outside the active segment -->
       <path d="M267.6,110.9 A265,265 0 0 1 452.4,110.9" fill="none" stroke="#FF7A1F" stroke-width="3" stroke-linecap="round" style="filter:drop-shadow(0 0 10px rgba(255,122,31,.8));"/>
       <g>
         <path d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z"
               fill="url(#segActive)" style="filter:drop-shadow(0 0 22px rgba(255,122,31,.45));"/>
+        <path d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#diagP)"/>
         <path transform="rotate(45,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
         <path transform="rotate(90,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
         <path transform="rotate(135,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
@@ -86,7 +89,7 @@
         <span style="font-size:22px;font-weight:900;line-height:1.2;">المركبة</span>
         <span style="font-size:11px;font-weight:600;color:#6E6C66;">قفل · صندوق · محرك</span>
         <div style="display:flex;align-items:center;gap:6px;margin-top:10px;">
-          <span dir="ltr" style="min-width:24px;height:22px;padding:0 6px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;box-sizing:border-box;">ESC</span>
+          <span dir="ltr" style="min-width:24px;height:22px;padding:0 6px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;box-sizing:border-box;transform:skewX(-8deg);">ESC</span>
           <span style="font-size:10px;font-weight:700;color:#6E6C66;">إغلاق</span>
         </div>
       </div>
@@ -94,9 +97,9 @@
   </div>
 
   <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
-    <div style="width:24px;height:1px;background:rgba(255,255,255,.1);"></div>
+    <div class="stripes" style="width:36px;height:8px;border-radius:2px;transform:skewX(-24deg);opacity:.5;"></div>
     <span style="font-size:11px;color:#6E6C66;font-weight:600;">القطاع النشط يتوسّع 4% مع توهج · فتح 200ms بدوران <span dir="ltr">-6°→0°</span> · 8 قطاعات كحد أقصى</span>
-    <div style="width:24px;height:1px;background:rgba(255,255,255,.1);"></div>
+    <div class="stripes" style="width:36px;height:8px;border-radius:2px;transform:skewX(-24deg);opacity:.5;"></div>
   </div>
 
 </div>

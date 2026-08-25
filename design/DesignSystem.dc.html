@@ -18,12 +18,16 @@
     .lbl{font-size:12px;font-weight:700;color:#A5A39D;}
     .val{font-size:10px;font-weight:600;color:#6E6C66;letter-spacing:.02em;}
     .num{font-variant-numeric:tabular-nums;}
-    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;box-sizing:border-box;}
+    .kbd{min-width:24px;height:24px;padding:0 7px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;box-sizing:border-box;transform:skewX(-8deg);}
     .sw{display:flex;align-items:center;gap:10px;}
     .sw .box{width:52px;height:38px;border-radius:6px;flex-shrink:0;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
+    .stripes-w{background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 12px);}
+    .dots{background-image:radial-gradient(rgba(255,255,255,.09) 1.2px, transparent 1.6px);background-size:14px 14px;}
+    .tick{display:inline-block;width:10px;height:12px;border-radius:2px;background:linear-gradient(180deg,#FF8A35,#E85D04);transform:skewX(-18deg);align-self:center;}
   </style>
 </helmet>
-<div dir="rtl" style="width:1500px;min-height:2400px;background:#09090B;padding:56px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;">
+<div dir="rtl" style="width:1500px;min-height:2620px;background:#09090B;padding:56px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:44px;">
 
   <!-- ═══════════ Header ═══════════ -->
   <div style="display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07);padding-bottom:30px;">
@@ -43,7 +47,7 @@
 
   <!-- ═══════════ Colors ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>الألوان</h2><span class="kicker">Tokens</span></div>
+    <div class="sec"><span class="tick"></span><h2>الألوان</h2><span class="kicker">Tokens</span></div>
     <div style="display:grid;grid-template-columns:repeat(4, minmax(0, 1fr));gap:18px;">
       <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
         <span class="kicker">Surfaces</span>
@@ -79,7 +83,7 @@
 
   <!-- ═══════════ Typography ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>الخطوط</h2><span class="kicker">Cairo</span></div>
+    <div class="sec"><span class="tick"></span><h2>الخطوط</h2><span class="kicker">Cairo</span></div>
     <div style="display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:18px;">
       <div class="card" style="padding:24px 28px;display:flex;flex-direction:column;gap:14px;">
         <div style="display:flex;align-items:baseline;justify-content:space-between;"><span style="font-size:32px;font-weight:900;">عنوان رئيسي</span><span class="val">Display · 32-58 / 900</span></div>
@@ -113,7 +117,7 @@
   <!-- ═══════════ Depth + Radius + Motion ═══════════ -->
   <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;">
     <div style="display:flex;flex-direction:column;gap:14px;">
-      <div class="sec"><h2>العمق</h2><span class="kicker">Elevation</span></div>
+      <div class="sec"><span class="tick"></span><h2>العمق</h2><span class="kicker">Elevation</span></div>
       <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px;height:190px;justify-content:center;">
         <div style="display:flex;justify-content:space-between;align-items:center;"><span class="lbl">لوحة نافذة</span><span class="val" dir="ltr">0 24px 60px rgba(0,0,0,.55)</span></div>
         <div style="display:flex;justify-content:space-between;align-items:center;"><span class="lbl">زجاج فوق اللعب</span><span class="val" dir="ltr">rgba(14,14,16,.78) + blur 18</span></div>
@@ -123,7 +127,7 @@
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px;">
-      <div class="sec"><h2>الزوايا</h2><span class="kicker">Radius</span></div>
+      <div class="sec"><span class="tick"></span><h2>الزوايا</h2><span class="kicker">Radius</span></div>
       <div class="card" style="padding:20px;display:flex;align-items:center;gap:16px;height:190px;justify-content:center;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:54px;height:54px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:6px;"></div><span class="val">6 · أزرار وحقول</span></div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:8px;"><div style="width:54px;height:54px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;"></div><span class="val">8 · بطاقات</span></div>
@@ -132,7 +136,7 @@
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:14px;">
-      <div class="sec"><h2>الحركة</h2><span class="kicker">Motion</span></div>
+      <div class="sec"><span class="tick"></span><h2>الحركة</h2><span class="kicker">Motion</span></div>
       <div class="card" style="padding:20px 24px;display:flex;flex-direction:column;gap:10px;height:190px;justify-content:center;">
         <div style="display:flex;justify-content:space-between;"><span class="lbl">دخول العناصر</span><span class="val">200ms · ease-out</span></div>
         <div style="display:flex;justify-content:space-between;"><span class="lbl">خروج العناصر</span><span class="val">140ms · ease-in</span></div>
@@ -145,7 +149,7 @@
 
   <!-- ═══════════ Icons ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>الأيقونات</h2><span class="kicker">SVG · Stroke 1.75 · 16 / 20 / 24</span></div>
+    <div class="sec"><span class="tick"></span><h2>الأيقونات</h2><span class="kicker">SVG · Stroke 1.75 · 16 / 20 / 24</span></div>
     <div class="card" style="padding:22px 28px;display:flex;align-items:center;justify-content:space-between;">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.51 4.04 3 5.5l7 7z"/></svg>
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F6F5F2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
@@ -166,11 +170,45 @@
     </div>
   </div>
 
+  <!-- ═══════════ Pattern + Slant ═══════════ -->
+  <div style="display:flex;flex-direction:column;gap:18px;">
+    <div class="sec"><span class="tick"></span><h2>الأنماط والميلان</h2><span class="kicker">Pattern · Slant</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;">
+      <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
+        <span class="kicker">نمط الخطوط — <span dir="ltr">Stripes 45°</span></span>
+        <div class="stripes" style="height:64px;border-radius:8px;border:1px solid rgba(255,122,31,.2);"></div>
+        <span class="val" dir="ltr">repeating-linear-gradient(-45deg, primary 35% 0 2px, transparent 2px 9px)</span>
+        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">للأشرطة الزخرفية، حواف اللوحات، تعبئة القطاع النشط، وداخل أشرطة التقدّم بنسخة بيضاء 30%.</span>
+      </div>
+      <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:12px;">
+        <span class="kicker">شبكة نقاط — <span dir="ltr">Dot Grid</span></span>
+        <div class="dots" style="height:64px;border-radius:8px;border:1px solid rgba(255,255,255,.08);"></div>
+        <span class="val" dir="ltr">radial-gradient(white 9% 1.2px, transparent 1.6px) · 14px</span>
+        <span style="font-size:12px;color:#A5A39D;line-height:1.7;">للمساحات الفارغة الكبيرة وخلفيات الحالات الخالية — لا تُستخدم خلف نصوص.</span>
+      </div>
+      <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:14px;">
+        <span class="kicker">الميلان — <span dir="ltr">Slant</span></span>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="height:40px;padding:0 22px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:13px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.3), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">زر مائل</span></div>
+          <span class="tick" style="width:12px;height:16px;"></span>
+          <div class="stripes" style="width:70px;height:8px;border-radius:2px;transform:skewX(-24deg);"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;">
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">أزرار أساسية ومفاتيح وشعار</span><span class="val" dir="ltr">skewX(-8°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">علامات الأقسام والمؤشرات</span><span class="val" dir="ltr">skewX(-18°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl">الأشرطة والشرائح الزخرفية</span><span class="val" dir="ltr">skewX(-24°/-30°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl" style="color:#FFA45C;">النص داخل المائل يُعاد باستقامة</span><span class="val" dir="ltr">inner skewX(+8°)</span></div>
+          <div style="display:flex;justify-content:space-between;"><span class="lbl" style="color:#FF5D5D;">ممنوع: حقول الإدخال والفقرات</span><span class="val">usability</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════ Buttons ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>الأزرار</h2><span class="kicker">min-height 44px</span></div>
+    <div class="sec"><span class="tick"></span><h2>الأزرار</h2><span class="kicker">min-height 44px</span></div>
     <div class="card" style="padding:22px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-      <div style="height:44px;padding:0 26px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:14px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);">أساسي</div>
+      <div style="height:44px;padding:0 26px;border-radius:6px;background:linear-gradient(180deg,#FF8A35,#E85D04);color:#14100B;font-weight:800;font-size:14px;display:flex;align-items:center;box-shadow:0 6px 20px rgba(255,122,31,.35), inset 0 1px 0 rgba(255,255,255,.3);transform:skewX(-8deg);"><span style="display:inline-block;transform:skewX(8deg);">أساسي</span></div>
       <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,122,31,.1);color:#FFA45C;border:1px solid rgba(255,122,31,.3);font-weight:700;font-size:14px;display:flex;align-items:center;">ثانوي</div>
       <div style="height:44px;padding:0 24px;border-radius:6px;background:rgba(255,255,255,.05);color:#F6F5F2;border:1px solid rgba(255,255,255,.1);font-weight:700;font-size:14px;display:flex;align-items:center;">محايد</div>
       <div style="height:44px;padding:0 24px;border-radius:6px;background:transparent;color:#A5A39D;font-weight:700;font-size:14px;display:flex;align-items:center;">شفاف</div>
@@ -190,7 +228,7 @@
 
   <!-- ═══════════ Forms ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>حقول الإدخال</h2><span class="kicker">Forms</span></div>
+    <div class="sec"><span class="tick"></span><h2>حقول الإدخال</h2><span class="kicker">Forms</span></div>
     <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;">
       <div class="card" style="padding:22px;display:flex;flex-direction:column;gap:16px;">
         <div style="display:flex;flex-direction:column;gap:6px;">
@@ -252,7 +290,7 @@
 
   <!-- ═══════════ Components ═══════════ -->
   <div style="display:flex;flex-direction:column;gap:18px;">
-    <div class="sec"><h2>مكوّنات أساسية</h2><span class="kicker">Components</span></div>
+    <div class="sec"><span class="tick"></span><h2>مكوّنات أساسية</h2><span class="kicker">Components</span></div>
     <div style="display:grid;grid-template-columns:repeat(3, minmax(0, 1fr));gap:18px;">
       <!-- list card -->
       <div class="card" style="overflow:hidden;">

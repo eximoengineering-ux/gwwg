@@ -15,6 +15,8 @@
     @keyframes breathe{0%,100%{opacity:.45;}50%{opacity:.9;}}
     .kicker{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#6E6C66;}
     .num{font-variant-numeric:tabular-nums;}
+    .stripes{background-image:repeating-linear-gradient(-45deg,rgba(255,122,31,.35) 0 2px,transparent 2px 9px);}
+    .stripes-w{background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.3) 0 5px,transparent 5px 12px);}
   </style>
 </helmet>
 <div dir="rtl" style="width:1440px;height:810px;position:relative;overflow:hidden;background:
@@ -30,6 +32,9 @@
   <div style="position:absolute;inset:0;background:radial-gradient(900px 560px at 50% 46%, transparent 25%, rgba(9,9,11,.85) 100%);"></div>
   <!-- light beam -->
   <div style="position:absolute;top:-140px;left:50%;transform:translateX(-50%) rotate(3deg);width:340px;height:560px;background:linear-gradient(180deg,rgba(255,122,31,.1),transparent 75%);filter:blur(42px);animation:breathe 5s ease-in-out infinite;"></div>
+
+  <div class="stripes" style="position:absolute;top:150px;inset-inline-end:-30px;width:240px;height:52px;transform:skewX(-24deg);opacity:.25;"></div>
+  <div class="stripes" style="position:absolute;bottom:200px;inset-inline-start:-40px;width:300px;height:40px;transform:skewX(-24deg);opacity:.18;"></div>
 
   <!-- top strip: quiet text, no boxes -->
   <div style="position:absolute;top:34px;inset-inline-start:56px;inset-inline-end:56px;display:flex;align-items:center;justify-content:space-between;">
@@ -57,7 +62,7 @@
     <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
       <div style="display:flex;align-items:center;gap:14px;">
         <div style="width:44px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2));"></div>
-        <span class="kicker" style="color:#FFA45C;">Roleplay City</span>
+        <div style="padding:4px 14px;border:1px solid rgba(255,122,31,.3);background:rgba(255,122,31,.08);border-radius:6px;transform:skewX(-10deg);"><span class="kicker" style="color:#FFA45C;display:inline-block;transform:skewX(10deg);">Roleplay City</span></div>
         <div style="width:44px;height:1px;background:linear-gradient(-90deg,transparent,rgba(255,255,255,.2));"></div>
       </div>
       <h1 style="margin:0;font-size:58px;font-weight:900;letter-spacing:.01em;line-height:1;" dir="ltr">MT <span style="color:#FF7A1F;">ROLEPLAY</span></h1>
@@ -79,6 +84,7 @@
     </div>
     <div style="height:3px;background:rgba(255,255,255,.06);position:relative;overflow:hidden;" dir="ltr">
       <div style="height:100%;width:72%;background:linear-gradient(90deg,#E85D04,#FF7A1F);position:relative;overflow:hidden;box-shadow:0 0 16px rgba(255,122,31,.6);">
+        <div class="stripes-w" style="position:absolute;inset:0;opacity:.5;"></div>
         <div style="position:absolute;top:0;bottom:0;width:25%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimmer 2s ease-in-out infinite;"></div>
       </div>
     </div>
