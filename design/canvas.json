@@ -467,6 +467,42 @@
    "h": 580,
    "title": "مؤشرات التفاعل — Interact UI",
    "page": "page-4"
+  },
+  {
+   "file": "ItemDetail.dc.html",
+   "x": 0,
+   "y": 2400,
+   "w": 1080,
+   "h": 580,
+   "title": "تفاصيل العنصر — Item Inspector",
+   "page": "page-4"
+  },
+  {
+   "file": "StatusBar.dc.html",
+   "x": 1200,
+   "y": 2400,
+   "w": 1200,
+   "h": 580,
+   "title": "شرائط الحالة — Status Indicators",
+   "page": "page-4"
+  },
+  {
+   "file": "QuickAccess.dc.html",
+   "x": 0,
+   "y": 3080,
+   "w": 1400,
+   "h": 600,
+   "title": "الوصول السريع — Quick Access Slots",
+   "page": "page-4"
+  },
+  {
+   "file": "AdvancedInteract.dc.html",
+   "x": 1600,
+   "y": 3080,
+   "w": 1000,
+   "h": 600,
+   "title": "التفاعلات المتقدمة — Advanced Interactions",
+   "page": "page-4"
   }
  ],
  "annotations": [
