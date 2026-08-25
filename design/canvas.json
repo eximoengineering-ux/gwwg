@@ -1,72 +1,498 @@
 {
-  "artboards": [
-    {
-      "file": "Main.dc.html",
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 810,
-      "title": "HUD داخل اللعب"
-    },
-    {
-      "file": "LoadingScreen.dc.html",
-      "x": 1560,
-      "y": 0,
-      "w": 1440,
-      "h": 810,
-      "title": "شاشة التحميل"
-    },
-    {
-      "file": "CharacterSelect.dc.html",
-      "x": 3120,
-      "y": 0,
-      "w": 1440,
-      "h": 810,
-      "title": "اختيار الشخصية"
-    },
-    {
-      "file": "DesignSystem.dc.html",
-      "x": 0,
-      "y": 970,
-      "w": 1500,
-      "h": 2860,
-      "title": "نظام التصميم"
-    },
-    {
-      "file": "Notifications.dc.html",
-      "x": 1600,
-      "y": 970,
-      "w": 520,
-      "h": 1080,
-      "title": "الإشعارات"
-    },
-    {
-      "file": "Menus.dc.html",
-      "x": 2220,
-      "y": 970,
-      "w": 980,
-      "h": 1020,
-      "title": "القوائم العامة"
-    },
-    {
-      "file": "RadialMenu.dc.html",
-      "x": 3300,
-      "y": 970,
-      "w": 820,
-      "h": 920,
-      "title": "القائمة الدائرية"
-    }
-  ],
-  "annotations": [
-    {
-      "id": "review-note",
-      "x": 0,
-      "y": -180,
-      "w": 380,
-      "text": "التصميم v3 — MT NUI\nإعادة بناء من الصفر بعد تغذية بصرية من Behance وPinterest\nلغة جديدة: شطف زوايا، أقواس تركيز، أشرطة مقسّمة، أرقام شبحية، خطوط نداء\nاسم السيرفر وشعاره (MT) مؤقتان — أرسل الهوية الرسمية لاستبدالهما"
-    }
-  ],
-  "launch": {
-    "view": "canvas"
+ "artboards": [
+  {
+   "file": "Main.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1440,
+   "h": 810,
+   "title": "HUD داخل اللعب",
+   "page": "page-1"
+  },
+  {
+   "file": "LoadingScreen.dc.html",
+   "x": 1560,
+   "y": 0,
+   "w": 1440,
+   "h": 810,
+   "title": "شاشة التحميل — RiceLoading",
+   "page": "page-1"
+  },
+  {
+   "file": "CharacterSelect.dc.html",
+   "x": 3120,
+   "y": 0,
+   "w": 1440,
+   "h": 810,
+   "title": "اختيار الشخصية — mt_characters",
+   "page": "page-1"
+  },
+  {
+   "file": "DesignSystem.dc.html",
+   "x": 0,
+   "y": 970,
+   "w": 1500,
+   "h": 2860,
+   "title": "نظام التصميم",
+   "page": "page-1"
+  },
+  {
+   "file": "Notifications.dc.html",
+   "x": 1600,
+   "y": 970,
+   "w": 520,
+   "h": 1080,
+   "title": "الإشعارات",
+   "page": "page-1"
+  },
+  {
+   "file": "Menus.dc.html",
+   "x": 2220,
+   "y": 970,
+   "w": 980,
+   "h": 1020,
+   "title": "القوائم العامة",
+   "page": "page-1"
+  },
+  {
+   "file": "RadialMenu.dc.html",
+   "x": 3300,
+   "y": 970,
+   "w": 820,
+   "h": 920,
+   "title": "القائمة الدائرية — mt_radialmenu",
+   "page": "page-1"
+  },
+  {
+   "file": "Phone.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 420,
+   "h": 860,
+   "title": "الهاتف — mt_phone",
+   "page": "page-2"
+  },
+  {
+   "file": "Tablet.dc.html",
+   "x": 540,
+   "y": 0,
+   "w": 900,
+   "h": 620,
+   "title": "التابلت — mt_tablet",
+   "page": "page-2"
+  },
+  {
+   "file": "JobsApp.dc.html",
+   "x": 1560,
+   "y": 0,
+   "w": 900,
+   "h": 620,
+   "title": "تطبيق الوظائف — mt_jobsapp",
+   "page": "page-2"
+  },
+  {
+   "file": "Banking.dc.html",
+   "x": 2580,
+   "y": 0,
+   "w": 1000,
+   "h": 660,
+   "title": "البنك — mt_banking",
+   "page": "page-2"
+  },
+  {
+   "file": "IDCard.dc.html",
+   "x": 0,
+   "y": 980,
+   "w": 560,
+   "h": 380,
+   "title": "البطاقة الشخصية — mt_idcard",
+   "page": "page-2"
+  },
+  {
+   "file": "Notepad.dc.html",
+   "x": 680,
+   "y": 980,
+   "w": 480,
+   "h": 580,
+   "title": "المفكرة — mt_notepad",
+   "page": "page-2"
+  },
+  {
+   "file": "Radio.dc.html",
+   "x": 1280,
+   "y": 980,
+   "w": 360,
+   "h": 580,
+   "title": "اللاسلكي — mt_radio",
+   "page": "page-2"
+  },
+  {
+   "file": "MDT.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1100,
+   "h": 700,
+   "title": "نظام MDT — mt_mdt",
+   "page": "page-3"
+  },
+  {
+   "file": "Dispatch.dc.html",
+   "x": 1220,
+   "y": 0,
+   "w": 480,
+   "h": 700,
+   "title": "الديسباتش — mt_dispatch",
+   "page": "page-3"
+  },
+  {
+   "file": "Police.dc.html",
+   "x": 1820,
+   "y": 0,
+   "w": 520,
+   "h": 560,
+   "title": "تفاعلات الشرطة — mt_police",
+   "page": "page-3"
+  },
+  {
+   "file": "PoliceRadar.dc.html",
+   "x": 2460,
+   "y": 0,
+   "w": 520,
+   "h": 360,
+   "title": "رادار السرعة — mt_policeradar",
+   "page": "page-3"
+  },
+  {
+   "file": "Bodycam.dc.html",
+   "x": 0,
+   "y": 820,
+   "w": 620,
+   "h": 420,
+   "title": "كاميرا الجسد — mt_bodycam",
+   "page": "page-3"
+  },
+  {
+   "file": "Fingerprint.dc.html",
+   "x": 740,
+   "y": 820,
+   "w": 520,
+   "h": 620,
+   "title": "البصمات — mt_fingerprint",
+   "page": "page-3"
+  },
+  {
+   "file": "Prison.dc.html",
+   "x": 1380,
+   "y": 820,
+   "w": 560,
+   "h": 440,
+   "title": "السجن — mt_prison",
+   "page": "page-3"
+  },
+  {
+   "file": "Ambulance.dc.html",
+   "x": 2060,
+   "y": 820,
+   "w": 560,
+   "h": 580,
+   "title": "الإسعاف — mt_ambulance",
+   "page": "page-3"
+  },
+  {
+   "file": "HospitalGames.dc.html",
+   "x": 2740,
+   "y": 820,
+   "w": 560,
+   "h": 500,
+   "title": "ألعاب المستشفى — mt_hospitalgames",
+   "page": "page-3"
+  },
+  {
+   "file": "Inventory.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1200,
+   "h": 700,
+   "title": "الحقيبة — mt_interface",
+   "page": "page-4"
+  },
+  {
+   "file": "Shops.dc.html",
+   "x": 1320,
+   "y": 0,
+   "w": 1000,
+   "h": 660,
+   "title": "المتاجر — mt_shops",
+   "page": "page-4"
+  },
+  {
+   "file": "Garages.dc.html",
+   "x": 2440,
+   "y": 0,
+   "w": 1000,
+   "h": 640,
+   "title": "الكراجات — mt_garages",
+   "page": "page-4"
+  },
+  {
+   "file": "SkillTree.dc.html",
+   "x": 0,
+   "y": 820,
+   "w": 1000,
+   "h": 660,
+   "title": "شجرة المهارات — mt_skilltree",
+   "page": "page-4"
+  },
+  {
+   "file": "Cosmetics.dc.html",
+   "x": 1120,
+   "y": 820,
+   "w": 1000,
+   "h": 660,
+   "title": "المظهر — mt_cosmetics",
+   "page": "page-4"
+  },
+  {
+   "file": "Mining.dc.html",
+   "x": 2240,
+   "y": 820,
+   "w": 520,
+   "h": 540,
+   "title": "التعدين — mt_mining",
+   "page": "page-4"
+  },
+  {
+   "file": "Farming.dc.html",
+   "x": 2880,
+   "y": 820,
+   "w": 520,
+   "h": 500,
+   "title": "الزراعة — mt_farming",
+   "page": "page-4"
+  },
+  {
+   "file": "VehicleKeys.dc.html",
+   "x": 0,
+   "y": 1600,
+   "w": 460,
+   "h": 380,
+   "title": "مفاتيح المركبات — mt_vehiclekeys",
+   "page": "page-4"
+  },
+  {
+   "file": "Elevator.dc.html",
+   "x": 580,
+   "y": 1600,
+   "w": 420,
+   "h": 580,
+   "title": "المصعد — mt_elevator",
+   "page": "page-4"
+  },
+  {
+   "file": "Doorlock.dc.html",
+   "x": 1120,
+   "y": 1600,
+   "w": 380,
+   "h": 540,
+   "title": "قفل الأبواب — Rice-doorlock",
+   "page": "page-4"
+  },
+  {
+   "file": "HouseRobbery.dc.html",
+   "x": 1620,
+   "y": 1600,
+   "w": 560,
+   "h": 500,
+   "title": "سرقة المنازل — mt_houserobbery",
+   "page": "page-4"
+  },
+  {
+   "file": "StoreRobbery.dc.html",
+   "x": 2300,
+   "y": 1600,
+   "w": 560,
+   "h": 500,
+   "title": "سرقة المتاجر — mt_storerobbery",
+   "page": "page-4"
+  },
+  {
+   "file": "Roosts.dc.html",
+   "x": 2980,
+   "y": 1600,
+   "w": 480,
+   "h": 440,
+   "title": "أقنان الدجاج — mt_roosts",
+   "page": "page-4"
+  },
+  {
+   "file": "Admin.dc.html",
+   "x": 0,
+   "y": 0,
+   "w": 1100,
+   "h": 700,
+   "title": "لوحة الأدمن — mt_admin",
+   "page": "page-5"
+  },
+  {
+   "file": "BossMenu.dc.html",
+   "x": 1220,
+   "y": 0,
+   "w": 1000,
+   "h": 640,
+   "title": "إدارة الشركة — mt_bossmenu",
+   "page": "page-5"
+  },
+  {
+   "file": "Roster.dc.html",
+   "x": 2340,
+   "y": 0,
+   "w": 900,
+   "h": 620,
+   "title": "سجل المناوبات — mt_roster",
+   "page": "page-5"
+  },
+  {
+   "file": "Logs.dc.html",
+   "x": 0,
+   "y": 820,
+   "w": 900,
+   "h": 580,
+   "title": "السجلات — Rice-logs",
+   "page": "page-5"
+  },
+  {
+   "file": "Graphics.dc.html",
+   "x": 1020,
+   "y": 820,
+   "w": 560,
+   "h": 640,
+   "title": "الرسوميات — mt_graphics",
+   "page": "page-5"
+  },
+  {
+   "file": "Density.dc.html",
+   "x": 1700,
+   "y": 820,
+   "w": 520,
+   "h": 500,
+   "title": "كثافة المدينة — mt_density",
+   "page": "page-5"
+  },
+  {
+   "file": "AudioMixer.dc.html",
+   "x": 2340,
+   "y": 820,
+   "w": 520,
+   "h": 580,
+   "title": "مازج الصوت — mt_audiomixer",
+   "page": "page-5"
+  },
+  {
+   "file": "CommandBinding.dc.html",
+   "x": 0,
+   "y": 1580,
+   "w": 600,
+   "h": 540,
+   "title": "ربط الأوامر — Rice-commandbinding",
+   "page": "page-5"
+  },
+  {
+   "file": "Crosshair.dc.html",
+   "x": 720,
+   "y": 1580,
+   "w": 520,
+   "h": 500,
+   "title": "مؤشر التصويب — Rice-crosshair",
+   "page": "page-5"
+  },
+  {
+   "file": "CrimeMenu.dc.html",
+   "x": 1360,
+   "y": 1580,
+   "w": 520,
+   "h": 580,
+   "title": "قائمة الجرائم — Rice-crimemenu",
+   "page": "page-5"
+  },
+  {
+   "file": "InfoPanel.dc.html",
+   "x": 2000,
+   "y": 1580,
+   "w": 600,
+   "h": 500,
+   "title": "لوحة المعلومات — Rice-info",
+   "page": "page-5"
+  },
+  {
+   "file": "EmoteMenu.dc.html",
+   "x": 2720,
+   "y": 1580,
+   "w": 640,
+   "h": 580,
+   "title": "قائمة الحركات — Rice-emotemenu",
+   "page": "page-5"
+  },
+  {
+   "file": "Keypress.dc.html",
+   "x": 0,
+   "y": 2280,
+   "w": 500,
+   "h": 300,
+   "title": "مؤشرات المفاتيح — Rice-keypress",
+   "page": "page-5"
+  },
+  {
+   "file": "MicroHUD.dc.html",
+   "x": 620,
+   "y": 2280,
+   "w": 720,
+   "h": 340,
+   "title": "عناصر HUD الدقيقة",
+   "page": "page-5"
   }
+ ],
+ "annotations": [
+  {
+   "id": "review-note",
+   "x": 0,
+   "y": -180,
+   "w": 380,
+   "page": "page-1",
+   "text": "التصميم v3 — MT NUI\nالصفحة 1: الأساسيات والنظام · الصفحات 2-5: لوحة لكل مورد\nاسم السيرفر وشعاره (MT) مؤقتان — أرسل الهوية الرسمية لاستبدالهما"
+  },
+  {
+   "id": "no-ui-note",
+   "x": 420,
+   "y": -180,
+   "w": 420,
+   "page": "page-1",
+   "text": "موارد بدون واجهات (حزم محتوى): mt_policecars · mt_emscars · mt_localcars · mt_sandkingrv · mt_props · mt_clothes_alpha/bravo/charlie (تُدار عبر mt_cosmetics) · mt_mining_mlo/props/sprites · mt_ranch_mlo/props/audio · mt_smallresources · mt_misc · Rice-interior\nغير واضح: mt_af — وضّح وظيفته لأصمم واجهته"
+  }
+ ],
+ "pages": [
+  {
+   "id": "page-1",
+   "name": "الأساسيات والنظام"
+  },
+  {
+   "id": "page-2",
+   "name": "الهاتف والتطبيقات"
+  },
+  {
+   "id": "page-3",
+   "name": "الشرطة والطوارئ"
+  },
+  {
+   "id": "page-4",
+   "name": "الاقتصاد والأنشطة"
+  },
+  {
+   "id": "page-5",
+   "name": "الإدارة والإعدادات"
+  }
+ ],
+ "launch": {
+  "view": "canvas",
+  "page": "page-2"
+ }
 }
