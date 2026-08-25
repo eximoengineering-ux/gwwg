@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <script src="./interactive.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
+    .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.08);position:relative;overflow:hidden;}
+    .barfill{height:100%;border-radius:3px;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
+    .num{font-variant-numeric:tabular-nums;}
+
+    .glass-panel{
+      background: linear-gradient(135deg, rgba(255,138,53,.12) 0%, rgba(255,164,92,.08) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,164,92,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1);
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .status-full{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      width:280px;
+    }
+
+    .status-item{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .status-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .status-icon{
+      width:14px;
+      height:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+    }
+
+    .status-label{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+  </style>
+</helmet>
+
+<div dir="rtl" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:60px;padding:40px;flex-wrap:wrap;">
+
+  <!-- ═══ Full Status Normal ═══ -->
+  <div class="glass-panel" style="padding:16px;border-radius:14px;transform:perspective(1200px) rotateY(-6deg);width:280px;" data-interactive="panel">
+    <div class="status-full">
+      <!-- Health -->
+      <div class="status-item">
+        <div class="status-header">
+          <div class="status-label">
+            <div class="status-icon">❤️</div>
+            <span style="font-size:11px;font-weight:700;">الصحة</span>
+          </div>
+          <span class="num" style="font-size:12px;color:#F7F4EF;font-weight:800;">85 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:85%;background:linear-gradient(90deg,#FF5D5D,#FF3333);box-shadow:0 0 12px rgba(255,93,93,.6);"></div></div>
+      </div>
+
+      <!-- Armor -->
+      <div class="status-item">
+        <div class="status-header">
+          <div class="status-label">
+            <div class="status-icon">🛡️</div>
+            <span style="font-size:11px;font-weight:700;">الدرع</span>
+          </div>
+          <span class="num" style="font-size:12px;color:#F7F4EF;font-weight:800;">45 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:45%;background:linear-gradient(90deg,#5CA8FF,#3D8FFF);box-shadow:0 0 12px rgba(92,168,255,.5);"></div></div>
+      </div>
+
+      <!-- Hunger -->
+      <div class="status-item">
+        <div class="status-header">
+          <div class="status-label">
+            <div class="status-icon">🍖</div>
+            <span style="font-size:11px;font-weight:700;">الجوع</span>
+          </div>
+          <span class="num" style="font-size:12px;color:#F7F4EF;font-weight:800;">65 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:65%;background:linear-gradient(90deg,#F5B840,#E6a020);box-shadow:0 0 12px rgba(245,184,64,.5);"></div></div>
+      </div>
+
+      <!-- Thirst -->
+      <div class="status-item">
+        <div class="status-header">
+          <div class="status-label">
+            <div class="status-icon">💧</div>
+            <span style="font-size:11px;font-weight:700;">العطش</span>
+          </div>
+          <span class="num" style="font-size:12px;color:#F7F4EF;font-weight:800;">40 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:40%;background:linear-gradient(90deg,#5CA8FF,#3D8FFF);box-shadow:0 0 12px rgba(92,168,255,.5);"></div></div>
+      </div>
+
+      <!-- Stamina -->
+      <div class="status-item">
+        <div class="status-header">
+          <div class="status-label">
+            <div class="status-icon">⚡</div>
+            <span style="font-size:11px;font-weight:700;">التحمل</span>
+          </div>
+          <span class="num" style="font-size:12px;color:#F7F4EF;font-weight:800;">92 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:92%;background:linear-gradient(90deg,#FF8A35,#FFa85c);box-shadow:0 0 12px rgba(255,138,53,.5);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Compact Status ═══ -->
+  <div class="glass-panel" style="padding:20px;border-radius:14px;width:320px;transform:perspective(1200px) rotateY(5deg);" data-interactive="panel">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,138,53,.15);border:1px solid rgba(255,164,92,.25);display:flex;align-items:center;justify-content:center;font-size:16px;">⚔️</div>
+      <div style="flex:1;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="kicker">الصحة · الدرع · التحمل</span>
+          <span class="num" style="font-size:11px;color:#B3ADA3;">85 / 45 / 92</span>
+        </div>
+        <div style="display:flex;gap:2px;">
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:85%;background:linear-gradient(90deg,#FF5D5D,#FF3333);box-shadow:0 0 8px rgba(255,93,93,.5);"></div></div>
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:45%;background:linear-gradient(90deg,#5CA8FF,#3D8FFF);box-shadow:0 0 8px rgba(92,168,255,.4);"></div></div>
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:92%;background:linear-gradient(90deg,#FF8A35,#FFa85c);box-shadow:0 0 8px rgba(255,138,53,.4);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Critical Health ═══ -->
+  <div style="display:flex;flex-direction:column;gap:14px;width:320px;transform:perspective(1200px) rotateY(-4deg);" data-interactive="panel">
+    <style>
+      @keyframes pulse-critical {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+      }
+    </style>
+    <div class="glass-panel" style="padding:20px;border-radius:14px;background:linear-gradient(135deg, rgba(255,93,93,.15) 0%, rgba(255,93,93,.08) 100%);border-color:rgba(255,93,93,.3);animation:pulse-critical 1s ease-in-out infinite;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,93,93,.2);border:1px solid rgba(255,93,93,.4);display:flex;align-items:center;justify-content:center;font-size:16px;">🚨</div>
+        <div style="flex:1;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+            <span style="font-size:12px;font-weight:800;color:#FF5D5D;">تحذير — الصحة منخفضة جداً</span>
+            <span class="num" style="font-size:11px;color:#FF5D5D;font-weight:800;">15%</span>
+          </div>
+          <div class="bar"><div class="barfill" style="width:15%;background:#FF3333;box-shadow:0 0 12px rgba(255,51,51,.7);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Low Stamina ═══ -->
+  <div class="glass-panel" style="padding:20px;border-radius:14px;width:320px;background:linear-gradient(135deg, rgba(255,184,64,.12) 0%, rgba(255,164,92,.08) 100%);border-color:rgba(255,184,64,.25);transform:perspective(1200px) rotateY(4deg);" data-interactive="panel">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:rgba(255,184,64,.15);border:1px solid rgba(255,184,64,.3);display:flex;align-items:center;justify-content:center;font-size:16px;">⚠️</div>
+      <div style="flex:1;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <span style="font-size:12px;font-weight:800;color:#F5B840;">تنبيه — التحمل منخفض</span>
+          <span class="num" style="font-size:11px;color:#F5B840;font-weight:800;">22%</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:22%;background:linear-gradient(90deg,#F5B840,#E6a020);box-shadow:0 0 12px rgba(245,184,64,.5);"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Hungry/Thirsty ═══ -->
+  <div class="glass-panel" style="padding:20px;border-radius:14px;width:320px;transform:perspective(1200px) rotateY(-5deg);" data-interactive="panel">
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(245,184,64,.15);border:1px solid rgba(245,184,64,.3);display:flex;align-items:center;justify-content:center;font-size:16px;">🍖</div>
+        <div style="flex:1;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#B3ADA3;">الجوع</span>
+            <span class="num" style="font-size:11px;color:#F5B840;font-weight:800;">8%</span>
+          </div>
+          <div class="bar" style="margin-top:4px;"><div class="barfill" style="width:8%;background:#F5B840;box-shadow:0 0 8px rgba(245,184,64,.5);"></div></div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(92,168,255,.15);border:1px solid rgba(92,168,255,.3);display:flex;align-items:center;justify-content:center;font-size:16px;">💧</div>
+        <div style="flex:1;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#B3ADA3;">العطش</span>
+            <span class="num" style="font-size:11px;color:#5CA8FF;font-weight:800;">12%</span>
+          </div>
+          <div class="bar" style="margin-top:4px;"><div class="barfill" style="width:12%;background:#5CA8FF;box-shadow:0 0 8px rgba(92,168,255,.4);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Perfect Health ═══ -->
+  <div class="glass-panel" style="padding:20px;border-radius:14px;width:320px;background:linear-gradient(135deg, rgba(62,207,142,.12) 0%, rgba(62,207,142,.08) 100%);border-color:rgba(62,207,142,.25);transform:perspective(1200px) rotateY(6deg);" data-interactive="panel">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="width:32px;height:32px;border-radius:8px;background:rgba(62,207,142,.15);border:1px solid rgba(62,207,142,.3);display:flex;align-items:center;justify-content:center;font-size:16px;">✓</div>
+      <div style="flex:1;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <span class="kicker" style="color:#3ECF8E;">جميع المعاملات</span>
+          <span class="num" style="font-size:11px;color:#3ECF8E;font-weight:800;">مثالي</span>
+        </div>
+        <div style="display:flex;gap:2px;">
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:100%;background:#3ECF8E;box-shadow:0 0 8px rgba(62,207,142,.5);"></div></div>
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:100%;background:#3ECF8E;box-shadow:0 0 8px rgba(62,207,142,.5);"></div></div>
+          <div class="bar" style="flex:1;"><div class="barfill" style="width:100%;background:#3ECF8E;box-shadow:0 0 8px rgba(62,207,142,.5);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

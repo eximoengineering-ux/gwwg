@@ -1,0 +1,380 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+  <script src="./interactive.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
+  <style>
+    body{margin:0;background:#0B0A09;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F7F4EF;}
+    .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.06);position:relative;overflow:hidden;}
+    .barfill{height:100%;border-radius:3px;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7A756C;}
+    .num{font-variant-numeric:tabular-nums;}
+
+    /* Amber Glass Effect */
+    .glass-panel{
+      background: linear-gradient(135deg, rgba(255,138,53,.12) 0%, rgba(255,164,92,.08) 100%);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,164,92,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 8px 32px rgba(255,138,53,.15);
+    }
+
+    .crosshair-container{
+      position:relative;
+      width:200px;
+      height:200px;
+      margin:0 auto 40px;
+    }
+
+    .crosshair{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:80px;
+      height:80px;
+      border:2px solid #FF8A35;
+      border-radius:50%;
+      opacity:.7;
+    }
+
+    .crosshair::before,
+    .crosshair::after{
+      content:'';
+      position:absolute;
+      background:#FF8A35;
+    }
+
+    .crosshair::before{
+      width:2px;
+      height:20px;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) translateY(-30px);
+    }
+
+    .crosshair::after{
+      width:20px;
+      height:2px;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%) translateX(-30px);
+    }
+
+    @keyframes pulse-cross {
+      0%, 100% { opacity: .7; transform: translate(-50%,-50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%,-50%) scale(1.1); }
+    }
+
+    .crosshair.active { animation: pulse-cross 1.5s ease-in-out infinite; }
+
+    .status-line{
+      width:100%;
+      height:2px;
+      background:linear-gradient(90deg, transparent, #FF8A35 20%, #FF8A35 80%, transparent);
+      margin:16px 0;
+      box-shadow:0 0 12px rgba(255,138,53,.4);
+    }
+
+    .stat-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:8px 0;
+      font-size:12px;
+    }
+
+    .stat-label{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      color:#B3ADA3;
+    }
+
+    .stat-icon{
+      width:16px;
+      height:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,138,53,.15);
+      border-radius:4px;
+      font-size:10px;
+    }
+
+    .status-badge{
+      display:inline-block;
+      padding:4px 10px;
+      background:rgba(62,207,142,.15);
+      border:1px solid rgba(62,207,142,.3);
+      border-radius:6px;
+      font-size:10px;
+      color:#3ECF8E;
+      font-weight:700;
+    }
+
+    .status-badge.warning{
+      background:rgba(255,184,64,.15);
+      border-color:rgba(255,184,64,.3);
+      color:#F5B840;
+    }
+
+    .status-badge.danger{
+      background:rgba(255,93,93,.15);
+      border-color:rgba(255,93,93,.3);
+      color:#FF5D5D;
+    }
+
+    .loading-spinner{
+      display:inline-block;
+      width:14px;
+      height:14px;
+      border:2px solid rgba(255,138,53,.2);
+      border-top-color:#FF8A35;
+      border-radius:50%;
+      animation:spin .8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .error-state{
+      text-align:center;
+      color:#FF5D5D;
+    }
+
+    .error-icon{
+      font-size:28px;
+      margin-bottom:8px;
+    }
+
+    .success-check{
+      display:inline-block;
+      width:16px;
+      height:16px;
+      background:#3ECF8E;
+      border-radius:50%;
+      position:relative;
+    }
+
+    .success-check::after{
+      content:'✓';
+      position:absolute;
+      color:white;
+      font-size:12px;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    }
+  </style>
+</helmet>
+
+<div dir="rtl" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:60px;padding:40px;flex-wrap:wrap;">
+
+  <!-- ═══ Normal State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(-4deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;position:relative;overflow:hidden;">
+      <div class="crosshair-container">
+        <div class="crosshair active"></div>
+      </div>
+
+      <!-- Target Info -->
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:16px;font-weight:800;color:#FFA45C;margin-bottom:4px;">أحمد علي</div>
+        <div class="kicker" style="color:#7A756C;">مسافة: <span dir="ltr">12م</span></div>
+      </div>
+
+      <div class="status-line"></div>
+
+      <!-- Health Bar -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+        <div class="stat-row">
+          <div class="stat-label">
+            <div class="stat-icon">❤️</div>
+            <span>الصحة</span>
+          </div>
+          <span class="num" style="color:#FF5D5D;font-weight:800;">78 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:78%;background:linear-gradient(90deg,#FF5D5D,#FF3333);box-shadow:0 0 12px rgba(255,93,93,.6);"></div></div>
+      </div>
+
+      <!-- Armor Bar -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+        <div class="stat-row">
+          <div class="stat-label">
+            <div class="stat-icon">🛡️</div>
+            <span>الدرع</span>
+          </div>
+          <span class="num" style="color:#5CA8FF;font-weight:800;">45 / 100</span>
+        </div>
+        <div class="bar"><div class="barfill" style="width:45%;background:linear-gradient(90deg,#5CA8FF,#3D8FFF);box-shadow:0 0 12px rgba(92,168,255,.5);"></div></div>
+      </div>
+
+      <!-- Status -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,164,92,.15);">
+        <span class="kicker">الحالة</span>
+        <span class="status-badge">مسلح</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Loading State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(3deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;position:relative;overflow:hidden;">
+      <div class="crosshair-container">
+        <div class="crosshair" style="opacity:.4;"></div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <div class="loading-spinner"></div>
+          <div style="font-size:14px;color:#B3ADA3;">جاري المسح...</div>
+        </div>
+        <div class="kicker" style="color:#7A756C;">الرجاء الانتظار</div>
+      </div>
+
+      <div class="status-line" style="opacity:.3;"></div>
+
+      <div style="text-align:center;color:#7A756C;font-size:12px;line-height:1.8;">
+        <div>جارٍ جمع معلومات الهدف</div>
+        <div style="font-size:10px;margin-top:8px;">⏱️ <span dir="ltr">2.3 ثانية</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Success State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(-3deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;background:linear-gradient(135deg, rgba(62,207,142,.12) 0%, rgba(62,207,142,.08) 100%);border-color:rgba(62,207,142,.25);position:relative;overflow:hidden;">
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="font-size:40px;margin-bottom:12px;">✓</div>
+        <div style="font-size:14px;font-weight:800;color:#3ECF8E;">تم المسح بنجاح</div>
+        <div class="kicker" style="color:#3ECF8E;opacity:.7;">معلومات الهدف محدثة</div>
+      </div>
+
+      <div class="status-line" style="background:linear-gradient(90deg, transparent, #3ECF8E 20%, #3ECF8E 80%, transparent);box-shadow:0 0 12px rgba(62,207,142,.4);"></div>
+
+      <!-- Updated Info -->
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+        <div class="stat-row">
+          <span class="stat-label">الاسم</span>
+          <span>أحمد علي</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">المسافة</span>
+          <span dir="ltr">12.5م</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">الحالة</span>
+          <span class="status-badge">✓ آمن</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Warning State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(5deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;background:linear-gradient(135deg, rgba(255,184,64,.12) 0%, rgba(255,164,92,.08) 100%);border-color:rgba(255,184,64,.25);position:relative;overflow:hidden;">
+      <style>
+        @keyframes pulse-warning {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.6; }
+        }
+      </style>
+      <div style="animation: pulse-warning 1s ease-in-out infinite;">
+        <div class="crosshair-container">
+          <div class="crosshair" style="border-color:#F5B840;"></div>
+        </div>
+
+        <div style="text-align:center;margin-bottom:20px;">
+          <div style="font-size:16px;font-weight:800;color:#F5B840;margin-bottom:4px;">تحذير</div>
+          <div class="kicker" style="color:#F5B840;opacity:.8;">الهدف بصحة منخفضة</div>
+        </div>
+
+        <div class="status-line" style="background:linear-gradient(90deg, transparent, #F5B840 20%, #F5B840 80%, transparent);box-shadow:0 0 12px rgba(245,184,64,.4);"></div>
+
+        <!-- Critical Health -->
+        <div style="display:flex;flex-direction:column;gap:6px;margin-top:16px;">
+          <div class="stat-row">
+            <span class="stat-label">الصحة</span>
+            <span class="num" style="color:#F5B840;font-weight:800;">18 / 100</span>
+          </div>
+          <div class="bar"><div class="barfill" style="width:18%;background:linear-gradient(90deg,#F5B840,#E6a020);box-shadow:0 0 12px rgba(245,184,64,.5);"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Error State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(-5deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;background:linear-gradient(135deg, rgba(255,93,93,.12) 0%, rgba(255,93,93,.08) 100%);border-color:rgba(255,93,93,.25);position:relative;overflow:hidden;">
+      <div class="error-state">
+        <div class="error-icon">✕</div>
+        <div style="font-size:14px;font-weight:800;margin-bottom:8px;">فقدان الهدف</div>
+        <div class="kicker" style="color:#FF5D5D;opacity:.7;">انقطع الاتصال</div>
+      </div>
+
+      <div class="status-line" style="background:linear-gradient(90deg, transparent, #FF5D5D 20%, #FF5D5D 80%, transparent);box-shadow:0 0 12px rgba(255,93,93,.4);margin:16px 0;"></div>
+
+      <div style="text-align:center;font-size:12px;color:#FF5D5D;line-height:1.6;">
+        <div>لا يمكن الوصول للهدف</div>
+        <div style="font-size:10px;margin-top:8px;opacity:.7;">حاول مرة أخرى</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Enemy State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(6deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;background:linear-gradient(135deg, rgba(255,93,93,.12) 0%, rgba(255,138,53,.08) 100%);border-color:rgba(255,93,93,.3);position:relative;overflow:hidden;">
+      <style>
+        @keyframes pulse-danger {
+          0%, 100% { box-shadow: 0 0 8px rgba(255,93,93,.4); }
+          50% { box-shadow: 0 0 20px rgba(255,93,93,.7); }
+        }
+      </style>
+      <div class="crosshair-container">
+        <div class="crosshair" style="border-color:#FF5D5D;animation: pulse-danger 1s ease-in-out infinite;"></div>
+      </div>
+
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="font-size:14px;font-weight:800;color:#FF5D5D;margin-bottom:4px;">🔴 عدو</div>
+        <div class="kicker" style="color:#FF5D5D;">خطر مرتفع</div>
+      </div>
+
+      <div class="status-line" style="background:linear-gradient(90deg, transparent, #FF5D5D 20%, #FF5D5D 80%, transparent);box-shadow:0 0 12px rgba(255,93,93,.6);"></div>
+
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+        <div class="stat-row">
+          <span class="stat-label">الاسم</span>
+          <span style="color:#FF5D5D;">مشبوه</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">الوضع</span>
+          <span class="status-badge danger">⚠️ معادي</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ Empty State ═══ -->
+  <div style="display:flex;flex-direction:column;gap:16px;width:320px;transform:perspective(1200px) rotateY(-6deg);" data-interactive="panel">
+    <div class="glass-panel" style="border-radius:16px;padding:24px;opacity:.6;position:relative;overflow:hidden;">
+      <div style="text-align:center;padding:40px 0;">
+        <div style="font-size:32px;margin-bottom:12px;">🔍</div>
+        <div style="font-size:13px;color:#B3ADA3;line-height:1.6;">
+          <div>لا يوجد هدف</div>
+          <div style="font-size:11px;margin-top:8px;color:#7A756C;">ركز على هدف لعرض المعلومات</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
