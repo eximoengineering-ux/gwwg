@@ -9,88 +9,94 @@
 <helmet>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap">
   <style>
-    body{margin:0;background:#0B0B0C;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F5F5F3;}
+    body{margin:0;background:#09090B;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:#F6F5F2;}
     a{color:#FF7A1F;} a:hover{color:#FFA45C;}
+    .kicker{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6E6C66;}
   </style>
 </helmet>
 <div dir="rtl" style="width:820px;height:920px;background:
-  radial-gradient(500px 500px at 50% 55%, rgba(255,122,31,.06), transparent 70%),
-  #0B0B0C;padding:36px 40px;box-sizing:border-box;display:flex;flex-direction:column;gap:8px;">
+  radial-gradient(520px 520px at 50% 54%, rgba(255,122,31,.07), transparent 70%),
+  #09090B;padding:36px 40px 28px;box-sizing:border-box;display:flex;flex-direction:column;gap:4px;">
 
-  <div style="display:flex;align-items:center;justify-content:space-between;">
-    <div style="display:flex;flex-direction:column;gap:4px;">
-      <h1 style="margin:0;font-size:22px;font-weight:900;">القائمة الدائرية <span style="color:#FF7A1F;">mt_radialmenu</span></h1>
-      <p style="margin:0;font-size:13px;color:#A8A8A4;">تُفتح بالضغط المستمر على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> — الخلفية خلفها تُعتم بنسبة 50%</p>
-    </div>
+  <div style="display:flex;flex-direction:column;gap:4px;">
+    <span class="kicker">mt_radialmenu</span>
+    <h1 style="margin:0;font-size:24px;font-weight:900;">القائمة الدائرية</h1>
+    <p style="margin:0;font-size:13px;color:#A5A39D;">ضغط مستمر على <span dir="ltr" style="color:#FFA45C;font-weight:800;">F1</span> — المشهد خلفها يُعتم 50% ويُموّه</p>
   </div>
 
   <div style="position:relative;width:720px;height:720px;align-self:center;">
     <svg width="720" height="720" viewBox="0 0 720 720">
-      <!-- segments: base shape rotated -->
+      <defs>
+        <linearGradient id="segActive" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#FF8A35"/>
+          <stop offset="1" stop-color="#E85D04"/>
+        </linearGradient>
+        <linearGradient id="segBase" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="rgba(28,28,31,.96)"/>
+          <stop offset="1" stop-color="rgba(17,17,19,.96)"/>
+        </linearGradient>
+      </defs>
+      <!-- active indicator arc just outside the active segment -->
+      <path d="M267.6,110.9 A265,265 0 0 1 452.4,110.9" fill="none" stroke="#FF7A1F" stroke-width="3" stroke-linecap="round" style="filter:drop-shadow(0 0 10px rgba(255,122,31,.8));"/>
       <g>
-        <!-- active (top) -->
-        <path d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z"
-              fill="#FF7A1F" stroke="#FFA45C" stroke-width="1.5" style="filter:drop-shadow(0 0 18px rgba(255,122,31,.55));"/>
-        <path transform="rotate(45,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(90,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(135,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(180,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(225,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(270,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
-        <path transform="rotate(315,360,360)" d="M269,116.4 A260,260 0 0 1 451,116.4 L407.3,233.5 A135,135 0 0 0 312.7,233.5 Z" fill="rgba(28,28,31,.94)" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+        <path d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z"
+              fill="url(#segActive)" style="filter:drop-shadow(0 0 22px rgba(255,122,31,.45));"/>
+        <path transform="rotate(45,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(90,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(135,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(180,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(225,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(270,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+        <path transform="rotate(315,360,360)" d="M272.5,125.7 A250,250 0 0 1 447.5,125.7 L419.5,200.7 A170,170 0 0 0 300.5,200.7 Z" fill="url(#segBase)" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
       </g>
 
-      <!-- icons (24px, centered at radius 197.5) -->
-      <!-- top: vehicle (active → dark icon) -->
-      <g transform="translate(348,150.5)">
+      <!-- icons at radius 210 -->
+      <g transform="translate(348,150)">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14100B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg>
       </g>
-      <!-- NE: phone -->
-      <g transform="translate(487.7,208.3)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+      <g transform="translate(496.5,199.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
       </g>
-      <!-- E: wallet -->
-      <g transform="translate(545.5,348)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
+      <g transform="translate(558,348)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4z"/></svg>
       </g>
-      <!-- SE: emotes (smile) -->
-      <g transform="translate(487.7,487.7)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
+      <g transform="translate(496.5,496.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01M15 9h.01"/></svg>
       </g>
-      <!-- S: clothes (shirt) -->
-      <g transform="translate(348,545.5)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+      <g transform="translate(348,558)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
       </g>
-      <!-- SW: interact (hand) -->
-      <g transform="translate(208.3,487.7)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="m7 15-1.8-1.8a2 2 0 0 0-2.8 2.8L8 21.6c1 1 2.4 1.6 3.8 1.6H15a5 5 0 0 0 5-5v-5a2 2 0 0 0-4 0"/></svg>
+      <g transform="translate(199.5,496.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="m7 15-1.8-1.8a2 2 0 0 0-2.8 2.8L8 21.6c1 1 2.4 1.6 3.8 1.6H15a5 5 0 0 0 5-5v-5a2 2 0 0 0-4 0"/></svg>
       </g>
-      <!-- W: job (briefcase) -->
-      <g transform="translate(150.5,348)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      <g transform="translate(150,348)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
       </g>
-      <!-- NW: settings -->
-      <g transform="translate(208.3,208.3)">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F5F5F3" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <g transform="translate(199.5,199.5)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B9B7B1" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       </g>
 
       <!-- center hub -->
-      <circle cx="360" cy="360" r="100" fill="#141416" stroke="rgba(255,255,255,.1)" stroke-width="1.5"/>
-      <circle cx="360" cy="360" r="88" fill="none" stroke="rgba(255,122,31,.35)" stroke-width="1" stroke-dasharray="4 6"/>
+      <circle cx="360" cy="360" r="128" fill="#101012" stroke="rgba(255,255,255,.08)" stroke-width="1.5"/>
+      <circle cx="360" cy="360" r="114" fill="none" stroke="rgba(255,122,31,.3)" stroke-width="1" stroke-dasharray="3 7"/>
     </svg>
-    <!-- center labels (HTML for proper Arabic shaping) -->
     <div style="position:absolute;top:0;left:0;width:720px;height:720px;display:flex;align-items:center;justify-content:center;pointer-events:none;">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;">
-        <span style="font-size:19px;font-weight:900;color:#FFA45C;">المركبة</span>
-        <span style="font-size:11px;font-weight:600;color:#78786F;">قفل · صندوق · محرك</span>
-        <span style="font-size:10px;font-weight:700;color:#78786F;margin-top:6px;background:#1C1C1F;border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:2px 8px;"><span dir="ltr">ESC</span> للإغلاق</span>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:3px;text-align:center;">
+        <span class="kicker" style="color:#FFA45C;font-size:9px;">Vehicle</span>
+        <span style="font-size:22px;font-weight:900;line-height:1.2;">المركبة</span>
+        <span style="font-size:11px;font-weight:600;color:#6E6C66;">قفل · صندوق · محرك</span>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:10px;">
+          <span dir="ltr" style="min-width:24px;height:22px;padding:0 6px;border-radius:6px;background:#1B1B1F;border:1px solid rgba(255,255,255,.12);box-shadow:inset 0 -2px 0 rgba(0,0,0,.55);display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:10px;box-sizing:border-box;">ESC</span>
+          <span style="font-size:10px;font-weight:700;color:#6E6C66;">إغلاق</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <div style="background:#141416;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
-    <span style="font-size:12px;color:#A8A8A4;font-weight:600;">القطاع النشط يتوسّع بمقدار 4% مع توهج · فتح القائمة 200ms بدوران خفيف <span dir="ltr">(-6°→0°)</span></span>
-    <span style="font-size:11px;color:#78786F;font-weight:700;">8 قطاعات كحد أقصى</span>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1);"></div>
+    <span style="font-size:11px;color:#6E6C66;font-weight:600;">القطاع النشط يتوسّع 4% مع توهج · فتح 200ms بدوران <span dir="ltr">-6°→0°</span> · 8 قطاعات كحد أقصى</span>
+    <div style="width:24px;height:1px;background:rgba(255,255,255,.1);"></div>
   </div>
 
 </div>
